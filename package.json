@@ -10,9 +10,11 @@
     "tw:init": "tailwindcss init -p"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "next": "15.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-scrollbar-hide": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
