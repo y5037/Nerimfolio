@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Metadata } from "next";
 import "@/styles/tailwind.css";
 
@@ -9,11 +10,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
       <body>{children}</body>
