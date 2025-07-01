@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function InfoSection() {
+export default function IntroSection() {
   const router = useRouter();
 
   return (

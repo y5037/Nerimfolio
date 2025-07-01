@@ -1,6 +1,6 @@
 import BodyContainer from "@/components/layout/responsive/BodyContainer";
 import FrontendSection from "./components/FrontendSection";
-import InfoSection from "./components/InfoSection";
+import IntroSection from "./components/IntroSection";
 import PublishingSection from "./components/PublishingSection";
 import TechBlogSection from "./components/TechBlogSection";
 import ScrollTo from "@/components/layout/scrollTo/ScrollTo";
@@ -8,7 +8,7 @@ import ScrollTo from "@/components/layout/scrollTo/ScrollTo";
 export default function Home() {
   return (
     <BodyContainer>
-      <InfoSection />
+      <IntroSection />
       <ScrollTo coord={"Intro"} />
       <FrontendSection />
       {/* <ScrollTo coord={"ThingsIBuilt"}/> */}
