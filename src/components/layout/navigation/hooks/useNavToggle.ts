@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import useMedia from "use-media";
 
-export default function useNavToggle() {
+export const useNavToggle = () => {
   const [isShowMenu, setIsShowMenu] = useState(false);
 
   const outRef = useRef<HTMLDivElement | null>(null);

@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { navLinks } from "@/app/constants/navigation";
+import { navLinks } from "@/components/layout/navigation/constants/navLinks";
 import Image from "next/image";
-import useNavToggle from "./hooks/useNavToggle";
+import { useNavToggle } from "./hooks/useNavToggle";
 
 export default function Navigation() {
   const router = useRouter();
