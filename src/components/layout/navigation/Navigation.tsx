@@ -13,7 +13,7 @@ export default function Navigation() {
   return (
     <>
       <div
-        className="hidden fixed right-12 top-8 cursor-pointer z-20 max-md:block"
+        className="hidden fixed right-12 top-8 cursor-pointer z-20 max-md:block max-md:right-6"
         ref={outRef}
       >
         <Image
@@ -29,7 +29,7 @@ export default function Navigation() {
         />
       </div>
       <div
-        className={`fixed right-[0] writing-mode-vertical w-20 h-full bg-[rgba(0,0,0,0.2)] flex pt-[100px] gap-6 max-md:w-32 max-md:text-lg  transition-transform duration-500 ease-in-out z-10 ${
+        className={`fixed right-[0] writing-mode-vertical w-20 h-full bg-[rgba(0,0,0,0.2)] flex pt-[100px] gap-6 transition-transform duration-500 ease-in-out z-10 ${
           isShowMenu ? "max-md:translate-x-0" : "max-md:translate-x-full"
         }`}
       >

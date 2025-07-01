@@ -13,7 +13,9 @@ module.exports = {
       screens: {
         s: "320px",
         xs: "480px",
-        md: "768px",
+        xs500: "500px",
+        lg900: "900px",
+        lg1050: "1050px",
         lg: "1199px",
         xlg: "1920px",
       },
@@ -53,6 +55,26 @@ module.exports = {
         "vertical-lr": "vertical-lr",
         sideways: "sideways-rl",
       },
+      keyframes: {
+        scrollAni: {
+          "0%": { top: "0", opacity: "1" },
+          "25%": { height: "50px" },
+          "100%": { top: "100%", opacity: "0" },
+        },
+        scrollAniMouse: {
+          "0%": { top: "-5px" },
+          "50%": { top: "5px" },
+          "100%": { top: "-5px" },
+        },
+      },
+      animation: {
+        scrollAni: "scrollAni 1s ease-in-out infinite",
+        scrollAniMouse: "scrollAniMouse 1s infinite",
+      },
+    },
+    fontFamily: {
+      roboto: ["roboto"],
+      robotoSlab: ["robotoSlab"],
     },
   },
   plugins: [

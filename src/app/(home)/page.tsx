@@ -11,7 +11,7 @@ export default function Home() {
       <FrontendSection />
       <PublishingSection />
       <TechBlogSection />
-      {/* <button>Contact 보러가기</button> */}
+      {/* <button>Contact 보러가기  </button> */}
     </BodyContainer>
   );
 }
