@@ -188,6 +188,8 @@ html,
 body {
   width: 100%;
   height: calc(env(safe-area-inset-bottom) + 100%);
+  min-height: calc(env(safe-area-inset-bottom) + 100%);
+  overflow-x: hidden;
 }
 
 a {

@@ -34,22 +34,43 @@ module.exports = {
         gray400: "var(--gray400)",
         gray500: "var(--gray500)",
 
-        orange100: "var(--primary-orange100)",
-        orange200: "var(--primary-orange200)",
-        orange300: "var(--primary-orange300)",
-        orange400: "var(--primary-orange400)",
-        orange500: "var(--primary-orange500)",
-        blue100: "var(--primary-blue100)",
-        blue200: "var(--primary-blue200)",
-        blue300: "var(--primary-blue300)",
+        orange100: "var(--orange100)",
+        orange200: "var(--orange200)",
+        orange300: "var(--orange300)",
+        orange400: "var(--orange400)",
+        orange500: "var(--orange500)",
+
+        blue100: "var(--blue100)",
+        blue200: "var(--blue200)",
+        blue300: "var(--blue300)",
 
         line100: "var(--line100)",
         line200: "var(--line200)",
+      },
+      writingMode: {
+        horizontal: "horizontal-tb",
+        vertical: "vertical-rl",
+        "vertical-lr": "vertical-lr",
+        sideways: "sideways-rl",
       },
     },
   },
   plugins: [
     require("tailwind-scrollbar-hide"),
     require("@tailwindcss/line-clamp"),
+    function ({ addUtilities, theme, variants }) {
+      const modes = theme("writingMode");
+      const newUtilities = {};
+
+      for (const [key, value] of Object.entries(modes)) {
+        newUtilities[`.writing-mode-${key}`] = {
+          writingMode: value,
+        };
+      }
+
+      addUtilities(newUtilities, {
+        variants: ["responsive"],
+      });
+    },
   ],
 };
