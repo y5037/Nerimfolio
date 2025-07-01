@@ -29,7 +29,7 @@ export default function Navigation() {
         />
       </div>
       <div
-        className={`fixed right-[0] writing-mode-vertical w-20 h-full bg-[rgba(0,0,0,0.2)] flex pt-[100px] gap-6 transition-transform duration-500 ease-in-out z-10 ${
+        className={`fixed right-[0] writing-mode-vertical w-20 h-full bg-[rgba(0,0,0,0.2)] flex pt-[100px] gap-6 transition-transform duration-500 ease-in-out z-10 text-gray-300 ${
           isShowMenu ? "max-md:translate-x-0" : "max-md:translate-x-full"
         }`}
       >
@@ -43,7 +43,7 @@ export default function Navigation() {
                   ? router.push(menu.href)
                   : window.open("https://velog.io/@nerimy/posts", "_blank")
               }
-              className="hover:text-gray-300 duration-[.2s]"
+              className="hover:text-white duration-[.2s]"
             >
               {menu.label}
             </button>
