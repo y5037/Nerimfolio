@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <BodyContainer>
       <IntroSection />
-      <ScrollTo coord={"Intro"} />
+      <ScrollTo coord="Intro" />
       <FrontendSection />
-      {/* <ScrollTo coord={"ThingsIBuilt"}/> */}
+      {/* <ScrollTo coord="ThingsIBuilt"/> */}
       <PublishingSection />
-      {/* <ScrollTo coord={"Layouts"}/> */}
+      {/* <ScrollTo coord="Layouts"/> */}
       <TechBlogSection />
-      {/* <ScrollTo coord={"InWords"}/> */}
+      {/* <ScrollTo coord="InWords"/> */}
       {/* <button>Contact 보러가기  </button> */}
     </BodyContainer>
   );
