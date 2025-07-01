@@ -36,7 +36,7 @@ export default function IntroSection() {
       </div>
       <div className="justify-items-center">
         <Image
-          src="/images/layout/scroll.svg"
+          src="/images/home/introSection/scroll.svg"
           alt="please, scrolldown"
           width={50}
           height={50}

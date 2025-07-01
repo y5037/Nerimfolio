@@ -3,7 +3,7 @@ import FrontendSection from "./components/FrontendSection";
 import IntroSection from "./components/IntroSection";
 import PublishingSection from "./components/PublishingSection";
 import TechBlogSection from "./components/TechBlogSection";
-import ScrollTo from "@/components/layout/scrollTo/ScrollTo";
+import ScrollTo from "@/app/(home)/components/scrollTo/ScrollTo";
 
 export default function Home() {
   return (

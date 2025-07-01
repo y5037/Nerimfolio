@@ -4,6 +4,11 @@
 
 @font-face {
   font-family: "RobotoSlab";
+  src: url("/fonts/robotoSlab/RobotoSlab-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "RobotoSlab";
   src: url("/fonts/robotoSlab/RobotoSlab-Medium.ttf") format("truetype");
   font-weight: 500;
 }
