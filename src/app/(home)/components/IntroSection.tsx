@@ -16,7 +16,7 @@ export default function IntroSection() {
           Hello <span className="font-thin">my name is</span>
         </p>
         <p
-          className="relative left-[-10px] inline-block text-8xl font-black italic cursor-pointer hover:bg-white hover:text-black pb-2 max-lg1050:text-7xl max-lg1050:left-[-6px] max-lg900:text-6xl max-lg900:pb-6 max-lg900:pt-2  max-lg900:left-[-4px] max-xs500:text-5xl"
+          className="relative left-[-10px] inline-block text-8xl font-black italic cursor-pointer hover:bg-white hover:text-black pb-2 max-lg1050:text-7xl max-lg1050:left-[-6px] max-lg900:text-6xl max-lg900:mb-6 max-lg900:pt-2  max-lg900:left-[-4px] max-xs500:text-5xl"
           onClick={() => router.push("/about")}
         >
           YUN HYE RIM

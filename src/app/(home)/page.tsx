@@ -11,7 +11,7 @@ export default function Home() {
       <IntroSection />
       <ScrollTo coord="Intro" />
       <FrontendSection />
-      {/* <ScrollTo coord="ThingsIBuilt"/> */}
+      <ScrollTo coord="ThingsIBuilt" />
       <PublishingSection />
       {/* <ScrollTo coord="Layouts"/> */}
       <TechBlogSection />
