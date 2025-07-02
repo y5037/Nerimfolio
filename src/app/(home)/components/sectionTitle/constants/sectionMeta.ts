@@ -9,7 +9,16 @@ export const sectionMeta: SectionMeta[] = [
   {
     id: "Layouts",
     title: "Layouts",
-    tags: ["#publishing", "#mark up", "#html", "#css", "jQuery"],
+    tags: [
+      "#php",
+      "#react",
+      "#html",
+      "#css",
+      "#jQuery",
+      "#web&app",
+      "#publishing",
+      "#mark up",
+    ],
   },
   {
     id: "InWords",

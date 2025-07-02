@@ -48,7 +48,7 @@ export default function PublishingSection() {
                 {activeIndex === uniqueKey && (
                   <div
                     onClick={(e) => e.stopPropagation()}
-                    className="absolute z-10 cursor-default"
+                    className="absolute z-10 cursor-default hidden md:block"
                   >
                     <Popup onClose={() => setActiveIndex(null)} />
                   </div>
@@ -57,6 +57,14 @@ export default function PublishingSection() {
             );
           })}
         </div>
+        {activeIndex !== null && (
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 md:hidden"
+          >
+            <Popup onClose={() => setActiveIndex(null)} />
+          </div>
+        )}
       </div>
     </>
   );

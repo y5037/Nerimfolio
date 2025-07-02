@@ -4,7 +4,7 @@ export default function FrontendSection() {
   return (
     <>
       <TitleContainer id="ThingsIBuilt" />
-      <div className="mx-auto w-[970px] max-lg:w-[900px] max-lg1050:w-[800px] max-lg900:w-auto max-lg900:px-10 max-lg900:overflow-auto">
+      <div className="mx-auto w-[970px] max-lg:w-[900px] max-lg1050:w-[800px] max-lg900:w-auto max-lg900:px-10 max-lg900:overflow-auto max-md:px-6">
         {/* max-lg900:h-[] */}
         <div className="relative h-[300px] mb-20 group max-lg900:h-[490px] max-lg900:mb-0">
           <div className="relative first z-[-1]">
@@ -30,7 +30,7 @@ export default function FrontendSection() {
                 Explore
               </button>
               <button className="flex-1 text-center border border-solid border-black rounded h-9 duration-[.2s] max-lg900:bg-[rgba(255,255,255.3)] max-lg900:text-black lg900:hover:bg-[rgba(255,255,255,.3)]">
-                Dive In →
+                Dive In
               </button>
             </div>
           </div>

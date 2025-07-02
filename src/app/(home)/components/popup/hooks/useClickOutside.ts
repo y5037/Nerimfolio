@@ -26,5 +26,6 @@ export const useClickOutside = (onClose: () => void) => {
     ref,
     handleAnimationEnd,
     isClosing,
+    setIsClosing,
   };
 };

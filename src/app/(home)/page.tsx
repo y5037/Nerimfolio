@@ -4,6 +4,7 @@ import IntroSection from "./components/IntroSection";
 import PublishingSection from "./components/PublishingSection";
 import TechBlogSection from "./components/TechBlogSection";
 import ScrollTo from "@/app/(home)/components/scrollTo/ScrollTo";
+import ContactButton from "./components/ContactButton";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <ScrollTo coord="Layouts" />
       <TechBlogSection />
       <ScrollTo coord="InWords" />
-      <button>Contact 보러가기 </button>
+      <ContactButton />
     </BodyContainer>
   );
 }
