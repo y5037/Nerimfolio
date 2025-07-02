@@ -3,7 +3,7 @@ import TitleContainer from "./sectionTitle/TitleContainer";
 export default function FrontendSection() {
   return (
     <>
-      <TitleContainer sectionId="ThingsIBuilt" />
+      <TitleContainer id="ThingsIBuilt" />
       <div className="mx-auto w-[970px] max-lg:w-[900px] max-lg1050:w-[800px] max-lg900:w-auto max-lg900:px-10 max-lg900:overflow-auto">
         {/* max-lg900:h-[] */}
         <div className="relative h-[300px] mb-20 group max-lg900:h-[490px] max-lg900:mb-0">

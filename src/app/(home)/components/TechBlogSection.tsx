@@ -1,3 +1,9 @@
+import TitleContainer from "./sectionTitle/TitleContainer";
+
 export default function TechBlogSection() {
-  return <></>;
+  return (
+    <>
+      <TitleContainer id="InWords" />
+    </>
+  );
 }

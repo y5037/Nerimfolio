@@ -15,8 +15,8 @@ export default function Home() {
       <PublishingSection />
       <ScrollTo coord="Layouts" />
       <TechBlogSection />
-      {/* <ScrollTo coord="InWords"/> */}
-      {/* <button>Contact 보러가기  </button> */}
+      <ScrollTo coord="InWords" />
+      <button>Contact 보러가기 </button>
     </BodyContainer>
   );
 }

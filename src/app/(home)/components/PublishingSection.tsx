@@ -21,7 +21,7 @@ export default function PublishingSection() {
 
   return (
     <>
-      <TitleContainer sectionId="Layouts" />
+      <TitleContainer id="Layouts" />
       <div className="group relative w-full">
         <div
           className={`flex w-max animate-slideLeft group-hover:[animation-play-state:paused] ${
