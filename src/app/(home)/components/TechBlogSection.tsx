@@ -65,6 +65,31 @@ export default function TechBlogSection() {
               </div>
             </div>
           ))}
+          <div
+            className="relative flex items-center border border-solid border-gray400 w-[31%] rounded-[8px] px-10 py-8 text-gray100 cursor-pointer max-lg1050:w-[48%] max-md:w-[100%] max-md:hidden"
+            onClick={() =>
+              window.open("https://velog.io/@nerimy/posts", "_blank")
+            }
+          >
+            <Image
+              src="/images/home/techblogSection/curlyArrow.png"
+              alt="->"
+              width={65}
+              height={65}
+              className="absolute top-4 right-10"
+            />
+            <Image
+              src="/images/home/techblogSection/velog.svg"
+              alt="Velog"
+              width={40}
+              height={40}
+              className="mr-5 pt-4"
+            />
+            <p className="pt-4 font-light">
+              <span className="font-semibold">Click</span> 하고,
+              <span className="block underline">더 많은 글 보러 가기</span>
+            </p>
+          </div>
         </div>
       </SectionDefault>
     </>
