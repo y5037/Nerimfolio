@@ -4,20 +4,12 @@ import Image from "next/image";
 import TitleContainer from "./sectionTitle/TitleContainer";
 import { useState } from "react";
 import Popup from "./popup/Popup";
-
-const images = [
-  { id: 1, src: "/images/home/publishingSection/becelo.svg" },
-  { id: 2, src: "/images/home/publishingSection/becelo.svg" },
-  { id: 3, src: "/images/home/publishingSection/becelo.svg" },
-  { id: 4, src: "/images/home/publishingSection/becelo.svg" },
-  { id: 5, src: "/images/home/publishingSection/becelo.svg" },
-  { id: 6, src: "/images/home/publishingSection/becelo.svg" },
-];
+import { slideImages } from "@/data/publishing";
 
 export default function PublishingSection() {
   const [activeIndex, setActiveIndex] = useState<string | null>(null);
 
-  const slideImages = [...images, ...images, ...images];
+  const slideMeta = [...slideImages, ...slideImages, ...slideImages];
 
   return (
     <>
@@ -28,7 +20,7 @@ export default function PublishingSection() {
             activeIndex !== null ? "[animation-play-state:paused]" : ""
           }`}
         >
-          {slideImages.map((image, idx) => {
+          {slideMeta.map((image, idx) => {
             const uniqueKey = `${image.id}-${idx}`;
             return (
               <div
