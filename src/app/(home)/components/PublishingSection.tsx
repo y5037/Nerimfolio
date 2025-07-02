@@ -46,7 +46,10 @@ export default function PublishingSection() {
                   <Image src={image.src} alt={`slide-${idx}`} fill />
                 </div>
                 {activeIndex === uniqueKey && (
-                  <div className="absolute z-10">
+                  <div
+                    onClick={(e) => e.stopPropagation()}
+                    className="absolute z-10 cursor-default"
+                  >
                     <Popup onClose={() => setActiveIndex(null)} />
                   </div>
                 )}
