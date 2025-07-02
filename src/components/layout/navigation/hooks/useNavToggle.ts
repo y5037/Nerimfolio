@@ -15,8 +15,8 @@ export const useNavToggle = () => {
   }, [isMobile]);
 
   useEffect(() => {
-    const handleClickOutside = (e: { target: any }) => {
-      if (outRef.current && !outRef.current.contains(e.target)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (outRef.current && !outRef.current.contains(e.target as Node)) {
         setIsShowMenu(false);
       }
     };
@@ -28,4 +28,4 @@ export const useNavToggle = () => {
   }, []);
 
   return { isShowMenu, setIsShowMenu, outRef };
-}
+};

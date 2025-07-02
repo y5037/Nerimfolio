@@ -28,7 +28,7 @@ export default function IntroSection() {
           the projects
         </p>
         <p className="text-[10.5rem] mt-[-35px] font-robotoSlab max-lg1050:text-[9rem] max-lg900:text-[8rem] max-md:text-[6.5rem] max-md:leading-[2] max-sm:text-[5.5rem] max-sm:leading-[2.2] max-xs500:leading-[2.4] max-xs500:text-[4rem]">
-          I've built —
+          I&apos;ve built —
         </p>
         <p className="text-8xl mt-[-35px] font-thin max-lg1050:text-7xl max-lg900:text-6xl max-xs500:text-5xl">
           with care.
