@@ -13,7 +13,7 @@ export default function Home() {
       <FrontendSection />
       <ScrollTo coord="ThingsIBuilt" />
       <PublishingSection />
-      {/* <ScrollTo coord="Layouts"/> */}
+      <ScrollTo coord="Layouts" />
       <TechBlogSection />
       {/* <ScrollTo coord="InWords"/> */}
       {/* <button>Contact 보러가기  </button> */}

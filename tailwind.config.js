@@ -66,10 +66,25 @@ module.exports = {
           "50%": { top: "5px" },
           "100%": { top: "-5px" },
         },
+        slideLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        popupShow: {
+          "0%": { opacity: 0, transform: "translateY(20px) scale(0.8)" },
+          "100%": { opacity: 1, transform: "translateY(0) scale(1)" },
+        },
+        popupHide: {
+          "0%": { opacity: 1, transform: "translateY(0) scale(1)" },
+          "100%": { opacity: 0, transform: "translateY(20px) scale(0.8)" },
+        },
       },
       animation: {
         scrollAni: "scrollAni 1s ease-in-out infinite",
         scrollAniMouse: "scrollAniMouse 1s infinite",
+        slideLeft: "slideLeft 50s linear infinite",
+        popupShow: "popupShow 0.3s forwards ease-out",
+        popupHide: "popupHide 0.3s forwards ease-in",
       },
     },
     fontFamily: {
