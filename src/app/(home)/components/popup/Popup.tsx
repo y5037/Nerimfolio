@@ -22,7 +22,12 @@ export default function Popup({ onClose }: PopupProps) {
           onClick={() => setIsClosing(true)}
           className="absolute top-4 right-4 md:hidden z-10"
         >
-          X
+          <Image
+            src="/images/home/publishingsection/close.svg"
+            alt="X"
+            width={30}
+            height={30}
+          />
         </button>
         <div className="absolute top-4 left-4 z-10">
           <Image

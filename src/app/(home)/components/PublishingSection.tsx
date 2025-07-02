@@ -60,7 +60,7 @@ export default function PublishingSection() {
         {activeIndex !== null && (
           <div
             onClick={(e) => e.stopPropagation()}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 md:hidden"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,.5)] md:hidden"
           >
             <Popup onClose={() => setActiveIndex(null)} />
           </div>
