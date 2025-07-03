@@ -70,7 +70,7 @@ export const techPosts: TechPost[] = [
     title: "Optimistic UI 찐- 도전기 💗 좋아요 토글 구현",
     excerpt:
       "예전에 처음 좋아요 기능을 만들 땐, 그냥 useState로 상태를 즉시 바꾸는 방식으로 간단하게 구현했었다. 그 때 정리한 글은 여기서 볼 수 있다 ⬇️",
-    category: ["toggleLike"],
+    category: ["Optimistic UI", "Toggle Like"],
     date: "2025.06.03",
     link: "https://velog.io/@nerimy/React-Query%EB%A1%9C-Optimistic-UI-%EC%B0%90-%EB%8F%84%EC%A0%84%EA%B8%B0-%EC%A2%8B%EC%95%84%EC%9A%94-%ED%86%A0%EA%B8%80-%EA%B5%AC%ED%98%84",
   },

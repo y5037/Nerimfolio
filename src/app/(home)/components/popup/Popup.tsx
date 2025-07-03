@@ -36,9 +36,9 @@ export default function Popup({ onClose }: PopupProps) {
         </button>
         <div className={clsx("absolute top-4 left-4 z-10")}>
           <Image
-            src="/images/home/publishingSection/becelo.svg"
-            alt="logo"
-            width={70}
+            src="/images/home/publishingSection/slide/becelo.svg"
+            alt="Becelo"
+            width={80}
             height={50}
           />
         </div>

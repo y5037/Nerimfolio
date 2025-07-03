@@ -10,7 +10,12 @@ import clsx from "clsx";
 export default function PublishingSection() {
   const [activeIndex, setActiveIndex] = useState<string | null>(null);
 
-  const slideMeta = [...slideImages, ...slideImages, ...slideImages];
+  const slideMeta = [
+    ...slideImages,
+    ...slideImages,
+    ...slideImages,
+    ...slideImages,
+  ];
 
   return (
     <>
@@ -41,8 +46,8 @@ export default function PublishingSection() {
               >
                 <div
                   className={clsx(
-                    "relative w-[120px] h-[120px] object-cover",
-                    "max-lg1050:w-[100px] max-lg1050:h-[100px]"
+                    "relative w-[120px] h-full object-cover",
+                    "max-lg1050:w-[100px]"
                   )}
                 >
                   <Image src={image.src} alt={`slide-${idx}`} fill />
