@@ -267,9 +267,6 @@ textarea:focus {
 textarea {
   resize: none;
 }
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 
 img,
 iframe,

@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <div
       className={clsx(
-        "flex flex-col h-[-webkit-fill-available] text-center items-center  px-10 my-[150px]",
+        "flex flex-col h-[-webkit-fill-available] text-center items-center  px-10 my-[200px]",
         "max-md:my-0 max-md:justify-center"
       )}
     >
