@@ -7,9 +7,24 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { tagColors } from "@/lib/constants/tagColors";
 import clsx from "clsx";
+import { useState } from "react";
 
 export default function TechBlogSection() {
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const visiblePosts = techPosts.slice(0, visibleCount);
+  const hasMore = visibleCount < techPosts.length;
+
   const router = useRouter();
+
+  const handleLoadMore = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setVisibleCount((prev) => prev + 3);
+      setIsLoading(false);
+    }, 800);
+  };
 
   return (
     <>
@@ -21,7 +36,7 @@ export default function TechBlogSection() {
             "max-md:gap-y-7"
           )}
         >
-          {techPosts.map((item) => (
+          {visiblePosts.map((item) => (
             <div
               key={item.id}
               className={clsx(
@@ -81,37 +96,60 @@ export default function TechBlogSection() {
               </div>
             </div>
           ))}
-          <div
-            className={clsx(
-              "relative flex items-center border border-solid border-gray400 w-[31%] rounded-[8px] px-10 py-8 text-gray100 cursor-pointer",
-              "max-lg1050:w-[48%]",
-              "max-md:w-[100%] max-md:hidden"
-            )}
-            onClick={() =>
-              window.open("https://velog.io/@nerimy/posts", "_blank")
-            }
-          >
-            <Image
-              src="/images/home/techblogSection/curlyArrow.png"
-              alt="->"
-              width={65}
-              height={65}
-              className={clsx("absolute top-4 right-10")}
-            />
-            <Image
-              src="/images/home/techblogSection/velog.svg"
-              alt="Velog"
-              width={40}
-              height={40}
-              className={clsx("mr-5 pt-4")}
-            />
-            <p className={clsx("pt-4 font-light")}>
-              <span className={clsx("font-semibold")}>Click</span> 하고,
-              <span className={clsx("block underline")}>
-                더 많은 글 보러 가기
-              </span>
-            </p>
-          </div>
+          {!hasMore && (
+            <div
+              className={clsx(
+                "min-h-[194px] relative flex items-center border border-solid border-gray400 w-[31%] rounded-[8px] px-10 py-8 text-gray100 cursor-pointer",
+                "max-lg1050:w-[48%]",
+                "max-md:w-[100%]"
+              )}
+              onClick={() =>
+                window.open("https://velog.io/@nerimy/posts", "_blank")
+              }
+            >
+              <Image
+                src="/images/home/techblogSection/curlyArrow.png"
+                alt="->"
+                width={65}
+                height={65}
+                className={clsx("absolute top-4 right-10")}
+              />
+              <Image
+                src="/images/home/techblogSection/velog.svg"
+                alt="Velog"
+                width={40}
+                height={40}
+                className={clsx("mr-5 pt-4")}
+              />
+              <p className={clsx("pt-4 font-light")}>
+                <span className={clsx("font-semibold")}>Click</span> 하고,
+                <span className={clsx("block underline")}>
+                  더 많은 글 보러 가기
+                </span>
+              </p>
+            </div>
+          )}
+          {isLoading ? (
+            <div className="flex justify-center mt-3 w-full mb-0.5">
+              <Image
+                src="/images/common/loader.gif"
+                alt="Loading..."
+                width={40}
+                height={40}
+              />
+            </div>
+          ) : (
+            hasMore && (
+              <div className="flex justify-center mt-3 w-full">
+                <button
+                  onClick={handleLoadMore}
+                  className="w-10 h-10 rounded-full border border-solid text-gray200 text-center"
+                >
+                  +
+                </button>
+              </div>
+            )
+          )}
         </div>
       </SectionDefault>
     </>
