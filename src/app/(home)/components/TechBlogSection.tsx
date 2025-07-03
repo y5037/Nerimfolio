@@ -6,6 +6,7 @@ import SectionDefault from "@/components/layout/responsive/SectionDefault";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { tagColors } from "@/lib/constants/tagColors";
+import clsx from "clsx";
 
 export default function TechBlogSection() {
   const router = useRouter();
@@ -14,25 +15,37 @@ export default function TechBlogSection() {
     <>
       <TitleContainer id="InWords" />
       <SectionDefault>
-        <div className="flex flex-wrap gap-x-[2%] gap-y-5 max-md:gap-y-7">
+        <div
+          className={clsx(
+            "flex flex-wrap gap-x-[2%] gap-y-5",
+            "max-md:gap-y-7"
+          )}
+        >
           {techPosts.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col justify-between w-[31%] rounded-[8px] px-6 py-4 cursor-pointer max-lg1050:w-[48%] max-md:w-[100%] bg-[#1a1a1a] text-gray100"
+              className={clsx(
+                "flex flex-col justify-between w-[31%] rounded-[8px] px-6 py-4 cursor-pointer bg-[#1a1a1a] text-gray100",
+                "max-lg1050:w-[48%]",
+                "max-md:w-[100%]"
+              )}
               onClick={() => router.push(item.link)}
             >
-              <p className="text-lg line-clamp-1 font-medium">{item.title}</p>
-              <p className="mt-2 mb-6 line-clamp-2 font-light">
+              <p className={clsx("text-lg line-clamp-1 font-medium")}>
+                {item.title}
+              </p>
+              <p className={clsx("mt-2 mb-6 line-clamp-2 font-light")}>
                 {item.excerpt}
               </p>
               <div
-                className={`flex items-center justify-between  font-light text-sm ${
+                className={clsx(
+                  "flex items-center justify-between font-light text-sm",
                   item.category.length > 0 &&
-                  "pb-3 border-b border-solid border-gray400"
-                }`}
+                    "pb-3 border-b border-solid border-gray400"
+                )}
               >
-                <div className="flex items-center">
-                  <div className="rounded-full overflow-hidden mr-2">
+                <div className={clsx("flex items-center")}>
+                  <div className={clsx("rounded-full overflow-hidden mr-2")}>
                     <Image
                       src="/images/home/techblogSection/profile.svg"
                       alt="profile"
@@ -42,12 +55,13 @@ export default function TechBlogSection() {
                   </div>
                   <p>y5037</p>
                 </div>
-                <p className="text-right text-gray200">{item.date}</p>
+                <p className={clsx("text-right text-gray200")}>{item.date}</p>
               </div>
               <div
-                className={`flex items-center ${
+                className={clsx(
+                  "flex items-center",
                   item.category.length > 0 && "mt-3"
-                }`}
+                )}
               >
                 {item.category.map((keyword, i) => {
                   const color = tagColors[i % tagColors.length];
@@ -55,7 +69,9 @@ export default function TechBlogSection() {
                   return (
                     <div
                       key={i}
-                      className={`px-4 py-1 mr-3 rounded-[16px] bg-gray200 text-sm font-light`}
+                      className={clsx(
+                        "px-4 py-1 mr-3 rounded-[16px] bg-gray200 text-sm font-light"
+                      )}
                       style={{ backgroundColor: color }}
                     >
                       {keyword}
@@ -66,7 +82,11 @@ export default function TechBlogSection() {
             </div>
           ))}
           <div
-            className="relative flex items-center border border-solid border-gray400 w-[31%] rounded-[8px] px-10 py-8 text-gray100 cursor-pointer max-lg1050:w-[48%] max-md:w-[100%] max-md:hidden"
+            className={clsx(
+              "relative flex items-center border border-solid border-gray400 w-[31%] rounded-[8px] px-10 py-8 text-gray100 cursor-pointer",
+              "max-lg1050:w-[48%]",
+              "max-md:w-[100%] max-md:hidden"
+            )}
             onClick={() =>
               window.open("https://velog.io/@nerimy/posts", "_blank")
             }
@@ -76,18 +96,20 @@ export default function TechBlogSection() {
               alt="->"
               width={65}
               height={65}
-              className="absolute top-4 right-10"
+              className={clsx("absolute top-4 right-10")}
             />
             <Image
               src="/images/home/techblogSection/velog.svg"
               alt="Velog"
               width={40}
               height={40}
-              className="mr-5 pt-4"
+              className={clsx("mr-5 pt-4")}
             />
-            <p className="pt-4 font-light">
-              <span className="font-semibold">Click</span> 하고,
-              <span className="block underline">더 많은 글 보러 가기</span>
+            <p className={clsx("pt-4 font-light")}>
+              <span className={clsx("font-semibold")}>Click</span> 하고,
+              <span className={clsx("block underline")}>
+                더 많은 글 보러 가기
+              </span>
             </p>
           </div>
         </div>

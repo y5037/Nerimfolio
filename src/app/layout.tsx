@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import "@/styles/tailwind.css";
 import Navigation from "@/components/layout/navigation/Navigation";
 import Footer from "@/components/layout/footer/Footer";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: "Yun Hyerim",
@@ -17,7 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="ko">
       <body>
         <Navigation />
-        <div className="flex flex-col justify-between h-full">
+        <div className={clsx("flex flex-col justify-between h-full")}>
           {children}
           <Footer />
         </div>
