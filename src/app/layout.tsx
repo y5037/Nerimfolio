@@ -20,7 +20,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navigation />
         <div className={clsx("flex flex-col justify-between h-full")}>
           {children}
-          <Footer />
         </div>
       </body>
     </html>
