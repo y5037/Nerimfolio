@@ -130,7 +130,7 @@ export default function TechBlogSection() {
             </div>
           )}
           {isLoading ? (
-            <div className="flex justify-center mt-3 w-full mb-0.5">
+            <div className={clsx("flex justify-center mt-3 w-full mb-0.5")}>
               <Image
                 src="/images/common/loader.gif"
                 alt="Loading..."
@@ -140,10 +140,12 @@ export default function TechBlogSection() {
             </div>
           ) : (
             hasMore && (
-              <div className="flex justify-center mt-3 w-full">
+              <div className={clsx("flex justify-center mt-3 w-full")}>
                 <button
                   onClick={handleLoadMore}
-                  className="w-10 h-10 rounded-full border border-solid text-gray200 text-center"
+                  className={clsx(
+                    "w-10 h-10 rounded-full border border-solid text-gray200 text-center"
+                  )}
                 >
                   +
                 </button>
