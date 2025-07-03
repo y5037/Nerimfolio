@@ -68,7 +68,7 @@ export default function TechBlogSection() {
                       height={25}
                     />
                   </div>
-                  <p>y5037</p>
+                  <p>ynrmy</p>
                 </div>
                 <p className={clsx("text-right text-gray200")}>{item.date}</p>
               </div>
