@@ -3,7 +3,6 @@
 import { techPosts } from "@/data/techBlog";
 import TitleContainer from "./sectionTitle/TitleContainer";
 import SectionDefault from "@/components/layout/responsive/SectionDefault";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { tagColors } from "@/lib/constants/tagColors";
 import clsx from "clsx";
@@ -15,8 +14,6 @@ export default function TechBlogSection() {
 
   const visiblePosts = techPosts.slice(0, visibleCount);
   const hasMore = visibleCount < techPosts.length;
-
-  const router = useRouter();
 
   const handleLoadMore = () => {
     setIsLoading(true);
@@ -40,18 +37,20 @@ export default function TechBlogSection() {
             <div
               key={item.id}
               className={clsx(
-                "flex flex-col justify-between w-[31%] rounded-[8px] px-6 py-4 cursor-pointer bg-[#1a1a1a] text-gray100",
+                "flex flex-col w-[31%] rounded-[8px] px-6 py-4 cursor-pointer bg-[#1a1a1a] text-gray100",
                 "max-lg1050:w-[48%]",
                 "max-md:w-[100%]"
               )}
-              onClick={() => router.push(item.link)}
+              onClick={() => window.open(item.link)}
             >
               <p className={clsx("text-lg line-clamp-1 font-medium")}>
                 {item.title}
               </p>
-              <p className={clsx("mt-2 mb-6 line-clamp-2 font-light")}>
-                {item.excerpt}
-              </p>
+              <div className={clsx("flex-[1]")}>
+                <p className={clsx("mt-2 mb-6 line-clamp-2 font-light")}>
+                  {item.excerpt}
+                </p>
+              </div>
               <div
                 className={clsx(
                   "flex items-center justify-between font-light text-sm",
@@ -74,7 +73,7 @@ export default function TechBlogSection() {
               </div>
               <div
                 className={clsx(
-                  "flex items-center",
+                  "flex flex-wrap gap-3",
                   item.category.length > 0 && "mt-3"
                 )}
               >
@@ -85,7 +84,7 @@ export default function TechBlogSection() {
                     <div
                       key={i}
                       className={clsx(
-                        "px-4 py-1 mr-3 rounded-[16px] bg-gray200 text-sm font-light"
+                        "px-4 py-1 rounded-[16px] bg-gray200 text-sm font-light"
                       )}
                       style={{ backgroundColor: color }}
                     >
