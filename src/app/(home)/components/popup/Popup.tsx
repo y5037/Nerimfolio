@@ -13,7 +13,7 @@ export default function Popup({ onClose }: PopupProps) {
       ref={ref}
       onAnimationEnd={handleAnimationEnd}
       className={clsx(
-        "w-[calc(100vw_*_(420/1920))] rounded-[14px] overflow-hidden bg-black600 shadow-[0_4px_24px_rgba(0,0,0,0.7)] transition-all",
+        "w-[calc(100vw_*_(400/1920))] max-w-[400px] rounded-[14px] overflow-hidden bg-black600 shadow-[0_4px_24px_rgba(0,0,0,0.7)] transition-all",
         "md:min-w-[400px]",
         "max-md:min-w-[350px]",
         isClosing
