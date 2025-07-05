@@ -28,7 +28,7 @@ export default function PublishingSection() {
       <div className={clsx("group relative w-full")}>
         <div
           className={clsx(
-            "flex w-max animate-slideRight group-hover:[animation-play-state:paused]",
+            "flex w-max animate-slideRight md:group-hover:[animation-play-state:paused]",
             activeIndex !== null ? "[animation-play-state:paused]" : ""
           )}
         >
