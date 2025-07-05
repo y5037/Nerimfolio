@@ -85,7 +85,7 @@ export default function PublishingSection() {
           >
             <Popup
               onClose={() => setActiveIndex(null)}
-              popupData={popupData[Number(activeIndex.slice(0))]}
+              popupData={popupData[Number(activeIndex.slice(0, 1)) - 1]}
             />
           </div>
         )}
