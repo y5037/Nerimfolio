@@ -4,10 +4,11 @@ import { useClickOutside } from "./hooks/useClickOutside";
 import clsx from "clsx";
 import { popupButton, popupKeyword } from "../../styles";
 
-export default function Popup({ onClose }: PopupProps) {
+export default function Popup({ onClose, popupData }: PopupProps) {
   const { ref, handleAnimationEnd, isClosing, setIsClosing } =
     useClickOutside(onClose);
 
+  if (!popupData) return;
   return (
     <div
       ref={ref}
@@ -34,16 +35,16 @@ export default function Popup({ onClose }: PopupProps) {
             height={30}
           />
         </button>
-        <div className={clsx("absolute top-4 left-4 z-10")}>
-          <Image
-            src="/images/home/publishingSection/slide/becelo.svg"
-            alt="Becelo"
-            width={80}
-            height={50}
-          />
+        <div
+          className={clsx(
+            "absolute top-4 left-4 z-10",
+            popupData.id === 1 && "mt-[-15px] ml-[-10px]"
+          )}
+        >
+          <Image src={popupData.logoImg} alt="Logo" width={80} height={50} />
         </div>
         <Image
-          src="/images/home/frontendSection/frontend1.png"
+          src={popupData.thumbnailImg}
           alt="썸네일"
           fill
           style={{ objectFit: "cover" }}
@@ -55,13 +56,17 @@ export default function Popup({ onClose }: PopupProps) {
             "flex flex-wrap items-center gap-x-2 pb-2 font-light text-gray500"
           )}
         >
-          <p className={popupKeyword}>#company_collaboration</p>
-          <p className={popupKeyword}>#php</p>
-          <p className={popupKeyword}>#publishing</p>
+          {popupData.keyword.map((item, idx) => (
+            <p key={idx} className={popupKeyword}>
+              #{item}
+            </p>
+          ))}
         </div>
         <div className={clsx("flex-1")}>
-          <p className={clsx("text-3xl font-semibold my-2")}>Becelo</p>
-          <p className={clsx("my-5")}>자체 풀필먼트 글로벌 통합 유통 플랫폼</p>
+          <p className={clsx("text-3xl font-semibold my-2")}>
+            {popupData.title}
+          </p>
+          <p className={clsx("my-5")}>{popupData.description}</p>
         </div>
         <div className={clsx("flex items-center gap-4")}>
           <button className={popupButton}>Explore</button>

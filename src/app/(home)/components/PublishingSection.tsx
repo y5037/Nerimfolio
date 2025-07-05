@@ -4,17 +4,22 @@ import Image from "next/image";
 import TitleContainer from "./sectionTitle/TitleContainer";
 import { useState } from "react";
 import Popup from "./popup/Popup";
-import { slideImages } from "@/data/publishing";
+import { popupData } from "@/data/publishing";
 import clsx from "clsx";
 
 export default function PublishingSection() {
   const [activeIndex, setActiveIndex] = useState<string | null>(null);
 
+  const logoMeta = popupData.map(({ id, logoImg }) => ({
+    id,
+    src: logoImg,
+  }));
+
   const slideMeta = [
-    ...slideImages,
-    ...slideImages,
-    ...slideImages,
-    ...slideImages,
+    ...logoMeta,
+    ...logoMeta,
+    ...logoMeta,
+    ...logoMeta,
   ].reverse();
 
   return (
@@ -27,8 +32,8 @@ export default function PublishingSection() {
             activeIndex !== null ? "[animation-play-state:paused]" : ""
           )}
         >
-          {slideMeta.map((image, idx) => {
-            const uniqueKey = `${image.id}-${idx}`;
+          {slideMeta.map((logo, idx) => {
+            const uniqueKey = `${logo.id}-${idx}`;
             return (
               <div
                 key={uniqueKey}
@@ -50,7 +55,7 @@ export default function PublishingSection() {
                     "max-lg1050:w-[100px]"
                   )}
                 >
-                  <Image src={image.src} alt={`slide-${idx}`} fill />
+                  <Image src={logo.src} alt={`slide-${idx}`} fill />
                 </div>
                 {activeIndex === uniqueKey && (
                   <div
@@ -60,7 +65,10 @@ export default function PublishingSection() {
                       "md:block"
                     )}
                   >
-                    <Popup onClose={() => setActiveIndex(null)} />
+                    <Popup
+                      onClose={() => setActiveIndex(null)}
+                      popupData={popupData[logo.id - 1]}
+                    />
                   </div>
                 )}
               </div>
@@ -75,7 +83,10 @@ export default function PublishingSection() {
               "md:hidden"
             )}
           >
-            <Popup onClose={() => setActiveIndex(null)} />
+            <Popup
+              onClose={() => setActiveIndex(null)}
+              popupData={popupData[Number(activeIndex.slice(0))]}
+            />
           </div>
         )}
       </div>
