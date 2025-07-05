@@ -38,7 +38,7 @@ export default function Popup({ onClose, popupData }: PopupProps) {
         <div
           className={clsx(
             "absolute top-4 left-4 z-10",
-            popupData.id === 1 && "mt-[-15px] ml-[-10px]"
+            popupData.id === 1 && "mt-[-15px] ml-[-15px]"
           )}
         >
           <Image src={popupData.logoImg} alt="Logo" width={80} height={50} />
