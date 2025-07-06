@@ -299,3 +299,13 @@ body {
   background: var(--black);
   color: var(--white);
 }
+
+@media (max-height: 970px) {
+  .bg-low-height-albaform {
+    background-position: -120px -210px;
+  }
+
+  .bg-low-height-globalnomad {
+    background-position: 0 -65px;
+  }
+}

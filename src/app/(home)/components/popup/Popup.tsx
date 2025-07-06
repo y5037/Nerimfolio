@@ -29,7 +29,7 @@ export default function Popup({ onClose, popupData }: PopupProps) {
           className={clsx("absolute top-4 right-4 z-10", "md:hidden")}
         >
           <Image
-            src="/images/home/publishingsection/close.svg"
+            src="/images/home/publishingSection/close.svg"
             alt="X"
             width={30}
             height={30}

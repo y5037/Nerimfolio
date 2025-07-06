@@ -1,4 +1,4 @@
-export type PopupData = {
+export type PublishingData = {
   id: number;
   logoImg: string;
   thumbnailImg: string;

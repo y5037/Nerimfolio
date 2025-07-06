@@ -4,13 +4,13 @@ import Image from "next/image";
 import TitleContainer from "./sectionTitle/TitleContainer";
 import { useState } from "react";
 import Popup from "./popup/Popup";
-import { popupData } from "@/data/publishing";
+import { publishingProject } from "@/data/publishing";
 import clsx from "clsx";
 
 export default function PublishingSection() {
   const [activeIndex, setActiveIndex] = useState<string | null>(null);
 
-  const logoMeta = popupData.map(({ id, logoImg }) => ({
+  const logoMeta = publishingProject.map(({ id, logoImg }) => ({
     id,
     src: logoImg,
   }));
@@ -67,7 +67,7 @@ export default function PublishingSection() {
                   >
                     <Popup
                       onClose={() => setActiveIndex(null)}
-                      popupData={popupData[logo.id - 1]}
+                      popupData={publishingProject[logo.id - 1]}
                     />
                   </div>
                 )}
@@ -85,7 +85,7 @@ export default function PublishingSection() {
           >
             <Popup
               onClose={() => setActiveIndex(null)}
-              popupData={popupData[Number(activeIndex.slice(0, 1)) - 1]}
+              popupData={publishingProject[Number(activeIndex.slice(0, 1)) - 1]}
             />
           </div>
         )}

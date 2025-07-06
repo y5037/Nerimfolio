@@ -1,6 +1,6 @@
-import { PopupData } from "@/data/publishing/types";
+import { PublishingData } from "@/data/publishing/types";
 
 export interface PopupProps {
   onClose: () => void;
-  popupData: PopupData;
+  popupData: PublishingData;
 }

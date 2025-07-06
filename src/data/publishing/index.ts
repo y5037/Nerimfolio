@@ -1,6 +1,6 @@
-import { PopupData } from "./types";
+import { PublishingData } from "./types";
 
-export const popupData: PopupData[] = [
+export const publishingProject: PublishingData[] = [
   {
     id: 1,
     logoImg: "/images/home/publishingSection/logo/portfolio.svg",
@@ -43,7 +43,7 @@ export const popupData: PopupData[] = [
     keyword: ["company_collaboration", "react", "publishing", "web&app"],
     title: "travelymap",
     description:
-      "React 기반 웹앱 프로젝트에 퍼블리싱으로 참여 / 퍼블리싱 코드 작성 및 GitHub으로 코드 관리·유지보수 진행",
+      "React 기반 웹앱 프로젝트에 퍼블리셔로 참여 / 퍼블리싱 코드 작성 및 GitHub으로 코드 관리·유지보수 진행",
   },
   {
     id: 5,
