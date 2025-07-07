@@ -10,8 +10,8 @@ export default function NotFound() {
   return (
     <div
       className={clsx(
-        "h-full text-center justify-items-center px-10 my-[150px]",
-        "max-md:my-0 max-md:content-center"
+        "flex flex-col h-[-webkit-fill-available] text-center items-center  px-10 my-[200px]",
+        "max-md:my-0 max-md:justify-center"
       )}
     >
       <Image

@@ -1,0 +1,55 @@
+import { ProntendData } from "./types";
+
+export const prontendProject: ProntendData[] = [
+  {
+    id: 1,
+    logoDefaultImg: "/images/home/frontendSection/logo/albaform.svg",
+    logoActiveImg: "/images/home/frontendSection/logo/albaformActive.svg",
+    thumbnailImg: "/images/home/frontendSection/thumbnail/albaform.png",
+    keyword: [
+      "team_project",
+      "next.js",
+      "typescript",
+      "react query",
+      "zustand",
+    ],
+    title: "albaform",
+    description: "NEXT App Router · SSR/CSR 통합 기반 긱워커 취업 매칭 플랫폼",
+  },
+  {
+    id: 2,
+    logoDefaultImg: "/images/home/frontendSection/logo/pandamarket.svg",
+    logoActiveImg: "/images/home/frontendSection/logo/pandamarketActive.svg",
+    thumbnailImg: "/images/home/frontendSection/thumbnail/pandamarket.png",
+    keyword: ["personal_project", "next.js", "typescript", "react query"],
+    title: "Panda Market",
+    description: "NEXT Page Router · CSR 기반 중고거래/커뮤니티 통합 플랫폼",
+  },
+  {
+    id: 3,
+    logoDefaultImg: "/images/home/frontendSection/logo/globalnomad.svg",
+    logoActiveImg: "/images/home/frontendSection/logo/globalnomadActive.svg",
+    thumbnailImg: "/images/home/frontendSection/thumbnail/globalnomad.png",
+    keyword: ["team_project", "next.js", "typescript", "react query"],
+    title: "Global Nomad",
+    description: "NEXT App Router · CSR 기반 체험 예약 플랫폼",
+  },
+  {
+    id: 4,
+    logoDefaultImg: "/images/home/frontendSection/logo/taskify.svg",
+    logoActiveImg: "/images/home/frontendSection/logo/taskifyActive.svg",
+    thumbnailImg: "/images/home/frontendSection/thumbnail/taskify.png",
+    keyword: ["team_project", "next.js", "typescript"],
+    title: "Taskify",
+    description: "NEXT Page Router · CSR 기반 워크플로우 관리 서비스",
+  },
+  {
+    id: 5,
+    logoDefaultImg: "/images/home/frontendSection/logo/rolling.svg",
+    logoActiveImg: "/images/home/frontendSection/logo/rollingActive.svg",
+    thumbnailImg: "/images/home/frontendSection/thumbnail/rolling.png",
+    keyword: ["team_project", "react", "javascript"],
+    title: "Rolling",
+    description: "React · JS 기반 익명 롤링페이퍼 서비스 개발 및 팀 리딩",
+  },
+];

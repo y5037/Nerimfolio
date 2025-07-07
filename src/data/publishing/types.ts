@@ -1,4 +1,8 @@
-export type SlideImage = {
+export type PublishingData = {
   id: number;
-  src: string;
+  logoImg: string;
+  thumbnailImg: string;
+  keyword: string[];
+  title: string;
+  description: string;
 };

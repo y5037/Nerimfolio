@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
-import "@/styles/tailwind.css";
+import "@/styles/globals.css";
 import Navigation from "@/components/layout/navigation/Navigation";
-import Footer from "@/components/layout/footer/Footer";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
@@ -16,11 +15,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
-      <body>
+      <body className={clsx("scrollbar-hide overflow-y-scroll")}>
         <Navigation />
         <div className={clsx("flex flex-col justify-between h-full")}>
           {children}
-          <Footer />
         </div>
       </body>
     </html>
