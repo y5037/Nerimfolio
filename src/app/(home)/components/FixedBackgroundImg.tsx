@@ -46,14 +46,15 @@ export default function FixedBackgroundImg({
           <div
             className={clsx(
               "fixed top-0 left-1/2 transform -translate-x-1/2 w-[970px] h-full bg-no-repeat bg-gray-300 bg-cover bg-center block grayscale group-hover:grayscale-0",
+              "max-xs:bg-[-160px]",
               "max-lg:w-[900px]",
               "max-lg900:w-full",
               id === 1 &&
                 "bg-albaform max-md:bg-[-70px] bg-low-height-albaform",
               id === 2 &&
-                "bg-pandamarket max-lg900:bg-[-50px] max-md:bg-[-120px] bg-low-height-pandamarket",
+                "bg-pandamarket max-lg900:bg-[-40px] max-md:bg-[-90px] bg-low-height-pandamarket",
               id === 3 && "bg-low-height-globalnomad",
-              id === 4 && "bg-[50px] max-lg900:bg-[-50px] max-md:bg-[-200px]",
+              id === 4 && "bg-[50px] max-lg900:bg-[-40px] max-xs:bg-[-200px]",
               id === 5 && "bg-low-height-rolling"
             )}
             style={{
