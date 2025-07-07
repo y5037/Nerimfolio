@@ -300,12 +300,28 @@ body {
   color: var(--white);
 }
 
+.bg-albaform {
+  background-position: -120px -70px;
+}
+
+.bg-pandamarket {
+  background-position: 150px 0;
+}
+
 @media (max-height: 970px) {
   .bg-low-height-albaform {
-    background-position: -120px -210px;
+    background-position: -120px -220px;
+  }
+
+  .bg-low-height-pandamarket {
+    background-position: 150px -100px;
   }
 
   .bg-low-height-globalnomad {
+    background-position: 0 -65px;
+  }
+
+  .bg-low-height-rolling {
     background-position: 0 -65px;
   }
 }

@@ -64,10 +64,13 @@ export default function FrontendSection() {
                         "max-lg:w-[900px]",
                         "max-lg900:w-full",
                         item.id === 1 &&
-                          "bg-[-120px] max-md:bg-[-70px] bg-low-height-albaform",
+                          "bg-albaform max-md:bg-[-70px] bg-low-height-albaform",
                         item.id === 2 &&
-                          "bg-[150px] max-lg900:bg-[-50px] max-md:bg-[-120px]",
-                        item.id === 3 && "bg-low-height-globalnomad"
+                          "bg-pandamarket max-lg900:bg-[-50px] max-md:bg-[-120px] bg-low-height-pandamarket",
+                        item.id === 3 && "bg-low-height-globalnomad",
+                        item.id === 4 &&
+                          "bg-[50px] max-lg900:bg-[-50px] max-md:bg-[-200px]",
+                        item.id === 5 && "bg-low-height-rolling"
                       )}
                       style={{ backgroundImage: `url(${item.thumbnailImg})` }}
                     />
