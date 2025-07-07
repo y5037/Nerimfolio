@@ -4,10 +4,8 @@ import { useClickOutside } from "./hooks/useClickOutside";
 import clsx from "clsx";
 import { popupButton, popupKeyword } from "../../styles";
 import ThumbnailImg from "./ThumbnailImg";
-import { useRouter } from "next/navigation";
 
 export default function Popup({ onClose, popupData }: PopupProps) {
-  const router = useRouter();
 
   const { ref, handleAnimationEnd, isClosing, setIsClosing } =
     useClickOutside(onClose);
