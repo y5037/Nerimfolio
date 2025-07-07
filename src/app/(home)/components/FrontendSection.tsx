@@ -7,9 +7,12 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { prontendProject } from "@/data/frontend";
 import FixedBackgroundImg from "./FixedBackgroundImg";
+import { useRouter } from "next/navigation";
 
 export default function FrontendSection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+
+  const router = useRouter();
 
   return (
     <>
@@ -82,8 +85,18 @@ export default function FrontendSection() {
                     <p className={clsx("mt-4 mb-5")}>{item.description}</p>
                   </div>
                   <div className={clsx("flex items-center gap-4")}>
-                    <button className={frontendSectionButton}>Explore</button>
-                    <button className={frontendSectionButton}>Dive In</button>
+                    <button
+                      className={frontendSectionButton}
+                      onClick={() => router.push(item.exploreLink)}
+                    >
+                      Explore
+                    </button>
+                    <button
+                      className={frontendSectionButton}
+                      onClick={() => window.open(item.diveInLink)}
+                    >
+                      Dive In
+                    </button>
                   </div>
                 </div>
               </div>
