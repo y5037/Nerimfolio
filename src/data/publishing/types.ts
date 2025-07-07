@@ -5,4 +5,6 @@ export type PublishingData = {
   keyword: string[];
   title: string;
   description: string;
+  exploreLink: string;
+  diveInLink: string;
 };

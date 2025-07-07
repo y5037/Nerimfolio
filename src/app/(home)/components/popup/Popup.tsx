@@ -3,8 +3,10 @@ import { PopupProps } from "../../types";
 import { useClickOutside } from "./hooks/useClickOutside";
 import clsx from "clsx";
 import { popupButton, popupKeyword } from "../../styles";
+import ThumbnailImg from "./ThumbnailImg";
 
 export default function Popup({ onClose, popupData }: PopupProps) {
+
   const { ref, handleAnimationEnd, isClosing, setIsClosing } =
     useClickOutside(onClose);
 
@@ -43,12 +45,7 @@ export default function Popup({ onClose, popupData }: PopupProps) {
         >
           <Image src={popupData.logoImg} alt="Logo" width={80} height={50} />
         </div>
-        <Image
-          src={popupData.thumbnailImg}
-          alt="썸네일"
-          fill
-          style={{ objectFit: "cover" }}
-        />
+        <ThumbnailImg popupData={popupData} />
       </div>
       <div className={clsx("p-6")}>
         <div
@@ -70,7 +67,12 @@ export default function Popup({ onClose, popupData }: PopupProps) {
         </div>
         <div className={clsx("flex items-center gap-4")}>
           <button className={popupButton}>Explore</button>
-          <button className={popupButton}>Dive In</button>
+          <button
+            className={popupButton}
+            onClick={() => window.open(popupData.diveInLink)}
+          >
+            Dive In
+          </button>
         </div>
       </div>
     </div>
