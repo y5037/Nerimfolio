@@ -83,7 +83,7 @@ export default function IntroSection() {
           with care.
         </p>
       </div>
-      <div className={clsx("justify-items-center")}>
+      <div className={clsx("flex flex-col items-center")}>
         <Image
           src="/images/home/introSection/scroll.svg"
           alt="please, scrolldown"

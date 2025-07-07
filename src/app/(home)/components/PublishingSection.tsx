@@ -4,13 +4,23 @@ import Image from "next/image";
 import TitleContainer from "./sectionTitle/TitleContainer";
 import { useState } from "react";
 import Popup from "./popup/Popup";
-import { slideImages } from "@/data/publishing";
+import { publishingProject } from "@/data/publishing";
 import clsx from "clsx";
 
 export default function PublishingSection() {
   const [activeIndex, setActiveIndex] = useState<string | null>(null);
 
-  const slideMeta = [...slideImages, ...slideImages, ...slideImages];
+  const logoMeta = publishingProject.map(({ id, logoImg }) => ({
+    id,
+    src: logoImg,
+  }));
+
+  const slideMeta = [
+    ...logoMeta,
+    ...logoMeta,
+    ...logoMeta,
+    ...logoMeta,
+  ].reverse();
 
   return (
     <>
@@ -18,12 +28,12 @@ export default function PublishingSection() {
       <div className={clsx("group relative w-full")}>
         <div
           className={clsx(
-            "flex w-max animate-slideLeft group-hover:[animation-play-state:paused]",
+            "flex w-max animate-slideRight md:group-hover:[animation-play-state:paused]",
             activeIndex !== null ? "[animation-play-state:paused]" : ""
           )}
         >
-          {slideMeta.map((image, idx) => {
-            const uniqueKey = `${image.id}-${idx}`;
+          {slideMeta.map((logo, idx) => {
+            const uniqueKey = `${logo.id}-${idx}`;
             return (
               <div
                 key={uniqueKey}
@@ -41,11 +51,11 @@ export default function PublishingSection() {
               >
                 <div
                   className={clsx(
-                    "relative w-[120px] h-[120px] object-cover",
-                    "max-lg1050:w-[100px] max-lg1050:h-[100px]"
+                    "relative w-[120px] h-full object-cover",
+                    "max-lg1050:w-[100px]"
                   )}
                 >
-                  <Image src={image.src} alt={`slide-${idx}`} fill />
+                  <Image src={logo.src} alt={`slide-${idx}`} fill />
                 </div>
                 {activeIndex === uniqueKey && (
                   <div
@@ -55,7 +65,10 @@ export default function PublishingSection() {
                       "md:block"
                     )}
                   >
-                    <Popup onClose={() => setActiveIndex(null)} />
+                    <Popup
+                      onClose={() => setActiveIndex(null)}
+                      popupData={publishingProject[logo.id - 1]}
+                    />
                   </div>
                 )}
               </div>
@@ -70,7 +83,10 @@ export default function PublishingSection() {
               "md:hidden"
             )}
           >
-            <Popup onClose={() => setActiveIndex(null)} />
+            <Popup
+              onClose={() => setActiveIndex(null)}
+              popupData={publishingProject[Number(activeIndex.slice(0, 1)) - 1]}
+            />
           </div>
         )}
       </div>
