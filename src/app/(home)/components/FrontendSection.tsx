@@ -6,6 +6,7 @@ import { frontendSectionButton } from "../styles";
 import Image from "next/image";
 import React, { useState } from "react";
 import { prontendProject } from "@/data/frontend";
+import FixedBackgroundImg from "./FixedBackgroundImg";
 
 export default function FrontendSection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -46,36 +47,10 @@ export default function FrontendSection() {
                       "lg900:right-3 lg900:left-auto"
                   )}
                 />
-                <div className={clsx("relative first z-[-1]")}>
-                  <div
-                    className={clsx(
-                      "absolute top-0 left-0 w-[685px] h-[400px]",
-                      "max-lg900:w-full",
-                      "lg1050:w-[685px]",
-                      (item.id === 2 || item.id === 4) && "right-0 left-auto",
-                      item.id === 2 && "lg900:w-[550px] lg900:h-[600px]",
-                      item.id === 5 && "lg900:h-[600px]"
-                    )}
-                    style={{ clip: "rect(0, auto, auto, 0)" }}
-                  >
-                    <div
-                      className={clsx(
-                        "fixed top-0 left-1/2 transform -translate-x-1/2 w-[970px] h-full bg-no-repeat bg-cover bg-center block grayscale group-hover:grayscale-0",
-                        "max-lg:w-[900px]",
-                        "max-lg900:w-full",
-                        item.id === 1 &&
-                          "bg-albaform max-md:bg-[-70px] bg-low-height-albaform",
-                        item.id === 2 &&
-                          "bg-pandamarket max-lg900:bg-[-50px] max-md:bg-[-120px] bg-low-height-pandamarket",
-                        item.id === 3 && "bg-low-height-globalnomad",
-                        item.id === 4 &&
-                          "bg-[50px] max-lg900:bg-[-50px] max-md:bg-[-200px]",
-                        item.id === 5 && "bg-low-height-rolling"
-                      )}
-                      style={{ backgroundImage: `url(${item.thumbnailImg})` }}
-                    />
-                  </div>
-                </div>
+                <FixedBackgroundImg
+                  id={item.id}
+                  thumbnailImg={item.thumbnailImg}
+                />
                 <div
                   className={clsx(
                     "flex flex-col w-[390px] absolute top-[60px] right-0 box-border px-[35px] py-5 bg-[rgba(255,255,255,.7)] shadow-gray text-black",

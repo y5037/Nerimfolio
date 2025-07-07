@@ -3,6 +3,7 @@ import { PopupProps } from "../../types";
 import { useClickOutside } from "./hooks/useClickOutside";
 import clsx from "clsx";
 import { popupButton, popupKeyword } from "../../styles";
+import ThumbnailImg from "./ThumbnailImg";
 
 export default function Popup({ onClose, popupData }: PopupProps) {
   const { ref, handleAnimationEnd, isClosing, setIsClosing } =
@@ -43,12 +44,7 @@ export default function Popup({ onClose, popupData }: PopupProps) {
         >
           <Image src={popupData.logoImg} alt="Logo" width={80} height={50} />
         </div>
-        <Image
-          src={popupData.thumbnailImg}
-          alt="썸네일"
-          fill
-          style={{ objectFit: "cover" }}
-        />
+        <ThumbnailImg popupData={popupData}/>
       </div>
       <div className={clsx("p-6")}>
         <div
