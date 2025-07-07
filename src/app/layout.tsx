@@ -5,6 +5,9 @@ import Navigation from "@/components/layout/navigation/Navigation";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/images/common/favicon.ico",
+  },
   title: {
     default: "윤혜림의 포트폴리오 🥨",
     template: "%s | 윤혜림의 포트폴리오 🥨",
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "윤혜림의 포트폴리오 🥨",
     images: [
       {
-        url: "https://nerimfolio.vercel.app/images/common/og-thumbnail.png", // 이 경로에 이미지가 있어야 함
+        url: "https://nerimfolio.vercel.app/images/common/og-thumbnail.jpg", // 이 경로에 이미지가 있어야 함
         width: 1200,
         height: 630,
         alt: "포트폴리오 썸네일",
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "윤혜림의 포트폴리오 🥨",
     description: "프론트엔드 개발자 윤혜림의 포트폴리오 입니다.",
-    images: ["https://nerimfolio.vercel.app/images/common/og-thumbnail.png"],
+    images: ["https://nerimfolio.vercel.app/images/common/og-thumbnail.jpg"],
   },
 };
 
