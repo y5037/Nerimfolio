@@ -15,6 +15,8 @@ export const prontendProject: ProntendData[] = [
     ],
     title: "albaform",
     description: "NEXT App Router · SSR/CSR 통합 기반 긱워커 취업 매칭 플랫폼",
+    exploreLink: "",
+    diveInLink: "",
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ export const prontendProject: ProntendData[] = [
     keyword: ["personal_project", "next.js", "typescript", "react query"],
     title: "Panda Market",
     description: "NEXT Page Router · CSR 기반 중고거래/커뮤니티 통합 플랫폼",
+    exploreLink: "",
+    diveInLink: "https://panda-market-y5037.vercel.app/",
   },
   {
     id: 3,
@@ -33,6 +37,8 @@ export const prontendProject: ProntendData[] = [
     keyword: ["team_project", "next.js", "typescript", "react query"],
     title: "Global Nomad",
     description: "NEXT App Router · CSR 기반 체험 예약 플랫폼",
+    exploreLink: "",
+    diveInLink: "https://globalnomad-t2.vercel.app/",
   },
   {
     id: 4,
@@ -42,6 +48,8 @@ export const prontendProject: ProntendData[] = [
     keyword: ["team_project", "next.js", "typescript"],
     title: "Taskify",
     description: "NEXT Page Router · CSR 기반 워크플로우 관리 서비스",
+    exploreLink: "",
+    diveInLink: "https://taskify-vert-rho.vercel.app/",
   },
   {
     id: 5,
@@ -50,6 +58,8 @@ export const prontendProject: ProntendData[] = [
     thumbnailImg: "/images/home/frontendSection/thumbnail/rolling.png",
     keyword: ["team_project", "react", "javascript"],
     title: "Rolling",
-    description: "React · JS 기반 익명 롤링페이퍼 서비스 개발 및 팀 리딩",
+    description: "REACT 기반 익명 롤링페이퍼 서비스",
+    exploreLink: "",
+    diveInLink: "https://github.com/y5037/Rolling",
   },
 ];

@@ -9,6 +9,8 @@ export const publishingProject: PublishingData[] = [
     title: "Publisher Portfolio",
     description:
       "HTML, CSS, jQuery 기반 개인 포트폴리오 / 디자인·퍼블리싱 작업물 수록",
+    exploreLink: "",
+    diveInLink: "https://publisher-nerimy.netlify.app/",
   },
   {
     id: 2,
@@ -26,6 +28,8 @@ export const publishingProject: PublishingData[] = [
     title: "Becelo",
     description:
       "PHP 기반 레거시 프로젝트의 판매자·일반 사용자 앱, 관리자·랜딩 페이지 전체 퍼블리싱 리뉴얼",
+    exploreLink: "",
+    diveInLink: "https://becelo.com/bbs/login.php",
   },
   {
     id: 3,
@@ -35,6 +39,8 @@ export const publishingProject: PublishingData[] = [
     title: "FANSIGN",
     description:
       "Flutter(Dart) 기반 앱 개발 참여 / 앱 화면 구성과 코드 설명을 정리한 HTML 가이드 페이지 제작",
+    exploreLink: "",
+    diveInLink: "https://publisher-nerimy.netlify.app/port/fansign_app/",
   },
   {
     id: 4,
@@ -44,6 +50,9 @@ export const publishingProject: PublishingData[] = [
     title: "travelymap",
     description:
       "React 기반 웹앱 프로젝트에 퍼블리셔로 참여 / 퍼블리싱 코드 작성 및 GitHub으로 코드 관리·유지보수 진행",
+    exploreLink: "",
+    diveInLink:
+      "https://publisher-nerimy.netlify.app/port/travelymap_app/guidemagazine/guide_home",
   },
   {
     id: 5,
@@ -53,6 +62,9 @@ export const publishingProject: PublishingData[] = [
     title: "HOMT STUDIO",
     description:
       "HTML, CSS 기반 웹앱 퍼블리싱 / 개발 연동용 퍼블리싱 코드 작업 및 전달",
+    exploreLink: "",
+    diveInLink:
+      "https://publisher-nerimy.netlify.app/port/homtstudio_app/login/login",
   },
   {
     id: 6,
@@ -62,5 +74,8 @@ export const publishingProject: PublishingData[] = [
     title: "KETOCK",
     description:
       "HTML, CSS 기반 웹앱 퍼블리싱 / 개발 연동용 퍼블리싱 코드 작업 및 전달",
+    exploreLink: "",
+    diveInLink:
+      "https://publisher-nerimy.netlify.app/port/ketock_app/login/login1",
   },
 ];

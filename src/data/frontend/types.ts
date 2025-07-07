@@ -6,4 +6,6 @@ export type ProntendData = {
   keyword: string[];
   title: string;
   description: string;
+  exploreLink:string;
+  diveInLink:string;
 };
