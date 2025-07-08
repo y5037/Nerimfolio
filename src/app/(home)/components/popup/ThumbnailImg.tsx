@@ -1,6 +1,6 @@
 "use client";
 
-import { PublishingData } from "@/data/publishing/types";
+import { PublishingData } from "@/data/home/publishing/types";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";

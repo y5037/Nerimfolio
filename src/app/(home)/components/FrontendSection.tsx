@@ -5,7 +5,7 @@ import TitleContainer from "./sectionTitle/TitleContainer";
 import { frontendSectionButton } from "../styles";
 import Image from "next/image";
 import React, { useState } from "react";
-import { prontendProject } from "@/data/frontend";
+import { prontendProject } from "@/data/home/frontend";
 import FixedBackgroundImg from "./FixedBackgroundImg";
 import { useRouter } from "next/navigation";
 
