@@ -42,7 +42,7 @@ export default function FixedBackgroundImg({
       >
         {!loaded ? (
           <div
-            className={clsx("absolute inset-0 bg-gray-300 animate-pulse z-0")}
+            className={clsx("absolute inset-0 bg-gray-700 animate-pulse z-0")}
           />
         ) : (
           <div

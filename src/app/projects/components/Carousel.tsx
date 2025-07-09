@@ -7,7 +7,7 @@ import { customSettings } from "@/lib/constants/slickSettings";
 import { frontendProject } from "@/data/projects/frontend";
 import { ProjectData } from "@/types/projects";
 import { publishingProject } from "@/data/projects/publishing";
-import React from "react";
+import React, { useState } from "react";
 import { useClickWithoutDrag } from "../hooks/useClickWithoutDrag";
 
 export default function Carousel({
@@ -17,6 +17,8 @@ export default function Carousel({
   type: "frontend" | "publishing";
   keyword: string;
 }) {
+  const [loadedMap, setLoadedMap] = useState<{ [key: number]: boolean }>({});
+
   const projectData: ProjectData[] =
     type === "frontend" ? frontendProject : publishingProject;
 
@@ -68,6 +70,7 @@ export default function Carousel({
                     alt="logo"
                     fill
                     className={clsx(
+                      loadedMap[project.id] ? "opacity-100" : "opacity-0",
                       type === "frontend" &&
                         project.id === 4 &&
                         "ml-[-10px] max-md:ml-0",
@@ -87,22 +90,50 @@ export default function Carousel({
                   {project.description}
                 </p>
               </div>
+              {!loadedMap[project.id] && (
+                <div
+                  className={clsx(
+                    "absolute inset-0 bg-gray-700 animate-pulse rounded-xl"
+                  )}
+                />
+              )}
               <Image
                 src={project.thumbnailImg}
                 alt={project.title}
                 width={800}
                 height={400}
-                className={clsx("rounded-xl object-cover min-h-[261px]")}
+                className={clsx(
+                  "rounded-xl object-cover min-h-[261px]",
+                  loadedMap[project.id] ? "opacity-100" : "opacity-0"
+                )}
+                onLoad={() =>
+                  setLoadedMap((prev) => ({ ...prev, [project.id]: true }))
+                }
               />
             </div>
-            <p
-              className={clsx(
-                "mt-3 mb-4 break-words font-light",
-                type === "frontend" && "hidden max-md:block"
-              )}
-            >
-              {project.description}
-            </p>
+            {!loadedMap[project.id] ? (
+              <>
+                <div
+                  className={clsx(
+                    "mt-3 mb-4 w-3/4 h-3 bg-gray-700 animate-pulse rounded-xl"
+                  )}
+                />
+                <div
+                  className={clsx(
+                    "mt-3 mb-4 w-2/4 h-3 bg-gray-600 animate-pulse rounded-xl"
+                  )}
+                />
+              </>
+            ) : (
+              <p
+                className={clsx(
+                  "mt-3 mb-4 break-words font-light",
+                  type === "frontend" && "hidden max-md:block"
+                )}
+              >
+                {project.description}
+              </p>
+            )}
           </div>
         ))}
       </Slider>
