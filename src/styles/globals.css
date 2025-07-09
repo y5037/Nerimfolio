@@ -311,7 +311,14 @@ body {
 }
 
 .bg-albaform {
-  background-position: -120px -70px;
+  background-position: -40px 0;
+
+  @media (min-width: 900px) {
+    background-position: -40px -70px;
+  }
+  @media (min-width: 1200px) {
+    background-position: -40px -160px;
+  }
 }
 
 .bg-pandamarket {

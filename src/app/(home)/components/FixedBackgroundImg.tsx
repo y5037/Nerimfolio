@@ -55,6 +55,7 @@ export default function FixedBackgroundImg({
                 "bg-albaform max-md:bg-[-70px] max-xs:bg-[-160px] bg-low-height-albaform",
               id === 2 &&
                 "bg-pandamarket max-lg900:bg-[-40px] max-md:bg-[-90px] max-xs:bg-[-160px] bg-low-height-pandamarket",
+
               id === 3 && "max-xs:bg-[-50px] bg-low-height-globalnomad",
               id === 4 && "bg-[80px] max-lg900:bg-[-40px] max-xs:bg-[-160px]",
               id === 5 && "max-xs:bg-[-100px] bg-low-height-rolling"
