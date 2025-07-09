@@ -4,7 +4,6 @@ import { useLoadedSkeleton } from "@/hooks/useLoadedSkeleton";
 import { PublishingData } from "@/types/landing";
 import clsx from "clsx";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export default function ThumbnailImg({
   popupData,
