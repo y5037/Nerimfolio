@@ -1,8 +1,8 @@
 "use client";
 
-import { techPosts } from "@/data/techBlog";
+import { techPosts } from "@/data/home/techBlog";
 import TitleContainer from "./sectionTitle/TitleContainer";
-import SectionDefault from "@/components/layout/responsive/SectionDefault";
+import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import Image from "next/image";
 import { tagColors } from "@/lib/constants/tagColors";
 import clsx from "clsx";
@@ -26,7 +26,7 @@ export default function TechBlogSection() {
   return (
     <>
       <TitleContainer id="InWords" />
-      <SectionDefault>
+      <ContentsLayout>
         <div
           className={clsx(
             "flex flex-wrap gap-x-[2%] gap-y-5",
@@ -152,7 +152,7 @@ export default function TechBlogSection() {
             )
           )}
         </div>
-      </SectionDefault>
+      </ContentsLayout>
     </>
   );
 }

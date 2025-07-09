@@ -5,7 +5,7 @@ import TitleContainer from "./sectionTitle/TitleContainer";
 import { frontendSectionButton } from "../styles";
 import Image from "next/image";
 import React, { useState } from "react";
-import { prontendProject } from "@/data/frontend";
+import { frontendProject } from "@/data/home/frontend";
 import FixedBackgroundImg from "./FixedBackgroundImg";
 import { useRouter } from "next/navigation";
 
@@ -25,7 +25,7 @@ export default function FrontendSection() {
           "max-md:px-6"
         )}
       >
-        {prontendProject.map((item) => {
+        {frontendProject.map((item) => {
           const isHovered = hoveredId === item.id;
           return (
             <React.Fragment key={item.id}>
@@ -42,12 +42,14 @@ export default function FrontendSection() {
                 <Image
                   src={isHovered ? item.logoActiveImg : item.logoDefaultImg}
                   alt="logo"
-                  width={100}
+                  width={120}
                   height={100}
                   className={clsx(
-                    "absolute top-3 left-3",
+                    "absolute top-3 left-4 max-h-[25px]",
                     (item.id === 2 || item.id === 4) &&
-                      "lg900:right-3 lg900:left-auto"
+                      "lg900:right-2 lg900:left-auto",
+                    item.id === 4 && "lg900:right-0",
+                    item.id === 5 && "left-auto"
                   )}
                 />
                 <FixedBackgroundImg
