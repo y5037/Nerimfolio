@@ -12,8 +12,8 @@ export const publishingProject: ProjectData[] = [
   {
     id: 2,
     title: "Becelo",
-    logoImg: "/images/projects/publishingSection/logo/Becelo.svg",
-    thumbnailImg: "/images/projects/publishingSection/thumbnail/Becelo.png",
+    logoImg: "/images/projects/publishingSection/logo/becelo.svg",
+    thumbnailImg: "/images/projects/publishingSection/thumbnail/becelo.png",
     description:
       "기존 PHP 기반 그누보드 사이트를 모바일 반응형 대응과 접근성 향상을 중심으로, 레거시 코드 구조를 개선하고 유지보수가 쉬운 퍼블리싱 구조로 재정비하였습니다.",
   },
