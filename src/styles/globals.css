@@ -311,13 +311,14 @@ body {
 }
 
 .bg-albaform {
-  background-position: -40px 0;
-
   @media (min-width: 900px) {
-    background-position: -40px -70px;
+    background-position: -40px -80px;
+  }
+  @media (min-width: 1050px) {
+    background-position: -40px -60px;
   }
   @media (min-width: 1200px) {
-    background-position: -40px -160px;
+    background-position: -40px -70px;
   }
 }
 
