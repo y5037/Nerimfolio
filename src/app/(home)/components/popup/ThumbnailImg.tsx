@@ -1,5 +1,6 @@
 "use client";
 
+import { useLoadedSkeleton } from "@/hooks/useLoadedSkeleton";
 import { PublishingData } from "@/types/landing";
 import clsx from "clsx";
 import Image from "next/image";
@@ -10,23 +11,14 @@ export default function ThumbnailImg({
 }: {
   popupData: PublishingData;
 }) {
-  const [loaded, setLoaded] = useState(false);
-  const [shouldShow, setShouldShow] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShouldShow(true);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const { loaded, setLoaded, shouldShow } = useLoadedSkeleton();
 
   return (
     <>
       {!loaded && shouldShow && (
         <div
           className={clsx(
-            "absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse z-0"
+            "absolute top-0 left-0 w-full h-full bg-gray-700 animate-pulse z-0"
           )}
         />
       )}
