@@ -27,7 +27,7 @@ export const publishingProject: PublishingData[] = [
     ],
     title: "Becelo",
     description:
-      "PHP 기반 레거시 프로젝트의 판매자·일반 사용자 앱, 관리자·랜딩 페이지 전체 퍼블리싱 리뉴얼",
+      "그누보드 기반 PHP 레거시 프로젝트의 사용자 앱, 관리자·랜딩 페이지 등 퍼블리싱을 전면 리뉴얼",
     exploreLink: "",
     diveInLink: "https://becelo.com/bbs/login.php",
   },
@@ -61,7 +61,7 @@ export const publishingProject: PublishingData[] = [
     keyword: ["company_collaboration", "publishing", "web&app"],
     title: "HOMT STUDIO",
     description:
-      "HTML, CSS 기반 웹앱 퍼블리싱 / 개발 연동용 퍼블리싱 코드 작업 및 전달",
+      "HTML, CSS 기반 웹앱 레이아웃 구현 및 개발 연동용 퍼블리싱 코드 작성·전달",
     exploreLink: "",
     diveInLink:
       "https://publisher-nerimy.netlify.app/port/homtstudio_app/login/login",

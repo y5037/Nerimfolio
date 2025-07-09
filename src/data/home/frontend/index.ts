@@ -60,6 +60,6 @@ export const frontendProject: FrontendData[] = [
     title: "Rolling",
     description: "REACT 기반 익명 롤링페이퍼 서비스",
     exploreLink: "",
-    diveInLink: "https://github.com/y5037/Rolling",
+    diveInLink: "https://rolling-three.vercel.app/",
   },
 ];

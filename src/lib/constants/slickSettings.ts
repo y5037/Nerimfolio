@@ -1,6 +1,4 @@
-import { ProjectData } from "@/types/projects";
-
-export const customSettings = (data: ProjectData[]) => {
+export const customSettings = () => {
   const settings = {
     dots: true,
     infinite: false,

@@ -28,23 +28,24 @@ export default function Carousel({
       )
     : projectData;
 
-  const { handleMouseDown, handleMouseUp } = useClickWithoutDrag();
+  const { handleMouseDown, handleMouseUp } = useClickWithoutDrag(type);
 
-  const { settings } = customSettings(filteredData);
+  const { settings } = customSettings();
 
   return filteredData.length > 0 ? (
     <div className={clsx(filteredData.length < 3 && "leftMode")}>
       <Slider {...settings}>
         {filteredData.map((project) => (
-          <div key={project.id} className={clsx("px-4 max-md:px-1")}>
-            <div
-              className={clsx("relative cursor-pointer")}
-              onMouseDown={handleMouseDown}
-              onMouseUp={(e) => handleMouseUp(e, project.id)}
-            >
+          <div
+            key={project.id}
+            className={clsx("px-4 max-md:px-1 cursor-pointer")}
+            onMouseDown={handleMouseDown}
+            onMouseUp={(e) => handleMouseUp(e, project.id)}
+          >
+            <div className={clsx("relative")}>
               <div
                 className={clsx(
-                  type === "frontend" && "absolute inset-0 bg-black opacity-20",
+                  type === "frontend" && "absolute inset-0 bg-black opacity-40",
                   "max-md:opacity-10"
                 )}
               />

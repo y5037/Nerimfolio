@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
-export const useClickWithoutDrag = () => {
+export const useClickWithoutDrag = (type: "frontend" | "publishing") => {
   const router = useRouter();
   const dragStart = useRef<number | null>(null);
 
@@ -17,7 +17,11 @@ export const useClickWithoutDrag = () => {
 
     const dragDistance = Math.abs(e.clientX - dragStart.current);
     if (dragDistance < 10) {
-      router.push(`/projects/${projectId}`);
+      router.push(
+        type === "frontend"
+          ? `/projects/frontend/${projectId}`
+          : `/projects/publishing/${projectId}`
+      );
     }
     dragStart.current = null;
   };
