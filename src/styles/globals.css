@@ -227,6 +227,11 @@ body {
   overflow-x: hidden;
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 a {
   display: block;
   margin: 0;
@@ -255,6 +260,11 @@ textarea {
   outline: none;
 }
 
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #000 inset;
+  -webkit-text-fill-color: #fff;
+  transition: background-color 5000s ease-in-out 0s;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -331,4 +341,28 @@ body {
   .bg-low-height-rolling {
     background-position: 0 -65px;
   }
+}
+
+.leftMode .slick-track {
+  margin-left: 0;
+}
+
+.slick-dots {
+  position: relative;
+  bottom: -15px;
+}
+
+.slick-dots li button:before {
+  font-size: 15px;
+  content: "■";
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: white;
+}
+
+.slick-dots li button:before {
+  opacity: 0.4;
+  color: var(--white);
 }

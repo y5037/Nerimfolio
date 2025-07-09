@@ -41,7 +41,9 @@ export default function FixedBackgroundImg({
         style={{ clip: "rect(0, auto, auto, 0)" }}
       >
         {!loaded ? (
-          <div className="absolute inset-0 bg-gray-300 animate-pulse z-0" />
+          <div
+            className={clsx("absolute inset-0 bg-gray-300 animate-pulse z-0")}
+          />
         ) : (
           <div
             className={clsx(

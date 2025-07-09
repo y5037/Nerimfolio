@@ -4,7 +4,7 @@ import Image from "next/image";
 import TitleContainer from "./sectionTitle/TitleContainer";
 import { useState } from "react";
 import Popup from "./popup/Popup";
-import { publishingProject } from "@/data/publishing";
+import { publishingProject } from "@/data/home/publishing";
 import clsx from "clsx";
 
 export default function PublishingSection() {

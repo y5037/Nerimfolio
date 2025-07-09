@@ -1,4 +1,4 @@
-import { PublishingData } from "@/data/publishing/types";
+import { PublishingData } from "@/types/landing";
 
 export interface PopupProps {
   onClose: () => void;

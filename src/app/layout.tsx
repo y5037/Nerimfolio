@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import "@/styles/globals.css";
 import Navigation from "@/components/layout/navigation/Navigation";
 import clsx from "clsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const metadata: Metadata = {
   icons: {
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "윤혜림의 포트폴리오 🥨",
     images: [
       {
-        url: "https://nerimfolio.vercel.app/images/common/og-thumbnail.jpg", // 이 경로에 이미지가 있어야 함
+        url: "https://nerimfolio.vercel.app/images/common/og-thumbnail.jpg",
         width: 1200,
         height: 630,
         alt: "포트폴리오 썸네일",
@@ -42,7 +44,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="ko">
       <body className={clsx("scrollbar-hide overflow-y-scroll")}>
         <Navigation />
-        <div className={clsx("flex flex-col justify-between h-full")}>
+        <div
+          className={clsx(
+            "flex flex-col justify-between h-full min-h-fit overflow-x-hidden"
+          )}
+        >
           {children}
         </div>
       </body>

@@ -1,6 +1,6 @@
 "use client";
 
-import SectionDefault from "@/components/layout/responsive/SectionDefault";
+import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 
@@ -8,12 +8,12 @@ export default function ContactButton() {
   const router = useRouter();
 
   return (
-    <SectionDefault>
-      <div className={clsx("py-20 text-right")}>
+    <ContentsLayout>
+      <div className={clsx("py-20 text-right", "max-md:pt-0")}>
         <button type="button" onClick={() => router.push("/about")}>
           Contact →
         </button>
       </div>
-    </SectionDefault>
+    </ContentsLayout>
   );
 }
