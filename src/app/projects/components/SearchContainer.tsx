@@ -7,10 +7,10 @@ export default function SearchContainer() {
     <ContentsLayout>
       <div
         className={clsx(
-          "flex items-center border-b border-solid border-gray100 py-1 my-20",
+          "flex items-center border-b border-solid border-gray100 py-1 my-32",
           "max-[1310px]:w-1/2",
-          "max-md:px-0",
-          "max-xs:w-2/3"
+          "max-md:px-0 my-24",
+          "max-xs:w-2/3 my-16"
         )}
       >
         <input

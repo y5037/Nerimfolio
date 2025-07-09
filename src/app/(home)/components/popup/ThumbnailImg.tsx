@@ -1,6 +1,6 @@
 "use client";
 
-import { PublishingData } from "@/data/home/publishing/types";
+import { PublishingData } from "@/types/landing";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -24,7 +24,11 @@ export default function ThumbnailImg({
   return (
     <>
       {!loaded && shouldShow && (
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse z-0" />
+        <div
+          className={clsx(
+            "absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse z-0"
+          )}
+        />
       )}
       <Image
         src={popupData.thumbnailImg}

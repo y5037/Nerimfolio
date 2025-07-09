@@ -1,6 +1,6 @@
-import { ProntendData } from "./types";
+import { FrontendData } from "@/types/landing";
 
-export const prontendProject: ProntendData[] = [
+export const frontendProject: FrontendData[] = [
   {
     id: 1,
     logoDefaultImg: "/images/home/frontendSection/logo/albaform.svg",

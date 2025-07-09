@@ -3,14 +3,19 @@ import Carousel from "./Carousel";
 import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import { ProjectContentsProps } from "../types";
 
-export default function ProjectContents({
-  $frontend,
-  $publishing,
-}: ProjectContentsProps) {
+export default function ProjectContents({ $frontend }: ProjectContentsProps) {
+  const type = $frontend ? "frontend" : "publishing";
+
   return (
     <ContentsLayout>
-      <div className="mb-[70px]">
-        <div className="mb-10">
+      <div
+        className={clsx(
+          "mb-[130px] max-xs500:mb-[90px]",
+          $frontend && "mb-[160px] max-xs500:mb-[90px]"
+          // $frontend || "max-xs:mb-0"
+        )}
+      >
+        <div className={clsx("mb-10")}>
           <p className={clsx("text-3xl text-gray100 font-semibold")}>
             {$frontend
               ? "🚀 Frontend Engineering Projects"
@@ -33,9 +38,7 @@ export default function ProjectContents({
             </p>
           )}
         </div>
-        <div>
-          <Carousel $frontend $publishing />
-        </div>
+        <Carousel type={type} />
       </div>
     </ContentsLayout>
   );

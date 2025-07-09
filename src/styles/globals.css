@@ -227,6 +227,11 @@ body {
   overflow-x: hidden;
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 a {
   display: block;
   margin: 0;

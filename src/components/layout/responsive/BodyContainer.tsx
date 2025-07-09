@@ -5,5 +5,5 @@ export default function BodyContainer({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className={clsx("h-full", "min-h-fit")}>{children}</div>;
+  return <div className={clsx("overflow-y-auto")}>{children}</div>;
 }

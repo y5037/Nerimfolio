@@ -2,82 +2,93 @@
 
 import Image from "next/image";
 import Slider from "react-slick";
-import { ProjectContentsProps } from "../types";
 import clsx from "clsx";
+import { settings } from "@/lib/constants/slickSettings";
+import { frontendProject } from "@/data/projects/frontend";
+import { ProjectData } from "@/types/projects";
+import { publishingProject } from "@/data/projects/publishing";
+import React from "react";
+import { useClickWithoutDrag } from "../hooks/useClickWithoutDrag";
 
 export default function Carousel({
-  $frontend,
-  $publishing,
-}: ProjectContentsProps) {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-  };
+  type,
+}: {
+  type: "frontend" | "publishing";
+}) {
+  const projectData: ProjectData[] =
+    type === "frontend" ? frontendProject : publishingProject;
 
-  const projectList = [
-    {
-      id: 1,
-      title: "Albaform",
-      thumbnail: "/images/projects/frontendSection/thumbnail/albaform.png",
-    },
-    {
-      id: 2,
-      title: "Fansign",
-      thumbnail: "/images/projects/frontendSection/thumbnail/pandamarket.png",
-    },
-    {
-      id: 3,
-      title: "Fansign",
-      thumbnail: "/images/projects/frontendSection/thumbnail/globalnomad.png",
-    },
-    {
-      id: 4,
-      title: "Fansign",
-      thumbnail: "/images/projects/frontendSection/thumbnail/taskify.png",
-    },
-    {
-      id: 5,
-      title: "Fansign",
-      thumbnail: "/images/projects/frontendSection/thumbnail/rolling.png",
-    },
-  ];
+  const { handleMouseDown, handleMouseUp } = useClickWithoutDrag();
 
   return (
     <Slider {...settings}>
-      {projectList.map((project) => (
-        <div key={project.id} className="px-4 max-md:px-1">
-          <div className="relative">
-            <div className={clsx("absolute inset-0 bg-black opacity-20")} />
+      {projectData.map((project) => (
+        <div
+          key={project.id}
+          className={clsx("px-4 max-md:px-1")}
+          onMouseDown={handleMouseDown}
+          onMouseUp={(e) => handleMouseUp(e, project.id)}
+        >
+          <div className={clsx("relative")}>
             <div
               className={clsx(
-                "absolute z-1 bottom-7 left-[20px] right-[20px]",
-                "max-md:bottom-4"
+                type === "frontend" && "absolute inset-0 bg-black opacity-20",
+                "max-md:opacity-20"
+              )}
+            />
+            <div
+              className={clsx(
+                "absolute z-1",
+                type === "frontend" &&
+                  "bottom-7 left-[20px] right-0 break-words pr-[20px] max-md:bottom-4 max-md:left-1/2 max-md:-translate-x-1/2 max-md:pr-0 max-md:w-fit max-md:text-center",
+                type === "publishing" && "right-[20px] top-0"
               )}
             >
-              <Image
-                src="/images/projects/frontendSection/logo/globalnomad.svg"
-                alt="logo"
-                width={150}
-                height={30}
-              />
-              <p className={clsx("mt-3 font-light", "max-md:hidden")}>
-                이렇게 저렇게 해서 만들었습니다.
+              <div
+                className={clsx(
+                  "relative w-[120px] h-[30px]",
+                  type === "publishing" && "w-[80px] h-[70px]"
+                )}
+              >
+                <Image
+                  src={project.logoImg}
+                  alt="logo"
+                  fill
+                  className={clsx(
+                    type === "frontend" &&
+                      project.id === 4 &&
+                      "ml-[-10px] max-md:ml-0",
+                    type === "frontend" &&
+                      project.id === 5 &&
+                      "ml-[-8px] max-md:ml-0"
+                  )}
+                />
+              </div>
+              <p
+                className={clsx(
+                  "mt-3 font-light",
+                  type === "publishing" && "hidden",
+                  type === "frontend" && "max-md:hidden"
+                )}
+              >
+                {project.description}
               </p>
             </div>
             <Image
-              src={project.thumbnail}
+              src={project.thumbnailImg}
               alt={project.title}
               width={800}
               height={400}
-              className={clsx("rounded-xl object-cover")}
+              className={clsx("rounded-xl object-cover min-h-[261px]")}
             />
           </div>
-          <p className={clsx("mt-3 mb-4 font-light hidden", "max-md:block")}>
-            이렇게 저렇게 해서 만들었습니다.
+          <p
+            className={clsx(
+              "mt-3 mb-4 break-words font-light",
+              type === "frontend" && "hidden max-md:block"
+            )}
+          >
+            {project.description}
           </p>
         </div>
       ))}

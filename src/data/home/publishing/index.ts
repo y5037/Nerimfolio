@@ -1,4 +1,4 @@
-import { PublishingData } from "./types";
+import { PublishingData } from "@/types/landing";
 
 export const publishingProject: PublishingData[] = [
   {

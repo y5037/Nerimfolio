@@ -25,7 +25,7 @@ export default function PublishingSection() {
   return (
     <>
       <TitleContainer id="Layouts" />
-      <div className={clsx("group relative w-full")}>
+      <div className={clsx("group relative w-full overflow-hidden")}>
         <div
           className={clsx(
             "flex w-max animate-slideRight md:group-hover:[animation-play-state:paused]",

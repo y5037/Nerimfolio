@@ -3,7 +3,6 @@
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import clsx from "clsx";
 
 export default function TransitionLayout({
   children,
