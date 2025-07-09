@@ -33,7 +33,7 @@ export default function Carousel({
             <div
               className={clsx(
                 type === "frontend" && "absolute inset-0 bg-black opacity-20",
-                "max-md:opacity-20"
+                "max-md:opacity-10"
               )}
             />
             <div
