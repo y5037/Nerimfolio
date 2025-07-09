@@ -44,7 +44,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="ko">
       <body className={clsx("scrollbar-hide overflow-y-scroll")}>
         <Navigation />
-        <div className={clsx("flex flex-col justify-between h-full min-h-fit")}>
+        <div
+          className={clsx(
+            "flex flex-col justify-between h-full min-h-fit overflow-x-hidden"
+          )}
+        >
           {children}
         </div>
       </body>

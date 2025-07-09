@@ -6,16 +6,14 @@ export const frontendProject: ProjectData[] = [
     title: "Albaform",
     logoImg: "/images/projects/frontendSection/logo/albaform.svg",
     thumbnailImg: "/images/projects/frontendSection/thumbnail/albaform.png",
-    description:
-      "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+    description: "qw",
   },
   {
     id: 2,
     title: "Fansign",
     logoImg: "/images/projects/frontendSection/logo/pandamarket.svg",
     thumbnailImg: "/images/projects/frontendSection/thumbnail/pandamarket.png",
-    description:
-      "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+    description: "qw",
   },
   {
     id: 3,

@@ -9,7 +9,7 @@ export default function ContactButton() {
 
   return (
     <ContentsLayout>
-      <div className={clsx("py-20 text-right")}>
+      <div className={clsx("py-20 text-right", "max-md:pt-0")}>
         <button type="button" onClick={() => router.push("/about")}>
           Contact →
         </button>

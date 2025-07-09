@@ -1,8 +1,12 @@
 import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import clsx from "clsx";
 import Image from "next/image";
+import { SearchContainerProps } from "../types";
 
-export default function SearchContainer() {
+export default function SearchContainer({
+  keyword,
+  setKeyword,
+}: SearchContainerProps) {
   return (
     <ContentsLayout>
       <div
@@ -16,12 +20,18 @@ export default function SearchContainer() {
         <input
           name="search"
           type="text"
+          value={keyword}
+          onChange={(e) => setKeyword?.(e.target.value)}
           className={clsx(
             "w-full bg-transparent mr-3 focus:outline-none font-light",
             "max-md:mr-2"
           )}
         />
-        <span className="pointer-events-none absolute left-1/2 bottom-0 h-[1px] w-0 -translate-x-1/2 bg-white transition-all duration-500 group-focus-within:w-full" />
+        <span
+          className={clsx(
+            "pointer-events-none absolute left-1/2 bottom-0 h-[1px] w-0 -translate-x-1/2 bg-white transition-all duration-500 group-focus-within:w-full"
+          )}
+        />
         <div
           className={clsx(
             "relative w-[30px] h-[30px] min-w-[30px]",

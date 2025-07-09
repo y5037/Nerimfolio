@@ -336,6 +336,10 @@ body {
   }
 }
 
+.leftMode .slick-track {
+  margin-left: 0;
+}
+
 .slick-dots {
   position: relative;
   bottom: -15px;
