@@ -11,7 +11,7 @@ export const frontendProject: ProjectData[] = [
   },
   {
     id: 2,
-    title: "Fansign",
+    title: "Pandamarket",
     logoImg: "/images/projects/frontendSection/logo/pandamarket.svg",
     thumbnailImg: "/images/projects/frontendSection/thumbnail/pandamarket.png",
     description:

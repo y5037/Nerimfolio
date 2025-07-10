@@ -36,7 +36,7 @@ export const publishingProject: ProjectData[] = [
   {
     id: 5,
     title: "HomtStudio",
-    logoImg: "/images/projects/publishingSection/logo/homtstudio.svg",
+    logoImg: "/images/projects/publishingSection/logo/homtStudio.svg",
     thumbnailImg: "/images/projects/publishingSection/thumbnail/homtstudio.png",
     description:
       "HTML, CSS 기반으로 웹앱 퍼블리싱 작업을 진행했으며, 페이지의 기본 뼈대를 만들어 개발 연동용 퍼블리싱 코드를 개발자에게 전달하는 역할을 맡았습니다.",
