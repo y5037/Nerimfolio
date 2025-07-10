@@ -45,9 +45,10 @@ export default function SearchContainer({
         />
         <div
           className={clsx(
-            "relative w-[30px] h-[30px] min-w-[30px]",
+            "relative w-[30px] h-[30px] min-w-[30px] cursor-pointer",
             "max-md:w-[25px] max-md:h-[25px] max-md:min-w-[25px]"
           )}
+          onClick={() => setKeyword?.(inputValue.trim())}
         >
           <Image
             src="/images/projects/searchSection/search.png"
