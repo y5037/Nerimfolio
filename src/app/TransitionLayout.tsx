@@ -21,6 +21,12 @@ export default function TransitionLayout({
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className={clsx("min-h-full")}
+        style={{
+          // willChange: "transform, opacity",
+          transform: "translate3d(0, 0, 0)",
+          backfaceVisibility: "hidden",
+          // perspective: 1000,
+        }}
       >
         {children}
       </motion.div>
