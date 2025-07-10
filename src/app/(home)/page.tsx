@@ -4,7 +4,7 @@ import IntroSection from "./components/IntroSection";
 import PublishingSection from "./components/PublishingSection";
 import TechBlogSection from "./components/TechBlogSection";
 import ScrollTo from "@/app/(home)/components/scrollTo/ScrollTo";
-import ContactButton from "./components/ContactButton";
+import AboutMeButton from "./components/AboutMeButton";
 import Footer from "@/components/layout/footer/Footer";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
         <ScrollTo coord="Layouts" />
         <TechBlogSection />
         <ScrollTo coord="InWords" />
-        <ContactButton />
+        <AboutMeButton />
       </BodyContainer>
       <Footer />
     </>
