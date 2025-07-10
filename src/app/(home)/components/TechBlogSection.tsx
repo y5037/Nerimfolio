@@ -6,7 +6,8 @@ import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import Image from "next/image";
 import { tagColors } from "@/lib/constants/tagColors";
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useBetweenMediaQuery } from "../hooks/useBetweenMediaQuery";
 
 export default function TechBlogSection() {
   const [visibleCount, setVisibleCount] = useState(3);
@@ -15,10 +16,19 @@ export default function TechBlogSection() {
   const visiblePosts = techPosts.slice(0, visibleCount);
   const hasMore = visibleCount < techPosts.length;
 
+  const isTablet = useBetweenMediaQuery(768, 1050);
+  useEffect(() => {
+    if (isTablet) {
+      setVisibleCount(4);
+    } else {
+      setVisibleCount(3);
+    }
+  }, [isTablet]);
+
   const handleLoadMore = () => {
     setIsLoading(true);
     setTimeout(() => {
-      setVisibleCount((prev) => prev + 3);
+      setVisibleCount((prev) => prev + visibleCount);
       setIsLoading(false);
     }, 800);
   };
