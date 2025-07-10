@@ -1,6 +1,5 @@
 "use client";
 
-import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import clsx from "clsx";
 import Image from "next/image";
 import { SearchContainerProps } from "../types";
@@ -19,7 +18,7 @@ export default function SearchContainer({
     }
   };
   return (
-    <ContentsLayout>
+    <>
       <div
         className={clsx(
           "group relative flex items-center border-b border-solid border-gray500 py-1 my-32",
@@ -59,6 +58,6 @@ export default function SearchContainer({
           />
         </div>
       </div>
-    </ContentsLayout>
+    </>
   );
 }
