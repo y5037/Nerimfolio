@@ -26,7 +26,7 @@ export default function TabContainer({ isTab, setIsTab }: TabProps) {
           </button>
         ))}
       </div>
-      <button type="button" onClick={() => setIsTab("Connect")}>
+      <button type="button">
         <Image
           src="/images/about/share.svg"
           alt="공유하기"
