@@ -1,37 +1,15 @@
 "use client";
 
-import { techPosts } from "@/data/home/techBlog";
 import TitleContainer from "./sectionTitle/TitleContainer";
 import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import Image from "next/image";
 import { tagColors } from "@/lib/constants/tagColors";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
-import { useBetweenMediaQuery } from "../hooks/useBetweenMediaQuery";
+import { useResponsiveLoadMore } from "../hooks/useResponsiveLoadMore";
 
 export default function TechBlogSection() {
-  const [visibleCount, setVisibleCount] = useState(3);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const visiblePosts = techPosts.slice(0, visibleCount);
-  const hasMore = visibleCount < techPosts.length;
-
-  const isTablet = useBetweenMediaQuery(768, 1050);
-  useEffect(() => {
-    if (isTablet) {
-      setVisibleCount(4);
-    } else {
-      setVisibleCount(3);
-    }
-  }, [isTablet]);
-
-  const handleLoadMore = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setVisibleCount((prev) => prev + visibleCount);
-      setIsLoading(false);
-    }, 800);
-  };
+  const { visiblePosts, isLoading, hasMore, handleLoadMore } =
+    useResponsiveLoadMore();
 
   return (
     <>
