@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import Carousel from "./Carousel";
-import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import { ProjectContentsProps } from "../types";
 
 export default function ProjectContents({
@@ -10,7 +9,7 @@ export default function ProjectContents({
   const type = $frontend ? "frontend" : "publishing";
 
   return (
-    <ContentsLayout>
+    <>
       <div
         className={clsx(
           "mb-[130px] max-xs500:mb-[90px]",
@@ -42,6 +41,6 @@ export default function ProjectContents({
         </div>
         <Carousel type={type} keyword={keyword} />
       </div>
-    </ContentsLayout>
+    </>
   );
 }
