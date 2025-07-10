@@ -1,23 +1,25 @@
 "use client";
 
-import BodyContainer from "@/components/layout/responsive/BodyContainer";
+import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import ProjectContents from "./components/ProjectContents";
 import SearchContainer from "./components/SearchContainer";
 import Footer from "@/components/layout/footer/Footer";
 import { useState } from "react";
 import clsx from "clsx";
 
-export default function ProjectsList() {
+export default function Projects() {
   const [keyword, setKeyword] = useState("");
 
   return (
-    <div className={clsx("h-full flex flex-col justify-between")}>
-      <BodyContainer>
-        <SearchContainer keyword={keyword} setKeyword={setKeyword} />
-        <ProjectContents $frontend keyword={keyword} />
-        <ProjectContents keyword={keyword} />
-      </BodyContainer>
+    <>
+      <ContentsLayout>
+        <div className={clsx("min-h-[calc(100vh-104px)]")}>
+          <SearchContainer keyword={keyword} setKeyword={setKeyword} />
+          <ProjectContents $frontend keyword={keyword} />
+          <ProjectContents keyword={keyword} />
+        </div>
+      </ContentsLayout>
       <Footer />
-    </div>
+    </>
   );
 }
