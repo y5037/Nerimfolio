@@ -18,13 +18,13 @@ export default function SearchContainer({
     }
   };
   return (
-    <>
+    <div className={clsx("py-28", "max-md:py-24", "max-xs:py-20")}>
       <div
         className={clsx(
-          "group relative flex items-center border-b border-solid border-gray500 py-1 my-32",
+          "group relative flex items-center border-b border-solid border-gray500 py-1",
           "max-[1310px]:w-1/2",
-          "max-md:px-0 max-md:my-24",
-          "max-xs:w-2/3 max-xs:my-16"
+          "max-md:px-0",
+          "max-xs:w-2/3"
         )}
       >
         <input
@@ -58,6 +58,6 @@ export default function SearchContainer({
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }

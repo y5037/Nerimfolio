@@ -12,9 +12,11 @@ export default function Projects() {
   return (
     <>
       <ContentsLayout>
-        <SearchContainer keyword={keyword} setKeyword={setKeyword} />
-        <ProjectContents $frontend keyword={keyword} />
-        <ProjectContents keyword={keyword} />
+        <div className="min-h-[calc(100vh-104px)]">
+          <SearchContainer keyword={keyword} setKeyword={setKeyword} />
+          <ProjectContents $frontend keyword={keyword} />
+          <ProjectContents keyword={keyword} />
+        </div>
       </ContentsLayout>
       <Footer />
     </>
