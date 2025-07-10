@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 
-export default function TransitionLayout({
+export default function TransitionDownLayout({
   children,
 }: {
   children: ReactNode;
@@ -16,9 +16,9 @@ export default function TransitionLayout({
     <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         className={clsx("min-h-full")}
       >
