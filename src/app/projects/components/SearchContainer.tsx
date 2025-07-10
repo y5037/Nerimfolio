@@ -1,12 +1,23 @@
+"use client";
+
 import ContentsLayout from "@/components/layout/responsive/ContentsLayout";
 import clsx from "clsx";
 import Image from "next/image";
 import { SearchContainerProps } from "../types";
+import { KeyboardEvent, useState } from "react";
 
 export default function SearchContainer({
   keyword,
   setKeyword,
 }: SearchContainerProps) {
+  const [inputValue, setInputValue] = useState(keyword ?? "");
+
+  const handleEnterKeyword = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setKeyword?.(inputValue.trim());
+    }
+  };
   return (
     <ContentsLayout>
       <div
@@ -20,8 +31,9 @@ export default function SearchContainer({
         <input
           name="search"
           type="text"
-          value={keyword}
-          onChange={(e) => setKeyword?.(e.target.value)}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={handleEnterKeyword}
           className={clsx(
             "w-full bg-transparent mr-3 focus:outline-none font-light",
             "max-md:mr-2"
