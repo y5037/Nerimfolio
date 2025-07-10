@@ -7,8 +7,10 @@ import clsx from "clsx";
 
 export default function TransitionLayout({
   children,
+  $landing,
 }: {
   children: ReactNode;
+  $landing?: boolean;
 }) {
   const pathname = usePathname();
 
@@ -16,10 +18,10 @@ export default function TransitionLayout({
     <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        initial={$landing ? { opacity: 0 } : { opacity: 0, y: -20 }}
+        animate={$landing ? { opacity: 1 } : { opacity: 1, y: 0 }}
+        exit={$landing ? { opacity: 0 } : { opacity: 0, y: -10 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
         className={clsx("min-h-full")}
       >
         {children}
