@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import TransitionDownLayout from "../TransitionDownLayout";
+import TransitionLayout from "../TransitionLayout";
 
 export default function AboutTemplate({ children }: { children: ReactNode }) {
-  return <TransitionDownLayout>{children}</TransitionDownLayout>;
+  return <TransitionLayout>{children}</TransitionLayout>;
 }
