@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { TabProps } from "../types";
-import Image from "next/image";
 import { ABOUT_TABS } from "@/lib/constants/aboutTabs";
 
 export default function TabContainer({ isTab, setIsTab }: TabProps) {

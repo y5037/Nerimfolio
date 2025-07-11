@@ -19,7 +19,7 @@ export const useModalController = (defaultValue = false) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [showModal, close]);
+  }, [showModal]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -35,7 +35,7 @@ export const useModalController = (defaultValue = false) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showModal, close]);
+  }, [showModal]);
 
   useEffect(() => {
     if (showModal) {
