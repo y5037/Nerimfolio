@@ -26,14 +26,6 @@ export default function TabContainer({ isTab, setIsTab }: TabProps) {
           </button>
         ))}
       </div>
-      <button type="button">
-        <Image
-          src="/images/about/share.svg"
-          alt="공유하기"
-          width={25}
-          height={25}
-        />
-      </button>
     </div>
   );
 }

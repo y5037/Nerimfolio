@@ -1,6 +1,10 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 
 export interface TabProps {
   isTab: "Intro" | "Builds" | "Connect";
   setIsTab: Dispatch<SetStateAction<"Intro" | "Builds" | "Connect">>;
+}
+
+export interface QRModalProps {
+  modalRef: RefObject<HTMLDivElement | null>;
 }

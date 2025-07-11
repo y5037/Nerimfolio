@@ -47,7 +47,7 @@ export default function FixedBackgroundImg({
         ) : (
           <div
             className={clsx(
-              "fixed top-0 left-1/2 transform -translate-x-1/2 w-[970px] h-full bg-no-repeat bg-gray-300 bg-cover bg-center block grayscale group-hover:grayscale-0",
+              "fixed top-0 left-1/2 transform -translate-x-1/2 w-[970px] h-full bg-no-repeat bg-cover bg-center block grayscale group-hover:grayscale-0",
               "max-lg:w-[900px]",
               "max-lg900:w-full",
               id === 1 &&
