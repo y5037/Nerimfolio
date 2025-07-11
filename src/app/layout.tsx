@@ -5,6 +5,7 @@ import Navigation from "@/components/layout/navigation/Navigation";
 import clsx from "clsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   icons: {
@@ -42,6 +43,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover"
+        />
+        <Script
+          src="https://developers.kakao.com/sdk/js/kakao.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body className={clsx("scrollbar-hide overflow-y-scroll")}>
         <Navigation />
         <div className={clsx("h-full overflow-x-hidden")}>{children}</div>

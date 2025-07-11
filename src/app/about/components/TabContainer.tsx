@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { TabProps } from "../types";
-import Image from "next/image";
 import { ABOUT_TABS } from "@/lib/constants/aboutTabs";
 
 export default function TabContainer({ isTab, setIsTab }: TabProps) {
@@ -26,14 +25,6 @@ export default function TabContainer({ isTab, setIsTab }: TabProps) {
           </button>
         ))}
       </div>
-      <button type="button">
-        <Image
-          src="/images/about/share.svg"
-          alt="공유하기"
-          width={25}
-          height={25}
-        />
-      </button>
     </div>
   );
 }
