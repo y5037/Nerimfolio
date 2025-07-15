@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 
 export interface TabProps {
   isTab: "Intro" | "Builds" | "Connect";
