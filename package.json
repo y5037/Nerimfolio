@@ -18,8 +18,10 @@
     "react-dom": "^19.0.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
+    "swiper": "^11.2.10",
     "tailwind-scrollbar-hide": "^4.0.0",
-    "use-media": "^1.5.0"
+    "use-media": "^1.5.0",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

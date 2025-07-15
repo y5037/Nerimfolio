@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
 
 @font-face {
   font-family: "RobotoSlab";
@@ -253,6 +251,11 @@ ol {
   list-style: none;
 }
 
+ul.list-disc,
+ul.list-disc li {
+  list-style: disc inside !important;
+}
+
 input,
 textarea {
   font-family: inherit;
@@ -342,28 +345,4 @@ body {
   .bg-low-height-rolling {
     background-position: 0 -65px;
   }
-}
-
-.leftMode .slick-track {
-  margin-left: 0;
-}
-
-.slick-dots {
-  position: relative;
-  bottom: -15px;
-}
-
-.slick-dots li button:before {
-  font-size: 15px;
-  content: "■";
-}
-
-.slick-dots li.slick-active button:before {
-  opacity: 1;
-  color: white;
-}
-
-.slick-dots li button:before {
-  opacity: 0.4;
-  color: var(--white);
 }

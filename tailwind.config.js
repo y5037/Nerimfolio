@@ -79,6 +79,10 @@ module.exports = {
           "0%": { opacity: 1, transform: "translateY(0) scale(1)" },
           "100%": { opacity: 0, transform: "translateY(20px) scale(0.8)" },
         },
+        progress: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: " translateX(0%)" },
+        },
       },
       animation: {
         scrollAni: "scrollAni 1s ease-in-out infinite",
@@ -86,6 +90,7 @@ module.exports = {
         slideRight: "slideRight 50s linear infinite",
         popupShow: "popupShow 0.3s forwards ease-out",
         popupHide: "popupHide 0.3s forwards ease-in",
+        progress: "progress 4s linear forwards",
       },
     },
     fontFamily: {

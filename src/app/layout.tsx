@@ -1,11 +1,14 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
-import "@/styles/globals.css";
 import Navigation from "@/components/layout/navigation/Navigation";
 import clsx from "clsx";
+import Script from "next/script";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Script from "next/script";
+import "@/styles/globals.css";
+import "@/styles/projectSlick.css";
+import "@/styles/storySwiper.css";
+import Tootip from "@/components/tootip/Tootip";
 
 export const metadata: Metadata = {
   icons: {
@@ -55,6 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={clsx("scrollbar-hide overflow-y-scroll")}>
         <Navigation />
+        <Tootip />
         <div className={clsx("h-full overflow-x-hidden")}>{children}</div>
       </body>
     </html>

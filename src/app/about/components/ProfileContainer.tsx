@@ -5,14 +5,28 @@ import { profileButton } from "../styles";
 import { useModalController } from "@/hooks/useModalController";
 import QRCodeModal from "./QRCodeModal";
 import { useKakaoShare } from "@/hooks/useKakaoShare";
+import StoryProfile from "./StoryProfile";
+import { useState } from "react";
 
 export default function ProfileContainer() {
-  const { showModal, open, modalRef } = useModalController();
+  const [modalType, setModalType] = useState<"story" | "qr" | null>(null);
+
+  const { showModal, open, close } = useModalController();
   const { handleShare } = useKakaoShare();
+
+  const handleOpenStory = () => {
+    open();
+    setModalType("story");
+  };
+
+  const handleOpenQR = () => {
+    open();
+    setModalType("qr");
+  };
 
   return (
     <>
-      {showModal && <QRCodeModal modalRef={modalRef} />}
+      {showModal && modalType === "qr" && <QRCodeModal isClose={close} />}
       <div className={clsx("flex my-10 items-center")}>
         <Image
           src="/images/about/back.png"
@@ -27,20 +41,12 @@ export default function ProfileContainer() {
         </p>
       </div>
       <div className={clsx("flex")}>
-        <div
-          className={clsx(
-            "relative w-[150px] min-w-[150px] h-[150px] rounded-full overflow-hidden border border-solid border-gray-300 box-border",
-            "max-lg1050:w-[100px] max-lg1050:min-w-[100px] max-lg1050:h-[100px]",
-            "max-xs500:w-[80px] max-xs500:min-w-[80px] max-xs500:h-[80px]"
-          )}
-        >
-          <Image
-            src="/images/about/profile.jpg"
-            alt="profile"
-            fill
-            className={clsx("object-cover")}
-          />
-        </div>
+        <StoryProfile
+          handleOpenStory={handleOpenStory}
+          showModal={showModal}
+          modalType={modalType}
+          close={close}
+        />
         <div
           className={clsx(
             "ml-16 flex flex-col justify-around",
@@ -77,7 +83,11 @@ export default function ProfileContainer() {
             디자이너 및 백엔드 개발자와의 원활한 협업이 강점입니다.
           </p>
           <div className={clsx("mt-8 mb-10 flex items-center justify-start")}>
-            <button type="button" className={profileButton} onClick={open}>
+            <button
+              type="button"
+              className={profileButton}
+              onClick={handleOpenQR}
+            >
               <Image
                 src="/images/about/qr.png"
                 alt="QRcode"
