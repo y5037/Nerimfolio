@@ -102,7 +102,9 @@ export default function Connect() {
             <p>Github</p>
           </li>
           <li
-            className={clsx("flex items-center gap-2.5 mb-4 cursor-pointer")}
+            className={clsx(
+              "inline-flex items-center gap-2.5 mb-4 cursor-pointer"
+            )}
             onClick={() => window.open("https://velog.io/@nerimy/posts")}
           >
             <Image
