@@ -47,7 +47,7 @@ export default function FrontendSection() {
                   className={clsx(
                     "absolute top-3 left-4 max-h-[25px]",
                     (item.id === 2 || item.id === 4) &&
-                      "lg900:right-2 lg900:left-auto",
+                      "lg900:right-0 lg900:left-auto max-lg900:left-0",
                     item.id === 4 && "lg900:right-0",
                     item.id === 5 && "left-auto"
                   )}
