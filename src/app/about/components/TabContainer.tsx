@@ -9,13 +9,17 @@ export default function TabContainer({ isTab, setIsTab }: TabProps) {
         "flex flex-items justify-between border-t border-solid border-gray500 py-4"
       )}
     >
-      <div className={clsx("flex flex-items gap-10 text-gray500")}>
+      <div
+        className={clsx(
+          "flex flex-items gap-10 text-gray500 w-full text-center"
+        )}
+      >
         {ABOUT_TABS.map((tab) => (
           <button
             key={tab.key}
             type="button"
             className={clsx(
-              "duration-[.2s] hover:text-white",
+              "flex-[1] duration-[.2s] hover:text-white",
               isTab === tab.key && "text-white"
             )}
             onClick={() => setIsTab(tab.key)}

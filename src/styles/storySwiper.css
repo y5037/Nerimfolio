@@ -1,0 +1,18 @@
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 0 !important;
+  background: var(--black) !important;
+  opacity: 1 !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--white) !important;
+  border: 1px solid var(--black) !important;
+}
