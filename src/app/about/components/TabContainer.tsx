@@ -11,7 +11,7 @@ export default function TabContainer({ isTab, setIsTab }: TabProps) {
     >
       <div
         className={clsx(
-          "flex flex-items gap-10 text-gray500 w-full text-center pr-[15px]"
+          "flex flex-items gap-10 text-gray500 w-full text-center pr-[10px]"
         )}
       >
         {ABOUT_TABS.map((tab) => (
