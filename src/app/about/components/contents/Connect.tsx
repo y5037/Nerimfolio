@@ -26,8 +26,10 @@ export default function Connect() {
       <div className={clsx(connectTileType1)}>
         <h3 className={clsx(connectTitle)}>🧠 MBTI & 협업 스타일</h3>
         <p className={clsx("text-zinc-400 text-sm leading-relaxed")}>
-          INFJ / 꼼꼼하고 조용하지만 팀에서는 유연하게 소통해요. 디자이너와
-          개발자 사이의 간극을 메우는 데 익숙해요.
+          ISFJ / UI 레이아웃이나 기능 구현에서 작은 어긋남도 그냥 지나치지 못할
+          만큼 꼼꼼한 성격이에요. 평소엔 조용한 편이지만, 팀에서는 유연하게
+          소통하며 디자이너와 개발자 사이의 간극을 자연스럽게 메우는 데
+          익숙해요.
         </p>
       </div>
       <div className={clsx(connectTileType2)}>
