@@ -17,7 +17,8 @@ export default function Connect() {
 
   const handleClickCopy = () => {
     showToast("복사가 완료되었습니다");
-    navigator.clipboard.writeText(emailRef.current?.innerText!);
+    const text = emailRef.current?.innerText;
+    if (text) navigator.clipboard.writeText(text);
   };
 
   return (

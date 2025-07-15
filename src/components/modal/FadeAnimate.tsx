@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { MouseEvent, ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 
 export default function FadeAnimate({
   children,
@@ -14,7 +14,6 @@ export default function FadeAnimate({
   const [isVisible, setIsVisible] = useState(true);
 
   const handleRequestClose = () => {
-    // e.stopPropagation();
     setIsVisible(false);
   };
 
