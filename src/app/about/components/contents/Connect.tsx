@@ -89,7 +89,7 @@ export default function Connect() {
           </li>
           <li
             className={clsx(
-              "inline-flex items-center gap-2.5 mb-3.5 cursor-pointer"
+              "flex items-center w-fit gap-2.5 mb-3.5 cursor-pointer"
             )}
             onClick={() => window.open("https://github.com/y5037")}
           >
@@ -103,7 +103,7 @@ export default function Connect() {
           </li>
           <li
             className={clsx(
-              "inline-flex items-center gap-2.5 mb-4 cursor-pointer"
+              "flex items-center w-fit gap-2.5 mb-4 cursor-pointer"
             )}
             onClick={() => window.open("https://velog.io/@nerimy/posts")}
           >
