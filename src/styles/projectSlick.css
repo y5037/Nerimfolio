@@ -1,0 +1,23 @@
+.leftMode .slick-track {
+  margin-left: 0;
+}
+
+.slick-dots {
+  position: relative;
+  bottom: -15px;
+}
+
+.slick-dots li button:before {
+  font-size: 15px;
+  content: "■";
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: white;
+}
+
+.slick-dots li button:before {
+  opacity: 0.4;
+  color: var(--white);
+}

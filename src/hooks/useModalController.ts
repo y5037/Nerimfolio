@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useModalController = (defaultValue = false) => {
   const [showModal, setShowModal] = useState(defaultValue);
-  const modalRef = useRef<HTMLDivElement | null>(null);
 
   const open = () => setShowModal(true);
   const close = () => setShowModal(false);
@@ -22,22 +21,6 @@ export const useModalController = (defaultValue = false) => {
   }, [showModal]);
 
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-        close();
-      }
-    };
-
-    if (showModal) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showModal]);
-
-  useEffect(() => {
     if (showModal) {
       document.body.style.overflow = "hidden";
     } else {
@@ -49,5 +32,5 @@ export const useModalController = (defaultValue = false) => {
     };
   }, [showModal]);
 
-  return { showModal, open, close, toggle, modalRef };
+  return { showModal, open, close, toggle };
 };
