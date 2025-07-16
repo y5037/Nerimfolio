@@ -1,6 +1,6 @@
 "use client";
 
-import { useToastStore } from "@/store/useToastStore";
+import { useTooltipStore } from "@/store/useTooltipStore";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export default function Tootip() {
   const [visible, setVisible] = useState(false);
 
-  const { message, show, hideToast } = useToastStore();
+  const { message, show, hideToast } = useTooltipStore();
 
   useEffect(() => {
     if (show) {

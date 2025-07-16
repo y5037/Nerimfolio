@@ -20,7 +20,7 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
   const { size } = useStorySliderLayout();
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowProgress(true), 1700);
+    const timer = setTimeout(() => setShowProgress(true), 1200);
     return () => clearTimeout(timer);
   }, []);
 

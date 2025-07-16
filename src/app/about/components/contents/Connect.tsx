@@ -9,11 +9,11 @@ import {
 } from "../../styles";
 import { useRef } from "react";
 import Image from "next/image";
-import { useToastStore } from "@/store/useToastStore";
+import { useTooltipStore } from "@/store/useTooltipStore";
 
 export default function Connect() {
   const emailRef = useRef<HTMLParagraphElement | null>(null);
-  const { showToast } = useToastStore();
+  const { showToast } = useTooltipStore();
 
   const handleClickCopy = () => {
     showToast("복사가 완료되었습니다");
