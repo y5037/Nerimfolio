@@ -116,7 +116,9 @@ export default function Connect() {
             />
             <p>Velog</p>
           </li>
-          <li className={clsx("flex items-center gap-2.5 cursor-pointer")}>
+          <li
+            className={clsx("flex items-center w-fit gap-2.5 cursor-pointer")}
+          >
             <Image
               src="/images/about/resume.png"
               alt="velog"

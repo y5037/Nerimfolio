@@ -33,7 +33,7 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
         transition={{
           opacity: { duration: 0.2 },
           width: { duration: 0.5, ease: "easeOut" },
-          height: { delay: 0.8, duration: 0.8, ease: "easeOut" },
+          height: { delay: 0.6, duration: 0.6, ease: "easeOut" },
         }}
         className={clsx("overflow-hidden")}
       >
