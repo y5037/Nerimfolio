@@ -44,7 +44,7 @@ export default function Tootip() {
           height={20}
           className={clsx("w-5 h-5")}
         />
-        <p className="text-sm font-semibold leading-6 m-0">{message}</p>
+        <p className={clsx("text-sm font-semibold leading-6 m-0")}>{message}</p>
       </div>
     </div>
   );

@@ -1,20 +1,22 @@
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { ReactNode, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction, useState } from "react";
 
 export default function FadeAnimate({
   children,
   isClose,
   $qrcode,
+  isVisible,
+  setIsVisible,
 }: {
   children: ReactNode;
   isClose: () => void;
   $qrcode?: boolean;
+  isVisible?: boolean;
+  setIsVisible?: Dispatch<SetStateAction<boolean>>;
 }) {
-  const [isVisible, setIsVisible] = useState(true);
-
   const handleRequestClose = () => {
-    setIsVisible(false);
+    setIsVisible?.(false);
   };
 
   return (

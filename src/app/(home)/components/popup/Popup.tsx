@@ -6,7 +6,6 @@ import { popupButton, popupKeyword } from "../../styles";
 import ThumbnailImg from "./ThumbnailImg";
 
 export default function Popup({ onClose, popupData }: PopupProps) {
-
   const { ref, handleAnimationEnd, isClosing, setIsClosing } =
     useClickOutside(onClose);
 
@@ -31,7 +30,7 @@ export default function Popup({ onClose, popupData }: PopupProps) {
           className={clsx("absolute top-4 right-4 z-10", "md:hidden")}
         >
           <Image
-            src="/images/home/publishingSection/close.svg"
+            src="/images/common/close.svg"
             alt="X"
             width={30}
             height={30}
