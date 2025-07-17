@@ -7,7 +7,7 @@ import { useResizeObserver } from "../hooks/useResizeObserver";
 import { useStoryRingAnimation } from "../hooks/useStoryRingAnimation";
 import StoryCubeSlider from "./StoryCubeSlider";
 
-export default function InstaStoryCanvas({
+export default function StoryProfile({
   handleOpenStory,
   showModal,
   modalType,
@@ -55,7 +55,7 @@ export default function InstaStoryCanvas({
         />
       </div>
       {showModal && modalType === "story" && (
-        <StoryCubeSlider isClose={close}/>
+        <StoryCubeSlider isClose={close} />
       )}
     </div>
   );

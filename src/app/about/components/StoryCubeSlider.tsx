@@ -59,7 +59,6 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
               width: { duration: 0.5, ease: "easeOut" },
               height: { delay: 0.8, duration: 0.8, ease: "easeOut" },
             }}
-            className={clsx("overflow-hidden")}
           >
             <Swiper
               loop={true}
@@ -95,7 +94,7 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
             >
               <SwiperSlide
                 className={clsx(
-                  "relative flex items-center justify-center",
+                  "relative",
                   showFirstStory ? "bg-black" : "bg-gray100"
                 )}
               >
@@ -123,10 +122,45 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
                   </>
                 )}
               </SwiperSlide>
-              <SwiperSlide
-                className={clsx("bg-white flex items-center justify-center")}
-              >
-                asd
+              <SwiperSlide className={clsx("relative")}>
+                <StoryHead setIsVisible={setIsVisible} />
+                <video
+                  src="/videos/zoom.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls={false}
+                  className={clsx("w-full h-full object-cover")}
+                />
+              </SwiperSlide>
+              <SwiperSlide className={clsx("relative")}>
+                <StoryHead setIsVisible={setIsVisible} />
+                <video
+                  src="/videos/beer.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls={false}
+                  className={clsx(
+                    "w-full h-full object-cover object-[center_bottom]"
+                  )}
+                />
+              </SwiperSlide>
+              <SwiperSlide className={clsx("relative")}>
+                <StoryHead setIsVisible={setIsVisible} />
+                <video
+                  src="/videos/jogging.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls={false}
+                  className={clsx(
+                    "w-full h-full object-cover object-[50%_30%]"
+                  )}
+                />
               </SwiperSlide>
             </Swiper>
           </motion.div>
