@@ -3,20 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
-import { useResizeObserver } from "../hooks/useResizeObserver";
-import { useStoryRingAnimation } from "../hooks/useStoryRingAnimation";
-import StoryCubeSlider from "./StoryCubeSlider";
+import { useResizeObserver } from "../../hooks/useResizeObserver";
+import { useStoryRingAnimation } from "../../hooks/useStoryRingAnimation";
 
-export default function InstaStoryCanvas({
+export default function StoryProfile({
   handleOpenStory,
-  showModal,
-  modalType,
-  close,
 }: {
   handleOpenStory: () => void;
-  showModal: boolean;
-  modalType: "story" | "qr" | null;
-  close: () => void;
 }) {
   const [canvasWidth, setCanvasWidth] = useState(0);
 
@@ -54,9 +47,6 @@ export default function InstaStoryCanvas({
           )}
         />
       </div>
-      {showModal && modalType === "story" && (
-        <StoryCubeSlider isClose={close}/>
-      )}
     </div>
   );
 }

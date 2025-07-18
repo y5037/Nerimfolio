@@ -5,6 +5,17 @@ export interface TabProps {
   setIsTab: Dispatch<SetStateAction<"Intro" | "Builds" | "Connect">>;
 }
 
-export interface ModalProps {
-  isClose: () => void;
+export type ModalController = {
+  showModal: boolean;
+  isVisible: boolean;
+  open: () => void;
+  close: () => void;
+  handleExitComplete: () => void;
+};
+
+export interface SlideProps {
+  showProgress: boolean;
+  showFirstStory: boolean;
+  controller: ModalController;
+  setLoadingBar: Dispatch<SetStateAction<number>>;
 }
