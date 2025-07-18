@@ -100,7 +100,6 @@ module.exports = {
   },
   plugins: [
     require("tailwind-scrollbar-hide"),
-    require("@tailwindcss/line-clamp"),
     function ({ addUtilities, theme, variants }) {
       const modes = theme("writingMode");
       const newUtilities = {};

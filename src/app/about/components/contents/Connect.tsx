@@ -9,11 +9,11 @@ import {
 } from "../../styles";
 import { useRef } from "react";
 import Image from "next/image";
-import { useToastStore } from "@/store/useToastStore";
+import { useTooltipStore } from "@/store/useTooltipStore";
 
 export default function Connect() {
   const emailRef = useRef<HTMLParagraphElement | null>(null);
-  const { showToast } = useToastStore();
+  const { showToast } = useTooltipStore();
 
   const handleClickCopy = () => {
     showToast("복사가 완료되었습니다");
@@ -116,7 +116,9 @@ export default function Connect() {
             />
             <p>Velog</p>
           </li>
-          <li className={clsx("flex items-center gap-2.5 cursor-pointer")}>
+          <li
+            className={clsx("flex items-center w-fit gap-2.5 cursor-pointer")}
+          >
             <Image
               src="/images/about/resume.png"
               alt="velog"

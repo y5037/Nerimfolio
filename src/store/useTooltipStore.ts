@@ -1,13 +1,13 @@
 import { create } from "zustand";
 
-interface ToastState {
+interface TooltipState {
   message: string | null;
   show: boolean;
   showToast: (message: string) => void;
   hideToast: () => void;
 }
 
-export const useToastStore = create<ToastState>((set) => ({
+export const useTooltipStore = create<TooltipState>((set) => ({
   message: null,
   show: false,
   showToast: (message) => set({ message, show: true }),
