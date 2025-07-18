@@ -73,6 +73,7 @@ export default function StorySlide({
               muted
               loop
               playsInline
+              preload="auto"
               controls={false}
               className={clsx(
                 "w-full h-full object-cover",
@@ -87,7 +88,7 @@ export default function StorySlide({
           <StoryHead isClose={controller.handleExitComplete} $story2 />
           <div
             className={clsx(
-              "absolute bottom-14 right-3 left-3 font-light text-gray100 bg-red-500"
+              "absolute bottom-14 right-3 left-3 font-light text-gray100"
             )}
           >
             <StoryContent $story2 />
@@ -97,11 +98,9 @@ export default function StorySlide({
             muted
             loop
             playsInline
+            preload="auto"
             controls={false}
             className={clsx("w-full h-full object-cover")}
-            onError={(e) => {
-              console.error("Video load error:", e);
-            }}
           >
             <source src="/videos/zoom.mp4" type="video/mp4" />
           </video>
@@ -120,6 +119,7 @@ export default function StorySlide({
             muted
             loop
             playsInline
+            preload="auto"
             controls={false}
             className={clsx(
               "w-full h-full object-cover object-[center_bottom]"
@@ -142,6 +142,7 @@ export default function StorySlide({
             muted
             loop
             playsInline
+            preload="auto"
             controls={false}
             className={clsx("w-full h-full object-cover object-[50%_30%]")}
           >
