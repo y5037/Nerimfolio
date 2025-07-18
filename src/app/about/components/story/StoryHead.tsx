@@ -32,6 +32,8 @@ export default function StoryHead({
               src="/images/about/profile.jpg"
               alt="프로필"
               fill
+              loading="eager"
+              fetchPriority="high"
               style={{ objectFit: "cover" }}
             />
           </div>
@@ -57,6 +59,8 @@ export default function StoryHead({
           height={20}
           className={clsx("cursor-pointer")}
           onClick={isClose}
+          loading="eager"
+          fetchPriority="high"
         />
       </div>
     </>
