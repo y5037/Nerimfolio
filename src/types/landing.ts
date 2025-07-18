@@ -5,6 +5,7 @@ export type BaseProjectData = {
   title: string;
   description: string;
   diveInLink: string;
+  githubLink?: string;
 };
 
 export type FrontendData = BaseProjectData & {

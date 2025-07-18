@@ -16,6 +16,7 @@ export const frontendProject: FrontendData[] = [
     title: "albaform",
     description: "NEXT App Router · SSR/CSR 통합 기반 긱워커 취업 매칭 플랫폼",
     diveInLink: "https://albaform-one.vercel.app/",
+    githubLink: "https://github.com/Albaform/main_repo",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ export const frontendProject: FrontendData[] = [
     title: "Panda Market",
     description: "NEXT Page Router · CSR 기반 중고거래/커뮤니티 통합 플랫폼",
     diveInLink: "https://panda-market-y5037.vercel.app/",
+    githubLink: "https://github.com/y5037/PandaMarket",
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ export const frontendProject: FrontendData[] = [
     title: "Global Nomad",
     description: "NEXT App Router · CSR 기반 체험 예약 플랫폼",
     diveInLink: "https://globalnomad-t2.vercel.app/",
+    githubLink: "https://github.com/T2-GlobalNomad/GlobalNomad",
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ export const frontendProject: FrontendData[] = [
     title: "Taskify",
     description: "NEXT Page Router · CSR 기반 워크플로우 관리 서비스",
     diveInLink: "https://taskify-vert-rho.vercel.app/",
+    githubLink: "https://github.com/codeit-Taskify-12-1/taskify",
   },
   {
     id: 5,
@@ -56,5 +60,6 @@ export const frontendProject: FrontendData[] = [
     title: "Rolling",
     description: "REACT 기반 익명 롤링페이퍼 서비스",
     diveInLink: "https://rolling-three.vercel.app/",
+    githubLink: "https://github.com/y5037/Rolling",
   },
 ];

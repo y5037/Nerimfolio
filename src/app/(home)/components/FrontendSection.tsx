@@ -101,6 +101,14 @@ export default function FrontendSection() {
                     >
                       Dive In
                     </button>
+                    <button onClick={() => window.open(item.githubLink)}>
+                      <Image
+                        src="/images/common/customGithub.svg"
+                        alt="Github"
+                        width={30}
+                        height={30}
+                      />
+                    </button>
                   </div>
                 </div>
               </div>
