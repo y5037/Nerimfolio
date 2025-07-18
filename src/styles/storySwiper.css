@@ -1,8 +1,8 @@
 .swiper-pagination-bullet {
-  width: 8px !important;
-  height: 8px !important;
+  width: 10px !important;
+  height: 4px !important;
   border-radius: 0 !important;
-  background: var(--black) !important;
+  background: rgba(0, 0, 0, 0.5) !important;
   opacity: 1 !important;
 }
 
@@ -13,6 +13,6 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--white) !important;
+  background: rgba(255, 255, 255, 0.5) !important;
   border: 1px solid var(--black) !important;
 }

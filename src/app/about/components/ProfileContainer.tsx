@@ -5,9 +5,9 @@ import { profileButton } from "../styles";
 import { useModalController } from "@/hooks/useModalController";
 import QRCodeModal from "./QRCodeModal";
 import { useKakaoShare } from "@/hooks/useKakaoShare";
-import StoryProfile from "./StoryProfile";
+import StoryProfile from "./story/StoryProfile";
 import { useState } from "react";
-import StoryCubeSlider from "./StoryCubeSlider";
+import StoryModal from "./story/StoryModal";
 
 export default function ProfileContainer() {
   const [modalType, setModalType] = useState<"story" | "qr" | null>(null);
@@ -31,7 +31,7 @@ export default function ProfileContainer() {
       {qrModal.showModal && modalType === "qr" ? (
         <QRCodeModal controller={qrModal} />
       ) : storyModal.showModal && modalType === "story" ? (
-        <StoryCubeSlider controller={storyModal} />
+        <StoryModal controller={storyModal} />
       ) : (
         ""
       )}

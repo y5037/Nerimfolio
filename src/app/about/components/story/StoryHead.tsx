@@ -1,7 +1,19 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-export default function StoryHead({ isClose }: { isClose: () => void }) {
+export default function StoryHead({
+  isClose,
+  $story1,
+  $story2,
+  $story3,
+  $story4,
+}: {
+  isClose: () => void;
+  $story1?: boolean;
+  $story2?: boolean;
+  $story3?: boolean;
+  $story4?: boolean;
+}) {
   return (
     <>
       <div className={clsx("absolute inset-0 bg-[rgba(0,0,0,.4)]")} />
@@ -13,7 +25,7 @@ export default function StoryHead({ isClose }: { isClose: () => void }) {
         <div className={clsx("flex items-center")}>
           <div
             className={clsx(
-              "relative w-[28px] h-[28px] rounded-full overflow-hidden border border-solid border-white"
+              "relative w-[30px] h-[30px] rounded-full overflow-hidden border border-solid border-white"
             )}
           >
             <Image
@@ -23,7 +35,20 @@ export default function StoryHead({ isClose }: { isClose: () => void }) {
               style={{ objectFit: "cover" }}
             />
           </div>
-          <p className={clsx("ml-2 font-light text-sm")}>윤 혜림</p>
+          <div>
+            <p className={clsx("ml-2 font-light text-sm")}>윤 혜림</p>
+            <p className={clsx("ml-2 font-light text-sm text-gray200")}>
+              {$story1
+                ? "am 10:00 ~ pm 10:00 (with a short break in the evening)"
+                : $story2
+                ? "pm 4:00 - pm 5:00"
+                : $story3
+                ? "pm 6:00 - pm 7:30"
+                : $story4
+                ? "am 6:30 - am 8:00"
+                : ""}
+            </p>
+          </div>
         </div>
         <Image
           src="/images/common/close.svg"

@@ -12,3 +12,10 @@ export type ModalController = {
   close: () => void;
   handleExitComplete: () => void;
 };
+
+export interface SlideProps {
+  showProgress: boolean;
+  showFirstStory: boolean;
+  controller: ModalController;
+  setLoadingBar: Dispatch<SetStateAction<number>>;
+}
