@@ -126,6 +126,28 @@ export default function StorySlide({
           </video>
         </SwiperSlide>
         <SwiperSlide className={clsx("relative")}>
+          <StoryHead isClose={controller.handleExitComplete} $story3 />
+          <div
+            className={clsx(
+              "absolute top-[48%] right-3 left-3 font-light text-gray100 text-right"
+            )}
+          >
+            <StoryContent $story3 />
+          </div>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls={false}
+            className={clsx(
+              "w-full h-full object-cover object-[center_bottom]"
+            )}
+          >
+            <source src="/videos/beer.mp4" type="video/mp4" />
+          </video>
+        </SwiperSlide>
+        <SwiperSlide className={clsx("relative")}>
           <StoryHead isClose={controller.handleExitComplete} $story4 />
           <div
             className={clsx(
