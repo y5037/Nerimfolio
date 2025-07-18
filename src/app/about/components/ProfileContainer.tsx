@@ -7,26 +7,35 @@ import QRCodeModal from "./QRCodeModal";
 import { useKakaoShare } from "@/hooks/useKakaoShare";
 import StoryProfile from "./StoryProfile";
 import { useState } from "react";
+import StoryCubeSlider from "./StoryCubeSlider";
 
 export default function ProfileContainer() {
   const [modalType, setModalType] = useState<"story" | "qr" | null>(null);
 
-  const { showModal, open, close } = useModalController();
   const { handleShare } = useKakaoShare();
+  const storyModal = useModalController();
+  const qrModal = useModalController();
 
   const handleOpenStory = () => {
-    open();
+    storyModal.open();
     setModalType("story");
   };
 
   const handleOpenQR = () => {
-    open();
+    qrModal.open();
     setModalType("qr");
   };
 
   return (
     <>
-      {showModal && modalType === "qr" && <QRCodeModal isClose={close} />}
+      {qrModal.showModal && modalType === "qr" ? (
+        <QRCodeModal controller={qrModal} />
+      ) : storyModal.showModal && modalType === "story" ? (
+        <StoryCubeSlider controller={storyModal} />
+      ) : (
+        ""
+      )}
+
       <div className={clsx("flex my-10 items-center")}>
         <Image
           src="/images/about/back.png"
@@ -41,12 +50,7 @@ export default function ProfileContainer() {
         </p>
       </div>
       <div className={clsx("flex")}>
-        <StoryProfile
-          handleOpenStory={handleOpenStory}
-          showModal={showModal}
-          modalType={modalType}
-          close={close}
-        />
+        <StoryProfile handleOpenStory={handleOpenStory} modalType={modalType} />
         <div
           className={clsx(
             "ml-16 flex flex-col justify-around",

@@ -1,26 +1,21 @@
+import { ModalController } from "@/app/about/types";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { Dispatch, ReactNode, SetStateAction } from "react";
+import { ReactNode } from "react";
 
 export default function FadeAnimate({
   children,
-  isClose,
+  controller,
   $qrcode,
-  isVisible,
-  setIsVisible,
 }: {
   children: ReactNode;
-  isClose: () => void;
+  controller: ModalController;
   $qrcode?: boolean;
-  isVisible: boolean;
-  setIsVisible: Dispatch<SetStateAction<boolean>>;
 }) {
-  const handleRequestClose = () => {
-    setIsVisible(false);
-  };
+  const { isVisible, close, handleExitComplete } = controller;
 
   return (
-    <AnimatePresence onExitComplete={isClose}>
+    <AnimatePresence onExitComplete={close}>
       {isVisible && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -29,7 +24,7 @@ export default function FadeAnimate({
           className={clsx(
             "fixed inset-0 bg-[rgba(0,0,0,0.5)] z-10 flex justify-center items-center cursor-auto"
           )}
-          onClick={handleRequestClose}
+          onClick={handleExitComplete}
         >
           <motion.div
             key="modal-content"

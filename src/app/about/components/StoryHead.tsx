@@ -1,16 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
 
-export default function StoryHead({
-  setIsVisible,
-}: {
-  setIsVisible: Dispatch<SetStateAction<boolean>>;
-}) {
-  const handleModalClose = () => {
-    setIsVisible(false);
-  };
-
+export default function StoryHead({ isClose }: { isClose: () => void }) {
   return (
     <>
       <div className={clsx("absolute inset-0 bg-[rgba(0,0,0,.4)]")} />
@@ -40,7 +31,7 @@ export default function StoryHead({
           width={20}
           height={20}
           className={clsx("cursor-pointer")}
-          onClick={handleModalClose}
+          onClick={isClose}
         />
       </div>
     </>

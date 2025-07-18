@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { EffectCube, Pagination, Autoplay } from "swiper/modules";
-import { ModalProps } from "../types";
+import { ModalController } from "../types";
 import FadeAnimate from "@/components/modal/FadeAnimate";
 import "swiper/css";
 import "swiper/css/effect-cube";
@@ -17,9 +17,12 @@ import Image from "next/image";
 import StoryHead from "./StoryHead";
 import StoryContent from "./StoryContent";
 
-export default function StoryCubeSlider({ isClose }: ModalProps) {
+export default function StoryCubeSlider({
+  controller,
+}: {
+  controller: ModalController;
+}) {
   const [loadingBar, setLoadingBar] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
   const [storyState, setStoryState] = useState({
     showProgress: false,
     showFirstStory: false,
@@ -43,11 +46,7 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
   const { showProgress, showFirstStory } = storyState;
 
   return (
-    <FadeAnimate
-      isClose={isClose}
-      isVisible={isVisible}
-      setIsVisible={setIsVisible}
-    >
+    <FadeAnimate controller={controller}>
       <div className={clsx("flex items-center")}>
         <div className={clsx("relative")}>
           {showProgress && <StoryProgressBar loadingBar={loadingBar} />}
@@ -100,7 +99,7 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
               >
                 {showFirstStory && (
                   <>
-                    <StoryHead setIsVisible={setIsVisible} />
+                    <StoryHead isClose={controller.handleExitComplete} />
                     {showProgress && (
                       <div
                         className={clsx(
@@ -123,7 +122,7 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
                 )}
               </SwiperSlide>
               <SwiperSlide className={clsx("relative")}>
-                <StoryHead setIsVisible={setIsVisible} />
+                <StoryHead isClose={controller.handleExitComplete} />
                 <video
                   src="/videos/zoom.mp4"
                   autoPlay
@@ -135,7 +134,7 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
                 />
               </SwiperSlide>
               <SwiperSlide className={clsx("relative")}>
-                <StoryHead setIsVisible={setIsVisible} />
+                <StoryHead isClose={controller.handleExitComplete} />
                 <video
                   src="/videos/beer.mp4"
                   autoPlay
@@ -149,7 +148,7 @@ export default function StoryCubeSlider({ isClose }: ModalProps) {
                 />
               </SwiperSlide>
               <SwiperSlide className={clsx("relative")}>
-                <StoryHead setIsVisible={setIsVisible} />
+                <StoryHead isClose={controller.handleExitComplete} />
                 <video
                   src="/videos/jogging.mp4"
                   autoPlay

@@ -5,18 +5,13 @@ import Image from "next/image";
 import clsx from "clsx";
 import { useResizeObserver } from "../hooks/useResizeObserver";
 import { useStoryRingAnimation } from "../hooks/useStoryRingAnimation";
-import StoryCubeSlider from "./StoryCubeSlider";
 
 export default function StoryProfile({
   handleOpenStory,
-  showModal,
   modalType,
-  close,
 }: {
   handleOpenStory: () => void;
-  showModal: boolean;
   modalType: "story" | "qr" | null;
-  close: () => void;
 }) {
   const [canvasWidth, setCanvasWidth] = useState(0);
 
@@ -54,9 +49,6 @@ export default function StoryProfile({
           )}
         />
       </div>
-      {showModal && modalType === "story" && (
-        <StoryCubeSlider isClose={close} />
-      )}
     </div>
   );
 }

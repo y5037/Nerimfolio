@@ -2,10 +2,17 @@ import { useEffect, useState } from "react";
 
 export const useModalController = (defaultValue = false) => {
   const [showModal, setShowModal] = useState(defaultValue);
+  const [isVisible, setIsVisible] = useState(true);
 
-  const open = () => setShowModal(true);
+  const open = () => {
+    setShowModal(true);
+    setIsVisible(true);
+  };
   const close = () => setShowModal(false);
-  const toggle = () => setShowModal((prev) => !prev);
+
+  const handleExitComplete = () => {
+    setIsVisible(false);
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -32,5 +39,5 @@ export const useModalController = (defaultValue = false) => {
     };
   }, [showModal]);
 
-  return { showModal, open, close, toggle };
+  return { showModal, isVisible, open, close, handleExitComplete };
 };
