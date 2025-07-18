@@ -69,6 +69,7 @@ export default function StorySlide({
               </div>
             )}
             <video
+              src="/videos/family.mp4"
               autoPlay
               muted
               loop
@@ -78,12 +79,10 @@ export default function StorySlide({
                 "w-full h-full object-cover",
                 showFirstStory ? "opacity-100" : "opacity-0 pointer-events-none"
               )}
-            >
-              <source src="/videos/family.mp4" type="video/mp4" />
-            </video>
+            />
           </>
         </SwiperSlide>
-        {/* <SwiperSlide className={clsx("relative")}>
+        <SwiperSlide className={clsx("relative")}>
           <StoryHead isClose={controller.handleExitComplete} $story2 />
           <div
             className={clsx(
@@ -93,37 +92,14 @@ export default function StorySlide({
             <StoryContent $story2 />
           </div>
           <video
+            src="/videos/zoom.mov"
             autoPlay
             muted
             loop
             playsInline
             controls={false}
             className={clsx("w-full h-full object-cover")}
-          >
-            <source src="/videos/zoom.mp4" type="video/mp4" />
-          </video>
-        </SwiperSlide> */}
-        <SwiperSlide className={clsx("relative")}>
-          <StoryHead isClose={controller.handleExitComplete} $story3 />
-          <div
-            className={clsx(
-              "absolute top-[48%] right-3 left-3 font-light text-gray100 text-right"
-            )}
-          >
-            <StoryContent $story3 />
-          </div>
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls={false}
-            className={clsx(
-              "w-full h-full object-cover object-[center_bottom]"
-            )}
-          >
-            <source src="/videos/beer.mp4" type="video/mp4" />
-          </video>
+          />
         </SwiperSlide>
         <SwiperSlide className={clsx("relative")}>
           <StoryHead isClose={controller.handleExitComplete} $story3 />
@@ -135,6 +111,7 @@ export default function StorySlide({
             <StoryContent $story3 />
           </div>
           <video
+            src="/videos/beer.mp4"
             autoPlay
             muted
             loop
@@ -143,9 +120,7 @@ export default function StorySlide({
             className={clsx(
               "w-full h-full object-cover object-[center_bottom]"
             )}
-          >
-            <source src="/videos/beer.mp4" type="video/mp4" />
-          </video>
+          />
         </SwiperSlide>
         <SwiperSlide className={clsx("relative")}>
           <StoryHead isClose={controller.handleExitComplete} $story4 />
@@ -157,15 +132,14 @@ export default function StorySlide({
             <StoryContent $story4 />
           </div>
           <video
+            src="/videos/jogging.mp4"
             autoPlay
             muted
             loop
             playsInline
             controls={false}
             className={clsx("w-full h-full object-cover object-[50%_30%]")}
-          >
-            <source src="/videos/jogging.mp4" type="video/mp4" />
-          </video>
+          />
         </SwiperSlide>
       </Swiper>
     </>
