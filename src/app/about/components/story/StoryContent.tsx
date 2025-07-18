@@ -57,15 +57,18 @@ export default function StoryContent({
             >
               매주 금요일 오후 4시,
             </span>
-            <span className="max-md:block"> 우리는 다시 줌으로 모였다.</span>
-            <br className="max-md:hidden" />
+            <span className={clsx("max-md:block")}>
+              {" "}
+              우리는 다시 줌으로 모였다.
+            </span>
+            <br className={clsx("max-md:hidden")} />
             각자 작업한 내용을 공유하고, 함께 이슈를 해결하기 위해.
             <br />
             프로젝트는 느리고 시행착오의 연속이었지만,
             <br />
           </p>
           <p className={clsx("mt-3 text-lg", "max-md:text-sm")}>
-            <span className="block">아무렴 어때!</span>
+            <span className={clsx("block")}>아무렴 어때!</span>
             분명하게 앞으로 나아갔고 결국 결과물도 만들어냈다.
           </p>
         </>
@@ -110,7 +113,9 @@ export default function StoryContent({
           </p>
           <p className={clsx("mt-3 text-lg", "max-md:text-sm")}>
             돌아와서 코드를 열어보면,
-            <span className="block">거짓말처럼 금방 해결될 때가 많다.</span>
+            <span className={clsx("block")}>
+              거짓말처럼 금방 해결될 때가 많다.
+            </span>
           </p>
         </>
       ) : (
