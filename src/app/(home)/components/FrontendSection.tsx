@@ -101,7 +101,13 @@ export default function FrontendSection() {
                     >
                       Dive In
                     </button>
-                    <button onClick={() => window.open(item.githubLink)}>
+                    <button
+                      onClick={() => window.open(item.githubLink)}
+                      className={clsx(
+                        "rounded",
+                        "max-lg900:bg-[rgba(255,255,255.3)] max-lg900:h-9 max-lg900:px-1 max-lg900:order-first"
+                      )}
+                    >
                       <Image
                         src="/images/common/customGithub.svg"
                         alt="Github"
