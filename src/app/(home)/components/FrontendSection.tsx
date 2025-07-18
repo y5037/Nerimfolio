@@ -89,7 +89,9 @@ export default function FrontendSection() {
                   <div className={clsx("flex items-center gap-4")}>
                     <button
                       className={frontendSectionButton}
-                      onClick={() => router.push(item.exploreLink)}
+                      onClick={() =>
+                        router.push(`/projects/frontend/${item.id}`)
+                      }
                     >
                       Explore
                     </button>

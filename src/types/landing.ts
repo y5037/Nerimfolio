@@ -4,7 +4,6 @@ export type BaseProjectData = {
   keyword: string[];
   title: string;
   description: string;
-  exploreLink: string;
   diveInLink: string;
 };
 
@@ -16,5 +15,3 @@ export type FrontendData = BaseProjectData & {
 export type PublishingData = BaseProjectData & {
   logoImg: string;
 };
-
-
