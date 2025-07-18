@@ -73,7 +73,6 @@ export default function StorySlide({
               muted
               loop
               playsInline
-              preload="auto"
               controls={false}
               className={clsx(
                 "w-full h-full object-cover",
@@ -84,7 +83,7 @@ export default function StorySlide({
             </video>
           </>
         </SwiperSlide>
-        <SwiperSlide className={clsx("relative")}>
+        {/* <SwiperSlide className={clsx("relative")}>
           <StoryHead isClose={controller.handleExitComplete} $story2 />
           <div
             className={clsx(
@@ -98,13 +97,12 @@ export default function StorySlide({
             muted
             loop
             playsInline
-            preload="auto"
             controls={false}
             className={clsx("w-full h-full object-cover")}
           >
             <source src="/videos/zoom.mp4" type="video/mp4" />
           </video>
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide className={clsx("relative")}>
           <StoryHead isClose={controller.handleExitComplete} $story3 />
           <div
@@ -119,7 +117,6 @@ export default function StorySlide({
             muted
             loop
             playsInline
-            preload="auto"
             controls={false}
             className={clsx(
               "w-full h-full object-cover object-[center_bottom]"
@@ -142,7 +139,6 @@ export default function StorySlide({
             muted
             loop
             playsInline
-            preload="auto"
             controls={false}
             className={clsx("w-full h-full object-cover object-[50%_30%]")}
           >
