@@ -57,36 +57,37 @@ export default function StorySlide({
               : "bg-[repeating-linear-gradient(-45deg,_#333_0px,_#333_16px,_#fff_16px,_#fff_21px)] animate-filmMove"
           )}
         >
-          {showFirstStory && (
-            <>
-              <StoryHead isClose={controller.handleExitComplete} $story1 />
-              {showProgress && (
-                <div
-                  className={clsx(
-                    "absolute bottom-14 right-3 left-3 font-light text-gray100"
-                  )}
-                >
-                  <StoryContent $story1 />
-                </div>
-              )}
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls={false}
-                className={clsx("w-full h-full object-cover")}
+          <>
+            <StoryHead isClose={controller.handleExitComplete} $story1 />
+            {showProgress && (
+              <div
+                className={clsx(
+                  "absolute bottom-14 right-3 left-3 font-light text-gray100"
+                )}
               >
-                <source src="/videos/family.mp4" type="video/mp4" />
-              </video>
-            </>
-          )}
+                <StoryContent $story1 />
+              </div>
+            )}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={false}
+              className={clsx(
+                "w-full h-full object-cover",
+                showFirstStory ? "opacity-100" : "opacity-0 pointer-events-none"
+              )}
+            >
+              <source src="/videos/family.mp4" type="video/mp4" />
+            </video>
+          </>
         </SwiperSlide>
         <SwiperSlide className={clsx("relative")}>
           <StoryHead isClose={controller.handleExitComplete} $story2 />
           <div
             className={clsx(
-              "absolute bottom-14 right-3 left-3 font-light text-gray100"
+              "absolute bottom-14 right-3 left-3 font-light text-gray100 bg-red-500"
             )}
           >
             <StoryContent $story2 />
@@ -98,6 +99,9 @@ export default function StorySlide({
             playsInline
             controls={false}
             className={clsx("w-full h-full object-cover")}
+            onError={(e) => {
+              console.error("Video load error:", e);
+            }}
           >
             <source src="/videos/zoom.mp4" type="video/mp4" />
           </video>
