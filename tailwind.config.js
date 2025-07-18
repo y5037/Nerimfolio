@@ -83,6 +83,10 @@ module.exports = {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: " translateX(0%)" },
         },
+        filmMove: {
+          "0%": { backgroundPosition: "0 0" },
+          "100%": { backgroundPosition: "200px 0" },
+        },
       },
       animation: {
         scrollAni: "scrollAni 1s ease-in-out infinite",
@@ -91,6 +95,7 @@ module.exports = {
         popupShow: "popupShow 0.3s forwards ease-out",
         popupHide: "popupHide 0.3s forwards ease-in",
         progress: "progress 4s linear forwards",
+        filmMove: "filmMove 3s linear infinite",
       },
     },
     fontFamily: {
