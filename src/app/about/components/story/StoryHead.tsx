@@ -22,10 +22,10 @@ export default function StoryHead({
           "absolute top-3 left-3 right-3 flex items-center justify-between z-10"
         )}
       >
-        <div className={clsx("flex items-center")}>
+        <div className={clsx("flex items-start")}>
           <div
             className={clsx(
-              "relative w-[30px] h-[30px] rounded-full overflow-hidden border border-solid border-white"
+              "relative w-[30px] min-w-[30px] h-[30px] rounded-full overflow-hidden border border-solid border-white"
             )}
           >
             <Image
@@ -37,9 +37,9 @@ export default function StoryHead({
           </div>
           <div>
             <p className={clsx("ml-2 font-light text-sm")}>윤 혜림</p>
-            <p className={clsx("ml-2 font-light text-sm text-gray200")}>
+            <p className={clsx("ml-2 font-light text-sm text-gray200 mr-1")}>
               {$story1
-                ? "am 10:00 ~ pm 10:00 (with a short break in the evening)"
+                ? "am 10:00 - pm 10:00 (with a short break in the evening)"
                 : $story2
                 ? "pm 4:00 - pm 5:00"
                 : $story3
