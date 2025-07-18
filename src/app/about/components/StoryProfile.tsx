@@ -8,10 +8,8 @@ import { useStoryRingAnimation } from "../hooks/useStoryRingAnimation";
 
 export default function StoryProfile({
   handleOpenStory,
-  modalType,
 }: {
   handleOpenStory: () => void;
-  modalType: "story" | "qr" | null;
 }) {
   const [canvasWidth, setCanvasWidth] = useState(0);
 

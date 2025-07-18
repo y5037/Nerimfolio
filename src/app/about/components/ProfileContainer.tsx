@@ -50,7 +50,7 @@ export default function ProfileContainer() {
         </p>
       </div>
       <div className={clsx("flex")}>
-        <StoryProfile handleOpenStory={handleOpenStory} modalType={modalType} />
+        <StoryProfile handleOpenStory={handleOpenStory} />
         <div
           className={clsx(
             "ml-16 flex flex-col justify-around",
