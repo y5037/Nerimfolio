@@ -42,10 +42,19 @@ export default function StoryModal({
   return (
     <FadeAnimate controller={controller}>
       <div className={clsx("flex items-center")}>
+        {!showFirstStory && (
+          <Image
+            src="/images/about/video.png"
+            alt="video"
+            width={35}
+            height={35}
+            className={clsx("mr-5")}
+          />
+        )}
         <div className={clsx("relative")}>
           {showProgress && <StoryProgressBar loadingBar={loadingBar} />}
           <motion.div
-            initial={{ width: 0, height: 4, opacity: 0 }}
+            initial={{ width: 0, height: 6, opacity: 0 }}
             animate={{ width: size.width, height: size.height, opacity: 1 }}
             transition={{
               opacity: { duration: 0.2 },
@@ -61,15 +70,6 @@ export default function StoryModal({
             />
           </motion.div>
         </div>
-        {!showFirstStory && (
-          <Image
-            src="/images/about/video.png"
-            alt="video"
-            width={40}
-            height={40}
-            className={clsx("ml-5 mt-[-9.5px] scale-x-[-1]")}
-          />
-        )}
       </div>
     </FadeAnimate>
   );

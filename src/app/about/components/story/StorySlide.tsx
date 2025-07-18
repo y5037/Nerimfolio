@@ -52,7 +52,9 @@ export default function StorySlide({
         <SwiperSlide
           className={clsx(
             "relative",
-            showFirstStory ? "bg-black" : "bg-gray100"
+            showFirstStory
+              ? "bg-black"
+              : "bg-[repeating-linear-gradient(-45deg,_#333_0px,_#333_16px,_#fff_16px,_#fff_21px)] animate-filmMove"
           )}
         >
           {showFirstStory && (

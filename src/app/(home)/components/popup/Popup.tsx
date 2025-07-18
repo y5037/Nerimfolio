@@ -4,8 +4,11 @@ import { useClickOutside } from "./hooks/useClickOutside";
 import clsx from "clsx";
 import { popupButton, popupKeyword } from "../../styles";
 import ThumbnailImg from "./ThumbnailImg";
+import { useRouter } from "next/navigation";
 
 export default function Popup({ onClose, popupData }: PopupProps) {
+  const router = useRouter();
+
   const { ref, handleAnimationEnd, isClosing, setIsClosing } =
     useClickOutside(onClose);
 
@@ -65,7 +68,12 @@ export default function Popup({ onClose, popupData }: PopupProps) {
           <p className={clsx("my-5")}>{popupData.description}</p>
         </div>
         <div className={clsx("flex items-center gap-4")}>
-          <button className={popupButton}>Explore</button>
+          <button
+            className={popupButton}
+            onClick={() => router.push(`/projects/publishing/${popupData.id}`)}
+          >
+            Explore
+          </button>
           <button
             className={popupButton}
             onClick={() => window.open(popupData.diveInLink)}
