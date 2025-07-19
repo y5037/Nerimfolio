@@ -1,26 +1,29 @@
 "use client";
 
 import { ReactNode } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSelectedLayoutSegments } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 
 export default function TransitionLayout({
   children,
-  $landing,
 }: {
   children: ReactNode;
-  $landing?: boolean;
 }) {
+  const segments = useSelectedLayoutSegments();
+  const key = segments.length > 0 ? segments[0] : "root";
+
   const pathname = usePathname();
+
+  const isLanding = pathname === "/";
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        key={pathname}
-        initial={$landing ? { opacity: 0 } : { opacity: 0, y: -20 }}
-        animate={$landing ? { opacity: 1 } : { opacity: 1, y: 0 }}
-        exit={$landing ? { opacity: 0 } : { opacity: 0, y: -10 }}
+        key={key}
+        initial={isLanding ? { opacity: 0 } : { opacity: 0, y: -20 }}
+        animate={isLanding ? { opacity: 1 } : { opacity: 1, y: 0 }}
+        exit={isLanding ? { opacity: 0 } : { opacity: 0, y: -10 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         className={clsx("min-h-full")}
       >
