@@ -34,7 +34,7 @@ export default function Navigation() {
       </div>
       <div
         className={clsx(
-          "fixed right-[0] writing-mode-vertical w-20 h-full bg-[rgba(0,0,0,0.2)] flex pt-[100px] gap-6 transition-transform duration-500 ease-in-out z-10 text-gray-300",
+          "fixed right-[0] writing-mode-vertical w-20 h-full bg-[rgba(0,0,0,0.2)] flex pt-[100px] gap-6 transition-transform duration-500 ease-in-out z-[100] text-gray-300",
           isShowMenu ? "max-md:translate-x-0" : "max-md:translate-x-full"
         )}
       >
