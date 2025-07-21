@@ -35,7 +35,7 @@ export default async function ProjectDetail({
 }: {
   params: Promise<{ type: string; id: string }>;
 }) {
-  const { type, id } = await params;
+  const { type } = await params;
 
   if (type !== "frontend" && type !== "publishing") {
     notFound();
