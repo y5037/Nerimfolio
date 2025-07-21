@@ -69,7 +69,7 @@ export default function StorySlide({
               </div>
             )}
             <video
-              src="/videos/family.mp4"
+              src="/videos/about/family.mp4"
               autoPlay
               muted
               loop
@@ -92,7 +92,7 @@ export default function StorySlide({
             <StoryContent $story2 />
           </div>
           <video
-            src="/videos/zoom.mov"
+            src="/videos/about/zoom.mov"
             autoPlay
             muted
             loop
@@ -111,7 +111,7 @@ export default function StorySlide({
             <StoryContent $story3 />
           </div>
           <video
-            src="/videos/beer.mp4"
+            src="/videos/about/beer.mp4"
             autoPlay
             muted
             loop
@@ -132,7 +132,7 @@ export default function StorySlide({
             <StoryContent $story4 />
           </div>
           <video
-            src="/videos/jogging.mp4"
+            src="/videos/about/jogging.mp4"
             autoPlay
             muted
             loop
