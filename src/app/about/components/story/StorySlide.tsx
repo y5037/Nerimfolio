@@ -57,29 +57,30 @@ export default function StorySlide({
               : "bg-[repeating-linear-gradient(-45deg,_#333_0px,_#333_16px,_#fff_16px,_#fff_21px)] animate-filmMove"
           )}
         >
-          {showFirstStory && (
-            <>
-              <StoryHead isClose={controller.handleExitComplete} $story1 />
-              {showProgress && (
-                <div
-                  className={clsx(
-                    "absolute bottom-14 right-3 left-3 font-light text-gray100"
-                  )}
-                >
-                  <StoryContent $story1 />
-                </div>
+          <>
+            <StoryHead isClose={controller.handleExitComplete} $story1 />
+            {showProgress && (
+              <div
+                className={clsx(
+                  "absolute bottom-14 right-3 left-3 font-light text-gray100"
+                )}
+              >
+                <StoryContent $story1 />
+              </div>
+            )}
+            <video
+              src="/videos/about/family.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={false}
+              className={clsx(
+                "w-full h-full object-cover",
+                showFirstStory ? "opacity-100" : "opacity-0 pointer-events-none"
               )}
-              <video
-                src="/videos/family.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls={false}
-                className={clsx("w-full h-full object-cover")}
-              />
-            </>
-          )}
+            />
+          </>
         </SwiperSlide>
         <SwiperSlide className={clsx("relative")}>
           <StoryHead isClose={controller.handleExitComplete} $story2 />
@@ -91,7 +92,7 @@ export default function StorySlide({
             <StoryContent $story2 />
           </div>
           <video
-            src="/videos/zoom.mp4"
+            src="/videos/about/zoom.mov"
             autoPlay
             muted
             loop
@@ -110,7 +111,7 @@ export default function StorySlide({
             <StoryContent $story3 />
           </div>
           <video
-            src="/videos/beer.mp4"
+            src="/videos/about/beer.mp4"
             autoPlay
             muted
             loop
@@ -131,7 +132,7 @@ export default function StorySlide({
             <StoryContent $story4 />
           </div>
           <video
-            src="/videos/jogging.mp4"
+            src="/videos/about/jogging.mp4"
             autoPlay
             muted
             loop

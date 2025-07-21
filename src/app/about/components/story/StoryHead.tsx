@@ -19,7 +19,7 @@ export default function StoryHead({
       <div className={clsx("absolute inset-0 bg-[rgba(0,0,0,.4)]")} />
       <div
         className={clsx(
-          "absolute top-3 left-3 right-3 flex items-center justify-between z-10"
+          "absolute top-3 left-3 right-3 flex items-start justify-between z-10"
         )}
       >
         <div className={clsx("flex items-start")}>
@@ -32,6 +32,8 @@ export default function StoryHead({
               src="/images/about/profile.jpg"
               alt="프로필"
               fill
+              loading="eager"
+              fetchPriority="high"
               style={{ objectFit: "cover" }}
             />
           </div>
@@ -57,6 +59,8 @@ export default function StoryHead({
           height={20}
           className={clsx("cursor-pointer")}
           onClick={isClose}
+          loading="eager"
+          fetchPriority="high"
         />
       </div>
     </>

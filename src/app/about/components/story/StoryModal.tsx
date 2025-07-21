@@ -61,6 +61,7 @@ export default function StoryModal({
               width: { duration: 0.5, ease: "easeOut" },
               height: { delay: 0.8, duration: 0.8, ease: "easeOut" },
             }}
+            className={clsx(!showProgress && "overflow-hidden")}
           >
             <StorySlide
               showProgress={showProgress}
