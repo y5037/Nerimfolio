@@ -34,6 +34,7 @@ export default function CustomVideoPlayer() {
           src="/videos/projects/test.mp4"
           onTimeUpdate={handleTimeUpdate}
           muted
+          poster="/images/projects/detail/frontend/thumbnail/albaform.png"
           controls={isFullscreen}
           className={clsx("w-full h-full object-cover")}
         />
