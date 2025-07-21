@@ -80,10 +80,18 @@ export const useVideoController = () => {
       if (video.requestFullscreen) {
         video.requestFullscreen();
         // 모바일 Safari (iOS)
-      } else if ((video as any).webkitEnterFullscreen) {
-        (video as any).webkitEnterFullscreen();
-      } else if ((video as any).mozRequestFullScreen) {
-        (video as any).mozRequestFullScreen();
+      } else if ("webkitEnterFullscreen" in video) {
+        (
+          video as HTMLVideoElement & {
+            webkitEnterFullscreen: () => void;
+          }
+        ).webkitEnterFullscreen();
+      } else if ("mozRequestFullScreen" in video) {
+        (
+          video as HTMLVideoElement & {
+            mozRequestFullScreen: () => void;
+          }
+        ).mozRequestFullScreen();
       }
     }
     syncProgress();
