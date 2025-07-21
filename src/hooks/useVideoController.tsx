@@ -67,9 +67,8 @@ export const useVideoController = () => {
   };
 
   const toggleFullscreen = () => {
-    const container = containerRef.current;
     const video = videoRef.current;
-    if (!container || !video) return;
+    if (!video) return;
 
     setIsPlaying(!video.paused);
     setProgress(video.currentTime);
@@ -77,7 +76,15 @@ export const useVideoController = () => {
     if (document.fullscreenElement) {
       document.exitFullscreen();
     } else {
-      video.requestFullscreen();
+      // 데스크탑 표준 전체화면
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+        // 모바일 Safari (iOS)
+      } else if ((video as any).webkitEnterFullscreen) {
+        (video as any).webkitEnterFullscreen();
+      } else if ((video as any).mozRequestFullScreen) {
+        (video as any).mozRequestFullScreen();
+      }
     }
     syncProgress();
   };
@@ -89,8 +96,13 @@ export const useVideoController = () => {
     };
 
     document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange); // iOS Safari 대응
     return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener(
+        "webkitfullscreenchange",
+        handleFullscreenChange
+      );
     };
   }, []);
 
