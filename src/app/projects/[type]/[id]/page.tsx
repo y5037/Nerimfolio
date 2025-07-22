@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import FrontendContents from "./components/frontend/Contents";
-import PublishingContents from "./components/publishing/Contents";
+import FrontendDetail from "./components/frontend/DetailPage";
+import PublishingDetail from "./components/publishing/DetailPage";
 import NotFound from "@/app/not-found";
 import { frontendProject } from "@/data/home/frontend";
 import { publishingProject } from "@/data/home/publishing";
@@ -43,9 +43,9 @@ export default async function ProjectDetail({
   return (
     <>
       {type === "frontend" ? (
-        <FrontendContents />
+        <FrontendDetail />
       ) : type === "publishing" ? (
-        <PublishingContents />
+        <PublishingDetail />
       ) : (
         <NotFound />
       )}
