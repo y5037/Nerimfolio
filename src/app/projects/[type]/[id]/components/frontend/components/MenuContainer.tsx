@@ -15,7 +15,8 @@ export default function MenuContainer() {
       <ul className={clsx("relative")}>
         <div
           className={clsx(
-            "absolute left-0 w-full h-[48px] bg-black700 rounded-xl transition-transform duration-300"
+            "absolute left-0 w-full h-[48px] bg-black700 rounded-xl transition-transform duration-300",
+            "max-lg:h-[77px]"
           )}
           style={{ transform: `translateY(${indicatorY}px)` }}
         />
@@ -26,7 +27,8 @@ export default function MenuContainer() {
               itemRefs.current[idx] = el;
             }}
             className={clsx(
-              "flex items-center text-gray100 font-light gap-2 pl-5 pr-12 py-3 rounded-xl cursor-pointer relative z-10"
+              "flex items-center text-gray100 font-light gap-2 pl-5 pr-12 py-3 rounded-xl cursor-pointer relative z-10",
+              "max-lg:flex-col max-lg:text-sm max-lg:pr-3 max-lg:pl-3"
             )}
             onClick={() => setIsActive(tab.title)}
           >
