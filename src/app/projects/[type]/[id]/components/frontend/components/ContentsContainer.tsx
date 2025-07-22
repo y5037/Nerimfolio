@@ -4,71 +4,53 @@ export default function ContentsContainer() {
   return (
     <div
       className={clsx(
-        "flex-[1] flex-wrap rounded-md bg-black700 p-5",
+        "flex-[1] flex-wrap rounded-md bg-black700 p-5 mb-[80px]",
         "max-lg:rounded-xl"
       )}
     >
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
-      <p>asdazsdfsdf</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
     </div>
   );
 }
