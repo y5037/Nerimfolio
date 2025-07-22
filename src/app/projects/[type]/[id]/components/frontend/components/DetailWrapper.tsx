@@ -1,9 +1,10 @@
+import clsx from "clsx";
 import ContentsContainer from "./ContentsContainer";
 import MenuContainer from "./MenuContainer";
 
 export default function DetailWrapper() {
   return (
-    <div>
+    <div className={clsx("flex gap-16")}>
       <MenuContainer />
       <ContentsContainer />
     </div>

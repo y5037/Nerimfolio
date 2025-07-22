@@ -15,7 +15,7 @@ export default function Navigation() {
     <>
       <div
         className={clsx(
-          "hidden fixed right-12 top-8 cursor-pointer z-20",
+          "hidden fixed right-12 top-8 cursor-pointer z-[9999]",
           "max-md:block max-md:right-6"
         )}
         ref={outRef}

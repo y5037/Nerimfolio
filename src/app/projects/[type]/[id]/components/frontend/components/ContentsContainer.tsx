@@ -1,3 +1,69 @@
+import clsx from "clsx";
+
 export default function ContentsContainer() {
-  return <></>;
+  return (
+    <div className={clsx("flex-[1] flex-wrap rounded-md bg-black700 p-5")}>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+      <p>asdazsdfsdf</p>
+    </div>
+  );
 }

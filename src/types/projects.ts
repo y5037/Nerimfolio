@@ -5,3 +5,8 @@ export type ProjectData = {
   thumbnailImg: string;
   description: string;
 };
+
+export type TabMenu = {
+  icon:string;
+  title:string
+}

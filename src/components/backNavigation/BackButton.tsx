@@ -6,7 +6,12 @@ import Image from "next/image";
 export default function BackButton({ $about }: { $about?: boolean }) {
   return (
     <>
-      <div className={clsx("flex my-10 items-center")}>
+      <div
+        className={clsx(
+          "flex my-10 items-center",
+          !$about && "sticky top-10 z-[100]"
+        )}
+      >
         <Image
           src="/images/common/back.png"
           alt="뒤로가기"
