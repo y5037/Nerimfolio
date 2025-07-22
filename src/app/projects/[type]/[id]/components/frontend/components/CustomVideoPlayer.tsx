@@ -1,11 +1,12 @@
 "use client";
 
 import { formatTime } from "@/utils/formatTime";
-import { useVideoController } from "../../../../../../../hooks/useVideoController";
+
 import Image from "next/image";
 import { controller, controllerButton } from "@/app/projects/styles";
 import clsx from "clsx";
 import { useParams, useRouter } from "next/navigation";
+import { useVideoController } from "@/hooks/useVideoController";
 
 export default function CustomVideoPlayer() {
   const {

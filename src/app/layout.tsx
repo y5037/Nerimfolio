@@ -59,7 +59,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={clsx("scrollbar-hide overflow-y-scroll")}>
         <Navigation />
         <Tootip />
-        <div className={clsx("h-full overflow-x-hidden")}>{children}</div>
+        <div id="scroll-container" className={clsx("h-full overflow-x-hidden")}>
+          {children}
+        </div>
       </body>
     </html>
   );

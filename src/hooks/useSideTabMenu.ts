@@ -12,7 +12,7 @@ export const useSideTabMenu = (tabs: TabMenu[], activeMenu: string) => {
     if (targetEl) {
       setIndicatorY(targetEl.offsetTop);
     }
-  }, [activeMenu]);
+  }, [tabs, activeMenu]);
 
   return { indicatorY, itemRefs };
 };
