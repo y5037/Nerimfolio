@@ -25,6 +25,13 @@ export async function generateMetadata({
     return { title: "Not Found" };
   }
 
+  if (
+    (type === "frontend" && Number(id) > 5) ||
+    (type === "publishing" && Number(id) > 6)
+  ) {
+    notFound();
+  }
+
   return {
     title,
   };
