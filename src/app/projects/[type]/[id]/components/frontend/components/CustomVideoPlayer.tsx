@@ -1,10 +1,12 @@
 "use client";
 
 import { formatTime } from "@/utils/formatTime";
-import { useVideoController } from "../../../../../../../hooks/useVideoController";
+
 import Image from "next/image";
 import { controller, controllerButton } from "@/app/projects/styles";
 import clsx from "clsx";
+import { useParams, useRouter } from "next/navigation";
+import { useVideoController } from "@/hooks/useVideoController";
 
 export default function CustomVideoPlayer() {
   const {
@@ -20,6 +22,11 @@ export default function CustomVideoPlayer() {
     duration,
     currentTime,
   } = useVideoController();
+
+  const params = useParams();
+  const router = useRouter();
+
+  const paramsId = Number(params.id);
 
   return (
     <div
@@ -97,15 +104,22 @@ export default function CustomVideoPlayer() {
             )}
           >
             <div className={clsx("flex items-center gap-2")}>
-              <button className={controller}>
-                <div className={controllerButton}>
-                  <Image
-                    src="/images/projects/detail/common/prev.png"
-                    alt="이전"
-                    fill
-                  />
-                </div>
-              </button>
+              {paramsId > 1 && (
+                <button
+                  className={controller}
+                  onClick={() =>
+                    router.push(`/projects/frontend/${paramsId - 1}`)
+                  }
+                >
+                  <div className={controllerButton}>
+                    <Image
+                      src="/images/projects/detail/common/prev.png"
+                      alt="이전"
+                      fill
+                    />
+                  </div>
+                </button>
+              )}
               <button onClick={togglePlay} className={controller}>
                 <div className={controllerButton}>
                   <Image
@@ -119,15 +133,22 @@ export default function CustomVideoPlayer() {
                   />
                 </div>
               </button>
-              <button className={controller}>
-                <div className={controllerButton}>
-                  <Image
-                    src="/images/projects/detail/common/next.png"
-                    alt="다음"
-                    fill
-                  />
-                </div>
-              </button>
+              {paramsId < 5 && (
+                <button
+                  className={controller}
+                  onClick={() =>
+                    router.push(`/projects/frontend/${paramsId + 1}`)
+                  }
+                >
+                  <div className={controllerButton}>
+                    <Image
+                      src="/images/projects/detail/common/next.png"
+                      alt="다음"
+                      fill
+                    />
+                  </div>
+                </button>
+              )}
             </div>
             <button onClick={toggleFullscreen} className={controller}>
               <div className={controllerButton}>
