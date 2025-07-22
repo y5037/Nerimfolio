@@ -30,6 +30,7 @@ module.exports = {
         black400: "var(--black400)",
         black500: "var(--black500)",
         black600: "var(--black600)",
+        black700: "var(--black700)",
 
         gray100: "var(--gray100)",
         gray200: "var(--gray200)",

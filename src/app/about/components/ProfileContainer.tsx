@@ -8,6 +8,7 @@ import { useKakaoShare } from "@/hooks/useKakaoShare";
 import StoryProfile from "./story/StoryProfile";
 import { useState } from "react";
 import StoryModal from "./story/StoryModal";
+import BackButton from "@/components/backNavigation/BackButton";
 
 export default function ProfileContainer() {
   const [modalType, setModalType] = useState<"story" | "qr" | null>(null);
@@ -36,19 +37,7 @@ export default function ProfileContainer() {
         ""
       )}
 
-      <div className={clsx("flex my-10 items-center")}>
-        <Image
-          src="/images/about/back.png"
-          alt="뒤로가기"
-          width={30}
-          height={30}
-          className={clsx("cursor-pointer")}
-          onClick={() => history.back()}
-        />
-        <p className={clsx("ml-4 mt-[-1px] font-medium text-[18px]")}>
-          윤 혜림
-        </p>
-      </div>
+      <BackButton $about />
       <div className={clsx("flex")}>
         <StoryProfile handleOpenStory={handleOpenStory} />
         <div
