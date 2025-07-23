@@ -8,10 +8,8 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 
 export default function MenuContainer({ isActive, setIsActive }: DetailTab) {
-  const { indicatorX, indicatorY, itemRefs, isActiveIndex } = useSideTabMenu(
-    frontendTabs,
-    isActive
-  );
+  const { indicatorX, indicatorY, itemRefs, isActiveIndex, indicatorWidth } =
+    useSideTabMenu(frontendTabs, isActive);
 
   const params = useParams();
 
@@ -46,7 +44,7 @@ export default function MenuContainer({ isActive, setIsActive }: DetailTab) {
             )}
             style={{
               transform: `translateX(${indicatorX}px)`,
-              width: `${itemRefs.current[isActiveIndex]?.offsetWidth || 113}px`,
+              width: `${indicatorWidth}px`,
             }}
           />
           {frontendTabs.map((tab, idx) => {
