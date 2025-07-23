@@ -8,7 +8,7 @@ export default function DetailWrapper() {
       className={clsx(
         "flex gap-16",
         "max-lg:gap-5",
-        "max-[530px]:mt-5",
+        "max-[530px]:mt-7",
         "max-xs500:gap-3"
       )}
     >

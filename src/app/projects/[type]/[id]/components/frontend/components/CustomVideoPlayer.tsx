@@ -38,7 +38,8 @@ export default function CustomVideoPlayer() {
       {!isPlaying && progress === 0 && (
         <div
           className={clsx(
-            "flex items-center absolute right-3 top-3 z-10 bg-[rgba(255,255,255,.7)] rounded px-2 py-1 text-black font-light text-xs gap-1 shadow-gray"
+            "flex items-center absolute ml-3 right-3 top-3 z-10 bg-[rgba(255,255,255,.7)] rounded px-2 py-1 text-black font-light text-xs gap-1 shadow-gray",
+            "max-md:text-[11px]"
           )}
         >
           <Image
