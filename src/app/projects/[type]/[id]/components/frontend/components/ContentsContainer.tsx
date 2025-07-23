@@ -1,7 +1,9 @@
 import clsx from "clsx";
 import Overview from "./contents/Overview";
+import { DetailTab } from "@/app/projects/types";
+import { AnimatePresence, motion } from "framer-motion";
 
-export default function ContentsContainer() {
+export default function ContentsContainer({ isActive }: DetailTab) {
   return (
     <div
       className={clsx(
@@ -9,7 +11,17 @@ export default function ContentsContainer() {
         "max-lg:rounded-xl"
       )}
     >
-      <Overview />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={isActive}
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 5 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
+          {isActive === "Overview" && <Overview />}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

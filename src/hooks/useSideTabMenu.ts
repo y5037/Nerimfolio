@@ -2,16 +2,19 @@ import { TabMenu } from "@/types/projects";
 import { useEffect, useRef, useState } from "react";
 
 export const useSideTabMenu = (tabs: TabMenu[], activeTab: string) => {
+  const [indicatorX, setIndicatorX] = useState(0);
   const [indicatorY, setIndicatorY] = useState(0);
 
-  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const isActiveIndex = tabs.findIndex((tab) => tab.title === activeTab);
 
   useEffect(() => {
     const updateIndicator = () => {
-      const idx = tabs.findIndex((tab) => tab.title === activeTab);
-      const targetEl = itemRefs.current[idx];
+      
+      const targetEl = itemRefs.current[isActiveIndex];
 
       if (targetEl) {
+        setIndicatorX(targetEl.offsetLeft);
         setIndicatorY(targetEl.offsetTop);
       }
     };
@@ -21,5 +24,5 @@ export const useSideTabMenu = (tabs: TabMenu[], activeTab: string) => {
     return () => window.removeEventListener("resize", updateIndicator);
   }, [tabs, activeTab]);
 
-  return { indicatorY, itemRefs };
+  return { indicatorX, indicatorY, itemRefs, isActiveIndex };
 };
