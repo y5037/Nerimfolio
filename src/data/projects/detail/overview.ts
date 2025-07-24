@@ -44,7 +44,7 @@ export const overviewData: OverviewData[] = [
     title: "판다마켓 - Pandamarket",
     description: [
       "이 프로젝트는 Next.js Page Router 기반으로 구축한 중고거래 및 커뮤니티 통합 플랫폼입니다.",
-      "클라이언트 사이드 렌더링(CSR)을 중심으로 구현되었으며, 부트캠프 기간 동안 팀 미션으로 시작해 장기간에 걸쳐 완성도를 높여왔습니다.",
+      "클라이언트 사이드 렌더링(CSR)을 중심으로 구현되었으며, 부트캠프 기간 동안 개인 과제로 시작해 JavaScript 기반 React에서 TypeScript 기반 Next.js로 점차 전환하며 완성도를 높여왔습니다.",
       "현재는 포트폴리오 작업을 위해 잠시 중단된 상태이며, 약 90%가 완료된 단계입니다.",
     ],
     keyword: ["Personal Project", "Next.js", "Typescript", "React Query"],
@@ -65,12 +65,12 @@ export const overviewData: OverviewData[] = [
     ],
     progressbar: [
       {
-        value: 90,
+        value: 100,
         text: "Frontend",
         pathColor: "#89CFFD",
       },
       {
-        value: 90,
+        value: 100,
         text: "Publishing",
         pathColor: "#FF9E9E",
       },

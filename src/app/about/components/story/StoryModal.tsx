@@ -23,6 +23,7 @@ export default function StoryModal({
     showProgress: false,
     showFirstStory: false,
   });
+  const [effect, setEffect] = useState<"cube" | "creative">("cube");
 
   const { size } = useStorySliderLayout();
 
@@ -51,7 +52,12 @@ export default function StoryModal({
             className={clsx("mr-5")}
           />
         )}
-        <div className={clsx("relative")}>
+        <div
+          className={clsx(
+            "relative",
+            effect === "creative" && "overflow-hidden"
+          )}
+        >
           {showProgress && <StoryProgressBar loadingBar={loadingBar} />}
           <motion.div
             initial={{ width: 0, height: 6, opacity: 0 }}
@@ -68,6 +74,8 @@ export default function StoryModal({
               showFirstStory={showFirstStory}
               setLoadingBar={setLoadingBar}
               controller={controller}
+              effect={effect}
+              setEffect={setEffect}
             />
           </motion.div>
         </div>
