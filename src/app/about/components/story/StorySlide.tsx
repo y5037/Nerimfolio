@@ -1,28 +1,33 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
-import { EffectCube, EffectFade, Pagination, Autoplay } from "swiper/modules";
+import {
+  EffectCube,
+  EffectCreative,
+  Pagination,
+  Autoplay,
+} from "swiper/modules";
 import StoryHead from "./StoryHead";
 import clsx from "clsx";
 import StoryContent from "./StoryContent";
 import { SlideProps } from "../../types";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function StorySlide({
   showProgress,
   showFirstStory,
   controller,
   setLoadingBar,
+  effect,
+  setEffect,
 }: SlideProps) {
   const swiperRef = useRef<SwiperType | null>(null);
-  
-  // 사파리 + 외부모니터 사용으로 인한 Cube Swiper 내부 콘텐츠 hidden 버그 완화
-  const [effect, setEffect] = useState<"cube" | "fade">("cube");
 
+  // 사파리 + 외부모니터 사용으로 인한 Cube Swiper 내부 콘텐츠 hidden 버그 완화
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   useEffect(() => {
     function checkSize() {
-      if (isSafari && window.innerWidth < 1300) setEffect("fade");
+      if (isSafari && window.innerWidth < 1300) setEffect("creative");
       else setEffect("cube");
     }
     checkSize();
@@ -46,7 +51,15 @@ export default function StorySlide({
           shadowOffset: 0,
           shadowScale: 0.94,
         }}
-        fadeEffect={{ crossFade: true }}
+        creativeEffect={{
+          prev: {
+            translate: ["-20%", 0, -1],
+            opacity: 0.5,
+          },
+          next: {
+            translate: ["100%", 0, 0],
+          },
+        }}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -54,7 +67,7 @@ export default function StorySlide({
           setLoadingBar(1 - progress);
         }}
         pagination={showProgress}
-        modules={[EffectCube, EffectFade, Pagination, Autoplay]}
+        modules={[EffectCube, EffectCreative, Pagination, Autoplay]}
         onTouchStart={() => swiperRef.current?.autoplay.stop()}
         onTouchEnd={() => {
           swiperRef.current?.autoplay.start();
