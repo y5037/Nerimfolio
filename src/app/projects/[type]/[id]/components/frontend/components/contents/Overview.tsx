@@ -18,7 +18,13 @@ export default function Overview() {
     <>
       <div className={clsx("pb-10")}>
         <p className={clsx("text-2xl font-bold mb-2")}>{data.title}</p>
-        <p className={clsx("text-gray400 font-light")}>{data.description}</p>
+        <div>
+          {data.description.map((text, idx) => (
+            <p key={idx} className={clsx("text-gray400 font-light")}>
+              {text}
+            </p>
+          ))}
+        </div>
         <div className={clsx("mt-5 flex items-center gap-2")}>
           {data.keyword.map((keyword, idx) => (
             <p

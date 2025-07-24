@@ -24,7 +24,7 @@ export type ProgressItems = {
 export type OverviewData = {
   id: number;
   title: string;
-  description: string;
+  description: string[];
   keyword: string[];
   thumbnail: string;
   period: string;
