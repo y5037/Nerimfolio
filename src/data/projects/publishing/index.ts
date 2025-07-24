@@ -4,6 +4,7 @@ export const publishingProject: ProjectData[] = [
   {
     id: 1,
     title: "Publisher Portfolio",
+    name: "퍼블리셔 포트폴리오",
     logoImg: "/images/projects/publishingSection/logo/portfolio.svg",
     thumbnailImg: "/images/projects/publishingSection/thumbnail/portfolio.png",
     description:
@@ -12,6 +13,7 @@ export const publishingProject: ProjectData[] = [
   {
     id: 2,
     title: "Becelo",
+    name: "비셀로",
     logoImg: "/images/projects/publishingSection/logo/becelo.svg",
     thumbnailImg: "/images/projects/publishingSection/thumbnail/becelo.png",
     description:
@@ -20,6 +22,7 @@ export const publishingProject: ProjectData[] = [
   {
     id: 3,
     title: "Fansign",
+    name: "팬사인",
     logoImg: "/images/projects/publishingSection/logo/fansign.svg",
     thumbnailImg: "/images/projects/publishingSection/thumbnail/fansign.png",
     description:
@@ -28,6 +31,7 @@ export const publishingProject: ProjectData[] = [
   {
     id: 4,
     title: "TravelyMap",
+    name: "트리블리맵",
     logoImg: "/images/projects/publishingSection/logo/travelyMap.svg",
     thumbnailImg: "/images/projects/publishingSection/thumbnail/travelyMap.png",
     description:
@@ -36,6 +40,7 @@ export const publishingProject: ProjectData[] = [
   {
     id: 5,
     title: "HomtStudio",
+    name: "홈트스튜디오",
     logoImg: "/images/projects/publishingSection/logo/homtStudio.svg",
     thumbnailImg: "/images/projects/publishingSection/thumbnail/homtstudio.png",
     description:
@@ -44,6 +49,7 @@ export const publishingProject: ProjectData[] = [
   {
     id: 6,
     title: "Ketock",
+    name: "키톡",
     logoImg: "/images/projects/publishingSection/logo/ketock.svg",
     thumbnailImg: "/images/projects/publishingSection/thumbnail/ketock.png",
     description:

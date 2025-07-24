@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Carousel from "./Carousel";
 import { ProjectContentsProps } from "../types";
 
-export default function ProjectContents({
+export default function ProjectList({
   $frontend,
   keyword,
 }: ProjectContentsProps) {

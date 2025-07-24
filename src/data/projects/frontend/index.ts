@@ -4,6 +4,7 @@ export const frontendProject: ProjectData[] = [
   {
     id: 1,
     title: "Albaform",
+    name:'알바폼',
     logoImg: "/images/projects/frontendSection/logo/albaform.svg",
     thumbnailImg: "/images/projects/frontendSection/thumbnail/albaform.png",
     description:
@@ -12,6 +13,7 @@ export const frontendProject: ProjectData[] = [
   {
     id: 2,
     title: "Pandamarket",
+    name:'판다마켓',
     logoImg: "/images/projects/frontendSection/logo/pandamarket.svg",
     thumbnailImg: "/images/projects/frontendSection/thumbnail/pandamarket.png",
     description:
@@ -20,6 +22,7 @@ export const frontendProject: ProjectData[] = [
   {
     id: 3,
     title: "GlobalNomad",
+    name:'글로벌노마드',
     logoImg: "/images/projects/frontendSection/logo/globalnomad.svg",
     thumbnailImg: "/images/projects/frontendSection/thumbnail/globalnomad.png",
     description:
@@ -28,6 +31,7 @@ export const frontendProject: ProjectData[] = [
   {
     id: 4,
     title: "Taskify",
+    name:'테스키파이',
     logoImg: "/images/projects/frontendSection/logo/taskify.svg",
     thumbnailImg: "/images/projects/frontendSection/thumbnail/taskify.png",
     description:
@@ -36,6 +40,7 @@ export const frontendProject: ProjectData[] = [
   {
     id: 5,
     title: "Rolling",
+    name:'롤링',
     logoImg: "/images/projects/frontendSection/logo/rolling.svg",
     thumbnailImg: "/images/projects/frontendSection/thumbnail/rolling.png",
     description:
