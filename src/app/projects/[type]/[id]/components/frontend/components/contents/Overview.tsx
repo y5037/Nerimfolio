@@ -1,3 +1,4 @@
+import { overviewLinkButton, overviewLiTitle } from "@/app/projects/styles";
 import AnimatedCircle from "@/components/progressbar/AnimatedCircle";
 import { overviewData } from "@/data/projects/detail/overview";
 import { tagColors } from "@/lib/constants/tagColors";
@@ -40,24 +41,22 @@ export default function Overview() {
           src={data.thumbnail}
           alt={data.title}
           fill
-          className={clsx("object-cover")}
+          className={clsx("object-cover object-[25%_38%]")}
         />
       </div>
       <ul className={clsx("text-gray-300 mt-5 space-y-10")}>
         <li>
-          <h2 className="text-xl font-bold text-white mb-4 pl-3 border-solid border-l-4 border-amber-400">
+          <h2 className={clsx(overviewLiTitle, "border-amber-400")}>
             진행 기간
           </h2>
           {data.period}
         </li>
         <li>
-          <h2 className="text-xl font-bold text-white mb-4 pl-3 border-solid border-l-4 border-rose-400">
-            팀원 수
-          </h2>
+          <h2 className={clsx(overviewLiTitle, "border-rose-400")}>팀원 수</h2>
           {data.member}명
         </li>
         <li className={clsx("flex flex-col gap-2")}>
-          <h2 className="text-xl font-bold text-white mb-4 pl-3 border-solid border-l-4 border-blue-400">
+          <h2 className={clsx(overviewLiTitle, "border-blue-400")}>
             기술 스택
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2">
@@ -66,8 +65,7 @@ export default function Overview() {
                 <div
                   key={category}
                   className={clsx(
-                    "rounded-2xl p-5",
-                    "bg-gray-100 dark:bg-gray-800/60",
+                    "rounded-2xl p-5 bg-gray-800/60",
                     "shadow-sm border border-solid border-gray-500/40"
                   )}
                 >
@@ -83,8 +81,7 @@ export default function Overview() {
                           key={stack}
                           className={clsx(
                             "text-sm px-3 py-1 rounded-full",
-                            "text-gray-800 dark:text-gray-200",
-                            "border border-gray-300 dark:border-white/20"
+                            "text-gray100"
                           )}
                           style={{ background: color }}
                         >
@@ -106,19 +103,13 @@ export default function Overview() {
       </div>
       <div className={clsx("flex items-center gap-3")}>
         <button
-          className={clsx(
-            "bg-[#3c82f6] rounded-xl px-4 py-2 duration-200",
-            "hover:opacity-85"
-          )}
+          className={clsx(overviewLinkButton, "bg-[#3c82f6]")}
           onClick={() => window.open(data.githubLink)}
         >
           GitHub
         </button>
         <button
-          className={clsx(
-            "bg-[#374151] rounded-xl px-4 py-2 duration-200",
-            "hover:opacity-85"
-          )}
+          className={clsx(overviewLinkButton, "bg-[#374151]")}
           onClick={() => window.open(data.diveInLink)}
         >
           Live Site
