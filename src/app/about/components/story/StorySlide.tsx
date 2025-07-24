@@ -1,11 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
-import { EffectCube, Pagination, Autoplay } from "swiper/modules";
+import { EffectCube, EffectFade, Pagination, Autoplay } from "swiper/modules";
 import StoryHead from "./StoryHead";
 import clsx from "clsx";
 import StoryContent from "./StoryContent";
 import { SlideProps } from "../../types";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function StorySlide({
   showProgress,
@@ -14,12 +14,27 @@ export default function StorySlide({
   setLoadingBar,
 }: SlideProps) {
   const swiperRef = useRef<SwiperType | null>(null);
+  
+  // 사파리 + 외부모니터 사용으로 인한 Cube Swiper 내부 콘텐츠 hidden 버그 완화
+  const [effect, setEffect] = useState<"cube" | "fade">("cube");
+
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  useEffect(() => {
+    function checkSize() {
+      if (isSafari && window.innerWidth < 1300) setEffect("fade");
+      else setEffect("cube");
+    }
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
 
   return (
     <>
       <Swiper
         loop={true}
-        effect="cube"
+        effect={effect}
         grabCursor={false}
         autoplay={{
           delay: 4000,
@@ -31,6 +46,7 @@ export default function StorySlide({
           shadowOffset: 0,
           shadowScale: 0.94,
         }}
+        fadeEffect={{ crossFade: true }}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -38,7 +54,7 @@ export default function StorySlide({
           setLoadingBar(1 - progress);
         }}
         pagination={showProgress}
-        modules={[EffectCube, Pagination, Autoplay]}
+        modules={[EffectCube, EffectFade, Pagination, Autoplay]}
         onTouchStart={() => swiperRef.current?.autoplay.stop()}
         onTouchEnd={() => {
           swiperRef.current?.autoplay.start();
