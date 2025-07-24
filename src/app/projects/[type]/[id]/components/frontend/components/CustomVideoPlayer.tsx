@@ -35,6 +35,23 @@ export default function CustomVideoPlayer() {
         "relative w-full mx-auto bg-black rounded-t-lg overflow-hidden"
       )}
     >
+      {!isPlaying && progress === 0 && (
+        <div
+          className={clsx(
+            "flex items-center absolute ml-3 right-3 top-3 z-10 bg-[rgba(255,255,255,.7)] rounded px-2 py-1 text-black font-light text-xs gap-1 shadow-gray",
+            "max-md:text-[11px]"
+          )}
+        >
+          <Image
+            src="/images/projects/detail/common/info.svg"
+            alt="!"
+            width={15}
+            height={15}
+          />
+          <p>시연은 제가 직접 구현한 주요 기능 위주로 구성되어 있습니다</p>
+        </div>
+      )}
+
       <div className={clsx("relative aspect-video")}>
         <video
           ref={videoRef}
@@ -59,19 +76,22 @@ export default function CustomVideoPlayer() {
         )}
       >
         <div className={clsx("h-full flex flex-col justify-end pb-10")}>
-          <div
-            className={clsx(
-              "relative w-[200px] h-[50px] min-h-[35px]",
-              "max-[700px]:w-[170px] max-[700px]:h-[30px] max-[700px]:min-h-[30px]",
-              "max-[530px]:w-[120px] max-[530px]:h-[20px] max-[530px]:min-h-[20px]"
-            )}
-          >
-            <Image
-              src="/images/projects/detail/frontend/logo/albaform.svg"
-              alt="logo"
-              fill
-            />
-          </div>
+          {!isPlaying && (
+            <div
+              className={clsx(
+                "relative w-[200px] h-[50px] min-h-[35px]",
+                "max-[700px]:w-[170px] max-[700px]:h-[30px] max-[700px]:min-h-[30px]",
+                "max-[530px]:w-[120px] max-[530px]:h-[20px] max-[530px]:min-h-[20px]"
+              )}
+            >
+              <Image
+                src="/images/projects/detail/frontend/logo/albaform.svg"
+                alt="logo"
+                fill
+              />
+            </div>
+          )}
+
           <div
             className={clsx(
               "w-1/2 flex items-center mt-6 mb-2 gap-3",

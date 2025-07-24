@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/styles/globals.css";
 import "@/styles/projectSlick.css";
 import "@/styles/storySwiper.css";
-import Tootip from "@/components/tootip/Tootip";
+import GlobalTooltip from "@/components/tooltip/GlobalTooltip";
 
 export const metadata: Metadata = {
   icons: {
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={clsx("scrollbar-hide overflow-y-scroll")}>
         <Navigation />
-        <Tootip />
+        <GlobalTooltip />
         <div id="scroll-container" className={clsx("h-full overflow-x-hidden")}>
           {children}
         </div>

@@ -5,7 +5,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function Tootip() {
+export default function GlobalTooltip() {
   const [visible, setVisible] = useState(false);
 
   const { message, show, hideToast } = useTooltipStore();
@@ -25,7 +25,6 @@ export default function Tootip() {
 
   return (
     <div
-      role="alert"
       className={clsx(
         "fixed bottom-[calc(50px+theme(spacing.safe-bottom))] left-1/2 z-[9999] w-auto pl-5 pr-7 py-3",
         "transform -translate-x-1/2 transition-all duration-300 ease-out",
