@@ -23,12 +23,22 @@ export default function StorySlide({
   const swiperRef = useRef<SwiperType | null>(null);
 
   // 사파리 + 외부모니터 사용으로 인한 Cube Swiper 내부 콘텐츠 hidden 버그 완화
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isSafari =
+    /^((?!chrome|android).)*safari/i.test(navigator.userAgent) &&
+    !navigator.userAgent.includes("CriOS"); // iOS Chrome은 제외
+
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
 
   useEffect(() => {
     function checkSize() {
-      if (isSafari && window.innerWidth < 1300) setEffect("creative");
-      else setEffect("cube");
+      if (isSafari && !isMobile && window.innerWidth < 1300) {
+        setEffect("creative");
+      } else {
+        setEffect("cube");
+      }
     }
     checkSize();
     window.addEventListener("resize", checkSize);
@@ -38,6 +48,7 @@ export default function StorySlide({
   return (
     <>
       <Swiper
+        key={effect}
         loop={true}
         effect={effect}
         grabCursor={false}
