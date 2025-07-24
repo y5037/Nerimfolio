@@ -1,22 +1,35 @@
+import AnimatedCircle from "@/components/progressbar/AnimatedCircle";
+import { overviewData } from "@/data/projects/detail/overview";
+import { tagColors } from "@/lib/constants/tagColors";
 import clsx from "clsx";
 import Image from "next/image";
-import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import { useParams } from "next/navigation";
 
 export default function Overview() {
+  const params = useParams();
+  const paramsId = Number(params.id);
+  const data = overviewData.find((item) => {
+    return item.id === paramsId;
+  });
+
+  if (!data) return;
   return (
     <>
       <div className={clsx("pb-10")}>
-        <p className={clsx("text-2xl font-bold mb-1")}>알바폼 (albaform)</p>
-        <p className={clsx("text-gray400 font-light")}>
-          NEXT App Router · SSR/CSR 통합 기반 긱워커 취업 매칭 플랫폼
-        </p>
-        <p
-          className={clsx(
-            "mt-3 font-light text-gray500 bg-black500 rounded-full inline-block px-2 py-1 text-xs"
-          )}
-        >
-          #Router
-        </p>
+        <p className={clsx("text-2xl font-bold mb-2")}>{data.title}</p>
+        <p className={clsx("text-gray400 font-light")}>{data.description}</p>
+        <div className={clsx("mt-5 flex items-center gap-2")}>
+          {data.keyword.map((keyword, idx) => (
+            <p
+              key={idx}
+              className={clsx(
+                "font-light text-gray500 bg-black500 rounded-full px-2 py-1 text-xs"
+              )}
+            >
+              #{keyword}
+            </p>
+          ))}
+        </div>
       </div>
       <div
         className={clsx(
@@ -24,52 +37,90 @@ export default function Overview() {
         )}
       >
         <Image
-          src="/images/projects/frontendSection/thumbnail/albaform.png"
-          alt="thumbnail"
+          src={data.thumbnail}
+          alt={data.title}
           fill
           className={clsx("object-cover")}
         />
       </div>
-      <ul className={clsx("text-gray-300 mt-7 space-y-4")}>
+      <ul className={clsx("text-gray-300 mt-5 space-y-10")}>
         <li>
-          <strong className={clsx("text-white")}>진행 기간:</strong> 2025.04 -
-          06
+          <h2 className="text-xl font-bold text-white mb-4 pl-3 border-solid border-l-4 border-amber-400">
+            진행 기간
+          </h2>
+          {data.period}
         </li>
         <li>
-          <strong className={clsx("text-white")}>팀원 수:</strong> 4명
+          <h2 className="text-xl font-bold text-white mb-4 pl-3 border-solid border-l-4 border-rose-400">
+            팀원 수
+          </h2>
+          {data.member}명
         </li>
-        <li>
-          <strong className={clsx("text-white")}>기술 스택:</strong>{" "}
-          {["React", "Next.js", "Zustand", "TailwindCSS"].join(", ")}
+        <li className={clsx("flex flex-col gap-2")}>
+          <h2 className="text-xl font-bold text-white mb-4 pl-3 border-solid border-l-4 border-blue-400">
+            기술 스택
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2">
+            {data.stack.map((categoryObj) =>
+              Object.entries(categoryObj).map(([category, stacks]) => (
+                <div
+                  key={category}
+                  className={clsx(
+                    "rounded-2xl p-5",
+                    "bg-gray-100 dark:bg-gray-800/60",
+                    "shadow-sm border border-solid border-gray-500/40"
+                  )}
+                >
+                  <h3 className="text-base font-semibold mb-3 text-white">
+                    {category}
+                  </h3>
+                  <ul className="flex flex-wrap gap-2">
+                    {stacks.map((stack, i) => {
+                      const color = tagColors[i % tagColors.length];
+
+                      return (
+                        <li
+                          key={stack}
+                          className={clsx(
+                            "text-sm px-3 py-1 rounded-full",
+                            "text-gray-800 dark:text-gray-200",
+                            "border border-gray-300 dark:border-white/20"
+                          )}
+                          style={{ background: color }}
+                        >
+                          {stack}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))
+            )}
+          </div>
         </li>
       </ul>
-      <div className={clsx("w-full h-28 gap-5 flex mt-7 mb-14")}>
-        <CircularProgressbar
-          value={80}
-          text={`Frontend 70%`}
-          styles={buildStyles({
-            pathColor: "#10B981",
-            textColor: "#fff",
-            trailColor: "#333",
-            textSize: "12px",
-          })}
-        />
-        <CircularProgressbar
-          value={65}
-          text={`Publishing 65%`}
-          styles={buildStyles({
-            pathColor: "#10B981",
-            textColor: "#fff",
-            trailColor: "#333",
-            textSize: "12px",
-          })}
-        />
+      <div className={clsx("flex gap-7 mt-12 mb-20")}>
+        {data.progressbar.map((data, idx) => (
+          <AnimatedCircle key={idx} data={data} />
+        ))}
       </div>
       <div className={clsx("flex items-center gap-3")}>
-        <button className={clsx("bg-[#3c82f6] rounded-xl px-4 py-2")}>
+        <button
+          className={clsx(
+            "bg-[#3c82f6] rounded-xl px-4 py-2 duration-200",
+            "hover:opacity-85"
+          )}
+          onClick={() => window.open(data.githubLink)}
+        >
           GitHub
         </button>
-        <button className={clsx("bg-[#374151] rounded-xl px-4 py-2")}>
+        <button
+          className={clsx(
+            "bg-[#374151] rounded-xl px-4 py-2 duration-200",
+            "hover:opacity-85"
+          )}
+          onClick={() => window.open(data.diveInLink)}
+        >
           Live Site
         </button>
       </div>
