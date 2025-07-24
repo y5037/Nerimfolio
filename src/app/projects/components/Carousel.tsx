@@ -26,6 +26,7 @@ export default function Carousel({
     ? projectData.filter(
         (project) =>
           project.title.toLowerCase().includes(keyword.toLowerCase()) ||
+          project.name.toLowerCase().includes(keyword.toLowerCase()) ||
           project.description.toLowerCase().includes(keyword.toLowerCase())
       )
     : projectData;
