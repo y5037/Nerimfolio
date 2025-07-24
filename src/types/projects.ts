@@ -1,6 +1,7 @@
 export type ProjectData = {
   id: number;
   title: string;
+  name: string;
   logoImg: string;
   thumbnailImg: string;
   description: string;
