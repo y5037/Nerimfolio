@@ -25,12 +25,12 @@ export default function Overview() {
             </p>
           ))}
         </div>
-        <div className={clsx("mt-5 flex items-center gap-2")}>
+        <div className={clsx("mt-5 flex items-center flex-wrap gap-2")}>
           {data.keyword.map((keyword, idx) => (
             <p
               key={idx}
               className={clsx(
-                "font-light text-gray500 bg-black500 rounded-full px-2 py-1 text-xs"
+                "min-w-fit font-light text-gray500 bg-black500 rounded-full px-2 py-1 text-xs"
               )}
             >
               #{keyword}
@@ -102,7 +102,7 @@ export default function Overview() {
           </div>
         </li>
       </ul>
-      <div className={clsx("flex gap-7 mt-12 mb-20")}>
+      <div className={clsx("flex gap-7 mt-12 mb-20", "max-xs:mb-9")}>
         {data.progressbar.map((data, idx) => (
           <AnimatedCircle key={idx} data={data} />
         ))}
