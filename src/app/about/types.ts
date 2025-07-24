@@ -18,4 +18,6 @@ export interface SlideProps {
   showFirstStory: boolean;
   controller: ModalController;
   setLoadingBar: Dispatch<SetStateAction<number>>;
+  effect: "cube" | "creative";
+  setEffect: Dispatch<SetStateAction<"cube" | "creative">>;
 }
