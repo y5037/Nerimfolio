@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 
 export default function MenuContainer({ isActive, setIsActive }: DetailTab) {
-  const { indicatorX, indicatorY, itemRefs, isActiveIndex, indicatorWidth } =
+  const { indicatorX, indicatorY, itemRefs, indicatorWidth } =
     useSideTabMenu(frontendTabs, isActive);
 
   const params = useParams();

@@ -23,7 +23,7 @@ export const useSideTabMenu = (tabs: TabMenu[], activeTab: string) => {
 
     window.addEventListener("resize", updateIndicator);
     return () => window.removeEventListener("resize", updateIndicator);
-  }, [tabs, activeTab]);
+  }, [tabs, activeTab, isActiveIndex]);
 
   return { indicatorX, indicatorY, itemRefs, isActiveIndex, indicatorWidth };
 };
