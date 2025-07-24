@@ -65,12 +65,12 @@ export const overviewData: OverviewData[] = [
     ],
     progressbar: [
       {
-        value: 90,
+        value: 100,
         text: "Frontend",
         pathColor: "#89CFFD",
       },
       {
-        value: 90,
+        value: 100,
         text: "Publishing",
         pathColor: "#FF9E9E",
       },
