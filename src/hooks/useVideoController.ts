@@ -67,33 +67,65 @@ export const useVideoController = () => {
   };
 
   const toggleFullscreen = () => {
+    const container = containerRef.current;
     const video = videoRef.current;
-    if (!video) return;
+    if (!container || !video) return;
 
     setIsPlaying(!video.paused);
     setProgress(video.currentTime);
 
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
+    const doc = document as Document & {
+      webkitFullscreenElement?: Element | null;
+      mozFullScreenElement?: Element | null;
+      msFullscreenElement?: Element | null;
+      webkitExitFullscreen?: () => void;
+      mozCancelFullScreen?: () => void;
+      msExitFullscreen?: () => void;
+    };
+
+    const elem = container as HTMLElement & {
+      webkitRequestFullscreen?: () => Promise<void>;
+      mozRequestFullScreen?: () => Promise<void>;
+      msRequestFullscreen?: () => Promise<void>;
+    };
+
+    const isFullscreen =
+      !!document.fullscreenElement ||
+      !!doc.webkitFullscreenElement ||
+      !!doc.mozFullScreenElement ||
+      !!doc.msFullscreenElement;
+
+    if (isFullscreen) {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (doc.webkitExitFullscreen) {
+        doc.webkitExitFullscreen();
+      } else if (doc.mozCancelFullScreen) {
+        doc.mozCancelFullScreen();
+      } else if (doc.msExitFullscreen) {
+        doc.msExitFullscreen();
+      }
     } else {
-      // 데스크탑 표준 전체화면
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-        // 모바일 Safari (iOS)
-      } else if ("webkitEnterFullscreen" in video) {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+
+      // iOS Safari - 비디오 자체가 fullscreen 되는 방식
+      if ("webkitEnterFullscreen" in video) {
         (
           video as HTMLVideoElement & {
             webkitEnterFullscreen: () => void;
           }
         ).webkitEnterFullscreen();
-      } else if ("mozRequestFullScreen" in video) {
-        (
-          video as HTMLVideoElement & {
-            mozRequestFullScreen: () => void;
-          }
-        ).mozRequestFullScreen();
       }
     }
+
     syncProgress();
   };
 

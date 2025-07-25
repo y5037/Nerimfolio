@@ -43,7 +43,7 @@ export default function StorySlide({
     checkSize();
     window.addEventListener("resize", checkSize);
     return () => window.removeEventListener("resize", checkSize);
-  }, []);
+  }, [isMobile, isSafari, setEffect]);
 
   return (
     <>

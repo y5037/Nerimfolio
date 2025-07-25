@@ -170,7 +170,12 @@ export default function CustomVideoPlayer() {
                 </button>
               )}
             </div>
-            <button onClick={toggleFullscreen} className={controller}>
+            <button
+              onClick={() => {
+                toggleFullscreen();
+              }}
+              className={controller}
+            >
               <div className={controllerButton}>
                 <Image
                   src="/images/projects/detail/common/fullscreen.png"
