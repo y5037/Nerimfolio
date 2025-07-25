@@ -7,6 +7,7 @@ import { controller, controllerButton } from "@/app/projects/styles";
 import clsx from "clsx";
 import { useParams, useRouter } from "next/navigation";
 import { useVideoController } from "@/hooks/useVideoController";
+import { isMobile } from "@/utils/isMobile";
 
 export default function CustomVideoPlayer() {
   const {
@@ -172,6 +173,7 @@ export default function CustomVideoPlayer() {
             </div>
             <button
               onClick={() => {
+                if (isMobile) togglePlay();
                 toggleFullscreen();
               }}
               className={controller}

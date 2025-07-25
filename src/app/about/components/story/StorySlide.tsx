@@ -11,6 +11,7 @@ import clsx from "clsx";
 import StoryContent from "./StoryContent";
 import { SlideProps } from "../../types";
 import { useEffect, useRef } from "react";
+import { isMobile } from "@/utils/isMobile";
 
 export default function StorySlide({
   showProgress,
@@ -26,11 +27,6 @@ export default function StorySlide({
   const isSafari =
     /^((?!chrome|android).)*safari/i.test(navigator.userAgent) &&
     !navigator.userAgent.includes("CriOS"); // iOS Chrome은 제외
-
-  const isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    );
 
   useEffect(() => {
     function checkSize() {
