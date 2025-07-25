@@ -16,6 +16,8 @@ export const useVideoController = () => {
 
     if (video.paused) {
       video.play();
+      video.playbackRate = 1.5;
+      setDuration(video.duration);
       setIsPlaying(true);
     } else {
       video.pause();
@@ -24,29 +26,6 @@ export const useVideoController = () => {
   };
 
   const syncProgress = () => {
-    const video = videoRef.current;
-    if (video && video.duration) {
-      const percent = (video.currentTime / video.duration) * 100;
-      setProgress(percent);
-
-      const handleLoadedMetadata = () => {
-        setDuration(video.duration);
-      };
-      const handleTimeUpdate = () => {
-        setCurrentTime(video.currentTime);
-      };
-
-      video.addEventListener("loadedmetadata", handleLoadedMetadata);
-      video.addEventListener("timeupdate", handleTimeUpdate);
-
-      return () => {
-        video.removeEventListener("loadedmetadata", handleLoadedMetadata);
-        video.removeEventListener("timeupdate", handleTimeUpdate);
-      };
-    }
-  };
-
-  const handleTimeUpdate = () => {
     const video = videoRef.current;
     if (video && video.duration) {
       const percent = (video.currentTime / video.duration) * 100;
@@ -98,6 +77,27 @@ export const useVideoController = () => {
   };
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleLoadedMetadata = () => {
+      setDuration(video.duration);
+    };
+    const handleTimeUpdate = () => {
+      setCurrentTime(video.currentTime);
+      setProgress((video.currentTime / video.duration) * 100);
+    };
+
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    video.addEventListener("timeupdate", handleTimeUpdate);
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleFullscreenChange = () => {
       const isFullscreenNow = !!document.fullscreenElement;
       setIsFullscreen(isFullscreenNow);
@@ -126,7 +126,6 @@ export const useVideoController = () => {
   return {
     containerRef,
     videoRef,
-    handleTimeUpdate,
     handleSeek,
     togglePlay,
     toggleFullscreen,

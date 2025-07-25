@@ -1,18 +1,18 @@
 "use client";
 
 import { formatTime } from "@/utils/formatTime";
-
 import Image from "next/image";
 import { controller, controllerButton } from "@/app/projects/styles";
 import clsx from "clsx";
 import { useParams, useRouter } from "next/navigation";
 import { useVideoController } from "@/hooks/useVideoController";
+import { isMobile } from "@/utils/isMobile";
+import { videoData } from "@/data/projects/detail/video";
 
 export default function CustomVideoPlayer() {
   const {
     containerRef,
     videoRef,
-    handleTimeUpdate,
     handleSeek,
     togglePlay,
     toggleFullscreen,
@@ -27,7 +27,11 @@ export default function CustomVideoPlayer() {
   const router = useRouter();
 
   const paramsId = Number(params.id);
+  const data = videoData.find((item) => {
+    return item.id === paramsId;
+  });
 
+  if (!data) return;
   return (
     <div
       ref={containerRef}
@@ -55,10 +59,10 @@ export default function CustomVideoPlayer() {
       <div className={clsx("relative aspect-video")}>
         <video
           ref={videoRef}
-          src="/videos/projects/test.mp4"
-          onTimeUpdate={handleTimeUpdate}
+          src={data.video}
+          preload="metadata"
           muted
-          poster="/images/projects/detail/frontend/thumbnail/albaform.png"
+          poster={data.thumbnail}
           controls={isFullscreen}
           className={clsx("w-full h-full object-cover")}
         />
@@ -84,11 +88,7 @@ export default function CustomVideoPlayer() {
                 "max-[530px]:w-[120px] max-[530px]:h-[20px] max-[530px]:min-h-[20px]"
               )}
             >
-              <Image
-                src="/images/projects/detail/frontend/logo/albaform.svg"
-                alt="logo"
-                fill
-              />
+              <Image src={data.logo} alt={data.title} fill />
             </div>
           )}
 
@@ -114,7 +114,7 @@ export default function CustomVideoPlayer() {
             </div>
             <p className={clsx("opacity-[.5]")}>{`${formatTime(
               currentTime
-            )} / ${formatTime(duration)}`}</p>
+            )} / ${duration > 0 ? formatTime(duration) : "--:--"}`}</p>
           </div>
           <div
             className={clsx(
@@ -170,7 +170,13 @@ export default function CustomVideoPlayer() {
                 </button>
               )}
             </div>
-            <button onClick={toggleFullscreen} className={controller}>
+            <button
+              onClick={() => {
+                if (isMobile) togglePlay();
+                toggleFullscreen();
+              }}
+              className={controller}
+            >
               <div className={controllerButton}>
                 <Image
                   src="/images/projects/detail/common/fullscreen.png"

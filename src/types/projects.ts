@@ -22,6 +22,14 @@ export type ProgressItems = {
   pathColor: string;
 };
 
+export type VideoData = {
+  id: number;
+  title: string;
+  logo: string;
+  thumbnail: string;
+  video: string;
+};
+
 export type OverviewData = {
   id: number;
   title: string;

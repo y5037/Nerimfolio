@@ -11,6 +11,7 @@ import clsx from "clsx";
 import StoryContent from "./StoryContent";
 import { SlideProps } from "../../types";
 import { useEffect, useRef } from "react";
+import { isMobile } from "@/utils/isMobile";
 
 export default function StorySlide({
   showProgress,
@@ -23,21 +24,27 @@ export default function StorySlide({
   const swiperRef = useRef<SwiperType | null>(null);
 
   // 사파리 + 외부모니터 사용으로 인한 Cube Swiper 내부 콘텐츠 hidden 버그 완화
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isSafari =
+    /^((?!chrome|android).)*safari/i.test(navigator.userAgent) &&
+    !navigator.userAgent.includes("CriOS"); // iOS Chrome은 제외
 
   useEffect(() => {
     function checkSize() {
-      if (isSafari && window.innerWidth < 1300) setEffect("creative");
-      else setEffect("cube");
+      if (isSafari && !isMobile && window.innerWidth < 1300) {
+        setEffect("creative");
+      } else {
+        setEffect("cube");
+      }
     }
     checkSize();
     window.addEventListener("resize", checkSize);
     return () => window.removeEventListener("resize", checkSize);
-  }, []);
+  }, [isMobile, isSafari, setEffect]);
 
   return (
     <>
       <Swiper
+        key={effect}
         loop={true}
         effect={effect}
         grabCursor={false}

@@ -114,8 +114,8 @@ export const overviewData: OverviewData[] = [
     id: 4,
     title: "테스키파이 - Taskify",
     description: [
-      "Next.js Page Router 기반으로 구축된 CSR 워크플로우 관리 서비스입니다. React Query를 통해 데이터 캐싱 및 실시간 화면 반영 구조를 도입하고, 사용자 편의성을 고려한 대시보드 및 마이페이지 기능을 제공합니다.",
-      "총 5인의 팀 프로젝트로 참여했으며, 초기에는 대시보드 편집 기능을 담당해 이름 및 색상 수정, 구성원 및 초대 내역 조회, 구성원 삭제, 초대 생성 및 취소, 대시보드 삭제, 리스트 페이지네이션 기능을 구현했습니다. 이후 마이페이지의 프로필 수정 기능 오류를 해결하고, 관련 기능을 보완하는 작업을 전담했습니다.",
+      "Next.js Page Router 기반의 CSR 워크플로우 관리 서비스입니다. React Query로 데이터 캐싱과 실시간 반영을 구현했으며, 사용자 중심의 대시보드·마이페이지 기능을 제공합니다.",
+      "총 5인 팀 프로젝트로 참여하여 대시보드 편집 기능 전반(이름/색상 수정, 구성원·초대 관리, 삭제, 페이지네이션 등)을 구현했고, 이후 마이페이지의 프로필 수정 기능 개선을 전담했습니다.",
     ],
     keyword: ["Team Project", "Next.js", "Typescript", "React Query"],
     thumbnail: "/images/projects/frontendSection/thumbnail/taskify.png",
