@@ -16,6 +16,8 @@ export const useVideoController = () => {
 
     if (video.paused) {
       video.play();
+      video.playbackRate = 1.5;
+      setDuration(video.duration);
       setIsPlaying(true);
     } else {
       video.pause();
@@ -24,29 +26,6 @@ export const useVideoController = () => {
   };
 
   const syncProgress = () => {
-    const video = videoRef.current;
-    if (video && video.duration) {
-      const percent = (video.currentTime / video.duration) * 100;
-      setProgress(percent);
-
-      const handleLoadedMetadata = () => {
-        setDuration(video.duration);
-      };
-      const handleTimeUpdate = () => {
-        setCurrentTime(video.currentTime);
-      };
-
-      video.addEventListener("loadedmetadata", handleLoadedMetadata);
-      video.addEventListener("timeupdate", handleTimeUpdate);
-
-      return () => {
-        video.removeEventListener("loadedmetadata", handleLoadedMetadata);
-        video.removeEventListener("timeupdate", handleTimeUpdate);
-      };
-    }
-  };
-
-  const handleTimeUpdate = () => {
     const video = videoRef.current;
     if (video && video.duration) {
       const percent = (video.currentTime / video.duration) * 100;
@@ -67,67 +46,56 @@ export const useVideoController = () => {
   };
 
   const toggleFullscreen = () => {
-    const container = containerRef.current;
     const video = videoRef.current;
-    if (!container || !video) return;
+    if (!video) return;
 
     setIsPlaying(!video.paused);
     setProgress(video.currentTime);
 
-    const doc = document as Document & {
-      webkitFullscreenElement?: Element | null;
-      mozFullScreenElement?: Element | null;
-      msFullscreenElement?: Element | null;
-      webkitExitFullscreen?: () => void;
-      mozCancelFullScreen?: () => void;
-      msExitFullscreen?: () => void;
-    };
-
-    const elem = container as HTMLElement & {
-      webkitRequestFullscreen?: () => Promise<void>;
-      mozRequestFullScreen?: () => Promise<void>;
-      msRequestFullscreen?: () => Promise<void>;
-    };
-
-    const isFullscreen =
-      !!document.fullscreenElement ||
-      !!doc.webkitFullscreenElement ||
-      !!doc.mozFullScreenElement ||
-      !!doc.msFullscreenElement;
-
-    if (isFullscreen) {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (doc.webkitExitFullscreen) {
-        doc.webkitExitFullscreen();
-      } else if (doc.mozCancelFullScreen) {
-        doc.mozCancelFullScreen();
-      } else if (doc.msExitFullscreen) {
-        doc.msExitFullscreen();
-      }
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
     } else {
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen();
-      } else if (elem.mozRequestFullScreen) {
-        elem.mozRequestFullScreen();
-      } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen();
-      }
-
-      // iOS Safari - 비디오 자체가 fullscreen 되는 방식
-      if ("webkitEnterFullscreen" in video) {
+      // 데스크탑 표준 전체화면
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+        // 모바일 Safari (iOS)
+      } else if ("webkitEnterFullscreen" in video) {
         (
           video as HTMLVideoElement & {
             webkitEnterFullscreen: () => void;
           }
         ).webkitEnterFullscreen();
+      } else if ("mozRequestFullScreen" in video) {
+        (
+          video as HTMLVideoElement & {
+            mozRequestFullScreen: () => void;
+          }
+        ).mozRequestFullScreen();
       }
     }
-
     syncProgress();
   };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleLoadedMetadata = () => {
+      setDuration(video.duration);
+    };
+    const handleTimeUpdate = () => {
+      setCurrentTime(video.currentTime);
+      setProgress((video.currentTime / video.duration) * 100);
+    };
+
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    video.addEventListener("timeupdate", handleTimeUpdate);
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, []);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -158,7 +126,6 @@ export const useVideoController = () => {
   return {
     containerRef,
     videoRef,
-    handleTimeUpdate,
     handleSeek,
     togglePlay,
     toggleFullscreen,
