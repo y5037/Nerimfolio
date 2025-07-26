@@ -3,7 +3,7 @@ import ContentsContainer from "./ContentsContainer";
 import MenuContainer from "./MenuContainer";
 import { useState } from "react";
 
-export default function DetailWrapper() {
+export default function DetailWrapper({ type }: { type: string }) {
   const [isActive, setIsActive] = useState("Overview");
 
   return (
@@ -16,8 +16,12 @@ export default function DetailWrapper() {
         "max-xs500:gap-3"
       )}
     >
-      <MenuContainer isActive={isActive} setIsActive={setIsActive} />
-      <ContentsContainer isActive={isActive} />
+      <MenuContainer
+        isActive={isActive}
+        setIsActive={setIsActive}
+        $frontend={type === "frontend"}
+      />
+      <ContentsContainer isActive={isActive} $frontend={type === "frontend"} />
     </div>
   );
 }

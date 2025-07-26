@@ -50,9 +50,9 @@ export default async function ProjectDetail({
   return (
     <>
       {type === "frontend" ? (
-        <FrontendDetail />
+        <FrontendDetail type={type}/>
       ) : type === "publishing" ? (
-        <PublishingDetail />
+        <PublishingDetail type={type}/>
       ) : (
         <NotFound />
       )}

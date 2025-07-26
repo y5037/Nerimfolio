@@ -1,9 +1,10 @@
 import clsx from "clsx";
-import Overview from "./contents/Overview";
 import { DetailTab } from "@/app/projects/types";
 import { AnimatePresence, motion } from "framer-motion";
+import FrontendOverview from "../frontend/components/contents/Overview";
+import PublishingOverview from "../publishing/components/contents/Overview";
 
-export default function ContentsContainer({ isActive }: DetailTab) {
+export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
   return (
     <div
       className={clsx(
@@ -19,7 +20,8 @@ export default function ContentsContainer({ isActive }: DetailTab) {
           exit={{ opacity: 0, y: 5 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          {isActive === "Overview" && <Overview />}
+          {isActive === "Overview" &&
+            ($frontend ? <FrontendOverview /> : <PublishingOverview />)}
         </motion.div>
       </AnimatePresence>
     </div>

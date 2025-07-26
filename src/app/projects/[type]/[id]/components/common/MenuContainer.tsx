@@ -2,16 +2,27 @@
 
 import { DetailTab } from "@/app/projects/types";
 import { useSideTabMenu } from "@/hooks/useSideTabMenu";
-import { frontendTabs } from "@/lib/constants/projectDetailTabs";
+import {
+  frontendTabs,
+  publishingTabs,
+} from "@/lib/constants/projectDetailTabs";
 import clsx from "clsx";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
-export default function MenuContainer({ isActive, setIsActive }: DetailTab) {
-  const { indicatorX, indicatorY, itemRefs, indicatorWidth } =
-    useSideTabMenu(frontendTabs, isActive);
+export default function MenuContainer({
+  isActive,
+  setIsActive,
+  $frontend,
+}: DetailTab) {
+  const { indicatorX, indicatorY, itemRefs, indicatorWidth } = useSideTabMenu(
+    $frontend ? frontendTabs : publishingTabs,
+    isActive
+  );
 
   const params = useParams();
+
+  const tabData = $frontend ? frontendTabs : publishingTabs;
 
   return (
     <div
@@ -47,7 +58,7 @@ export default function MenuContainer({ isActive, setIsActive }: DetailTab) {
               width: `${indicatorWidth}px`,
             }}
           />
-          {frontendTabs.map((tab, idx) => {
+          {tabData.map((tab, idx) => {
             if (params.id === "2" && idx === 3) return null;
 
             return (
