@@ -84,11 +84,19 @@ export default function CustomVideoPlayer() {
             <div
               className={clsx(
                 "relative w-[200px] h-[50px] min-h-[35px]",
-                "max-[700px]:w-[170px] max-[700px]:h-[30px] max-[700px]:min-h-[30px]",
+                "max-md:w-[170px] max-md:h-[30px] max-md:min-h-[30px]",
                 "max-[530px]:w-[120px] max-[530px]:h-[20px] max-[530px]:min-h-[20px]"
               )}
             >
-              <Image src={data.logo} alt={data.title} fill />
+              <Image
+                src={data.logo}
+                alt={data.title}
+                fill
+                className={clsx(
+                  "object-contain object-left",
+                  data.id === 2 || data.id === 4 || (data.id === 5 && "")
+                )}
+              />
             </div>
           )}
 
