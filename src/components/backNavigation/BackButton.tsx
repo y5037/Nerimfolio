@@ -13,7 +13,7 @@ export default function BackButton({ $about }: { $about?: boolean }) {
         )}
       >
         <Image
-          src="/images/common/back.png"
+          src="/images/common/back.svg"
           alt="뒤로가기"
           width={30}
           height={30}
