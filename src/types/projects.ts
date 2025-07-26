@@ -22,15 +22,18 @@ export type ProgressItems = {
   pathColor: string;
 };
 
-export type VideoData = {
+export type BaseMediaData = {
   id: number;
   title: string;
   logo: string;
   thumbnail: string;
-  video: string;
 };
 
-export type OverviewData = {
+export type VideoData = BaseMediaData & {
+  video?: string;
+};
+
+export type BaseOverviewData = {
   id: number;
   title: string;
   description: string[];
@@ -42,4 +45,15 @@ export type OverviewData = {
   progressbar: ProgressItems[];
   githubLink: string;
   diveInLink: string;
+};
+
+export type FrontendOverviewData = BaseOverviewData & {
+  member?: number;
+  stack?: StackCategory[];
+  githubLink?: string;
+};
+
+export type PublishingOverviewData = BaseOverviewData & {
+  department?: string;
+  responsibilities?: string[];
 };

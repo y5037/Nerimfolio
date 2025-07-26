@@ -1,6 +1,6 @@
-import { OverviewData } from "@/types/projects";
+import { FrontendOverviewData } from "@/types/projects";
 
-export const overviewData: OverviewData[] = [
+export const frontendOverviewData: FrontendOverviewData[] = [
   {
     id: 1,
     title: "알바폼 - albaform",

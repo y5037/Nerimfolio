@@ -77,7 +77,8 @@ export default function Carousel({
                         "ml-[-10px] max-md:ml-0",
                       type === "frontend" &&
                         project.id === 5 &&
-                        "ml-[-8px] max-md:ml-0"
+                        "ml-[-8px] max-md:ml-0",
+                      type === "publishing" && project.id === 1 && "ml-[20px]"
                     )}
                   />
                 </div>

@@ -1,6 +1,6 @@
 import { overviewLinkButton, overviewLiTitle } from "@/app/projects/styles";
 import AnimatedCircle from "@/components/progressbar/AnimatedCircle";
-import { overviewData } from "@/data/projects/detail/overview";
+import { frontendOverviewData } from "@/data/projects/detail/overview";
 import { tagColors } from "@/lib/constants/tagColors";
 import clsx from "clsx";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import { useParams } from "next/navigation";
 export default function Overview() {
   const params = useParams();
   const paramsId = Number(params.id);
-  const data = overviewData.find((item) => {
+  const data = frontendOverviewData.find((item) => {
     return item.id === paramsId;
   });
 
