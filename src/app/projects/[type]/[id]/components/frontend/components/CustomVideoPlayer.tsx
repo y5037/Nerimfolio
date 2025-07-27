@@ -9,6 +9,7 @@ import { useVideoController } from "@/hooks/useVideoController";
 import { isMobile } from "@/utils/isMobile";
 import { videoData } from "@/data/projects/detail/media";
 import { useEffect, useState } from "react";
+import Skeleton from "@/components/skeleton/Skeleton";
 
 export default function CustomVideoPlayer() {
   const [loadedMap, setLoadedMap] = useState<{ [key: number]: boolean }>({});
@@ -82,13 +83,7 @@ export default function CustomVideoPlayer() {
             loadedMap[data.id] ? "opacity-100" : "opacity-0"
           )}
         />
-        {!loadedMap[data.id] && (
-          <div
-            className={clsx(
-              "absolute inset-0 bg-gray-700 animate-pulse rounded-xl"
-            )}
-          />
-        )}
+        {!loadedMap[data.id] && <Skeleton />}
       </div>
       <div
         className={clsx("absolute inset-x-0 bottom-0 h-1/2 z-10")}

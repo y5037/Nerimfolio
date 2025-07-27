@@ -1,3 +1,4 @@
+import Skeleton from "@/components/skeleton/Skeleton";
 import { thumbnailData } from "@/data/projects/detail/media";
 import clsx from "clsx";
 import Image from "next/image";
@@ -44,13 +45,7 @@ export default function Thumbnail() {
         )}
         onLoad={() => setLoadedMap((prev) => ({ ...prev, [data.id]: true }))}
       />
-      {!loadedMap[data.id] && (
-        <div
-          className={clsx(
-            "absolute inset-0 bg-gray-700 animate-pulse rounded-xl"
-          )}
-        />
-      )}
+      {!loadedMap[data.id] && <Skeleton />}
     </div>
   );
 }

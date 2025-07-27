@@ -5,6 +5,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { useResizeObserver } from "../../hooks/useResizeObserver";
 import { useStoryRingAnimation } from "../../hooks/useStoryRingAnimation";
+import Skeleton from "@/components/skeleton/Skeleton";
 
 export default function StoryProfile({
   handleOpenStory,
@@ -12,6 +13,7 @@ export default function StoryProfile({
   handleOpenStory: () => void;
 }) {
   const [canvasWidth, setCanvasWidth] = useState(0);
+  const [loadedMap, setLoadedMap] = useState(false);
 
   const { containerRef } = useResizeObserver(setCanvasWidth);
   const { canvasRef } = useStoryRingAnimation(canvasWidth, setCanvasWidth);
@@ -28,24 +30,26 @@ export default function StoryProfile({
     >
       <canvas
         ref={canvasRef}
-        className={clsx("absolute inset-0 w-full h-full")}
+        className={clsx("absolute inset-0 w-full h-full z-10")}
       />
       <div
         className={clsx(
-          "absolute inset-0 rounded-full overflow-hidden flex items-center justify-center"
+          "absolute inset-0 w-[91%] h-[91%] rounded-full overflow-hidden",
+          "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+          "max-lg1050:w-[88%] max-lg1050:h-[88%]"
         )}
       >
         <Image
           src="/images/about/profile.jpg"
           alt="Profile"
-          width={0}
-          height={0}
-          sizes="100%"
+          fill
+          onLoad={() => setLoadedMap(true)}
           className={clsx(
-            "rounded-full w-[91%] h-[91%] object-cover",
-            "max-lg1050:w-[88%] max-lg1050:h-[88%]"
+            "object-cover",
+            loadedMap ? "opacity-100" : "opacity-0"
           )}
         />
+        {!loadedMap && <Skeleton />}
       </div>
     </div>
   );
