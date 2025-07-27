@@ -2,8 +2,11 @@
 
 import clsx from "clsx";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function BackButton({ $about }: { $about?: boolean }) {
+  const router = useRouter();
+
   return (
     <>
       <div
@@ -13,12 +16,12 @@ export default function BackButton({ $about }: { $about?: boolean }) {
         )}
       >
         <Image
-          src="/images/common/back.png"
+          src="/images/common/back.svg"
           alt="뒤로가기"
           width={30}
           height={30}
           className={clsx("cursor-pointer")}
-          onClick={() => history.back()}
+          onClick={() => ($about ? history.back() : router.push("/projects"))}
         />
         {$about && (
           <p className={clsx("ml-4 mt-[-1px] font-medium text-[18px]")}>

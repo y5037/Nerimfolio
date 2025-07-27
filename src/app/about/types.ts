@@ -6,9 +6,9 @@ export interface TabProps {
 }
 
 export type ModalController = {
-  showModal: boolean;
+  showModal?: boolean;
   isVisible: boolean;
-  open: () => void;
+  open?: () => void;
   close: () => void;
   handleExitComplete: () => void;
 };

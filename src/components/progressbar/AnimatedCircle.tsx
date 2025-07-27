@@ -37,7 +37,7 @@ export default function AnimatedCircle({ data }: { data: ProgressItems }) {
           strokeLinecap: "round",
         })}
       >
-        <p className={clsx("text-center text-sm mt-1", "max-xs:text-xs")}>
+        <p className={clsx("text-center text-sm mt-1", "max-xs:text-xs px-2")}>
           {data.text}
           <span className={clsx("block font-semibold")}>{data.value}%</span>
         </p>

@@ -1,6 +1,6 @@
 import { overviewLinkButton, overviewLiTitle } from "@/app/projects/styles";
 import AnimatedCircle from "@/components/progressbar/AnimatedCircle";
-import { overviewData } from "@/data/projects/detail/overview";
+import { frontendOverviewData } from "@/data/projects/detail/overview";
 import { tagColors } from "@/lib/constants/tagColors";
 import clsx from "clsx";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import { useParams } from "next/navigation";
 export default function Overview() {
   const params = useParams();
   const paramsId = Number(params.id);
-  const data = overviewData.find((item) => {
+  const data = frontendOverviewData.find((item) => {
     return item.id === paramsId;
   });
 
@@ -44,7 +44,7 @@ export default function Overview() {
         )}
       >
         <Image
-          src={data.thumbnail}
+          src={data.thumbnail!}
           alt={data.title}
           fill
           className={clsx("object-cover object-[25%_38%]")}
@@ -65,8 +65,8 @@ export default function Overview() {
           <h2 className={clsx(overviewLiTitle, "border-blue-400")}>
             기술 스택
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2">
-            {data.stack.map((categoryObj) =>
+          <div className={clsx("grid gap-4 sm:grid-cols-2 md:grid-cols-2")}>
+            {data.stack!.map((categoryObj) =>
               Object.entries(categoryObj).map(([category, stacks]) => (
                 <div
                   key={category}
@@ -75,10 +75,10 @@ export default function Overview() {
                     "shadow-sm border border-solid border-gray-500/40"
                   )}
                 >
-                  <h3 className="text-base font-semibold mb-3 text-white">
+                  <h3 className={clsx("text-base font-semibold mb-3 text-white")}>
                     {category}
                   </h3>
-                  <ul className="flex flex-wrap gap-2">
+                  <ul className={clsx("flex flex-wrap gap-2")}>
                     {stacks.map((stack, i) => {
                       const color = tagColors[i % tagColors.length];
 
