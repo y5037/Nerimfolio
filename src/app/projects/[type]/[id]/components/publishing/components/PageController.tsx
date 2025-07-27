@@ -8,7 +8,9 @@ export default function PageController() {
   const paramsId = Number(params.id);
 
   return (
-    <div className={clsx("flex items-center justify-between my-8")}>
+    <div
+      className={clsx("flex items-center justify-between my-8", "max-md:mb-1")}
+    >
       <div>
         {paramsId !== 1 && (
           <button
