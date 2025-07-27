@@ -8,8 +8,11 @@ import { useParams, useRouter } from "next/navigation";
 import { useVideoController } from "@/hooks/useVideoController";
 import { isMobile } from "@/utils/isMobile";
 import { videoData } from "@/data/projects/detail/media";
+import { useEffect, useState } from "react";
 
 export default function CustomVideoPlayer() {
+  const [loadedMap, setLoadedMap] = useState<{ [key: number]: boolean }>({});
+
   const {
     containerRef,
     videoRef,
@@ -30,6 +33,12 @@ export default function CustomVideoPlayer() {
   const data = videoData.find((item) => {
     return item.id === paramsId;
   });
+
+  useEffect(() => {
+    if (duration > 0) {
+      setLoadedMap((prev) => ({ ...prev, [Number(data?.id)]: true }));
+    }
+  }, [duration, data?.id]);
 
   if (!data) return;
   return (
@@ -60,12 +69,22 @@ export default function CustomVideoPlayer() {
         <video
           ref={videoRef}
           src={data.video}
-          preload="metadata"
+          preload="auto"
           muted
           poster={data.thumbnail}
           controls={isFullscreen}
-          className={clsx("w-full h-full object-cover")}
+          className={clsx(
+            "w-full h-full object-cover",
+            loadedMap[data.id] ? "opacity-100" : "opacity-0"
+          )}
         />
+        {!loadedMap[data.id] && (
+          <div
+            className={clsx(
+              "absolute inset-0 bg-gray-700 animate-pulse rounded-xl"
+            )}
+          />
+        )}
       </div>
       <div
         className={clsx("absolute inset-x-0 bottom-0 h-1/2 z-10")}
@@ -99,7 +118,6 @@ export default function CustomVideoPlayer() {
               />
             </div>
           )}
-
           <div
             className={clsx(
               "w-1/2 flex items-center mt-6 mb-2 gap-3",
