@@ -53,7 +53,7 @@ export const publishingProject: PublishingData[] = [
   {
     id: 5,
     logoImg: "/images/home/publishingSection/logo/homtStudio.svg",
-    thumbnailImg: "/images/home/publishingSection/thumbnail/homtstudio.png",
+    thumbnailImg: "/images/home/publishingSection/thumbnail/homtStudio.png",
     keyword: ["company_collaboration", "publishing", "web&app"],
     title: "HOMT STUDIO",
     description:
