@@ -11,7 +11,7 @@ export default function MediaContainer({ type }: { type: string }) {
       <div
         className={clsx(
           "aspect-video",
-          type !== "frontend" && "relative rounded-lg overflow-hidden mb-10"
+          type !== "frontend" && "relative rounded-lg overflow-hidden"
         )}
       >
         {type === "frontend" ? <CustomVideoPlayer /> : <Thumbnail />}

@@ -59,7 +59,7 @@ export default function MenuContainer({
             }}
           />
           {tabData.map((tab, idx) => {
-            if (params.id === "2" && idx === 3) return null;
+            if ($frontend && params.id === "2" && idx === 3) return null;
 
             return (
               <div

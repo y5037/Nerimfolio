@@ -38,22 +38,20 @@ export type BaseOverviewData = {
   title: string;
   description: string[];
   keyword: string[];
-  thumbnail: string;
   period: string;
-  member: number;
-  stack: StackCategory[];
   progressbar: ProgressItems[];
-  githubLink: string;
   diveInLink: string;
 };
 
 export type FrontendOverviewData = BaseOverviewData & {
+  thumbnail?: string;
   member?: number;
   stack?: StackCategory[];
   githubLink?: string;
 };
 
 export type PublishingOverviewData = BaseOverviewData & {
+  designScreenshots?: string[];
   department?: string;
   responsibilities?: string[];
 };
