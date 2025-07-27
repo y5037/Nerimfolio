@@ -13,4 +13,5 @@ export type ProjectContentsProps = SearchContainerProps & {
 export type DetailTab = {
   isActive: string;
   setIsActive?: Dispatch<SetStateAction<string>>;
+  $frontend: boolean;
 };

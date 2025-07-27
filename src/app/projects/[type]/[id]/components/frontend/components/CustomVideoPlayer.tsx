@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { useParams, useRouter } from "next/navigation";
 import { useVideoController } from "@/hooks/useVideoController";
 import { isMobile } from "@/utils/isMobile";
-import { videoData } from "@/data/projects/detail/video";
+import { videoData } from "@/data/projects/detail/media";
 
 export default function CustomVideoPlayer() {
   const {
