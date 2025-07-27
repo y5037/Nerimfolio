@@ -9,6 +9,7 @@ import { ProjectData } from "@/types/projects";
 import { publishingProject } from "@/data/projects/publishing";
 import React, { useState } from "react";
 import { useClickWithoutDrag } from "../hooks/useClickWithoutDrag";
+import Skeleton from "@/components/skeleton/Skeleton";
 
 export default function Carousel({
   type,
@@ -92,13 +93,7 @@ export default function Carousel({
                   {project.description}
                 </p>
               </div>
-              {!loadedMap[project.id] && (
-                <div
-                  className={clsx(
-                    "absolute inset-0 bg-gray-700 animate-pulse rounded-xl"
-                  )}
-                />
-              )}
+              {!loadedMap[project.id] && <Skeleton />}
               <Image
                 src={project.thumbnailImg}
                 alt={project.title}
@@ -115,16 +110,8 @@ export default function Carousel({
             </div>
             {!loadedMap[project.id] ? (
               <>
-                <div
-                  className={clsx(
-                    "mt-3 mb-4 w-3/4 h-3 bg-gray-700 animate-pulse rounded-xl"
-                  )}
-                />
-                <div
-                  className={clsx(
-                    "mt-3 mb-4 w-2/4 h-3 bg-gray-600 animate-pulse rounded-xl"
-                  )}
-                />
+                <Skeleton $text1 />
+                <Skeleton $text2 />
               </>
             ) : (
               <p
