@@ -1,9 +1,13 @@
+import Skeleton from "@/components/skeleton/Skeleton";
 import { thumbnailData } from "@/data/projects/detail/media";
 import clsx from "clsx";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+import { useState } from "react";
 
 export default function Thumbnail() {
+  const [loadedMap, setLoadedMap] = useState<{ [key: number]: boolean }>({});
+
   const params = useParams();
 
   const paramsId = Number(params.id);
@@ -35,8 +39,13 @@ export default function Thumbnail() {
         src={data.thumbnail}
         alt={data.title}
         fill
-        className={clsx("object-cover")}
+        className={clsx(
+          "object-cover",
+          loadedMap[data.id] ? "opacity-100" : "opacity-0"
+        )}
+        onLoad={() => setLoadedMap((prev) => ({ ...prev, [data.id]: true }))}
       />
+      {!loadedMap[data.id] && <Skeleton />}
     </div>
   );
 }

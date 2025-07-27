@@ -26,7 +26,11 @@ export default function MenuContainer({
 
   return (
     <div
-      className={clsx("sticky top-24 h-fit", "max-md:static max-md:mt-3 mb-2")}
+      className={clsx(
+        "sticky top-24 h-fit mb-2",
+        "max-md:static",
+        $frontend && "max-md:mt-3"
+      )}
     >
       <div
         className={clsx(

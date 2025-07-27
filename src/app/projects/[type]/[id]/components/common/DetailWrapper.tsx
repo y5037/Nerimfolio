@@ -12,8 +12,8 @@ export default function DetailWrapper({ type }: { type: string }) {
         "flex gap-16",
         "max-lg:gap-5",
         "max-md:flex-col",
-        "max-[530px]:mt-7",
-        "max-xs500:gap-3"
+        "max-xs500:gap-3",
+        type === "frontend" && "max-[530px]:mt-4"
       )}
     >
       <MenuContainer

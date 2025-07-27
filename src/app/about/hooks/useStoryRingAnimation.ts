@@ -51,7 +51,7 @@ export const useStoryRingAnimation = (
       gradient.addColorStop(0.8, "#FFDF3F");
       gradient.addColorStop(1, "#bc1888");
       ctx.strokeStyle = gradient;
-      ctx.lineWidth = 6;
+      ctx.lineWidth = 4;
       ctx.lineJoin = "round";
 
       const cx = canvasWidth / 2;
