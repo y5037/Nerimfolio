@@ -9,7 +9,7 @@ export default function PageController() {
 
   return (
     <div
-      className={clsx("flex items-center justify-between my-8", "max-md:mb-1")}
+      className={clsx("flex items-center justify-between my-8", "max-md:mb-6")}
     >
       <div>
         {paramsId !== 1 && (

@@ -35,10 +35,14 @@ export default function CustomVideoPlayer() {
   });
 
   useEffect(() => {
-    if (duration > 0) {
+    const img = new (window.Image as new () => HTMLImageElement)();
+
+    if (!data?.thumbnail) return;
+    img.src = data?.thumbnail;
+    img.onload = () => {
       setLoadedMap((prev) => ({ ...prev, [Number(data?.id)]: true }));
-    }
-  }, [duration, data?.id]);
+    };
+  }, [data?.thumbnail, data?.id]);
 
   if (!data) return;
   return (
