@@ -19,7 +19,7 @@ export default function ScreenshotModal({
       $frontendFeature={$frontendFeature}
       $publishingOverview={$publishingOverview}
     >
-      {$frontendFeature ? (
+      {$frontendFeature || $publishingOverview ? (
         <Image src={imgSrc} alt="스크린샷" width={1400} height={0} />
       ) : (
         <Image src={imgSrc} alt="스크린샷" fill />
