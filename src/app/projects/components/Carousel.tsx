@@ -38,7 +38,7 @@ export default function Carousel({
 
   return filteredData.length > 0 ? (
     <div className={clsx(filteredData.length < 3 && "leftMode")}>
-      <Slider {...settings}>
+      <Slider {...settings} touchMove={true} verticalSwiping={false}>
         {filteredData.map((project) => (
           <div
             key={project.id}
