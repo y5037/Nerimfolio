@@ -35,6 +35,7 @@ export default function Features() {
           공통 UI / 전역 컴포넌트
         </h3>
         <FeatureAccordion
+          paramsId={paramsId}
           groupId="commonUI"
           openGroup={openGroup}
           setOpenGroup={setOpenGroup}
@@ -47,6 +48,7 @@ export default function Features() {
           페이지별 기능
         </h3>
         <FeatureAccordion
+          paramsId={paramsId}
           groupId="pageFeatures"
           openGroup={openGroup}
           setOpenGroup={setOpenGroup}

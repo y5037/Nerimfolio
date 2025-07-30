@@ -62,7 +62,7 @@ export type FeatureData = {
   contributionPercent: number;
   contributionDetails?: string[];
   contributionNote: boolean;
-  description: string;
+  description: string[];
   image: string;
   tech: string[];
   ux: string[];
