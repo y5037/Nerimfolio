@@ -3,6 +3,7 @@ import { DetailTab } from "@/app/projects/types";
 import { AnimatePresence, motion } from "framer-motion";
 import FrontendOverview from "../frontend/components/contents/Overview";
 import PublishingOverview from "../publishing/components/contents/Overview";
+import Feature from "../frontend/components/contents/Features";
 
 export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
   return (
@@ -20,8 +21,17 @@ export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
           exit={{ opacity: 0, y: 5 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          {isActive === "Overview" &&
-            ($frontend ? <FrontendOverview /> : <PublishingOverview />)}
+          {isActive === "Overview" ? (
+            $frontend ? (
+              <FrontendOverview />
+            ) : (
+              <PublishingOverview />
+            )
+          ) : isActive === "Features" ? (
+            <Feature />
+          ) : (
+            ""
+          )}
         </motion.div>
       </AnimatePresence>
     </div>

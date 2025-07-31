@@ -21,3 +21,7 @@
   opacity: 0.4;
   color: var(--white);
 }
+
+.slick-slider {
+  touch-action: pan-x; /* 수평 터치만 허용 */
+}
