@@ -278,7 +278,7 @@ export const featuresData: Features[] = [
               "또한 백엔드에서 임시저장을 지원하지 않는 한계를 보완하기 위해, 로컬스토리지를 활용한 임시저장 기능을 구현했습니다.",
             ],
             image:
-              "/images/projects/detail/frontend/features/albaform/apply.png",
+              "/images/projects/detail/frontend/features/albaform/apply.svg",
             tech: [
               "React Hook Form",
               "Zod",
@@ -431,7 +431,7 @@ export const featuresData: Features[] = [
               "지원자에게는 스크랩한 알바폼 목록을 확인할 수 있는 추가 기능이 제공되어 개인화된 사용 경험을 제공합니다.",
             ],
             image:
-              "/images/projects/detail/frontend/features/albaform/mypage.png",
+              "/images/projects/detail/frontend/features/albaform/mypage.svg",
             tech: [
               "React Query",
               "React Hook Form",
@@ -920,6 +920,475 @@ export const featuresData: Features[] = [
               "달력 기반 예약 현황 조회로 예약 일정 관리 편의성 향상",
               "직관적인 예약 승인/거절 UI로 빠른 예약 처리 지원",
               "사용자 선택 체험에 따른 맞춤형 예약 데이터 표시",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    projectName: "Taskify",
+    featureGroups: [
+      {
+        groupName: "공통 UI",
+        features: [
+          {
+            title: "Button",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "기본 버튼과 앵커 태그를 모두 지원하며, 버튼의 너비, 높이, 패딩, 둥근 스타일 등을 prop을 통해 자유롭게 커스터마이징할 수 있습니다.",
+              "클릭 이벤트 핸들러와 조건부 렌더링을 활용해 사용자 상호작용 및 네비게이션 용도로 유연하게 활용 가능하도록 구현되었습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/button.svg",
+            tech: ["SCSS Modules"],
+            ux: [
+              "버튼의 형태와 동작 방식을 유연하게 제어할 수 있어 다양한 UI 요구사항에 대응",
+              "둥근 버튼 여부를 설정해 시각적인 강조나 액션의 특성을 명확하게 전달",
+              "링크 및 버튼을 하나의 컴포넌트로 통합하여 개발 생산성과 유지보수 효율 향상",
+            ],
+          },
+          {
+            title: "Modal",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "React Portal을 활용하여 모달 콘텐츠를 DOM 최상단에 렌더링하며, 뒷배경 클릭 시 모달을 닫을 수 있도록 인터랙션을 제공합니다.",
+              "모달 외부 영역 클릭 시 이벤트 전파를 차단해 의도치 않은 닫힘을 방지하며, 다양한 콘텐츠에 대응 가능한 children 기반의 확장형 구조로 구성되어 있습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/modal.png",
+            tech: ["React DOM Portal", "SCSS Modules"],
+            ux: [
+              "모달 외부 클릭 시 닫힘 기능 제공으로 직관적인 UX 구현",
+              "자식 요소 기반으로 다양한 콘텐츠 삽입이 가능하여 재사용성 확보",
+            ],
+          },
+          {
+            title: "GNB",
+            implementedByMe: false,
+            contributionPercent: 1,
+            contributionDetails: [
+              "'초대하기' 버튼 활성화 로직 추가",
+              "초대 완료 시 내역 자동 갱신 로직 구현",
+            ],
+            contributionNote: false,
+            description: [
+              "사용자 로그인 정보를 바탕으로 대시보드 이름, 관리 기능, 멤버 목록, 프로필 드롭다운을 표시하는 글로벌 내비게이션 컴포넌트입니다.",
+              "대시보드가 본인이 생성한 경우에만 설정 및 초대 기능이 노출되며, 현재 라우트에 따라 조건부 렌더링이 이뤄집니다.",
+              "사용자 프로필을 클릭하면 드롭다운 메뉴가 노출되고, 외부 영역 클릭 시 자동으로 닫히도록 이벤트 리스너를 활용한 UX 처리를 적용했습니다.",
+              "멤버 목록은 API 호출을 통해 실시간으로 불러오며, 프로필 이미지가 없는 경우에는 이니셜을 기반으로 스타일링된 대체 UI를 제공해 사용자 식별이 가능합니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/navigation.svg",
+            tech: ["Axios", "SCSS Modules", "Styled-components"],
+            ux: [
+              "프로필 클릭 시 사용자 메뉴가 드롭다운으로 노출되어 계정 기능 접근이 직관적",
+              "초대 및 설정 버튼은 본인이 생성한 대시보드에만 표시돼 사용자 권한에 따른 접근 제어를 지원",
+              "멤버 프로필 이미지 또는 이니셜로 사용자 구분을 시각적으로 제공해 인지 용이성 향상",
+              "드롭다운 외부 클릭 시 자동 닫힘 처리로 UX 일관성 확보",
+            ],
+          },
+        ],
+      },
+      {
+        groupName: "페이지별 기능",
+        features: [
+          {
+            title: "랜딩",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "서비스의 첫 인상을 담당하는 랜딩 페이지로, 정적인 시각 요소에 AOS(Ani­mate on Scroll)를 적용해 부드러운 인터랙션 효과를 구현했습니다.",
+              "React Type Animation을 활용해 제품명 'Taskify'가 반복적으로 타이핑되는 애니메이션을 연출하여 브랜드 이미지를 강화했습니다.",
+              "CustomButton 컴포넌트와 함께 '로그인하기' 버튼을 배치하여 사용자 흐름의 시작 지점을 명확하게 유도합니다.",
+              "초기에는 다크모드 테마를 고려해 흰 배경으로 시작했으나, 실제 개발 과정에서 테마 기능은 제외되어 현재는 라이트 모드만 제공됩니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/landing.png",
+            tech: [
+              "AOS (Animate On Scroll)",
+              "React Type Animation",
+              "SCSS Modules",
+            ],
+            ux: [
+              "스크롤에 따른 자연스러운 시각 효과로 사용자 몰입도 향상",
+              "반복되는 타이핑 애니메이션으로 브랜드 네임을 각인",
+              "단일 CTA 버튼을 통해 사용자의 행동 유도 경로를 단순화",
+            ],
+          },
+          {
+            title: "로그인 & 회원가입",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "회원가입과 로그인이 유사한 구조로 구성되어 있으며, 이메일, 닉네임, 비밀번호 입력에 대한 정적 유효성 검사를 직접 구현해 실시간 피드백을 제공합니다.",
+              "입력값 검증은 별도의 라이브러리 없이 정규표현식 및 조건문 기반의 로직으로 구성되어 있으며, 필수 체크 항목(이용약관 동의 등)이 모두 완료돼야 가입 버튼이 활성화됩니다.",
+              "비밀번호와 비밀번호 확인 입력창에는 눈 아이콘을 활용한 가시성 토글 기능이 포함되어 사용자 편의성을 높였고, 가입/로그인 성공 또는 실패 시에는 CustomModal을 활용하여 사용자에게 직관적인 결과 피드백을 제공합니다.",
+              "회원가입 완료 시 자동으로 로그인 페이지로 리디렉션되는 흐름을 구성하여 자연스러운 사용자 여정을 유도합니다.",
+            ],
+            image: "/images/projects/detail/frontend/features/taskify/sign.png",
+            tech: ["axios", "Custom Modal", "TypeScript", "SCSS Modules"],
+            ux: [
+              "입력 단계마다 실시간 유효성 검사를 통해 사용자 오류를 사전에 방지",
+              "이용약관 동의 여부를 기반으로 버튼 활성화 상태를 제어해 사용자의 책임 인식 유도",
+              "비밀번호 가시성 토글로 입력 편의성 향상",
+              "가입 성공/실패에 따른 즉각적인 모달 피드백 제공으로 행동 유도",
+              "회원가입 후 자동 이동 처리로 중단 없는 사용자 흐름 설계",
+            ],
+          },
+          {
+            title: "나의 대시보드",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "내가 생성한 대시보드, 소속된 대시보드, 초대받은 대시보드를 한눈에 관리할 수 있는 대시보드 개요 페이지입니다.",
+              "초대받은 대시보드는 수락 여부에 따라 별도로 분리되어 표시되며, 각 영역은 디자인과 목적에 따라 무한스크롤 또는 페이지네이션 방식으로 구현돼 있습니다.",
+              "'새로운 대시보드 생성' 기능으로 사용자는 이 페이지에서 바로 자신의 협업 공간을 추가로 만들 수 있으며, 각 대시보드 카드를 클릭하면 해당 대시보드의 상세 페이지로 진입할 수 있어 협업 중인 여러 공간을 유연하게 전환할 수 있습니다.",
+              "데이터 통신은 axios와 useEffect 조합으로 구현되며, 직접적인 비동기 처리와 상태 관리를 수행합니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/myDashboard.png",
+            tech: ["axios", "TypeScript", "SCSS Modules"],
+            ux: [
+              "대시보드 유형별 구분과 페이징 방식 도입으로 정보 탐색의 직관성 향상",
+              "직접 생성한 대시보드뿐 아니라 소속 및 초대된 대시보드까지 통합적으로 확인 가능",
+              "대시보드 생성 진입점을 제공하여 사용자의 협업 공간 확장을 유도",
+              "axios 기반 비동기적 상태 관리를 통해 충분한 성능과 안정성 확보",
+            ],
+          },
+          {
+            title: "대시보드 등록",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "‘나의 대시보드’ 페이지에서 접근 가능한 대시보드 생성 전용 모달 컴포넌트입니다.",
+              "사용자가 입력한 대시보드 이름과 색상 정보를 axios를 통해 서버에 POST 요청으로 전송하여 새로운 대시보드를 생성합니다.",
+              "대시보드 이름은 빈 값 방지를 위한 입력 유효성 검사를 진행하며, 색상 선택은 미리 정의된 색상 리스트 중 하나를 클릭해 지정할 수 있습니다. 색상이 선택되면 체크 아이콘이 표시되며, 이름과 색상이 모두 유효할 경우 ‘생성’ 버튼을 통해 대시보드가 실제로 생성되고 부모 컴포넌트에 반영됩니다.",
+              "입력 및 상태 관리는 모두 해당 컴포넌트 내부에서 처리되며, 별도의 상태관리 라이브러리 없이도 독립적인 데이터 흐름이 완성된 구조입니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/createDashboard.png",
+            tech: ["axios", "TypeScript", "SCSS Modules"],
+            ux: [
+              "대시보드 이름 입력과 색상 선택 과정을 직관적으로 구성하여 사용자 진입 장벽 최소화",
+              "입력값 미충족 시 alert 처리로 필수 항목 누락 방지",
+              "즉각적인 색상 선택 피드백과 체크 아이콘 제공으로 사용자의 현재 선택 상태 명확화",
+              "모달 내에서 바로 대시보드 생성 가능해 페이지 이동 없이 빠른 워크플로우 제공",
+            ],
+          },
+          {
+            title: "대시보드 수정",
+            implementedByMe: true,
+            contributionPercent: 100,
+            contributionNote: false,
+            description: [
+              "이 페이지는 사용자가 대시보드의 핵심 정보를 관리하고 구성원을 효율적으로 운영할 수 있도록 설계된 관리 페이지입니다.",
+              "현재 소속된 구성원과 초대 내역을 확인하여 구성원 삭제 및 초대 취소 기능을 통한 팀 관리가 가능하며, 초대 기능도 통합되어 있어 신규 구성원 초대가 용이합니다.",
+              "모든 변경 사항은 즉각적으로 화면에 업데이트되어 사용자 경험의 연속성을 보장하고 있습니다.",
+              "마지막으로, '대시보드 삭제' 기능으로 불필요한 대시보드를 손쉽게 제거할 수 있으며, 삭제 후에는 자동으로 메인 대시보드 목록으로 이동하여 자연스러운 작업 흐름을 유지합니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/editDashboard.png",
+            tech: ["axios", "TypeScript", "SCSS Modules"],
+            ux: [
+              "수정 사항이 즉시 반영되어 사용자 피드백 지연 없이 자연스러운 작업 흐름 제공",
+              "대시보드 설정 내 다양한 관리 기능을 하나의 페이지에서 접근 가능하도록 통합",
+              "삭제 완료 시 사용자 혼란을 줄이기 위한 리디렉션 처리로 UX 안정성 확보",
+              "초대 및 취소가 직관적으로 이루어지며, 실시간 데이터 반영으로 신뢰도 향상",
+            ],
+          },
+          {
+            title: "대시보드 상세",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "특정 대시보드에 속한 컬럼과 해당 컬럼 내 메모들을 확인하고 관리할 수 있는 페이지입니다.",
+              "대시보드 ID를 기반으로 API를 호출하여 해당 대시보드에 속한 컬럼들을 불러오고, 각 컬럼 내부에는 텍스트 및 이미지 기반의 메모들이 시각적으로 표시됩니다.",
+              "각 컬럼은 독립적인 컴포넌트로 구성되어 있으며, 새로운 컬럼을 생성하는 기능도 제공됩니다. 생성은 전용 모달을 통해 컬럼명을 입력한 후 서버에 전송하여 처리됩니다.",
+              "컬럼 삭제 기능 또한 지원되며, 삭제 시 현재 UI에서 즉시 반영됩니다.",
+              "드래그 앤 드롭을 위한 `@hello-pangea/dnd` 라이브러리가 적용되어 있으나, 실제 드래그 이동 기능은 구현되지 않은 상태로 마무리되었습니다.",
+              "axios + useEffect를 기반으로 API와 데이터 흐름을 제어합니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/dashboardDetail.png",
+            tech: ["axios", "@hello-pangea/dnd", "TypeScript", "SCSS Modules"],
+            ux: [
+              "컬럼 별 카드 형태로 메모를 구분해 가독성을 높이고 시각적인 작업 흐름 제공",
+              "컬럼 추가/삭제 시 실시간으로 UI에 반영되어 사용자의 작업 피드백을 명확히 전달",
+              "컬럼 생성을 위한 모달 도입으로 사용자 흐름을 해치지 않는 비동기 인터랙션 제공",
+            ],
+          },
+          {
+            title: "칼럼 등록 및 수정",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "새로운 칼럼을 생성하고 기존 칼럼명을 변경할 수 있는 기능을 제공합니다.",
+              "사용자가 입력한 칼럼명을 서버로 POST 요청 보낸 후 리스트 및 변경사항을 실시간 반영하도록 구현 되었습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/createColumn.png",
+            tech: ["axios", "TypeScript", "SCSS Modules"],
+            ux: [
+              "모달 기반 입력 UI를 통해 직관적인 칼럼 생성 및 수정 경험 제공",
+              "서버 요청 후 즉시 리스트 업데이트로 사용자 피드백 향상",
+            ],
+          },
+          {
+            title: "카드 등록 및 수정",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "할 일 카드의 등록과 수정을 위한 모달 컴포넌트입니다.",
+              "사용자는 제목, 설명, 마감일, 담당자, 태그, 이미지 등을 입력할 수 있으며, 필수 항목은 제목, 설명, 마감일, 담당자입니다.",
+              "담당자는 현재 대시보드 멤버 중에서 선택할 수 있으며, 선택된 담당자는 프로필 이미지 또는 닉네임 첫 글자로 표시됩니다.",
+              "태그 입력 시 Enter 키로 여러 태그를 추가할 수 있고, 이미지 업로드 기능도 포함되어 있습니다.",
+              "마감일은 시간 단위까지 선택 가능한 데이트피커로 설정하며, 입력값 검증 후 서버에 카드 데이터를 전송합니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/createCard.png",
+            tech: ["axios", "react-datepicker", "TypeScript", "SCSS Modules"],
+            ux: [
+              "필수 입력값 검증을 통해 올바른 데이터 입력 유도",
+              "담당자 선택 드롭다운으로 직관적인 멤버 지정",
+              "태그 입력 시 엔터키로 쉽게 추가 가능",
+              "이미지 업로드로 시각적 정보 보완",
+              "모달 오픈 시 배경 스크롤 차단으로 집중도 향상",
+            ],
+          },
+          {
+            title: "카드 상세",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "카드의 세부 정보를 확인하고 댓글을 관리할 수 있는 모달입니다.",
+              "카드 제목, 설명, 태그, 담당자 정보, 마감일, 첨부 이미지 등 모든 카드 관련 데이터를 직관적으로 확인할 수 있습니다.",
+              "담당자는 이름 또는 프로필 이미지로 표시되며, 마감일과 함께 레이아웃 우측에 시각적으로 구분됩니다.",
+              "댓글 목록은 서버에서 조회되며, 새로운 댓글 작성 시 서버에 전송 후 목록이 실시간으로 갱신되도록 구현했습니다.",
+              "카드 수정 버튼을 통해 별도의 수정 모달(TaskEditModal)을 열 수 있으며, 수정 후 상세 정보가 즉시 반영됩니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/cardDetail.png",
+            tech: ["axios", "TypeScript", "SCSS Modules"],
+            ux: [
+              "모달 내부 클릭 시 외부 닫힘 방지 및 포커스 유지",
+              "카드 정보 수정 시 즉시 반영되는 데이터 흐름",
+              "댓글 작성 후 실시간 목록 갱신을 통한 인터랙션 강화",
+              "담당자 및 마감일 섹션을 별도로 분리하여 정보 명확성 향상",
+              "스크롤 차단을 통한 집중도 높은 사용자 경험",
+            ],
+          },
+          {
+            title: "계정 관리",
+            implementedByMe: false,
+            contributionPercent: 45,
+            contributionDetails: [
+              "반응형 레이아웃 및 모바일 UI 구성",
+              "렌더링 오류로 인한 페이지 진입 불가 현상 해결",
+              "닉네임·프로필 이미지 수정 기능 정상화 및 저장 버튼 활성화 조건 추가",
+            ],
+            contributionNote: true,
+            description: [
+              "계정 관리 페이지는 사용자가 자신의 계정 정보를 관리할 수 있는 공간으로, 프로필 수정 및 비밀번호 변경 기능을 제공합니다.",
+              "프로필 수정 섹션에서는 사용자의 닉네임과 프로필 이미지를 변경할 수 있으며, 이는 실시간 반영됩니다.",
+              "비밀번호 변경은 별도의 입력 검증 로직과 함께 구성되어 있어 보안과 사용성을 동시에 고려한 설계가 적용되어 있습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/taskify/mypage.png",
+            tech: ["TypeScript", "SCSS Modules"],
+            ux: [
+              "모듈화된 컴포넌트 구조로 사용자 정보와 보안 정보를 분리하여 제공",
+              "직관적인 UI를 통해 닉네임 및 프로필 이미지 수정 과정을 간소화",
+              "이메일 및 비밀번호 변경 과정에서 명확한 피드백 제공",
+              "‘돌아가기’ 버튼 제공으로 탐색 흐름의 유연성 확보",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    projectName: "Rolling",
+    featureGroups: [
+      {
+        groupName: "공통 UI",
+        features: [
+          {
+            title: "Input",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "입력 상태에 따라 시각적 피드백이 제공되도록 설계된 `styled-components` 기반의 공통 입력 컴포넌트입니다.",
+              "focus, disabled 등의 다양한 상태를 반영해 UX 향상을 도모하고, 플레이스홀더 색상 변화로 입력 흐름을 명확히 안내합니다.",
+              "전역 변수를 활용하여 디자인 일관성과 유지보수성을 확보했습니다.",
+              "모든 필드는 반응형 너비를 갖추고 있으며, padding 및 타이포그래피 설정을 통해 가독성과 조작성 모두 고려되었습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/rolling/input.svg",
+            tech: ["Styled Components"],
+            ux: ["상태 기반 시각 피드백", "접근성 향상", "디자인 일관성 유지"],
+          },
+          {
+            title: "Button",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "재사용성과 디자인 일관성을 고려하여 `styled-components` 기반으로 구현된 공통 버튼 컴포넌트입니다.",
+              "버튼 크기(`small`, `default`)와 상태(hover, active, focus, disabled)에 따라 동적으로 스타일이 적용되도록 설계되었습니다.",
+              "모든 버튼은 중앙 정렬 및 반응형 패딩을 제공하며, 주요 색상은 전역 CSS 변수로 관리되어 유지보수가 용이합니다.",
+              "button 디렉토리 내에서 다양한 상황에 맞는 버튼 변형들이 함께 정의되어 있어 유연한 UI 개발이 가능합니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/rolling/button.svg",
+            tech: ["Styled Components"],
+            ux: ["접근성 고려", "상호작용 피드백 제공", "디자인 일관성 유지"],
+          },
+          {
+            title: "Toast",
+            implementedByMe: false,
+            contributionPercent: 75,
+            contributionDetails: [
+              "미완성 상태였던 스타일링을 마무리하고, 반응형 대응을 포함하여 토스트 컴포넌트의 UI를 완성함",
+              "전역적으로 사용할 수 있도록 구조를 단순화하고, 다양한 페이지에서 손쉽게 호출 가능한 형태로 재사용성을 개선함",
+            ],
+            contributionNote: false,
+            description: [
+              "URL 복사와 같은 사용자 액션에 대한 피드백을 전달하기 위해 제작된 공통 Toast 컴포넌트입니다.",
+              "정중앙 하단 고정 위치에 자연스럽게 등장하며, 체크 아이콘과 텍스트를 함께 배치해 직관성을 높였습니다.",
+              "반응형 설계를 통해 모바일 환경에서도 가독성과 위치 정렬이 유지되며, 배경 투명도와 그림자 효과로 시인성을 확보했습니다.",
+              "클로즈 버튼을 통해 사용자 조작으로도 종료가 가능하도록 UX를 배려하였고, 다크 배경에 화이트 텍스트 대비를 적용하여 접근성을 향상시켰습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/rolling/toast.svg",
+            tech: ["Styled Components"],
+            ux: [
+              "즉각적 피드백 제공",
+              "반응형 대응",
+              "접근성 고려",
+              "재사용성 최적화",
+            ],
+          },
+        ],
+      },
+      {
+        groupName: "페이지별 기능",
+        features: [
+          {
+            title: "랜딩",
+            implementedByMe: false,
+            contributionPercent: 50,
+            contributionDetails: [
+              "반응형 레이아웃 구현을 지원해 모바일과 데스크탑 전반의 화면 안정성을 확보함",
+            ],
+            contributionNote: false,
+            description: [
+              "서비스의 첫 진입점으로, 사용자가 롤링페이퍼 작성 기능에 자연스럽게 접근할 수 있도록 유도하는 역할을 합니다.",
+              "기초적인 서비스 소개와 함께 사용 흐름을 안내하는 구성으로 되어 있으며, 시각적 집중을 위한 간결한 레이아웃으로 설계되었습니다.",
+              "반응형 대응을 통해 모바일 및 데스크탑 환경에서 콘텐츠가 흐트러지지 않도록 최적화되어 있습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/rolling/landing.png",
+            tech: ["Styled Components"],
+            ux: ["간결한 진입 구조", "반응형 최적화", "이용 유도 중심 구성"],
+          },
+          {
+            title: "롤링페이퍼 목록",
+            implementedByMe: true,
+            contributionPercent: 100,
+            contributionNote: false,
+            description: [
+              "롤링페이퍼 서비스를 탐색할 수 있는 대표적인 진입점으로, 사용자들이 인기 롤링페이퍼와 최근 작성된 롤링페이퍼를 각각의 섹션에서 쉽게 찾아볼 수 있도록 구성하였습니다.",
+              "두 섹션 모두 카드 형태의 슬라이드 방식으로 구성되어 있으며, slick-carousel 라이브러리를 이용해 한 번에 하나의 카드가 이동하도록 설정해 자연스럽고 직관적인 사용자 경험을 제공했습니다.",
+              "각 롤링페이퍼 카드는 썸네일 이미지, 제목, 작성자 정보를 포함하고 있으며, 클릭 시 해당 롤링페이퍼의 상세 페이지로 이동되도록 구현되어 콘텐츠 접근성을 높였습니다.",
+              "섹션 간 시각적 구분과 인터랙션 효과, 전체적인 콘텐츠 배치와 구성 흐름을 고려하여 UI/UX 흐름을 직접 설계하고 구현하였으며, 데스크톱과 모바일 환경 모두에서 콘텐츠가 안정적으로 보이도록 레이아웃을 조정했습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/rolling/rolling.png",
+            tech: ["slick-carousel", "Javascript", "Styled Components"],
+            ux: [
+              "카드 슬라이드 인터랙션",
+              "섹션 기반 콘텐츠 탐색",
+              "반응형 콘텐츠 레이아웃",
+            ],
+          },
+          {
+            title: "롤링페이퍼 등록",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "사용자가 새 롤링페이퍼를 생성할 수 있는 페이지로, 받는 사람의 이름과 배경 스타일을 선택하여 간편하게 롤링페이퍼를 등록할 수 있도록 구성되었습니다.",
+              "배경은 이미지 또는 컬러 중 하나를 선택하는 방식이며, 제공된 컬러 팔레트와 이미지 샘플 중에서 원하는 테마를 클릭하여 선택하는 직관적인 인터페이스를 제공합니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/rolling/createRolling.png",
+            tech: ["JavaScript", "Styled Components"],
+            ux: [
+              "컬러 및 이미지 선택 인터랙션",
+              "실시간 테마 미리보기",
+              "간편한 등록 플로우",
+            ],
+          },
+          {
+            title: "롤링페이퍼 상세",
+            implementedByMe: true,
+            contributionPercent: 40,
+            contributionDetails: [
+              "상단 헤더 영역의 전반적인 UI 구성 및 스타일링을 맡아, 사용자 경험 흐름에 맞는 레이아웃과 인터랙션을 설계",
+              "이모지 감정 표현 기능 구현으로 사용자 참여도를 높이는 인터랙션 제공",
+              "카카오톡 공유 및 URL 복사 기능을 구현하여, 소셜 공유 경로를 다양화하고 접근성을 향상시킴",
+            ],
+            contributionNote: false,
+            description: [
+              "개별 롤링페이퍼의 상세 내용을 확인할 수 있는 페이지로, 해당 페이지 상단에는 사용자 감정 표현을 위한 이모지 리액션 기능이 구현되어 있습니다.",
+              "기본 제공되는 여러 종류의 이모지 중 하나를 클릭하면 해당 감정 표현에 대한 카운트가 올라가는 구조로, 소셜 피드백처럼 자연스러운 사용자 반응을 유도합니다.",
+              "또한 카카오 공유 API와 URL 복사 기능을 통해 타인에게 롤링페이퍼를 쉽게 전달할 수 있도록 구성되어 있어, 콘텐츠 확산을 지원합니다.",
+              "페이지 하단에는 해당 롤링페이퍼에 등록된 메시지들이 무한 스크롤 방식으로 출력되며, 각 메시지를 클릭 시 모달 형태로 상세 내용을 확인할 수 있습니다.",
+              "개별 메시지 삭제뿐 아니라, 전체 롤링페이퍼 삭제 기능도 함께 제공되어 사용자에게 콘텐츠 관리의 자율성을 부여합니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/rolling/rollingDetail.png",
+            tech: ["Kakao Share API", "JavaScript", "Styled Components"],
+            ux: [
+              "이모지 기반 감정 표현 인터랙션",
+              "카카오 공유 및 URL 복사 기능",
+              "무한스크롤 메시지 렌더링 및 모달 뷰",
+              "삭제 기능을 통한 콘텐츠 관리 지원",
+            ],
+          },
+          {
+            title: "롤링페이퍼 메시지 등록",
+            implementedByMe: false,
+            contributionPercent: 0,
+            contributionNote: false,
+            description: [
+              "롤링페이퍼에 메시지를 등록하는 페이지로, 보내는 사람의 이름, 프로필 이미지, 상대와의 관계, 메시지 내용, 그리고 사용할 폰트를 선택할 수 있습니다.",
+              "프로필 이미지와 폰트는 기본 제공된 리스트 중에서 선택할 수 있으며, 모든 입력값이 유효할 때에만 등록 버튼이 활성화되도록 구성되어 있습니다.",
+              "텍스트 중심의 입력 UI에 감성적 시각 요소를 결합해, 사용자 맞춤형 메시지를 직관적으로 작성할 수 있도록 설계되었습니다.",
+            ],
+            image:
+              "/images/projects/detail/frontend/features/rolling/sendMessage.png",
+            tech: ["JavaScript", "Styled Components"],
+            ux: [
+              "필수 입력 완료 시 등록 버튼 활성화",
+              "직관적이고 감성적인 프로필 이미지 및 폰트 선택 UI",
+              "간결하고 명확한 입력 폼으로 편리한 메시지 작성 지원",
             ],
           },
         ],
