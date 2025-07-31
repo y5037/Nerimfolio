@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useRef, useState } from "react";
 import ScreenshotModal from "../../common/ScreenshotModal";
+import AnimatedBar from "@/components/progressbar/AnimatedBar";
 
 export default function FeatureAccordion({
   paramsId,
@@ -155,12 +156,8 @@ export default function FeatureAccordion({
                           </span>
                         )}
                       </h4>
-
-                      <div className="mt-1 w-full bg-gray-700 h-3 rounded-full">
-                        <div
-                          className="bg-blue-500 h-full rounded-full transition-all"
-                          style={{ width: `${feature.contributionPercent}%` }}
-                        />
+                      <div className="mt-1 w-full rounded-full">
+                        <AnimatedBar value={feature.contributionPercent} />
                       </div>
                       <div className="text-xs text-right text-gray-400 mt-1">
                         {feature.contributionPercent}%
