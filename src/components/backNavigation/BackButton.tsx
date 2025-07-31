@@ -11,7 +11,7 @@ export default function BackButton({ $about }: { $about?: boolean }) {
     <>
       <div
         className={clsx(
-          "flex my-10 items-center",
+          "inline-flex my-10 items-center",
           !$about && "sticky top-10 z-[100] max-xs500:mb-7"
         )}
       >

@@ -175,7 +175,7 @@ export const frontendOverviewData: FrontendOverviewData[] = [
       },
     ],
     githubLink: "https://github.com/y5037/Rolling",
-    diveInLink: "https://rolling-three.vercel.app/",
+    diveInLink: "https://rolling-chi.vercel.app/",
   },
 ];
 

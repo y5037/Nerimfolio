@@ -71,7 +71,7 @@ export const frontendProject: FrontendData[] = [
     keyword: ["team_project", "react", "javascript"],
     title: "Rolling",
     description: "REACT 기반 익명 롤링페이퍼 서비스",
-    diveInLink: "https://rolling-three.vercel.app/",
+    diveInLink: "https://rolling-chi.vercel.app/",
     githubLink: "https://github.com/y5037/Rolling",
   },
 ];

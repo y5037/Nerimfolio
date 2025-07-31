@@ -55,3 +55,26 @@ export type PublishingOverviewData = BaseOverviewData & {
   department?: string;
   responsibilities?: string[];
 };
+
+export type FeatureData = {
+  title: string;
+  implementedByMe: boolean;
+  contributionPercent: number;
+  contributionDetails?: string[];
+  contributionNote: boolean;
+  description: string[];
+  image: string;
+  tech: string[];
+  ux: string[];
+};
+
+type FeatureGroup = {
+  groupName: string;
+  features: FeatureData[];
+};
+
+export type Features = {
+  id: number;
+  projectName: string;
+  featureGroups: FeatureGroup[];
+};

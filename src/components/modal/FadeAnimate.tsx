@@ -7,12 +7,14 @@ export default function FadeAnimate({
   children,
   controller,
   $qrcode,
-  $screenshot,
+  $frontendFeature,
+  $publishingOverview,
 }: {
   children: ReactNode;
   controller: ModalController;
   $qrcode?: boolean;
-  $screenshot?: boolean;
+  $frontendFeature?: boolean;
+  $publishingOverview?: boolean;
 }) {
   const { isVisible, close, handleExitComplete } = controller;
 
@@ -24,29 +26,40 @@ export default function FadeAnimate({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={clsx(
-            "fixed inset-0 bg-[rgba(0,0,0,0.5)] z-[9999] flex justify-center items-center cursor-auto"
+            "fixed inset-0 bg-[rgba(0,0,0,0.6)] z-[9999]",
+            $frontendFeature
+              ? "overflow-y-auto bg-[rgba(0,0,0,0.7)]"
+              : "flex justify-center items-center cursor-auto"
           )}
           onClick={handleExitComplete}
         >
-          <motion.div
-            key="modal-content"
-            onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-              e.stopPropagation()
-            }
-            initial={{ opacity: 0, x: 0, y: 0, scale: 0.92 }}
-            animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 0, y: 0, scale: 0.92 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+          <div
             className={clsx(
-              $screenshot &&
-                "relative mx-auto w-[calc(100vw_*_(1400/1920))] h-[calc(100vw_*_(800/1920))] rounded-lg overflow-hidden",
-              "max-md:w-full max-md:h-[calc(100vw_*_(950/1920))] max-md:mx-6",
-              $qrcode &&
-                "relative rounded shadow-xl overflow-hidden w-[300px] h-[370px] max-s:w-full max-s:mx-4"
+              ($frontendFeature || $publishingOverview) && "max-md:px-6",
+              $frontendFeature &&
+                "max-w-[1000px] mx-auto min-h-screen flex justify-center items-center px-6 py-20"
             )}
           >
-            {children}
-          </motion.div>
+            <motion.div
+              key="modal-content"
+              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
+                e.stopPropagation()
+              }
+              initial={{ opacity: 0, x: 0, y: 0, scale: 0.92 }}
+              animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 0, y: 0, scale: 0.92 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className={clsx(
+                "max-md:w-full",
+                $publishingOverview &&
+                  "relative mx-auto w-[calc(100vw_*_(1400/1920))] h-[calc(100vw_*_(800/1920))] max-w-[1400px] max-h-[800px] rounded-lg overflow-hidden max-md:h-[calc(100vw_*_(950/1920))]",
+                $qrcode &&
+                  "relative rounded shadow-xl overflow-hidden w-[300px] h-[370px] min-w-[300px]"
+              )}
+            >
+              {children}
+            </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

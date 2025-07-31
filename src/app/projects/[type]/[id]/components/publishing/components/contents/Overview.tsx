@@ -4,7 +4,7 @@ import { publishingOverviewData } from "@/data/projects/detail/overview";
 import { useModalController } from "@/hooks/useModalController";
 import clsx from "clsx";
 import { useParams } from "next/navigation";
-import ScreenshotModal from "../ScreenshotModal";
+import ScreenshotModal from "../../../common/ScreenshotModal";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -25,6 +25,7 @@ export default function Overview() {
     <>
       {showModal && (
         <ScreenshotModal
+          $publishingOverview
           imgSrc={isScreenshot}
           controller={{ isVisible, close, handleExitComplete }}
         />
