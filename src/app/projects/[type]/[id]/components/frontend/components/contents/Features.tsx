@@ -1,7 +1,7 @@
 import { featuresData } from "@/data/projects/detail/features";
 import { useState } from "react";
 import FeatureAccordion from "./components/FeatureAccordion";
-import { getParamsId } from "@/utils/getParamsId";
+import { useParamsId } from "@/utils/getParamsId";
 import clsx from "clsx";
 
 export default function Features() {
@@ -9,7 +9,7 @@ export default function Features() {
     "commonUI" | "pageFeatures" | null
   >(null);
 
-  const paramsId = getParamsId();
+  const paramsId = useParamsId();
   const featureData = featuresData.find((item) => {
     return item.id === paramsId;
   });

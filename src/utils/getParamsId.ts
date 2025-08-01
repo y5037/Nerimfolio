@@ -1,6 +1,6 @@
 import { useParams } from "next/navigation";
 
-export function getParamsId() {
+export function useParamsId() {
   const params = useParams();
   return Number(params.id);
 }

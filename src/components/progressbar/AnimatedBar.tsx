@@ -1,4 +1,5 @@
 "use client";
+
 import { Line } from "rc-progress";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
@@ -13,7 +14,7 @@ export default function AnimatedBar({ value }: { value: number }) {
       const timeout = setTimeout(() => setProgress(value), 300);
       return () => clearTimeout(timeout);
     }
-  }, [inView]);
+  }, [inView, value]);
 
   return (
     <div ref={ref} className={clsx("w-full")}>

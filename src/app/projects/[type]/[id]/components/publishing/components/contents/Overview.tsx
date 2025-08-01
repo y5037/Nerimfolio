@@ -6,12 +6,12 @@ import clsx from "clsx";
 import ScreenshotModal from "../../../common/ScreenshotModal";
 import { useState } from "react";
 import Image from "next/image";
-import { getParamsId } from "@/utils/getParamsId";
+import { useParamsId } from "@/utils/getParamsId";
 
 export default function Overview() {
   const [isScreenshot, setIsScreenshot] = useState("");
 
-  const paramsId = getParamsId();
+  const paramsId = useParamsId();
   const data = publishingOverviewData.find((item) => {
     return item.id === paramsId;
   });

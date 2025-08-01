@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import TechDecisionCard from "./components/TechDecisionCard";
 import { frontendTechStackData } from "@/data/projects/detail/techStack";
-import { getParamsId } from "@/utils/getParamsId";
+import { useParamsId } from "@/utils/getParamsId";
 import clsx from "clsx";
 
 export default function TechStack() {
-  const paramsId = getParamsId();
+  const paramsId = useParamsId();
   const data = frontendTechStackData.find((item) => {
     return item.id === paramsId;
   });

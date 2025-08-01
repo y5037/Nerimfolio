@@ -1,11 +1,11 @@
-import { getParamsId } from "@/utils/getParamsId";
+import { useParamsId } from "@/utils/getParamsId";
 import clsx from "clsx";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function PageController() {
   const router = useRouter();
-  const paramsId = getParamsId();
+  const paramsId = useParamsId();
 
   return (
     <div
