@@ -105,12 +105,10 @@ export default function FeatureAccordion({
                 }}
               >
                 <div className={clsx("px-6 py-6 text-gray-300")}>
-                  <div className={clsx("space-y-0.5 mb-6")}>
-                    {feature.description.map((text, idx) => (
-                      <p key={idx} className={clsx("text-sm")}>
-                        {text}
-                      </p>
-                    ))}
+                  <div className={clsx("mb-6")}>
+                    <pre className={clsx("text-sm text-wrap")}>
+                      {feature.description}
+                    </pre>
                   </div>
                   <div className={clsx("space-y-8")}>
                     {feature.image && (
