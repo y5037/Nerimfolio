@@ -119,7 +119,7 @@ export const featuresData: Features[] = [
             ],
             contributionNote: true,
             description: `랜딩페이지는 사용자가 알바폼에 처음 진입할 때 마주하는 첫 화면으로, 서비스의 목적과 주요 기능을 소개하고 CTA 버튼을 통해 자연스럽게 서비스 흐름으로 유도하는 역할을 합니다.
-기존의 반응형 레이아웃은 유지하면서도, 과도하게 확장되던 메인 섹션의 시각적 불안정성을 개선했으며, 사용자 상태에 따라 CTA 버튼의 이동 경로를 유동적으로 설정해 보다 매끄럽고 개인화된 온보딩 경험을 제공합니다.`,
+기존의 반응형 레이아웃은 유지하면서도, 과도하게 확장되던 메인 섹션의 시각적 불안정성을 개선했으며, 사용자 상태에 따라 CTA 버튼의 이동 경로를 유동적으로 설정해, 보다 매끄럽고 개인화된 온보딩 경험을 제공합니다.`,
             image:
               "/images/projects/detail/frontend/features/albaform/landing.png",
             tech: ["Tailwind CSS", "Styled Components"],
@@ -170,8 +170,8 @@ export const featuresData: Features[] = [
               "반응형 레이아웃 및 모바일 UI 구성",
             ],
             contributionNote: true,
-            description: `알바폼 목록 페이지는 사용자가 전체 채용 공고를 탐색하는 중심 허브로, 알바폼 플랫폼의 핵심 콘텐츠를 제공합니다.
-초기 렌더링 속도를 개선하기 위해 SSR과 CSR 방식을 통합하여 적용했으며, 검색, 필터, 무한스크롤 기능을 통해 다양한 조건에 맞는 공고 탐색을 지원합니다. 또한 모바일 환경에서도 최적화된 UI를 제공해, 기기와 관계없이 모든 사용자에게 원활한 탐색 경험을 보장합니다.`,
+            description: `알바폼 목록 페이지는 사용자가 전체 채용 공고를 탐색하는 중심 허브로, 알바폼 플랫폼의 핵심 콘텐츠를 제공합니다. 검색, 필터, 무한 스크롤 기능을 통해 다양한 조건에 맞는 공고 탐색을 지원하며, 모바일 환경에서도 최적화된 UI로 기기와 관계없이 원활한 탐색 경험을 제공합니다.
+또한, 검색 엔진 최적화(SEO)를 고려해 SSR과 CSR 방식을 병행 적용함으로써 초기 렌더링 속도와 검색 노출 효과를 동시에 개선했습니다.`,
             image:
               "/images/projects/detail/frontend/features/albaform/albaform.png",
             tech: [
@@ -374,7 +374,7 @@ React Hook Form과 Zod 기반의 스키마 유효성 검사를 활용해 입력 
             title: "[채용자/지원자] 마이페이지",
             implementedByMe: true,
             contributionPercent: 100,
-            contributionNote: true,
+            contributionNote: false,
             description: `마이페이지는 채용자와 지원자가 모두 사용하는 공통 페이지로, 사용자 권한에 따라 UI와 노출 기능이 유동적으로 분기되도록 설계했습니다. 기본적으로 내가 작성한 알바토크 글과 댓글을 확인할 수 있으며, 정렬 필터 기능과 무한 스크롤을 통해 편리한 탐색 환경을 제공합니다.
 비밀번호 변경과 내 정보 수정 기능은 React Hook Form과 Zod를 활용한 폼 유효성 검사를 적용했으며, 특히 ‘내 정보 수정’ 모달은 권한별로 입력 항목과 UI를 다르게 구성하여 맞춤형 경험을 제공합니다. 지원자에게는 스크랩한 알바폼 목록을 확인할 수 있는 추가 기능을 제공해 보다 개인화된 사용 경험을 지원합니다.`,
             image:
@@ -502,7 +502,7 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             contributionPercent: 100,
             contributionNote: false,
             description: `상품 정보 확인과 사용자 상호작용을 위한 상세 페이지로, 게시자는 본인이 등록한 게시글을 삭제할 수 있습니다(수정 기능은 추후 추가할 예정입니다).
-좋아요 기능은 토글 방식으로 구현되어 클릭 시 숫자가 즉시 반영되며, 댓글은 등록, 수정, 삭제가 가능하고 React Query의 queryKey 기반 캐싱을 통해 실시간으로 반영됩니다. 댓글 무한스크롤 기능은 향후 구현할 계획입니다.`,
+좋아요 기능은 토글 방식으로 구현되어 클릭 시 숫자가 즉시 반영되며, 댓글은 무한스크롤로 데이터 패칭되며 등록, 수정, 삭제가 가능하고 React Query의 queryKey 기반 캐싱을 통해 실시간으로 반영됩니다`,
             image:
               "/images/projects/detail/frontend/features/pandamarket/productDetail.png",
             tech: ["React Query", "TypeScript", "CSS Modules"],
