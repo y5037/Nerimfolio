@@ -2,13 +2,12 @@ import { overviewLinkButton, overviewLiTitle } from "@/app/projects/styles";
 import AnimatedCircle from "@/components/progressbar/AnimatedCircle";
 import { frontendOverviewData } from "@/data/projects/detail/overview";
 import { tagColors } from "@/lib/constants/tagColors";
+import { getParamsId } from "@/utils/getParamsId";
 import clsx from "clsx";
 import Image from "next/image";
-import { useParams } from "next/navigation";
 
 export default function Overview() {
-  const params = useParams();
-  const paramsId = Number(params.id);
+  const paramsId = getParamsId();
   const data = frontendOverviewData.find((item) => {
     return item.id === paramsId;
   });
@@ -75,7 +74,9 @@ export default function Overview() {
                     "shadow-sm border border-solid border-gray-500/40"
                   )}
                 >
-                  <h3 className={clsx("text-base font-semibold mb-3 text-white")}>
+                  <h3
+                    className={clsx("text-base font-semibold mb-3 text-white")}
+                  >
                     {category}
                   </h3>
                   <ul className={clsx("flex flex-wrap gap-2")}>

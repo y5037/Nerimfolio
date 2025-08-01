@@ -78,3 +78,21 @@ export type Features = {
   projectName: string;
   featureGroups: FeatureGroup[];
 };
+
+export type TechStackData = {
+  title: string;
+  description: string;
+  titleColor: string;
+};
+
+type TechStackGroup = {
+  groupName: string;
+  techStack?: TechStackData[];
+  directory?: string;
+};
+
+export type TechStack = {
+  id: number;
+  projectName: string;
+  techStackGroup: TechStackGroup[];
+};

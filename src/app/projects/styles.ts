@@ -17,3 +17,7 @@ export const overviewLinkButton = clsx(
   "rounded-xl px-4 py-2 duration-200",
   "hover:opacity-85"
 );
+
+export const featuresSemiTitle = clsx("text-sm font-medium text-gray-400");
+
+export const featuresUl = clsx("list-disc list-inside text-sm mt-1");

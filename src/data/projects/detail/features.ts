@@ -162,8 +162,8 @@ export const featuresData: Features[] = [
               "/images/projects/detail/frontend/features/albaform/sign.png",
             tech: [
               "React Query",
-              "Zustand",
               "React Hook Form",
+              "Zustand",
               "zod",
               "Axios",
               "Cookies",
