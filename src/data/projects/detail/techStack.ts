@@ -1,4 +1,6 @@
-export const frontendTechStackData = [
+import { TechStack } from "@/types/projects";
+
+export const frontendTechStackData: TechStack[] = [
   {
     id: 1,
     projectName: "Albaform",
@@ -58,7 +60,8 @@ invalidateQueries를 활용해 최신 데이터를 자동으로 반영하고, on
       },
       {
         groupName: "Directory Architecture",
-        directory: `/src
+        description: `실제 서비스 환경을 가정하여, 채용자(Owner)와 지원자(Applicant)의 UI 및 흐름 차이를 명확히 반영하기 위해 역할별로 분리했습니다. 이렇게 분리함으로써 유지보수성을 높이고, 협업 과정에서 컴포넌트 간 의존성을 최소화하여 효율적인 개발이 가능하도록 설계했습니다.`,
+        directory: `📂 src
 ├── 📂 app
 │   └── 📂 albaform                   # 알바폼 관련 페이지 루트
 │       ├── 📄 page.tsx               # 공통 페이지 (예: 목록)
@@ -79,6 +82,46 @@ invalidateQueries를 활용해 최신 데이터를 자동으로 반영하고, on
 ├── 📂 utils                          # 공통 유틸 함수
 ├── 📂 schemas                        # Zod 스키마, 폼 유효성 로직
 └── 📄 page.tsx                       # 앱 진입점`,
+      },
+    ],
+  },
+  {
+    id: 2,
+    projectName: "PandaMarket",
+    techStackGroups: [
+      {
+        groupName: "Tech Stack Choice",
+        techStack: [
+          {
+            title: "Next.js Page Router",
+            description: `최신 Next.js의 App Router 구조를 실무에 적용해보고자 도입했습니다.
+단순한 정적 페이지 구성이 아닌, 다양한 사용자 역할(Role)에 따른 UI 분기, 인증 흐름, 서버 상태 연동 등 복잡한 라우팅 시나리오를 직접 설계해보는 것이 이번 프로젝트의 중요한 목표 중 하나였습니다.
+라우트 단위의 레이아웃 구성, 역할별 UI 분리, 서버 컴포넌트와 클라이언트 컴포넌트의 책임 분리 등 실서비스 수준에서 유지보수성과 확장성을 고려한 구조 설계를 중점적으로 구현했습니다.
+
+또한, 전역 상태 관리나 메타데이터 구성 같은 공통 요소들을 레이아웃에 통합함으로써 반복적인 코드 작성을 줄이고 역할 분리를 명확히 했습니다.`,
+            titleColor: "text-cyan-400",
+          },
+        ],
+      },
+      {
+        groupName: "Directory Architecture",
+        description: `이 프로젝트는 역할별로 디렉토리를 구분한 기능 중심의 구조로 설계되었습니다. components, api, hooks, context, utils 등은 각 기능의 책임에 따라 모듈화하여 유지 보수성과 확장성을 높였고, types를 별도로 분리해 타입 일관성과 재사용성을 확보했습니다.`,
+        directory: `📂 project
+├── 📂 public
+│   ├── 📂 assets               # 이미지, 폰트 등 정적 파일 및 메타 태그와 파비콘 관련 파일 모음
+├── 📂 src
+│   ├── 📂 api                 # Axios API 요청
+│   ├── 📂 components          # 재사용 가능한 UI 컴포넌트 및 페이지 작업 컴포넌트
+│   ├── 📂 context             # 전역 Provider 관리
+│   ├── 📂 hooks               # react-query 훅 모음
+│   ├── 📂 pages               # 각 페이지별 컴포넌트
+│   ├── 📂 types               # 타입 모음
+│   ├── 📂 utils               # 유틸리티성 함수 및 커스텀 훅 모음
+│   📂 styles                  # Global Reset Styled
+│   📄 package-lock.json        # 정확한 종속성 버전이 기록된 파일로, 일관된 빌드를 보장
+│   📄 package.json             # 프로젝트 종속성 및 스크립트 정의
+├── 📄 .gitignore               # Git 무시 파일 목록
+└── 📄 README.md                # 프로젝트 개요 및 사용법`,
       },
     ],
   },

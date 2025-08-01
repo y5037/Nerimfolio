@@ -10,15 +10,20 @@ export default function TechStack() {
     return item.id === paramsId;
   });
 
-  const techStack =
-    data?.techStackGroups.find(
-      (group) => group.groupName === "Tech Stack Choice"
-    )?.techStack ?? [];
+  const groups = data?.techStackGroups ?? [];
 
-  const directory =
-    data?.techStackGroups.find(
-      (group) => group.groupName === "Directory Architecture"
-    )?.directory ?? [];
+  let techStack: (typeof groups)[number]["techStack"] = [];
+  let description: string | undefined;
+  let directory: string | undefined;
+
+  for (const group of groups) {
+    if (group.groupName === "Tech Stack Choice") {
+      techStack = group.techStack ?? [];
+    } else if (group.groupName === "Directory Architecture") {
+      description = group.description ?? "";
+      directory = group.directory ?? "";
+    }
+  }
 
   if (!data) return;
   return (
@@ -81,13 +86,9 @@ export default function TechStack() {
                 디렉토리 구조 설계
               </h3>
             </div>
-            <p className={clsx("text-neutral-400 mb-8")}>
-              실제 서비스 환경을 가정하여, 채용자(Owner)와 지원자(Applicant)의
-              UI 및 흐름 차이를 명확히 반영하기 위해 역할별로 분리했습니다.
-              <br />
-              이렇게 분리함으로써 유지보수성을 높이고, 협업 과정에서 컴포넌트 간
-              의존성을 최소화하여 효율적인 개발이 가능하도록 설계했습니다.
-            </p>
+            <pre className={clsx("text-neutral-400 mb-8 text-wrap")}>
+              {description}
+            </pre>
             <pre
               className={clsx(
                 "bg-neutral-800/70 p-4 rounded-xl font-mono text-sm text-neutral-300 overflow-x-auto border border-solid border-gray-500/40"

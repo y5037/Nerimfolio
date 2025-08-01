@@ -88,11 +88,12 @@ export type TechStackData = {
 type TechStackGroup = {
   groupName: string;
   techStack?: TechStackData[];
+  description?: string;
   directory?: string;
 };
 
 export type TechStack = {
   id: number;
   projectName: string;
-  techStackGroup: TechStackGroup[];
+  techStackGroups: TechStackGroup[];
 };
