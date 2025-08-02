@@ -3,16 +3,15 @@ import AnimatedCircle from "@/components/progressbar/AnimatedCircle";
 import { publishingOverviewData } from "@/data/projects/detail/overview";
 import { useModalController } from "@/hooks/useModalController";
 import clsx from "clsx";
-import { useParams } from "next/navigation";
 import ScreenshotModal from "../../../common/ScreenshotModal";
 import { useState } from "react";
 import Image from "next/image";
+import { useParamsId } from "@/utils/getParamsId";
 
 export default function Overview() {
   const [isScreenshot, setIsScreenshot] = useState("");
 
-  const params = useParams();
-  const paramsId = Number(params.id);
+  const paramsId = useParamsId();
   const data = publishingOverviewData.find((item) => {
     return item.id === paramsId;
   });

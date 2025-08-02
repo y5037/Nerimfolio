@@ -62,7 +62,7 @@ export type FeatureData = {
   contributionPercent: number;
   contributionDetails?: string[];
   contributionNote: boolean;
-  description: string[];
+  description: string;
   image: string;
   tech: string[];
   ux: string[];
@@ -77,4 +77,23 @@ export type Features = {
   id: number;
   projectName: string;
   featureGroups: FeatureGroup[];
+};
+
+export type TechStackData = {
+  title: string;
+  description: string;
+  titleColor: string;
+};
+
+type TechStackGroup = {
+  groupName: string;
+  techStack?: TechStackData[];
+  description?: string;
+  directory?: string;
+};
+
+export type TechStack = {
+  id: number;
+  projectName: string;
+  techStackGroups: TechStackGroup[];
 };

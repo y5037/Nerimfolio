@@ -1,7 +1,9 @@
 "use client";
+
 import { Line } from "rc-progress";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 export default function AnimatedBar({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
@@ -12,10 +14,10 @@ export default function AnimatedBar({ value }: { value: number }) {
       const timeout = setTimeout(() => setProgress(value), 300);
       return () => clearTimeout(timeout);
     }
-  }, [inView]);
+  }, [inView, value]);
 
   return (
-    <div ref={ref} className="w-full">
+    <div ref={ref} className={clsx("w-full")}>
       <Line
         percent={progress}
         strokeWidth={1}

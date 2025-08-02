@@ -34,7 +34,7 @@ export default function NotFound() {
         type="button"
         onClick={() => router.push("/")}
         className={clsx(
-          "mt-[50px] h-14 rounded-[33px] px-7 text-blue300 bg-gray100 transition duration-[.3s] hover:bg-gray500 hover:text-gray100 font-medium text-[18px]"
+          "mt-[50px] h-14 rounded-[33px] px-7 text-blue300 bg-gray100 transition duration-300 hover:bg-gray500 hover:text-gray100 font-medium text-[18px]"
         )}
       >
         홈으로 돌아가기

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.19.2",
     "lucide-react": "^0.525.0",
@@ -23,7 +24,9 @@
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.10",
+    "tailwind-merge": "^3.3.1",
     "tailwind-scrollbar-hide": "^4.0.0",
+    "tailwindcss-animate": "^1.0.7",
     "use-media": "^1.5.0",
     "zustand": "^5.0.6"
   },
