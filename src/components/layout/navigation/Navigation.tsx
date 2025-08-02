@@ -48,7 +48,7 @@ export default function Navigation() {
                   ? router.push(menu.href)
                   : window.open("https://velog.io/@nerimy/posts", "_blank")
               }
-              className={clsx("hover:text-white duration-[.2s]")}
+              className={clsx("hover:text-white duration-200")}
             >
               {menu.label}
             </button>

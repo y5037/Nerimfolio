@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import FrontendOverview from "../frontend/components/contents/Overview";
 import PublishingOverview from "../publishing/components/contents/Overview";
 import Feature from "../frontend/components/contents/Features";
+import TechStack from "../frontend/components/contents/TechStack";
 
 export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
   return (
@@ -29,6 +30,8 @@ export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
             )
           ) : isActive === "Features" ? (
             <Feature />
+          ) : isActive === "Tech & Stack" ? (
+            <TechStack />
           ) : (
             ""
           )}

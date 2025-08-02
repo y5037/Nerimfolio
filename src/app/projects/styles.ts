@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 export const controller = clsx(
-  "border border-solid border-gray100 rounded-full p-2 bg-[rgba(0,0,0,.3)] duration-[.2s] hover:bg-[rgba(255,255,255,.1)]"
+  "border border-solid border-gray100 rounded-full p-2 bg-[rgba(0,0,0,.3)] duration-200 hover:bg-[rgba(255,255,255,.1)]"
 );
 
 export const controllerButton = clsx(
@@ -17,3 +17,7 @@ export const overviewLinkButton = clsx(
   "rounded-xl px-4 py-2 duration-200",
   "hover:opacity-85"
 );
+
+export const featuresSemiTitle = clsx("text-sm font-medium text-gray-400");
+
+export const featuresUl = clsx("list-disc list-inside text-sm mt-1");
