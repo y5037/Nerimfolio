@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 export const controller = clsx(
-  "border border-solid border-gray100 rounded-full p-2 bg-[rgba(0,0,0,.3)] duration-[.2s] hover:bg-[rgba(255,255,255,.1)]"
+  "border border-solid border-gray100 rounded-full p-2 bg-[rgba(0,0,0,.3)] duration-200 hover:bg-[rgba(255,255,255,.1)]"
 );
 
 export const controllerButton = clsx(

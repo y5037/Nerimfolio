@@ -19,7 +19,7 @@ export default function TabContainer({ isTab, setIsTab }: TabProps) {
             key={tab.key}
             type="button"
             className={clsx(
-              "flex-[1] duration-[.2s] hover:text-white",
+              "flex-[1] duration-200 hover:text-white",
               isTab === tab.key && "text-white"
             )}
             onClick={() => setIsTab(tab.key)}

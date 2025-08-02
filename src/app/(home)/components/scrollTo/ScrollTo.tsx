@@ -13,7 +13,7 @@ export default function ScrollTo({ coord }: { coord: string }) {
         return (
           <button
             className={clsx(
-              "w-[10px] h-[10px] border-spacing-[2px] border-solid cursor-pointer hover:bg-white duration-[.2s]",
+              "w-[10px] h-[10px] border-spacing-[2px] border-solid cursor-pointer hover:bg-white duration-200",
               coord === item && "bg-white"
             )}
             key={i}
