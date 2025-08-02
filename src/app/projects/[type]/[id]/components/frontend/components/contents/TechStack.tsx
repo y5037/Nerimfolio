@@ -86,7 +86,7 @@ export default function TechStack() {
                 디렉토리 구조 설계
               </h3>
             </div>
-            <pre className={clsx("text-neutral-400 mb-8 text-wrap")}>
+            <pre className={clsx("pl-3 text-neutral-400 mb-8 text-wrap")}>
               {description}
             </pre>
             <pre
