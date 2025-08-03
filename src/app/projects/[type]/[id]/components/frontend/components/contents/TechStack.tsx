@@ -3,6 +3,8 @@ import TechDecisionCard from "./components/TechDecisionCard";
 import { frontendTechStackData } from "@/data/projects/detail/techStack";
 import { useParamsId } from "@/utils/getParamsId";
 import clsx from "clsx";
+import { TechStackData } from "@/types/projects";
+import { ColorKey } from "@/lib/constants/techColors";
 
 export default function TechStack() {
   const paramsId = useParamsId();
@@ -57,7 +59,10 @@ export default function TechStack() {
             </div>
             <div className={clsx("space-y-6")}>
               {techStack.map((item, idx) => (
-                <TechDecisionCard key={idx} data={item} />
+                <TechDecisionCard
+                  key={idx}
+                  data={item as TechStackData & { signatureColor: ColorKey }}
+                />
               ))}
             </div>
           </CardContent>
