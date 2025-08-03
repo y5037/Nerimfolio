@@ -38,10 +38,10 @@ export default function TechStack() {
             "bg-neutral-900 border-neutral-700 rounded-2xl shadow-md border border-solid border-gray-500/40"
           )}
         >
-          <CardContent className={clsx("p-6")}>
+          <CardContent className={clsx("px-6 py-10")}>
             <div
               className={clsx(
-                "mb-10 pl-5 border-solid border-l-4 border-pink-400"
+                "mb-8 pl-5 border-solid border-l-4 border-pink-400"
               )}
             >
               <span
@@ -51,7 +51,7 @@ export default function TechStack() {
               >
                 Tech Stack Choice
               </span>
-              <h2 className={clsx("text-xl font-bold text-neutral-100 mt-1")}>
+              <h2 className={clsx("text-2xl font-bold text-neutral-100 mt-1")}>
                 기술 선택 배경
               </h2>
             </div>
@@ -67,7 +67,7 @@ export default function TechStack() {
             "bg-neutral-900 border-neutral-700 rounded-2xl shadow-md border border-solid border-gray-500/40"
           )}
         >
-          <CardContent className={clsx("p-6")}>
+          <CardContent className={clsx("px-6 py-10")}>
             <div
               className={clsx("pl-5 border-solid border-l-4 border-indigo-400")}
             >
@@ -80,7 +80,7 @@ export default function TechStack() {
               </span>
               <h3
                 className={clsx(
-                  "text-xl font-semibold text-neutral-100 mt-1 mb-3"
+                  "text-2xl font-semibold text-neutral-100 mt-1 mb-3"
                 )}
               >
                 디렉토리 구조 설계
@@ -91,7 +91,7 @@ export default function TechStack() {
             </pre>
             <pre
               className={clsx(
-                "bg-neutral-800/70 p-4 rounded-xl font-mono text-sm text-neutral-300 overflow-x-auto border border-solid border-gray-500/40"
+                "bg-neutral-800/70 p-6 rounded-xl font-mono text-sm text-gray200 overflow-x-auto border border-indigo-400/40 shadow-[0_0_10px_rgba(129,140,248,0.4)] "
               )}
             >
               {directory}

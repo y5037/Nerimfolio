@@ -82,7 +82,7 @@ export type Features = {
 export type TechStackData = {
   title: string;
   description: string;
-  titleColor: string;
+  signatureColor: string;
 };
 
 type TechStackGroup = {
