@@ -8,7 +8,11 @@ interface Props {
 
 export default function TechDecisionCard({ data }: Props) {
   return (
-    <div className="relative bg-black px-6 py-8 rounded-lg border border-pink-400/40 font-mono text-sm text-white shadow-[0_0_10px_rgba(249,168,212,0.3)] overflow-x-auto">
+    <div
+      className={clsx(
+        "relative bg-black px-6 py-8 rounded-lg border border-pink-400/40 font-mono text-sm text-white shadow-[0_0_10px_rgba(249,168,212,0.3)] overflow-x-auto"
+      )}
+    >
       <h3
         className={clsx(
           "inline-block text-xs font-medium mb-4 tracking-widest uppercase border border-solid rounded-full px-5 py-2",
@@ -17,7 +21,11 @@ export default function TechDecisionCard({ data }: Props) {
       >
         {data.title}
       </h3>
-      <pre className="whitespace-pre-wrap pl-1 leading-relaxed tracking-wide text-gray200">
+      <pre
+        className={clsx(
+          "whitespace-pre-wrap pl-1 leading-relaxed tracking-wide text-gray200"
+        )}
+      >
         {data.description}
       </pre>
     </div>
