@@ -4,6 +4,7 @@ import {
 } from "@/lib/constants/collaborationIcons";
 import clsx from "clsx";
 import Image from "next/image";
+import CollaborationContent from "./CollaborationContent";
 
 export default function CollaborationCard({
   iconKey,
@@ -11,12 +12,14 @@ export default function CollaborationCard({
   color,
   thumbnail,
   delay,
+  content,
 }: {
   iconKey: IconKey;
   title: string;
   color: string;
   thumbnail: string;
   delay?: number;
+  content: React.ReactNode;
 }) {
   const IconComponent = COLLABORATIONICONS_MAP[iconKey];
 
@@ -24,12 +27,12 @@ export default function CollaborationCard({
     <div
       className={clsx(
         `flex flex-col relative group rounded-3xl border border-gray-700  shadow-xl transition-all duration-300 min-h-[500px] overflow-hidden`,
-        "lg900:scale-[0.98] lg900:hover:scale-[1]"
+        "lg900:scale-[0.98] lg900:hover:scale-[1] group"
       )}
       style={{ animationDelay: `${delay}s` }}
     >
       <div className="relative w-full h-[250px]">
-        <div className="absolute inset-0 bg-[rgba(0,0,0,.7)] z-10" />
+        <div className="absolute inset-0 bg-[rgba(0,0,0,.7)] z-10 group-hover:lg900:bg-[rgba(0,0,0,.8)] duration-300" />
         <Image src={thumbnail} alt="team" fill className="object-cover" />
         <div className="h-full flex-col content-center justify-self-center justify-items-center items-center gap-3 absolute z-[11]">
           <div
@@ -43,7 +46,9 @@ export default function CollaborationCard({
         </div>
       </div>
       <div className={clsx("flex-1 p-6 h-full", ` bg-gradient-to-br ${color}`)}>
-        <div className="text-sm text-white leading-relaxed">content</div>
+        <div className="text-sm text-white leading-relaxed">
+          <CollaborationContent content={content} />
+        </div>
       </div>
     </div>
   );

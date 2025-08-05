@@ -10,6 +10,7 @@ export const colorMap = {
   orange: "text-orange-400 border-orange-400",
   teal: "text-teal-400 border-teal-400",
   amber: "text-amber-400 border-amber-400",
+  sky: "text-sky-400 border-sky-400",
 } as const;
 
 export type ColorKey = keyof typeof colorMap;

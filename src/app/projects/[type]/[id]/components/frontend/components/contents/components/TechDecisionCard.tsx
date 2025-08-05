@@ -21,13 +21,13 @@ export default function TechDecisionCard({ data }: Props) {
       >
         {data.title}
       </h3>
-      <pre
+      <p
         className={clsx(
-          "whitespace-pre-wrap pl-1 leading-relaxed tracking-wide text-gray200"
+          "whitespace-pre-line pl-1 leading-relaxed tracking-wide text-gray200"
         )}
       >
         {data.description}
-      </pre>
+      </p>
     </div>
   );
 }

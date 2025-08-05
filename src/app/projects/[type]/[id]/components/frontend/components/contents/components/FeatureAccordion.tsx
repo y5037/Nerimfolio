@@ -104,11 +104,11 @@ export default function FeatureAccordion({
                     : "0px",
                 }}
               >
-                <div className={clsx("px-6 py-6 text-gray-300")}>
+                <div className={clsx("px-6 py-6 text-gray-300 bg-gray-950")}>
                   <div className={clsx("mb-6")}>
-                    <pre className={clsx("text-sm text-wrap")}>
+                    <p className={clsx("text-sm whitespace-pre-line")}>
                       {feature.description}
-                    </pre>
+                    </p>
                   </div>
                   <div className={clsx("space-y-8")}>
                     {feature.image && (
@@ -118,7 +118,7 @@ export default function FeatureAccordion({
                         width={800}
                         height={0}
                         className={clsx(
-                          "w-full rounded-md border border-gray-600  object-cover cursor-pointer"
+                          "w-full rounded-md object-cover cursor-pointer"
                         )}
                         onClick={() => {
                           open();

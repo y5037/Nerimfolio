@@ -1,3 +1,5 @@
+import { IconKey } from "@/lib/constants/collaborationIcons";
+
 export type ProjectData = {
   id: number;
   title: string;
@@ -97,3 +99,45 @@ export type TechStack = {
   projectName: string;
   techStackGroups: TechStackGroup[];
 };
+
+export type CollaborationCardType = {
+  key: string;
+  iconKey: IconKey;
+  title: string;
+  color: string;
+  thumbnail: string;
+};
+
+export interface TeamData {
+  name: string;
+  roles: string[];
+}
+
+export interface ContributionData {
+  name: string;
+  summary: string;
+  details: string[];
+}
+
+type GitContentType = {
+  title: string;
+  description: string;
+};
+
+export interface GitData {
+  imgUrl: string;
+  contents: GitContentType[];
+}
+
+export interface ToolData {
+  name: string;
+  icon: string;
+  desc: string;
+}
+
+export interface MeetingData {
+  icon: string;
+  title: string;
+  description?: string;
+  list?: string[];
+}
