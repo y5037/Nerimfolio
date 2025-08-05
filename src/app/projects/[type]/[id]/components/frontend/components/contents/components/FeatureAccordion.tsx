@@ -56,11 +56,11 @@ export default function FeatureAccordion({
               <button
                 onClick={() => handleClickToggle()}
                 className={clsx(
-                  "w-full flex items-center justify-between px-6 py-4 text-left text-white hover:bg-gray-700/40 transition",
+                  "w-full flex items-center justify-between box-border px-6 py-4 text-left text-white hover:bg-gray-700/40 transition",
                   isOpen && "bg-gray-700/40"
                 )}
               >
-                <div className={clsx("flex items-center gap-3")}>
+                <div className={clsx("flex items-center gap-3 mr-3")}>
                   <h3 className={clsx("text-[16px] font-medium")}>
                     {feature.title}
                   </h3>
@@ -68,7 +68,7 @@ export default function FeatureAccordion({
                     (feature.implementedByMe ? (
                       <span
                         className={clsx(
-                          "text-xs px-2 py-1 rounded-full bg-sky-900 text-sky-200 border border-sky-500"
+                          "inline-block min-w-fit text-xs px-2 py-1 rounded-full bg-sky-900 text-sky-200 border border-sky-500"
                         )}
                       >
                         담당
@@ -76,21 +76,22 @@ export default function FeatureAccordion({
                     ) : feature.contributionPercent > 0 ? (
                       <span
                         className={clsx(
-                          "text-xs px-2 py-1 rounded-full bg-emerald-900 text-emerald-200 border border-emerald-500"
+                          "inline-block min-w-fit text-xs px-2 py-1 rounded-full bg-emerald-900 text-emerald-200 border border-emerald-500"
                         )}
                       >
                         기여 ({feature.contributionPercent}%)
                       </span>
                     ) : null)}
                 </div>
-                <ChevronDown
-                  className={clsx(
-                    "absolute right-3 w-5 h-5 transition-transform",
-                    isOpen ? "rotate-180" : ""
-                  )}
-                />
+                <div>
+                  <ChevronDown
+                    className={clsx(
+                      "w-5 h-5 transition-transform",
+                      isOpen ? "rotate-180" : ""
+                    )}
+                  />
+                </div>
               </button>
-
               <div
                 ref={(el) => {
                   contentRefs.current[i] = el;

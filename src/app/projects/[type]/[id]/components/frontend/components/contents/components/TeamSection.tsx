@@ -5,11 +5,13 @@ export default function TeamSection({ teamData }: { teamData: TeamData[] }) {
   const target = teamData.find((me) => me.name.toString().includes("윤혜림"));
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className={clsx("grid grid-cols-1 sm:grid-cols-2 gap-4")}>
       {teamData.map(({ name, roles }) => (
         <div
           key={name}
-          className="rounded-2xl backdrop-blur border border-solid border-[rgba(255,255,255,.1)] bg-[rgba(255,255,255,.1)] pb-6 space-y-5 overflow-hidden"
+          className={clsx(
+            "rounded-2xl backdrop-blur border border-solid border-[rgba(255,255,255,.1)] bg-[rgba(255,255,255,.1)] pb-6 space-y-5 overflow-hidden"
+          )}
         >
           <div
             className={clsx(
@@ -21,7 +23,11 @@ export default function TeamSection({ teamData }: { teamData: TeamData[] }) {
           >
             {name}
           </div>
-          <ul className="list-disc list-inside text-sm text-white/80 leading-relaxed space-y-1 px-10">
+          <ul
+            className={clsx(
+              "list-disc list-inside text-sm text-white/80 leading-relaxed space-y-1 px-10"
+            )}
+          >
             {roles.map((role, idx) => (
               <li
                 key={idx}

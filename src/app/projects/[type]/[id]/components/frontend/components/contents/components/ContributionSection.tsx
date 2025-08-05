@@ -19,7 +19,7 @@ export default function ContributionSection({
   );
 
   return (
-    <div className="space-y-6">
+    <div className={clsx("space-y-6")}>
       {contributionData.map((m, idx) => (
         <div
           key={m.name}
@@ -32,15 +32,17 @@ export default function ContributionSection({
         >
           <button
             onClick={() => toggle(idx)}
-            className="w-full flex justify-between items-center"
+            className={clsx("w-full flex justify-between items-center")}
           >
             <div>
               <p className={clsx("text-base font-semibold text-white")}>
                 {m.name}
               </p>
-              <p className="text-sm text-[rgba(255,255,255,.7)]">{m.summary}</p>
+              <p className={clsx("text-sm text-[rgba(255,255,255,.7)]")}>
+                {m.summary}
+              </p>
             </div>
-            <div className="w-5 h-5">
+            <div className={clsx("w-5 h-5")}>
               <ChevronDown
                 className={clsx(
                   "absolute right-3 w-5 h-5 transition-transform",
@@ -57,13 +59,17 @@ export default function ContributionSection({
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="overflow-hidden"
+                className={clsx("overflow-hidden")}
               >
-                <div className="mt-5 p-6 rounded-2xl border border-solid border-[rgba(255,255,255,.3)] space-y-1 text-[rgba(255,255,255,.8)] text-sm">
+                <div
+                  className={clsx(
+                    "mt-5 p-6 rounded-2xl border border-solid border-[rgba(255,255,255,.3)] space-y-1 text-[rgba(255,255,255,.8)] text-sm"
+                  )}
+                >
                   {m.details.map((d, i) => {
                     const isLast = i === m.details.length - 1;
                     return (
-                      <div key={i} className="flex gap-2">
+                      <div key={i} className={clsx("flex gap-2")}>
                         <span>{isLast ? "└" : "├"}</span>
                         <span>{d}</span>
                       </div>

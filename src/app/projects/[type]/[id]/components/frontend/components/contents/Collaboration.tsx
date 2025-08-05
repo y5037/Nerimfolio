@@ -2,6 +2,7 @@ import { collaborationCards } from "@/lib/constants/collaborationCards";
 import CollaborationCard from "./components/CollaborationCard";
 import { useParamsId } from "@/utils/getParamsId";
 import { useCollaborationContent } from "@/app/projects/hooks/useCollaborationContent";
+import clsx from "clsx";
 
 export default function Collaboration() {
   const paramsId = useParamsId();
@@ -9,8 +10,8 @@ export default function Collaboration() {
 
   if (!content) return null;
   return (
-    <section className="relative max-w-7xl mx-auto">
-      <div className="flex-col space-y-16">
+    <section className={clsx("relative max-w-7xl mx-auto")}>
+      <div className={clsx("flex-col space-y-16")}>
         {collaborationCards.map(({ key, ...rest }, idx) => (
           <CollaborationCard
             key={key}
