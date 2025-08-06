@@ -37,7 +37,12 @@ export default function Carousel({
   const { settings } = customSettings();
 
   return filteredData.length > 0 ? (
-    <div className={clsx(filteredData.length < 3 && "leftMode")}>
+    <div
+      className={clsx(
+        filteredData.length < 3 && "leftMode",
+        type === "frontend" && "min-h-[470px]"
+      )}
+    >
       <Slider {...settings} touchMove={true} verticalSwiping={false}>
         {filteredData.map((project) => (
           <div
@@ -83,15 +88,17 @@ export default function Carousel({
                     )}
                   />
                 </div>
-                <p
-                  className={clsx(
-                    "mt-3 font-light",
-                    type === "publishing" && "hidden",
-                    type === "frontend" && "max-md:hidden"
-                  )}
-                >
-                  {project.description}
-                </p>
+                {loadedMap[project.id] && (
+                  <p
+                    className={clsx(
+                      "mt-3 font-light",
+                      type === "publishing" && "hidden",
+                      type === "frontend" && "max-md:hidden"
+                    )}
+                  >
+                    {project.description}
+                  </p>
+                )}
               </div>
               {!loadedMap[project.id] && <Skeleton />}
               <Image
