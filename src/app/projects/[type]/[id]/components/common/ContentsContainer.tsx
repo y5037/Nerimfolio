@@ -5,6 +5,7 @@ import FrontendOverview from "../frontend/components/contents/Overview";
 import PublishingOverview from "../publishing/components/contents/Overview";
 import Feature from "../frontend/components/contents/Features";
 import TechStack from "../frontend/components/contents/TechStack";
+import Collaboration from "../frontend/components/contents/Collaboration";
 
 export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
   return (
@@ -32,6 +33,8 @@ export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
             <Feature />
           ) : isActive === "Tech & Stack" ? (
             <TechStack />
+          ) : isActive === "Collaboration" ? (
+            <Collaboration />
           ) : (
             ""
           )}

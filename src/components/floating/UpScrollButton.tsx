@@ -31,7 +31,7 @@ export default function UpScrollButton() {
   return (
     <div
       className={clsx(
-        "fixed bottom-0 inset-x-0 duration-300 transition-opacity",
+        "fixed bottom-0 inset-x-0 duration-300 transition-opacity z-10",
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
     >
