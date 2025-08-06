@@ -42,7 +42,7 @@ export default function ContributionSection({
                 {m.summary}
               </p>
             </div>
-            <div className={clsx("w-5 h-5")}>
+            <div className={clsx("w-5 h-5 min-w-5 ml-2")}>
               <ChevronDown
                 className={clsx(
                   "absolute right-3 w-5 h-5 transition-transform",

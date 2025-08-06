@@ -25,18 +25,27 @@ export default function TeamSection({ teamData }: { teamData: TeamData[] }) {
           </div>
           <ul
             className={clsx(
-              "list-disc list-inside text-sm text-white/80 leading-relaxed space-y-1 px-10"
+              "text-sm text-white/80 leading-relaxed space-y-1 px-10"
             )}
           >
             {roles.map((role, idx) => (
               <li
                 key={idx}
                 className={clsx(
-                  target?.roles?.includes(role)
+                  "relative pl-4",
+                  target?.name?.includes(name)
                     ? "marker:text-[rgba(0,0,0,.6)] text-black"
                     : "marker:text-white"
                 )}
               >
+                <span
+                  className={clsx(
+                    "absolute left-0 top-2 inline-block w-1 h-1 rounded-full",
+                    target?.name?.includes(name)
+                      ? "bg-[rgba(0,0,0,.6)]"
+                      : "bg-white"
+                  )}
+                />
                 {role}
               </li>
             ))}

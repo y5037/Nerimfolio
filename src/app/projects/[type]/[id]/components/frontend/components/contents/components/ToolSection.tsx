@@ -19,7 +19,9 @@ export default function ToolSection({ toolData }: { toolData: ToolData[] }) {
           >
             <Image src={t.icon} alt={t.name} width={50} height={50} />
           </div>
-          <p className={clsx("pt-3 pb-1 text-white font-semibold")}>{t.name}</p>
+          <p className={clsx("pt-3 pb-1 text-white font-semibold text-base")}>
+            {t.name}
+          </p>
           <p className={clsx("text-xs text-white/70 text-center")}>{t.desc}</p>
         </div>
       ))}

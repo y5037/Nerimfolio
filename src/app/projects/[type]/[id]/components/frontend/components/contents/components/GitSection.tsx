@@ -18,10 +18,10 @@ export default function GitSection({ gitData }: { gitData: GitData[] }) {
               <div
                 key={idx}
                 className={clsx(
-                  "p-4 rounded-xl bg-[rgba(255,255,255,.1)] backdrop-blur space-y-1"
+                  "p-4 rounded-xl bg-[rgba(255,255,255,.1)] backdrop-blur space-y-3"
                 )}
               >
-                <p className={clsx("font-semibold text-white")}>
+                <p className={clsx("font-semibold text-white text-base")}>
                   {content.title}
                 </p>
                 <p className={clsx("whitespace-pre-line")}>
