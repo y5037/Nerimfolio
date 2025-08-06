@@ -15,7 +15,7 @@ export const frontendTechStackData: TechStack[] = [
 라우트 단위의 레이아웃 구성, 역할별 UI 분리, 서버 컴포넌트와 클라이언트 컴포넌트의 책임 분리 등 실서비스 수준에서 유지보수성과 확장성을 고려한 구조 설계를 중점적으로 구현했습니다.
 
 또한, 전역 상태 관리나 메타데이터 구성 같은 공통 요소들을 레이아웃에 통합함으로써 반복적인 코드 작성을 줄이고 역할 분리를 명확히 했습니다.`,
-            titleColor: "text-cyan-400",
+            signatureColor: "cyan",
           },
           {
             title: "React Query",
@@ -28,21 +28,21 @@ export const frontendTechStackData: TechStack[] = [
 실사용자 경험을 고려해 불필요한 요청을 최소화하고 상태를 정확히 동기화하는 데 집중하여 React Query의 mutation 기능을 통해 댓글 등록, 정보 수정 등 사용자 상호작용을 처리했습니다.
 
 'invalidateQueries'를 활용해 최신 데이터를 자동으로 반영하고, 'onSuccess'를 이용한 즉각적인 UI 반영과 사용자 피드백 제공으로 더욱 매끄럽고 반응성 높은 UX를 구현할 수 있었습니다.`,
-            titleColor: "text-yellow-400",
+            signatureColor: "yellow",
           },
           {
             title: "Zustand",
             description: `전역 상태 관리 라이브러리로는 Redux와 고민했지만, 프로젝트 규모와 일정상 보다 간단하고 빠르게 적용할 수 있는 Zustand를 선택했습니다.
 전체 전역 상태가 복잡하지 않고, 주로 로그인 여부와 사용자 역할 관리 등 최소한의 상태만 필요했기 때문에 불필요한 보일러플레이트 없이 직관적으로 구현할 수 있는 점이 큰 장점이었습니다.
 실서비스 환경에서도 충분히 활용 가능한 구조로, 컴포넌트 간 상태 공유와 UI 제어를 효율적으로 처리했습니다.`,
-            titleColor: "text-purple-400",
+            signatureColor: "purple",
           },
           {
             title: "React Hook Form",
             description: `복잡한 폼 관리를 위해 React Hook Form을 도입했습니다.
 가볍고 성능이 뛰어나며, 불필요한 리렌더링을 최소화해 사용자 경험을 개선할 수 있었습니다.
 또한, Tailwind CSS와도 자연스럽게 결합되어 빠른 UI 구성과 함께 안정적인 유효성 검사 및 에러 핸들링이 가능했습니다.`,
-            titleColor: "text-fuchsia-400",
+            signatureColor: "fuchsia",
           },
           {
             title: "Tailwind CSS",
@@ -54,7 +54,7 @@ export const frontendTechStackData: TechStack[] = [
 
 개발 초기에는 클래스 네이밍 방식에 적응이 필요했지만 구성 요소별 스타일이 컴포넌트 내부에 모여 있어 유지보수성과 재사용성이 높았고, 협업 시에도 명확하게 소통할 수 있었습니다.
 더불어, PostCSS나 Sass 같은 별도 설정 없이도 생산적인 개발 환경을 만들 수 있어 짧은 개발 기간 내에서 일관된 UI를 빠르게 구성하는 데 큰 도움이 되었습니다.`,
-            titleColor: "text-emerald-400",
+            signatureColor: "emerald",
           },
         ],
       },
@@ -98,7 +98,7 @@ export const frontendTechStackData: TechStack[] = [
 Next.js 도입을 통해 SEO 대응, 페이지 단위의 라우팅 최적화, 정적 자원 관리 등의 이점을 누릴 수 있었고, 이를 통해 더 나은 사용자 경험과 성능 개선을 도모했습니다.
 
 마이그레이션 과정에서는 Page Router 기반으로 구조를 잡았으며, 이후 App Router로의 전환도 고려했지만 실무에서 기존 Page Router 기반의 레거시 프로젝트 유지보수를 맡게 될 가능성도 고려해, Page Router 환경에 대한 이해도를 높이고자 그대로 유지하며 프로젝트를 완성했습니다.`,
-            titleColor: "text-lime-400",
+            signatureColor: "lime",
           },
           {
             title: "React Query",
@@ -108,7 +108,7 @@ Next.js 도입을 통해 SEO 대응, 페이지 단위의 라우팅 최적화, �
 초기에는 REST API 호출 이후 수동으로 다시 GET 요청을 보내는 방식으로 변경사항을 반영했지만, React Query를 도입하면서 불필요한 네트워크 요청과 상태 관리의 번거로움을 크게 줄일 수 있었습니다.
 
 이 경험을 통해 React Query의 구조와 장점에 대해 자연스럽게 이해하게 되었고, 캐싱 전략이나 비동기 흐름에 대한 이해도 함께 높일 수 있었습니다.`,
-            titleColor: "text-fuchsia-400",
+            signatureColor: "fuchsia",
           },
           {
             title: "CSS Modules",
@@ -117,7 +117,7 @@ CSS Modules는 로컬 범위 클래스 네이밍을 지원해 이러한 충돌 �
 별도의 세팅 없이도 간단하게 적용할 수 있어 빠르게 프로젝트에 녹여낼 수 있었습니다.
 
 특히 컴포넌트 단위 개발을 할 때 각 컴포넌트에 독립적인 스타일을 유지할 수 있다는 점에서 생산성과 유지보수 측면 모두에 도움이 되었습니다.`,
-            titleColor: "text-rose-400",
+            signatureColor: "rose",
           },
         ],
       },
@@ -158,7 +158,7 @@ App Router는 서버 컴포넌트, 파일 기반 라우팅, 레이아웃 분리 
 
 또한 프로젝트 구조나 데이터 fetching 방식에 대해 보다 유연하고 체계적인 구성 경험을 할 수 있었으며,  
 이를 통해 개인은 물론 팀 전체의 기술 폭을 넓힐 수 있었다고 생각합니다.`,
-            titleColor: "text-orange-400",
+            signatureColor: "orange",
           },
           {
             title: "React Query",
@@ -168,7 +168,7 @@ React Query의 기본 개념과 흐름, 특히 'query key'와 'invalidateQueries
 데이터 동기화 방식에 익숙해지기까지 시간이 걸렸지만, 직접 CRUD 기능을 구현하며 반복적으로 사용하다 보니 자연스럽게 학습할 수 있었고 실시간 UI 갱신이나 전역 상태 캐싱의 편리함도 체감할 수 있었습니다.
 
 이 프로젝트는 React Query의 실제 적용 경험을 쌓고 단순한 API 호출 도구를 넘어 데이터 흐름을 체계적으로 다루는 툴로서의 가치를 이해하게 된 계기가 되었습니다.`,
-            titleColor: "text-teal-400",
+            signatureColor: "teal",
           },
           {
             title: "CSS Modules",
@@ -177,13 +177,13 @@ React Query의 기본 개념과 흐름, 특히 'query key'와 'invalidateQueries
 CSS Modules는 클래스 이름 중복을 방지하면서도 일반 CSS처럼 작성할 수 있어  
 초기 진입장벽이 낮고 팀원 간 협업에도 적합했습니다.  
 디자인 완성도보다는 기능 구현과 학습 효율을 우선시한 기술 선택이었습니다.`,
-            titleColor: "text-sky-400",
+            signatureColor: "sky",
           },
           {
             title: "Storybook",
             description: `공통 컴포넌트의 재사용성과 관리 효율성을 높이기 위해 Storybook을 도입했습니다.  
 개별 컴포넌트를 독립적으로 구현하고 시각적으로 확인하며, UI 개발 경험을 확장하는 것을 목표로 삼았습니다.`,
-            titleColor: "text-purple-400",
+            signatureColor: "purple",
           },
         ],
       },
@@ -242,12 +242,12 @@ CSS Modules는 클래스 이름 중복을 방지하면서도 일반 CSS처럼 �
             description: `특별히 Page Router를 선택한 배경이라기보다는, 타입스크립트를 학습하며 자연스럽게 Next.js와 함께 사용하게 된 흐름이었습니다. App Router가 이미 존재했지만, 당시에는 이를 고려하거나 경험할 여유가 없었기에 익숙한 Page Router를 활용하는 것이 가장 합리적이라고 판단했습니다.
 
 이 과정을 통해 Next.js의 기본 라우팅 방식과 타입스크립트와의 호환성, 안정성을 직접 경험할 수 있었고, 프로젝트 진행에 적합하다고 판단해 그대로 적용하게 되었습니다.`,
-            titleColor: "text-rose-400",
+            signatureColor: "rose",
           },
           {
             title: "SCSS (CSS Modules)",
             description: `SCSS(CSS Modules)는 팀 내에서 공식적으로 결정한 사항은 아니었지만, 한 명이 SCSS를 사용하기 시작하면서 자연스럽게 팀 전체가 맞춰 사용하게 되었습니다. 덕분에 스타일 작성 시 모듈화와 변수 활용, 중첩 등의 SCSS 장점을 경험할 수 있었고, 코드 일관성 유지에도 도움이 되었습니다. 앞으로는 팀 차원의 스타일 가이드 협의를 통해 좀 더 체계적인 방식으로 발전시켜 나가고자 합니다.`,
-            titleColor: "text-yellow-400",
+            signatureColor: "yellow",
           },
         ],
       },
@@ -295,17 +295,17 @@ CSS Modules는 클래스 이름 중복을 방지하면서도 일반 CSS처럼 �
             title: "React",
             description: `이 프로젝트는 React에 익숙해지기 위한 학습 중심의 첫 과제였습니다. 당시에는 Next.js를 접하기 전이었고, 순수 JavaScript 학습 이후 React를 활용한 프로젝트 경험을 쌓기 위해 진행한 실습 성격의 프로젝트였습니다.
 학습 과정의 연장선에서 자연스럽게 사용하게 되었고, 컴포넌트 기반 개발 방식과 상태 관리에 대한 이해를 넓히는 데 집중했습니다.`,
-            titleColor: "text-emerald-400",
+            signatureColor: "emerald",
           },
           {
             title: "CSS Modules",
             description: `기존 CSS에 익숙했던 만큼 진입 장벽이 낮아 동적 스타일링이 필요 없는 단순한 레이아웃 구성에는 가장 효율적인 선택이었습니다. 컴포넌트 단위로 클래스를 분리해 관리할 수 있어 코드의 가독성과 유지보수에도 도움이 되었습니다.`,
-            titleColor: "text-amber-400",
+            signatureColor: "amber",
           },
           {
             title: "Styled Components",
             description: `CSS Modules만으로는 어려웠던 동적 스타일링이나 변수를 활용한 테마 관리 등을 적용하기 위해 선택한 방식입니다. 컴포넌트 단위로 스타일을 관리할 수 있어 코드의 응집도가 높아지고, 자바스크립트 문법을 그대로 활용할 수 있다는 점도 학습 및 개발 측면에서 큰 장점이었습니다.`,
-            titleColor: "text-cyan-400",
+            signatureColor: "cyan",
           },
         ],
       },
