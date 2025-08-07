@@ -45,12 +45,12 @@ export default function CollaborationCard({
         />
         <div
           className={clsx(
-            "h-full flex-col content-center justify-self-center justify-items-center items-center gap-3 absolute z-[11]"
+            "w-full h-full flex-col content-center justify-self-center text-center justify-items-center items-center gap-3 absolute z-[11]"
           )}
         >
           <div
             className={clsx(
-              `w-12 h-12 mb-2 flex items-center justify-center rounded-full text-white shadow-md bg-gradient-to-br ${color}`
+              `w-12 h-12 mx-auto mb-2 flex items-center justify-center rounded-full text-white shadow-md bg-gradient-to-br ${color}`
             )}
           >
             <IconComponent size={22} />
