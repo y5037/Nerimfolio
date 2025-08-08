@@ -6,10 +6,13 @@ import PublishingOverview from "../publishing/components/contents/Overview";
 import Feature from "../frontend/components/contents/Features";
 import TechStack from "../frontend/components/contents/TechStack";
 import Collaboration from "../frontend/components/contents/Collaboration";
+import FrontendRetrospective from "../frontend/components/contents/Retrospective";
+import PublishingRetrospective from "../publishing/components/contents/Retrospective";
 
 export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
   return (
     <div
+      id="projectDetailContents"
       className={clsx(
         "flex-[1] flex-wrap rounded-md bg-black700 px-7 py-10 mb-[80px]",
         "max-lg:rounded-xl"
@@ -35,9 +38,13 @@ export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
             <TechStack />
           ) : isActive === "Collaboration" ? (
             <Collaboration />
-          ) : (
-            ""
-          )}
+          ) : isActive === "Retrospective" ? (
+            $frontend ? (
+              <FrontendRetrospective />
+            ) : (
+              <PublishingRetrospective />
+            )
+          ) : null}
         </motion.div>
       </AnimatePresence>
     </div>

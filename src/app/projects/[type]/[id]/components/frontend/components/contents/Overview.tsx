@@ -49,7 +49,7 @@ export default function Overview() {
           className={clsx("object-cover object-[25%_38%]")}
         />
       </div>
-      <ul className={clsx("text-gray-300 mt-5 space-y-10")}>
+      <ul className={clsx("text-gray-300 mt-6 space-y-10")}>
         <li>
           <h2 className={clsx(overviewLiTitle, "border-amber-400")}>
             진행 기간
