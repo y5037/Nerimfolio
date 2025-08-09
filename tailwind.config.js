@@ -118,6 +118,11 @@ module.exports = {
             top: "-5px",
           },
         },
+        scrollHint: {
+          "0%": { transform: "translateY(0)", opacity: "1" },
+          "50%": { transform: "translateY(10px)", opacity: "0.85" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
         slideRight: {
           "0%": {
             transform: "translateX(-50%)",
@@ -178,6 +183,7 @@ module.exports = {
       animation: {
         scrollAni: "scrollAni 1s ease-in-out infinite",
         scrollAniMouse: "scrollAniMouse 1s infinite",
+        scrollHint: "scrollHint 1.6s ease-in-out infinite",
         slideRight: "slideRight 50s linear infinite",
         popupShow: "popupShow 0.3s forwards ease-out",
         popupHide: "popupHide 0.3s forwards ease-in",

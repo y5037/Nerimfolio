@@ -6,8 +6,7 @@ import PublishingOverview from "../publishing/components/contents/Overview";
 import Feature from "../frontend/components/contents/Features";
 import TechStack from "../frontend/components/contents/TechStack";
 import Collaboration from "../frontend/components/contents/Collaboration";
-import FrontendRetrospective from "../frontend/components/contents/Retrospective";
-import PublishingRetrospective from "../publishing/components/contents/Retrospective";
+import Retrospective from "./contents/Retrospective";
 
 export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
   return (
@@ -39,11 +38,7 @@ export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
           ) : isActive === "Collaboration" ? (
             <Collaboration />
           ) : isActive === "Retrospective" ? (
-            $frontend ? (
-              <FrontendRetrospective />
-            ) : (
-              <PublishingRetrospective />
-            )
+            <Retrospective $frontend={$frontend} />
           ) : null}
         </motion.div>
       </AnimatePresence>

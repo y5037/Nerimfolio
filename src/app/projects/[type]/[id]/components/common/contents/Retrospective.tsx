@@ -3,55 +3,43 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
+import {
+  FrontendRetrospectiveData,
+  PublishingRetrospectiveData,
+} from "@/data/projects/detail/retrospective";
+import { useParamsId } from "@/utils/getParamsId";
 
-const retrospectives = [
-  {
-    id: 1,
-    title: "Core Wins",
-    subheading: "프로젝트에서 얻은 가장 중요한 성과와 배움",
-    description:
-      "Redux Toolkit으로 상태관리 효율성을 체감했습니다.\n팀 내 소통이 문제 해결의 핵심임을 깨달았습니다.\n성능 최적화 경험이 크게 성장에 도움 되었습니다.",
-    imageUrl: "/images/projects/detail/frontend/retrospective/test.png",
-  },
-  {
-    id: 2,
-    title: "Biggest Hurdles",
-    subheading: "직면했던 주요 난관과 그 극복 과정",
-    description:
-      "일정 부족과 초기 설계 변경으로 리팩터링 부담이 컸습니다.\n성능 이슈로 렌더링 지연이 발생하기도 했습니다.",
-    imageUrl: "/images/projects/detail/frontend/retrospective/qq.png",
-  },
-  {
-    id: 3,
-    title: "Next Leap",
-    subheading: "앞으로의 개선 방향과 성장 계획",
-    description:
-      "Atomic Design 도입으로 컴포넌트 재사용성을 높일 계획입니다.\n초기부터 다크모드 설계를 고려하여 개발할 예정입니다.",
-    imageUrl: "/images/projects/detail/frontend/retrospective/r.png",
-  },
-  {
-    id: 4,
-    title: "Growth Snapshot",
-    subheading: "프로젝트가 남긴 개인적인 성장과 회고",
-    description:
-      "협업을 통해 관계와 커뮤니케이션의 중요성을 다시 한번 느꼈습니다.\n실무 경험과 성장에 큰 도움이 된 프로젝트였습니다.",
-    imageUrl: "/images/projects/detail/frontend/retrospective/f.png",
-  },
-];
-
-export default function Retrospective() {
+export default function Retrospective({ $frontend }: { $frontend: boolean }) {
   const [activeId, setActiveId] = useState<number | null>(null);
+
+  const paramsId = useParamsId();
+
+  const retrospectiveData = $frontend
+    ? FrontendRetrospectiveData
+    : PublishingRetrospectiveData;
+
+  const data = retrospectiveData.find((data) => data.id === paramsId);
 
   return (
     <>
-      <div className="relative min-h-screen w-full">
+      <Image
+        src="/images/projects/detail/common/arrowDown.svg"
+        alt="Down"
+        width={30}
+        height={30}
+        className={clsx(
+          "justify-self-center mt-10 mb-20 animate-scrollHint",
+          "max-md:mt-6 max-md:mb-10"
+        )}
+      />
+      <div className="relative w-full">
         <div
           className={clsx(
-            "flex flex-col items-center gap-y-16 px-4 pt-10",
+            "flex flex-col items-center gap-y-16 pt-10",
             "md:gap-y-32 md:px-8"
           )}
         >
-          {retrospectives.map((item, idx) => {
+          {data?.retrospectiveGroup.map((item, idx) => {
             const isActive = activeId === item.id;
             const isLeftTilt = idx % 2 === 0;
             const delay = `-${idx * 1.5}s`;
@@ -166,7 +154,7 @@ export default function Retrospective() {
                       />
                     )}
                   </div>
-                  <p className="text-zinc-400 text-sm whitespace-pre-line leading-relaxed">
+                  <p className="whitespace-pre-linetext-zinc-400 text-sm whitespace-pre-line leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -178,29 +166,28 @@ export default function Retrospective() {
       </div>
       <div
         className={clsx(
-          "flex items-center mt-32 mb-10 justify-self-end px-4",
+          "flex items-center mt-32 mb-10 justify-self-end",
+          "md:px-8",
           "max-md:justify-between max-md:justify-self-auto",
-          "md:px-8"
+          "max-xs500:mt-24"
         )}
       >
         <div className={clsx("flex items-center gap-10")}>
           <p
             className={clsx(
-              "font-light text-1xl mr-16",
+              "font-light text-1xl mr-7",
               "max-md:mr-0 text-[rgba(255,255,255,.5)]"
             )}
           >
-            <span className="font-bold text-2xl">Wrapping up</span>
-            <br />
-            the <span className="text-gray500 font-robotoSlab">story</span>
-            <br />
-            of this project’s journey.
+            <span className="font-bold text-xl">Wrapping up</span> the{" "}
+            <span className="text-gray500 font-robotoSlab">story</span>
+            <br /> of this project’s journey.
           </p>
         </div>
         <Image
-          src="/images/projects/detail/frontend/retrospective/semicolon.svg"
+          src="/images/projects/detail/common/semicolon.svg"
           alt=";"
-          width={25}
+          width={20}
           height={50}
           className="mt-2 opacity-50"
         />

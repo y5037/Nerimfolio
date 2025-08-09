@@ -141,3 +141,17 @@ export interface MeetingData {
   description?: string;
   list?: string[];
 }
+
+type RetrospectiveGroup = {
+  id: number;
+  title: string;
+  subheading: string;
+  description: string;
+  imageUrl: string;
+};
+
+export type RetrospectiveData = {
+  id: number;
+  projectName: string;
+  retrospectiveGroup: RetrospectiveGroup[];
+};

@@ -70,7 +70,7 @@ export default function Overview() {
                 <div
                   key={category}
                   className={clsx(
-                    "rounded-2xl p-5 bg-gray-800/60",
+                    "rounded-2xl p-5 bg-gray-800/30",
                     "shadow-sm border border-solid border-gray-500/40"
                   )}
                 >
