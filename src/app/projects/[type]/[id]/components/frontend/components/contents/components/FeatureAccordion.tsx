@@ -50,14 +50,14 @@ export default function FeatureAccordion({
             <div
               key={i}
               className={clsx(
-                "relative bg-gray-800/60 rounded-xl overflow-hidden border border-gray-700"
+                "relative bg-white/60 rounded-xl overflow-hidden border border-solid border-[rgba(255,255,255,.1)]"
               )}
             >
               <button
                 onClick={() => handleClickToggle()}
                 className={clsx(
-                  "w-full flex items-center justify-between box-border px-6 py-4 text-left text-white hover:bg-gray-700/40 transition",
-                  isOpen && "bg-gray-700/40"
+                  "w-full flex items-center justify-between box-border px-6 py-4 text-left text-white hover:bg-[rgba(0,0,0,.2)] transition",
+                  isOpen && "bg-[rgba(0,0,0,.2)]"
                 )}
               >
                 <div className={clsx("flex items-center gap-3 mr-3")}>

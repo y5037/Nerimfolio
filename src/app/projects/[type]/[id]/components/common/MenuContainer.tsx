@@ -24,6 +24,18 @@ export default function MenuContainer({
 
   const tabData = $frontend ? frontendTabs : publishingTabs;
 
+  const scrollToSection = () => {
+    const el = document.getElementById("projectDetailContents");
+    const container = document.getElementById("scroll-container");
+
+    if (el && container) {
+      const yOffset = -80;
+      const y = el.offsetTop + yOffset;
+
+      container.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       className={clsx(
@@ -76,7 +88,10 @@ export default function MenuContainer({
                   "max-lg:flex-col max-lg:text-sm max-lg:pr-2 max-lg:pl-2",
                   "max-md:px-4 max-md:flex-row max-md:min-w-fit"
                 )}
-                onClick={() => setIsActive?.(tab.title)}
+                onClick={() => {
+                  scrollToSection();
+                  setIsActive?.(tab.title);
+                }}
               >
                 <div
                   className={clsx(
