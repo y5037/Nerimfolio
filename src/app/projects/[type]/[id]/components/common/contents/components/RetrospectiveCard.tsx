@@ -132,15 +132,15 @@ export default function RetrospectiveCard({
           {item.description}
         </p>
       </div>
-
       <div
-        className="pointer-events-none absolute bottom-0 left-0 w-full h-48"
+        className={clsx(
+          "pointer-events-none absolute bottom-0 left-0 w-full h-48"
+        )}
         style={{
           background: "linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))",
-          opacity: fadeOpacity,
+          opacity: isActive ? fadeOpacity : 0,
         }}
       />
-
       <div className="absolute inset-0 rounded-xl pointer-events-none transition-colors duration-500 border border-transparent hover:border-indigo-400" />
     </div>
   );
