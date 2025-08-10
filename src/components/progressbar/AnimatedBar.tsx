@@ -21,8 +21,8 @@ export default function AnimatedBar({ value }: { value: number }) {
       <Line
         percent={progress}
         strokeWidth={1}
-        strokeColor="#3B82F6"
-        trailColor="#374151"
+        strokeColor="#EC4899"
+        trailColor="#2D3748"
         trailWidth={1}
         strokeLinecap="round"
       />

@@ -33,13 +33,11 @@ export default function Features() {
           정리했습니다.
         </p>
       </div>
-      <section className={clsx("mb-8")}>
+      <section className={clsx("mb-10")}>
         <h3
-          className={clsx(
-            "flex items-center text-lg font-medium mb-3 ml-2 text-gray400"
-          )}
+          className={clsx("flex items-center text-base mb-3 ml-2 text-gray400")}
         >
-          <Puzzle className={clsx("w-5 h-5 mr-2")} />
+          <Puzzle className={clsx("w-4 h-4 mr-2")} />
           공통 UI / 전역 컴포넌트
         </h3>
         <FeatureAccordion
@@ -52,11 +50,9 @@ export default function Features() {
       </section>
       <section>
         <h3
-          className={clsx(
-            "flex items-center text-lg font-medium mb-3 ml-2 text-gray400"
-          )}
+          className={clsx("flex items-center text-base mb-3 ml-2 text-gray400")}
         >
-          <WrenchIcon className={clsx("w-5 h-5 mr-2")} />
+          <WrenchIcon className={clsx("w-4 h-4 mr-2")} />
           페이지별 기능
         </h3>
         <FeatureAccordion

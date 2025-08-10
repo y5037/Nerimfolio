@@ -8,9 +8,7 @@ export default function ToolSection({ toolData }: { toolData: ToolData[] }) {
       {toolData.map((t) => (
         <div
           key={t.name}
-          className={clsx(
-            "group flex flex-col items-center justify-center py-7"
-          )}
+          className={clsx("group flex flex-col items-center py-7")}
         >
           <div
             className={clsx(
