@@ -142,7 +142,7 @@ export interface MeetingData {
   list?: string[];
 }
 
-type RetrospectiveGroup = {
+export type RetrospectiveGroup = {
   id: number;
   title: string;
   subheading: string;
