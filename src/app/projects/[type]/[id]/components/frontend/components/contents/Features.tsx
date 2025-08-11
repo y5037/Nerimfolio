@@ -27,7 +27,7 @@ export default function Features() {
       <div
         className={clsx("mb-12 pl-5 border-solid border-l-4 border-teal-400")}
       >
-        <h2 className={clsx("text-2xl font-bold mb-3")}>주요 기능 상세 설명</h2>
+        <h2 className={clsx("text-2xl font-bold mb-3")}>주요 기능 상세</h2>
         <p className={clsx("text-sm text-gray-400 font-light")}>
           담당하거나 기여한 핵심 기능들을 기술 스택과 함께 구조적으로
           정리했습니다.
