@@ -7,6 +7,8 @@ import Feature from "../frontend/components/contents/Features";
 import TechStack from "../frontend/components/contents/TechStack";
 import Collaboration from "../frontend/components/contents/Collaboration";
 import Retrospective from "./contents/Retrospective";
+import MarkupStyling from "../publishing/components/contents/MarkupStyling";
+import ResponsiveSupport from "../publishing/components/contents/ResponsiveSupport";
 
 export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
   return (
@@ -37,6 +39,10 @@ export default function ContentsContainer({ isActive, $frontend }: DetailTab) {
             <TechStack />
           ) : isActive === "Collaboration" ? (
             <Collaboration />
+          ) : isActive === "Markup & Styling" ? (
+            <MarkupStyling />
+          ) : isActive === "Responsive & Support" ? (
+            <ResponsiveSupport />
           ) : isActive === "Retrospective" ? (
             <Retrospective $frontend={$frontend} />
           ) : null}
