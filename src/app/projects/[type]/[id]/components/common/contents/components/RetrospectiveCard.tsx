@@ -43,7 +43,9 @@ export default function RetrospectiveCard({
     >
       {!isActive && (
         <span
-          className="absolute inset-0 pointer-events-none animate-shine z-10"
+          className={clsx(
+            "absolute inset-0 pointer-events-none animate-shine z-10"
+          )}
           style={{
             background:
               "linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.07) 50%, transparent 60%)",
@@ -52,19 +54,24 @@ export default function RetrospectiveCard({
           }}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-900 transition-all duration-500 ease-out hover:brightness-110" />
+      <div
+        className={clsx(
+          "absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-900 transition-all duration-500 ease-out",
+          "hover:brightness-110"
+        )}
+      />
       <div
         className={clsx(
           "relative w-full overflow-hidden rounded-t-xl transition-all duration-500",
           isActive ? "brightness-100 blur-0 h-full" : "brightness-75 blur-sm"
         )}
       >
-        <div className="absolute inset-0 bg-[rgba(0,0,0,.7)] z-10" />
+        <div className={clsx("absolute inset-0 bg-[rgba(0,0,0,.7)] z-10")} />
         <Image
           src={item.imageUrl}
           alt={item.title}
           fill
-          className="object-cover"
+          className={clsx("object-cover")}
           draggable={false}
         />
       </div>
@@ -79,7 +86,7 @@ export default function RetrospectiveCard({
             : "opacity-0 top-10"
         )}
       >
-        <span className="text-xs text-gray300 font-light">
+        <span className={clsx("text-xs text-gray300 font-light")}>
           {item.subheading}
         </span>
         {String(item.id).padStart(2, "0")}
@@ -128,7 +135,11 @@ export default function RetrospectiveCard({
             />
           )}
         </div>
-        <p className="text-gray200 text-sm whitespace-pre-line leading-relaxed font-light">
+        <p
+          className={clsx(
+            "text-gray200 text-sm whitespace-pre-line leading-relaxed font-light"
+          )}
+        >
           {item.description}
         </p>
       </div>
@@ -141,7 +152,12 @@ export default function RetrospectiveCard({
           opacity: isActive ? fadeOpacity : 0,
         }}
       />
-      <div className="absolute inset-0 rounded-xl pointer-events-none transition-colors duration-500 border border-transparent hover:border-indigo-400" />
+      <div
+        className={clsx(
+          "absolute inset-0 rounded-xl pointer-events-none transition-colors duration-500 border border-transparent",
+          "hover:border-indigo-400"
+        )}
+      />
     </div>
   );
 }

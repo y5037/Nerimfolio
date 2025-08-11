@@ -1,79 +1,146 @@
 "use client";
 
+import { motion } from "framer-motion";
 import clsx from "clsx";
 import {
-  buildsStackEmoji,
-  buildsSection,
-  buildsStackWrap,
-  buildsTitle,
-  tabContentsWrap,
-  buildsULList,
-  buildsStackList,
-} from "../../styles";
-import { techStack, tools } from "@/lib/constants/aboutTechStacks";
+  techStack,
+  favoriteTools,
+  collaborationTools,
+  building,
+} from "@/lib/constants/aboutBuilds";
 
 export default function Builds() {
   return (
-    <div
-      className={clsx(
-        "space-y-16 max-w-4xl mx-auto px-4",
-        "max-md:space-y-12",
-        tabContentsWrap
-      )}
-    >
-      <section className={clsx(buildsSection)}>
-        <h2 className={clsx("border-orange-500", buildsTitle)}>
+    <section className={clsx("space-y-12 mt-14 mb-20")}>
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className={clsx(
+          "p-8 rounded-3xl border border-solid border-[rgba(255,255,255,0.09)] bg-[rgba(255,255,255,0.03)]"
+        )}
+      >
+        <h2
+          className={clsx(
+            "inline-block text-2xl font-bold mb-8 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"
+          )}
+        >
           🛠️ Primary Tech Stack
         </h2>
-        <ul className={clsx(buildsStackWrap)}>
-          {techStack.map(({ name, emoji, bg }) => (
-            <li key={name} className={clsx("py-1.5", buildsStackList, bg)}>
-              <span className={clsx(buildsStackEmoji)}>{emoji}</span>
-              <span>{name}</span>
+        <ul className={clsx("grid grid-cols-2 gap-6", "sm:grid-cols-3")}>
+          {techStack.map(({ name, emoji }) => (
+            <li
+              key={name}
+              className={clsx(
+                "flex flex-col items-center justify-center p-6 rounded-2xl transition bg-[rgba(255,255,255,0.05)]"
+              )}
+            >
+              <span className={clsx("text-3xl mb-3")}>{emoji}</span>
+              <span className={clsx("text-sm font-medium")}>{name}</span>
             </li>
           ))}
         </ul>
-      </section>
-      <section className={clsx(buildsSection)}>
-        <h2 className={clsx("border-purple-500", buildsTitle)}>
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+        className={clsx(
+          "p-8 rounded-3xl border border-solid border-[rgba(255,255,255,0.09)] bg-[rgba(255,255,255,0.03)]"
+        )}
+      >
+        <h2
+          className={clsx(
+            "inline-block text-2xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
+          )}
+        >
           🧰 Favorite Tools & Libraries
         </h2>
-        <p className={clsx("text-gray-400 mb-4")}>
+        <p className={clsx("mb-8 text-gray300 text-sm")}>
           프로젝트에 감성을 더하거나, 개발 속도를 높이는 데 자주 사용하는
           도구들이에요.
         </p>
-        <ul className={clsx(buildsStackWrap)}>
-          {tools.map(({ name, emoji, bg }) => (
-            <li key={name} className={clsx("py-2", buildsStackList, bg)}>
-              <span className={clsx(buildsStackEmoji)}>{emoji}</span>
-              <span>{name}</span>
+        <div className={clsx("flex space-x-4 overflow-x-auto snap-x")}>
+          {favoriteTools.map(({ name, emoji }) => (
+            <div
+              key={name}
+              className={clsx(
+                "flex-shrink-0 snap-center w-40 h-40 rounded-2xl flex flex-col items-center justify-center transition bg-[rgba(255,255,255,0.05)]"
+              )}
+            >
+              <span className={clsx("text-3xl mb-3")}>{emoji}</span>
+              <span className={clsx("text-sm font-medium")}>{name}</span>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        className={clsx(
+          "p-8 rounded-3xl border border-solid border-[rgba(255,255,255,0.09)] bg-[rgba(255,255,255,0.03)]"
+        )}
+      >
+        <h2
+          className={clsx(
+            "inline-block text-2xl font-bold mb-8 bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent"
+          )}
+        >
+          🤝 Collaboration Tools
+        </h2>
+        <ul className={clsx("space-y-4 font-light")}>
+          {collaborationTools.map((item, i) => (
+            <li
+              key={i}
+              className={clsx(
+                "p-5 rounded-xl transition bg-[rgba(255,255,255,0.05)]"
+              )}
+            >
+              {item}
             </li>
           ))}
         </ul>
-      </section>
-      <section className={clsx(buildsSection)}>
-        <h2 className={clsx("border-green-500", buildsTitle)}>
-          🤝 Collaboration Tools
-        </h2>
-        <ul className={clsx(buildsULList)}>
-          <li>Git & GitHub으로 소스 버전 및 이슈 관리</li>
-          <li>Figma를 통한 디자이너와의 원활한 협업</li>
-          <li>Notion, Zeplin 등을 활용한 업무 정리 및 커뮤니케이션 경험</li>
-        </ul>
-      </section>
-      <section className={clsx(buildsSection)}>
-        <h2 className={clsx("border-pink-500", buildsTitle)}>
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+        className={clsx(
+          "p-8 rounded-3xl border border-solid border-[rgba(255,255,255,0.09)] bg-[rgba(255,255,255,0.03)]"
+        )}
+      >
+        <h2
+          className={clsx(
+            "inline-block text-2xl font-bold mb-8 bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent"
+          )}
+        >
           ✨ My Way of Building
         </h2>
-        <ul className={clsx(buildsULList)}>
-          <li>직접 커스텀 훅을 만들어 코드 재사용성과 가독성을 높입니다</li>
-          <li>퍼블리셔 경험 덕분에 디자이너-개발자 간 소통에 강점이 있어요</li>
-          <li>정해진 틀에만 얽매이지 않고, 더 나은 방향을 고민하며 작업해요</li>
-          <li>
-            작은 UI 디테일까지 신경 써서, 사용자 경험을 향상시키는 데 집중합니다
-          </li>
+        <ul className={clsx("space-y-3")}>
+          {building.map((item, idx) => (
+            <li
+              key={idx}
+              className={clsx(
+                "p-5 rounded-xl transition bg-[rgba(255,255,255,0.05)]"
+              )}
+            >
+              <p className={clsx("leading-relaxed text-gray300 font-light")}>
+                <span
+                  className={clsx("text-[rgba(255,255,255,1)] font-semibold")}
+                >
+                  {item.highlight}
+                </span>
+                {item.text}
+              </p>
+            </li>
+          ))}
         </ul>
-      </section>
-    </div>
+      </motion.section>
+    </section>
   );
 }

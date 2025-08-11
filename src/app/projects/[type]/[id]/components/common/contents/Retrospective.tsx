@@ -36,7 +36,7 @@ export default function Retrospective({ $frontend }: { $frontend: boolean }) {
           "max-md:mt-6 max-md:mb-10"
         )}
       />
-      <div className="relative w-full">
+      <div className={clsx("relative w-full")}>
         <div
           ref={ref}
           className={clsx(
@@ -77,8 +77,8 @@ export default function Retrospective({ $frontend }: { $frontend: boolean }) {
               "max-md:mr-0 text-[rgba(255,255,255,.5)]"
             )}
           >
-            <span className="font-bold text-xl">Wrapping up</span> the{" "}
-            <span className="text-gray500 font-robotoSlab">story</span>
+            <span className={clsx("font-bold text-xl")}>Wrapping up</span> the{" "}
+            <span className={clsx("text-gray500 font-robotoSlab")}>story</span>
             <br /> of this project’s journey.
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function Retrospective({ $frontend }: { $frontend: boolean }) {
           alt=";"
           width={20}
           height={50}
-          className="mt-2 opacity-50"
+          className={clsx("mt-2 opacity-50")}
         />
       </div>
     </>
