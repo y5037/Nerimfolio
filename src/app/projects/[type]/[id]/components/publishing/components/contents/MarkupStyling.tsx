@@ -60,28 +60,24 @@ export default function MarkupStyling() {
           }}
         >
           <span
+            className={clsx(
+              "absolute top-0 right-0 left-0 w-full h-[6px] opacity-40"
+            )}
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "6px",
-              height: "100%",
               backgroundColor: color,
             }}
           />
           <span
-            className="px-2 py-1 text-xs font-semibold rounded"
+            className="px-2 py-1 text-xs font-semibold rounded text-white"
             style={{
               backgroundColor: color,
-              color: "#fff",
             }}
           >
             {label}
           </span>
           <h3
-            className="text-xl font-bold mt-3 mb-5"
+            className="text-xl font-bold mt-3 mb-5 text-white"
             style={{
-              color: "white",
               textShadow: "0 2px 4px rgba(0,0,0,0.4)",
             }}
           >

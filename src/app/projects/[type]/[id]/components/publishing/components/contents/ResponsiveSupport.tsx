@@ -13,7 +13,7 @@ const supportItems = [
       { item: "데스크탑", value: "1024px 이상" },
       { item: "전략", value: "Mobile First Approach" },
     ],
-    color: "#60A5FA", // 파랑 포인트
+    color: "#60A5FA",
   },
   {
     label: "BROWSER",
@@ -26,7 +26,7 @@ const supportItems = [
       { item: "Edge", value: "완벽 호환" },
       { item: "IE11", value: "기본 기능 동작 확인" },
     ],
-    color: "#FBBF24", // 노란색 포인트
+    color: "#FBBF24",
   },
   {
     label: "DEVICE",
@@ -37,7 +37,7 @@ const supportItems = [
       { item: "모바일", value: "터치 인터페이스 대응" },
       { item: "태블릿", value: "혼합 입력 환경 지원" },
     ],
-    color: "#34D399", // 민트 그린
+    color: "#34D399",
   },
   {
     label: "ACCESSIBILITY",
@@ -48,7 +48,7 @@ const supportItems = [
       { item: "키보드 탐색", value: "Tab 순서 및 포커스 관리" },
       { item: "색상 대비", value: "WCAG AA 수준 이상" },
     ],
-    color: "#F87171", // 레드 톤
+    color: "#F87171",
   },
 ];
 
