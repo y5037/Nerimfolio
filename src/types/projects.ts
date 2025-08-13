@@ -155,3 +155,41 @@ export type RetrospectiveData = {
   projectName: string;
   retrospectiveGroup: RetrospectiveGroup[];
 };
+
+type DescTableGroup = {
+  category: string;
+  detail: string;
+};
+
+export type MarkupStylingGroup = {
+  label: string;
+  title: string;
+  desc?: string;
+  descTable?: DescTableGroup[];
+  color: string;
+};
+
+export type MarkupStylingData = {
+  id: number;
+  projectName: string;
+  markupStylingGroup: MarkupStylingGroup[];
+};
+
+type ResponsiveSupportDetails = {
+  item: string;
+  value: string;
+};
+
+export type ResponsiveSupportGroup = {
+  label: string;
+  title: string;
+  brief: string;
+  details: ResponsiveSupportDetails[];
+  color: string;
+};
+
+export type ResponsiveSupportData = {
+  id: number;
+  projectName: string;
+  responsiveSupportGroup: ResponsiveSupportGroup[];
+};
