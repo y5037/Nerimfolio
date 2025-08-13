@@ -142,7 +142,7 @@ export const frontendOverviewData: FrontendOverviewData[] = [
       },
     ],
     githubLink: "https://github.com/codeit-Taskify-12-1/taskify",
-    diveInLink: "https://taskify-vert-rho.vercel.app/",
+    diveInLink: "https://taskify-jet-theta.vercel.app/",
   },
   {
     id: 5,
