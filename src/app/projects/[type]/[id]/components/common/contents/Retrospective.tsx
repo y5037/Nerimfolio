@@ -32,7 +32,7 @@ export default function Retrospective({ $frontend }: { $frontend: boolean }) {
         width={30}
         height={30}
         className={clsx(
-          "justify-self-center mt-10 mb-20 animate-scrollHint",
+          "justify-self-center mt-10 mb-20 animate-scrollHint mx-auto",
           "max-md:mt-6 max-md:mb-10"
         )}
       />
@@ -64,9 +64,9 @@ export default function Retrospective({ $frontend }: { $frontend: boolean }) {
       </div>
       <div
         className={clsx(
-          "flex items-center mt-32 mb-10 justify-self-end",
+          "flex items-center mt-32 mb-10 justify-end",
           "md:px-8",
-          "max-md:justify-between max-md:justify-self-auto",
+          "max-md:justify-between",
           "max-xs500:mt-24"
         )}
       >
