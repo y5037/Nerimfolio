@@ -62,7 +62,12 @@ export default function Builds() {
           프로젝트에 감성을 더하거나, 개발 속도를 높이는 데 자주 사용하는
           도구들이에요.
         </p>
-        <div className={clsx("flex space-x-4 overflow-x-auto snap-x")}>
+        <div
+          className={clsx(
+            "flex space-x-4 overflow-x-auto snap-x",
+            "hide-scrollbar"
+          )}
+        >
           {favoriteTools.map(({ name, emoji }) => (
             <div
               key={name}

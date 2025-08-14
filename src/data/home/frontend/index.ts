@@ -60,7 +60,7 @@ export const frontendProject: FrontendData[] = [
     ],
     title: "Taskify",
     description: "NEXT Page Router · CSR 기반 워크플로우 관리 서비스",
-    diveInLink: "https://taskify-jet-theta.vercel.app/",
+    diveInLink: "https://taskify-one-drab.vercel.app/",
     githubLink: "https://github.com/codeit-Taskify-12-1/taskify",
   },
   {

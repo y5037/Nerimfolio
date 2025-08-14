@@ -25,7 +25,7 @@ export default function Features() {
   return (
     <section id="features">
       <div
-        className={clsx("mb-12 pl-5 border-solid border-l-4 border-teal-400")}
+        className={clsx("mb-12 pl-5 border-solid border-l-4 border-indigo-400")}
       >
         <h2 className={clsx("text-2xl font-bold mb-3")}>주요 기능 상세</h2>
         <p className={clsx("text-sm text-gray-400 font-light")}>
