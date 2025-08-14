@@ -202,28 +202,222 @@ export const PublishingRetrospectiveData: RetrospectiveData[] = [
         id: 1,
         title: "Proud Achievements",
         subheading: "이 프로젝트에서 이루어낸 주요 성과와 배운 점",
-        description: "",
+        description:
+          "이 프로젝트는 퍼블리셔로 취업을 준비하던 시절, 포트폴리오로 사용하기 위해 시작한 작업입니다.\n초기에는 PC 화면을 기준으로 제작했지만,\n‘모든 디바이스에 대응할 수 있어야 한다’는 조언을 받고 반응형 구조로 확장했습니다.\n결과적으로 모바일, 태블릿, 데스크톱 등 모든 디바이스 환경에서 최적화된 레이아웃을 구현할 수 있게 되었고,\n이를 통해 반응형 퍼블리싱 전반에 대한 이해도를 크게 높일 수 있었습니다.\n\n또한, 다양한 프로젝트(자사 웹앱, 랜딩페이지 등)의 퍼블리싱한 결과물들을 함께 담으면서\n이 작업 과정에서 제이쿼리 활용 능력과 마크업 구조 설계 능력도 한층 성장시킬 수 있었습니다.",
         imageUrl: "/images/projects/detail/publishing/retrospective/1.jpg",
       },
       {
         id: 2,
         title: "Areas for Improvement",
         subheading: "직면했던 문제점과 앞으로 개선해야 할 부분",
-        description: "",
+        description:
+          "제이쿼리로 작성한 스크립트가 특정 브라우저에서 정상적으로 동작하지 않는 상황을 마주하게 됐습니다.\n단순한 UI 오류를 넘어, 사용자 경험에 직접적인 영향을 주는 문제였어요.\n이를 계기로 브라우저 환경에 따른 편차 없이\n모든 사용자가 동일한 품질의 서비스를 이용할 수 있는 방법에 대해 깊이 고민하게 되었습니다.\n\n당시에는 제이쿼리가 이미 점차 사용량이 줄고 있었고,\n순수 Javascript로도 동일한 기능을 구현할 수 있는 방법이 존재했습니다.\n그러나 익숙한 기술에서 벗어나 새로운 접근 방식을 적용하는 것은 쉽지 않았고,\n예기치 않은 오류와 마주했을 때의 당황스러움도 컸습니다.\n\n기술 선택이 서비스 품질과 직결된다는 사실과 트렌드 변화에 따른 기술 전환의 중요성을 체감한 계기가 되어\n이후로는 프로젝트 초기부터 호환성과 유지보수성을 함께 고려하는 습관이 자리잡게 되었습니다.",
         imageUrl: "/images/projects/detail/publishing/retrospective/2.jpg",
       },
       {
         id: 3,
         title: "Next Steps",
         subheading: "다음 작업에서 시도하고 싶은 방향과 계획",
-        description: "",
+        description:
+          "퍼블리셔로 근무하던 시절에는 jQuery에 의존하며 프로젝트 작업을 이어갔습니다.\n솔직히 말하면, JavaScript가 어렵게 느껴져서 도망친 도피처에 가까웠어요.\n하지만 그 익숙함 속에 안주하다 보니, 정작 JavaScript에 대한 이해는 점점 얕아지고 있었습니다.\n\n기술은 빠르게 발전하고 있었고, 이를 따라가기 위해서는 근본적인 언어부터 다시 탄탄히 다져야 한다는 걸 깨달았습니다.\n그래서 jQuery 대신 순수 JavaScript를 깊이 있게 배우고,\n이를 바탕으로 최신 기술을 활용한 포트폴리오를 만들어보기로 결심했습니다.",
         imageUrl: "/images/projects/detail/publishing/retrospective/3.png",
       },
       {
         id: 4,
         title: "Personal Reflections",
         subheading: "이 프로젝트가 남긴 개인적인 성장과 회고",
-        description: "",
+        description:
+          "내가 사용하는 디바이스와 브라우저로 정상 동작한다고 해서\n모든 사용자에게 동일한 경험을 제공할 수 없다는 것을 깨달았습니다.\n누군가 이에 대해 질문했을 때 당황하지 않고 상황을 설명하려면,\n브라우저와 디바이스별 특성을 충분히 이해하고 있어야 한다는 것도 알게 되었어요.\n\n그동안은 편하고 빠르게 결과물을 만들기 위해 jQuery라는 쉬운 길을 선택하기도 했지만,\n이번 경험을 통해 뼈대부터 확실히 기반을 잡고, 기술의 근본을 이해하는 것이 더 중요한 접근임을 깨달았습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/4.jpg",
+      },
+    ],
+  },
+  {
+    id: 2,
+    projectName: "Becelo",
+    retrospectiveGroup: [
+      {
+        id: 1,
+        title: "Proud Achievements",
+        subheading: "이 프로젝트에서 이루어낸 주요 성과와 배운 점",
+        description:
+          "이 프로젝트는 기획과 디자인 단계부터 참여하여\n개발자와 본격적으로 협업하는 경험을 처음으로 쌓은 작업이었습니다.\n\n협업 과정 속에서 내가 맡은 역할에 충실히 임하는 것이\n다음 단계의 작업을 원활하게 만드는 핵심이라는 것을 실감할 수 있었어요.\n또한, 내가 만든 퍼블리싱 결과물이\n실제 자사 웹앱과 랜딩페이지에서 활용되는 모습을 보며 큰 뿌듯함을 느꼈습니다.\n\n혼자 퍼블리싱을 전담하다 보니 작업량이 많아 힘들기도 했지만,\n그 과정에서 PHP 기반의 그누보드 파일 구조를 빠르게 이해하고 활용할 수 있게 되었습니다.\n처음에는 여기저기 흩어진 파일을 찾는 일이 어려웠지만,\n구조를 익히고 나서는 필요한 파일을 빠르게 찾아 작업할 수 있어 성취감도 느낄 수 있었습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/1.jpg",
+      },
+      {
+        id: 2,
+        title: "Areas for Improvement",
+        subheading: "직면했던 문제점과 앞으로 개선해야 할 부분",
+        description:
+          "개발이 어느 정도 진행되기도 전에 기획과 디자인이 계속 변경되고\n새로운 기능이 추가되면서 몇 차례 작업물을 다시 작성해야 하는 상황이 있었습니다.\n컨펌을 받고 진행한 작업임에도 리팩토링이 반복되어 처음에는 많이 힘들었어요.\n\n하지만 반복적인 수정 과정을 겪으면서,\n더 나은 기획과 UI 디자인이 나오고 이에 맞춰 빠르게 대응하는 능력을 키울 수 있었습니다.\n또한, 한 작업에 매몰되지 않고 다양한 아이디어를 시도할 수 있는 여유도 생겼습니다.\n\n앞으로 유사한 상황에 직면하더라도 단순히 불평하기보다는\n배움의 기회로 삼아 적응하고 성장하는 태도를 유지하려고 합니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/2.jpg",
+      },
+      {
+        id: 3,
+        title: "Next Steps",
+        subheading: "다음 작업에서 시도하고 싶은 방향과 계획",
+        description:
+          "PHP 기반 프로젝트에서 jQuery를 사용하는 것 자체에는 큰 무리가 없었지만,\n모달과 같이 반복해서 사용되는 페이지나 디자인 요소를 구현하다 보니\n불필요한 코드가 점점 늘어나고 코드가 지저분해지는 현상을 실시간으로 체감했습니다.\n\n앞으로 PHP 기반 개발을 계속 이어가게 된다면,\n불필요하게 중복되는 코드를 줄이는 방법을 고민하고 이를 개선하기 위해\nPHP에 대한 이해와 공부를 좀 더 심화할 필요가 있다고 느꼈습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/3.png",
+      },
+      {
+        id: 4,
+        title: "Personal Reflections",
+        subheading: "이 프로젝트가 남긴 개인적인 성장과 회고",
+        description:
+          "기획과 디자인 단계부터 참여해 PHP 개발자와 협업하며 프로젝트를 완성한 경험은 굉장히 뜻 깊었습니다.\n하나의 서비스를 만들어 나가는 과정에서 얼마나 많은 인력과 시행착오가 필요한지 직접 체감하며,\n이를 통해 다양한 깨달음을 얻을 수 있었어요.\n\n또한, 프로젝트 진행 과정 속에서 각자의 역할 속에서 성장하고 있는 동료들을 보며,\n협업과 경험의 중요성을 깊이 느낄 수 있었습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/4.jpg",
+      },
+    ],
+  },
+  {
+    id: 3,
+    projectName: "Fansign",
+    retrospectiveGroup: [
+      {
+        id: 1,
+        title: "Proud Achievements",
+        subheading: "이 프로젝트에서 이루어낸 주요 성과와 배운 점",
+        description:
+          "회사에서 제공한 기회를 통해 네이티브 퍼블리싱을 직접 경험할 수 있었던 점이 가장 큰 성과였습니다.\n웹과 달리 모바일 중심으로 진행되는 네이티브 퍼블리싱은\n마크업 구조와 태그 사용 방식이 웹과 상당히 달랐습니다.\n\n처음에는 익숙하지 않아 당황스러웠지만,\n실제로 기능을 구현해보면서 당시 웹에서는 기본적으로 제공되지 않던 모달 UI/UX 라이브러리나 편의 기능들이\n네이티브 환경에서는 이미 준비되어 쉽게 사용할 수 있다는 점에서 굉장히 편하고 재밌었습니다.\n\n이를 통해 단순히 코드를 작성하는 것 이상의 경험,\n즉 새로운 환경에서 빠르게 적응하고 기능을 구현하는 방법을 배우게 되었고,\n앞으로 모바일 퍼블리싱을 다룰 때 기초적인 이해와 자신감을 쌓을 수 있는 계기가 되었습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/1.jpg",
+      },
+      {
+        id: 2,
+        title: "Areas for Improvement",
+        subheading: "직면했던 문제점과 앞으로 개선해야 할 부분",
+        description:
+          "네이티브 환경에서의 퍼블리싱은 처음 경험하다 보니, 프로젝트 전 과정이 거의 공부와 적용의 반복이었습니다.\n새로운 구조와 규칙을 배우면서 바로 적용해야 하는 상황이 계속되다 보니 정신없이 바쁘기도 했고,\n체력적으로도 쉽지 않았습니다.\n또한, 퍼블리셔로서 마크업을 작성하는 것은 단순한 디자인 구현을 넘어 개발과 직결되는 작업임에도,\n당시에는 이해도가 충분히 높지 않아 여러 부분에서 시행착오를 겪었습니다.\n\n이 경험을 통해, 앞으로는 새로운 환경을 접할 때 사전에 관련 지식을 충분히 쌓고,\n퍼블리싱과 개발의 연계를 이해한 상태에서 프로젝트에 임하는 것이 중요하다는 점을 깨닫게 되었습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/2.jpg",
+      },
+      {
+        id: 3,
+        title: "Next Steps",
+        subheading: "다음 작업에서 시도하고 싶은 방향과 계획",
+        description:
+          "앞으로 비슷한 프로젝트를 진행할 때는 프로젝트 초반부터 관련 규칙과 구조를 충분히 학습하고,\n퍼블리싱과 개발 간의 연계를 고려하여 코드를 작성할 계획입니다.\n반복되는 시행착오를 줄이고, 효율적이면서 안정적인 코드 작성 방식을 지향함으로써\n프로젝트 완성도를 높여, 보다 원활한 협업을 만들어가는 것이 목표입니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/3.png",
+      },
+      {
+        id: 4,
+        title: "Personal Reflections",
+        subheading: "이 프로젝트가 남긴 개인적인 성장과 회고",
+        description:
+          "제한된 지식으로도 최대한 안정적인 결과물을 만들어내는 경험을 통해,\n앞으로는 새로운 기술이나 환경에서도 당황하지 않고 체계적으로 대응할 수 있는 자신감을 얻었습니다.\n\n단순히 기능을 구현하는 것을 넘어,\n구조를 이해하고 기반을 탄탄히 다지는 것이 퍼블리셔로서 성장하는 핵심이라는 점을 배운 프로젝트였습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/4.jpg",
+      },
+    ],
+  },
+  {
+    id: 4,
+    projectName: "TravelyMap",
+    retrospectiveGroup: [
+      {
+        id: 1,
+        title: "Proud Achievements",
+        subheading: "이 프로젝트에서 이루어낸 주요 성과와 배운 점",
+        description:
+          "기획자나 디자이너와의 협업 과정에서 배우는 점도 많았지만,\n퍼블리싱 작업이 바로 화면으로 확인되다 보니 때로는 의견 충돌이 발생하기도 했습니다.\n퍼블리셔로 일하면서 본격적으로 처음 시작한 프로젝트라,\n당시에는 모르는 부분이 많아 상대방의 의견에 굽히는 경우가 많았지만,\n이제는 필요한 경우 내 의견을 제시하면서 맞춰나가는 점도 중요하다는 것을 배웠습니다.\n\n또한, 퍼블리싱을 전담하고 웹앱을 처음 제작하면서\n화면 레이아웃과 마크업 구조를 어떻게 설계해야 효율적일지 고민했던 경험은\n스스로 공부하고 성장하는 데 큰 도움이 되었습니다.\n이 과정을 통해 퍼블리셔로서의 기초 역량과 문제 해결 능력을 확실히 다질 수 있었습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/1.jpg",
+      },
+      {
+        id: 2,
+        title: "Areas for Improvement",
+        subheading: "직면했던 문제점과 앞으로 개선해야 할 부분",
+        description:
+          "웹앱 퍼블리싱을 처음 경험하다 보니, 디바이스별 반응형 레이아웃을 어떻게 설계해야 할지 고민이 많았습니다.\n고민이 깊어지면서 마크업 구조를 복잡하게 꼬아 생각하는 시기도 있었고,\n태블릿과 모바일 각각에 맞춘 레이아웃을 따로 잡는 등 여러 시행착오를 겪었습니다.\n\n이 과정에서, 단순히 화면을 구현하는 것을 넘어 다양한 디바이스 환경에서도\n안정적으로 동작하도록 설계하는 것이 얼마나 중요한지 깨닫게 되었습니다.\n유연한 구조를 설계하고, 불필요한 반복과 복잡함을 최소화하는 방법을 적극적으로 고민하려고 합니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/2.jpg",
+      },
+      {
+        id: 3,
+        title: "Next Steps",
+        subheading: "다음 작업에서 시도하고 싶은 방향과 계획",
+        description:
+          "웹앱 마크업을 작성할 때, 단순히 코드를 무작정 작성하는 것이 아니라 전체적인 디자인 구조를 먼저 파악하고,\nCSS로 어떻게 효율적으로 구현할 수 있을지에 대한 고민이 필요 하다는 것을 깨달았습니다.\n앞으로는 이러한 접근 방식을 꾸준히 적용해 디자인과 구조를 정확히 이해하고,\n유지보수와 확장이 용이한 마크업을 작성하는 퍼블리셔가 되고 싶습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/3.png",
+      },
+      {
+        id: 4,
+        title: "Personal Reflections",
+        subheading: "이 프로젝트가 남긴 개인적인 성장과 회고",
+        description:
+          "웹앱 퍼블리싱이 처음이었기 때문에,\n디바이스별 반응형 레이아웃을 고민하며 마크업을 어렵게 꼬아보는 시행착오를 많이 겪었습니다.\n\n단순히 화면을 구현하는 수준을 넘어,\n유지보수와 확장이 용이한 구조를 설계하는 습관을 배우게 되었고,\n앞으로 퍼블리셔로서 더 견고하고 체계적인 작업 방식을 갖추는 발판이 되었다고 생각합니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/4.jpg",
+      },
+    ],
+  },
+  {
+    id: 5,
+    projectName: "HomtStudio",
+    retrospectiveGroup: [
+      {
+        id: 1,
+        title: "Proud Achievements",
+        subheading: "이 프로젝트에서 이루어낸 주요 성과와 배운 점",
+        description:
+          "이 프로젝트에서는 기존에 HTML로 작성된 코드를 직접 React 프로젝트로 이전하고 화면에 띄우는 과정을 경험했습니다.\n덕분에 React에서 특정 루트가 어떻게 연결되어 화면이 표시되는지 구조를 직접 이해할 수 있었고,\n초기 React 프로젝트 구조를 직접 세팅해보면서 이전과는 다른 개발 환경의 신선함을 느낄 수 있었습니다.\n\n이를 통해 단순히 마크업을 구현하는 것을 넘어,\n프레임워크 기반에서 화면이 어떻게 구성되는지를 체감하며 구조 설계 능력을 키울 수 있었던 시간이었습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/1.jpg",
+      },
+      {
+        id: 2,
+        title: "Areas for Improvement",
+        subheading: "직면했던 문제점과 앞으로 개선해야 할 부분",
+        description:
+          "React 기반으로 진행되면서 jQuery를 사용할 수 없었기 때문에\nUX적인 상호작용까지 직접 구현하는 데에는 한계가 있었습니다.\n완전히 프론트엔드 개발 영역에 속하는 부분이다보니 직접 처리할 수 없는 영역이었고,\n그로 인해 많은 답답함과 아쉬움을 느꼈습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/2.jpg",
+      },
+      {
+        id: 3,
+        title: "Next Steps",
+        subheading: "다음 작업에서 시도하고 싶은 방향과 계획",
+        description:
+          "프레임워크 환경에서도 퍼블리셔로서 기본적인 UX 흐름과 상호작용 구조를 이해하고,\n설계 단계에서부터 개발자와 원활히 협업할 수 있는 능력을 키우는 것이 필요하다고 느꼈습니다.\n\n구현 과정에서 발생할 수 있는 불필요한 시행착오를 줄이고,\n개발자와 함께 원활하게 구현 방향에 대한 의견을 주고 받으며\n더 완성도 높은 화면을 제작할 수 있을 것이라고 생각 됩니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/3.png",
+      },
+      {
+        id: 4,
+        title: "Personal Reflections",
+        subheading: "이 프로젝트가 남긴 개인적인 성장과 회고",
+        description:
+          "React 기반 환경에서 퍼블리셔로서 할 수 있는 역할과 한계를 명확히 경험할 수 있었습니다.\nHTML과 CSS를 다루는 기본 퍼블리싱 능력뿐만 아니라, 화면 구조와 레이아웃을 설계하고,\n이를 React 프로젝트 구조에 맞게 적용하는 과정을 직접 수행하면서\n프론트엔드 개발과 퍼블리싱 사이의 경계를 이해하게 되었습니다.\n\n앞으로는 프레임워크 환경에서도 퍼블리셔로서 필요한 UX 흐름과 구조를 이해하고,\n설계 단계에서부터 개발자와 조율할 수 있는 역량을 키우는 것이 목표입니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/4.jpg",
+      },
+    ],
+  },
+  {
+    id: 6,
+    projectName: "Ketock",
+    retrospectiveGroup: [
+      {
+        id: 1,
+        title: "Proud Achievements",
+        subheading: "이 프로젝트에서 이루어낸 주요 성과와 배운 점",
+        description:
+          "HTML과 CSS를 기반으로 작업물을 정리하여 개발팀에 전달하는 역할을 맡았습니다.\n비록 직접적인 UX 구현이나 프론트엔드 상호작용까지 다루지는 않았지만,\n전달할 코드의 구조와 가독성을 신경 쓰면서 퍼블리싱의 기본 역량을 더욱 탄탄히 다질 수 있었습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/1.jpg",
+      },
+      {
+        id: 2,
+        title: "Areas for Improvement",
+        subheading: "직면했던 문제점과 앞으로 개선해야 할 부분",
+        description:
+          "HTML/CSS만 전달하다 보니, 실제 개발과의 연결 과정에서\n의도와 다른 구현이 발생할 수 있다는 점을 체감했습니다.\n앞으로는 전달용 코드 작성 시 개발 관점에서 필요한 구조와 주석을 더 꼼꼼히 고려해,\n협업 과정에서 생길 수 있는 오해를 최소화하는 것이 필요하다는 것을 깨달았습니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/2.jpg",
+      },
+      {
+        id: 3,
+        title: "Next Steps",
+        subheading: "다음 작업에서 시도하고 싶은 방향과 계획",
+        description:
+          "개발자와의 소통과 코드 최적화까지 염두에 두고 작업할 계획입니다.\n특히 코드의 일관성과 재사용성을 높여,\n후속 프로젝트에서도 원활한 협업과 유지보수가 가능하도록 개선하고자 합니다.",
+        imageUrl: "/images/projects/detail/publishing/retrospective/3.png",
+      },
+      {
+        id: 4,
+        title: "Personal Reflections",
+        subheading: "이 프로젝트가 남긴 개인적인 성장과 회고",
+        description:
+          "비록 직접적인 인터랙션 구현은 없었지만,\n퍼블리싱의 기본기를 점검하고 협업 과정에서의 역할을 명확히 이해할 수 있었습니다.\n\n이 경험을 바탕으로,\n단순히 코드를 전달하는 것을 넘어 프로젝트 전체를 이해하고\n개발자와 효율적으로 협력할 수 있는 능력을 쌓게 된 것이 가장 큰 성장 포인트였습니다.",
         imageUrl: "/images/projects/detail/publishing/retrospective/4.jpg",
       },
     ],
