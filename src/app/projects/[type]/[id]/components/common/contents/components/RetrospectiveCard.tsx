@@ -71,7 +71,7 @@ export default function RetrospectiveCard({
           src={item.imageUrl}
           alt={item.title}
           fill
-          className={clsx("object-cover")}
+          className={clsx("object-cover object-[center_-1px]")}
           draggable={false}
         />
       </div>
@@ -127,12 +127,9 @@ export default function RetrospectiveCard({
         >
           <p>{item.title}</p>
           {isActive && (
-            <div
-              className={clsx(
-                "my-3 w-5 h-0.5 bg-gray200",
-                !isLeftTilt && "justify-self-end"
-              )}
-            />
+            <div className={clsx(!isLeftTilt && "flex justify-end")}>
+              <div className={clsx("my-3 w-5 h-0.5 bg-gray200")} />
+            </div>
           )}
         </div>
         <p

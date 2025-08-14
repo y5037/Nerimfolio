@@ -79,7 +79,7 @@ export default function PublishingSection() {
           <div
             onClick={(e) => e.stopPropagation()}
             className={clsx(
-              "fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,.5)]",
+              "fixed inset-0 z-[99999] flex items-center justify-center bg-[rgba(0,0,0,.5)]",
               "md:hidden"
             )}
           >
