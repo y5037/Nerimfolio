@@ -9,6 +9,6 @@ export const AboutStats = [
   },
   {
     label: "Posts",
-    value: 39,
+    value: 43,
   },
 ];

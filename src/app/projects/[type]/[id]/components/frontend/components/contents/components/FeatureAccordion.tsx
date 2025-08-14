@@ -68,7 +68,7 @@ export default function FeatureAccordion({
                     (feature.implementedByMe ? (
                       <span
                         className={clsx(
-                          "inline-block min-w-fit text-xs px-2 py-1 rounded-full bg-sky-900 text-sky-200 border border-sky-500"
+                          "inline-block min-w-fit text-xs px-2 py-1 rounded-full bg-violet-900 text-violet-200 border border-solid border-violet-500 bg-opacity-80"
                         )}
                       >
                         담당
@@ -76,7 +76,7 @@ export default function FeatureAccordion({
                     ) : feature.contributionPercent > 0 ? (
                       <span
                         className={clsx(
-                          "inline-block min-w-fit text-xs px-2 py-1 rounded-full bg-emerald-900 text-emerald-200 border border-emerald-500"
+                          "inline-block min-w-fit text-xs px-2 py-1 rounded-full bg-teal-900 text-teal-200 border border-solid border-teal-500 bg-opacity-80"
                         )}
                       >
                         기여 ({feature.contributionPercent}%)
