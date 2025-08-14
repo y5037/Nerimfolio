@@ -2,7 +2,7 @@ import { useModalController } from "@/hooks/useModalController";
 import { FeatureData } from "@/types/projects";
 import clsx from "clsx";
 import { ChevronDown } from "lucide-react";
-import { Dispatch, SetStateAction, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import ScreenshotModal from "../../../../common/ScreenshotModal";
 import FeatureContent from "./FeatureContent";
 
@@ -21,7 +21,6 @@ export default function FeatureAccordion({
 }) {
   const [isScreenshot, setIsScreenshot] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const { showModal, isVisible, open, close, handleExitComplete } =
     useModalController();
@@ -91,10 +90,8 @@ export default function FeatureAccordion({
                 </div>
               </button>
               <FeatureContent
-                i={i}
                 feature={feature}
                 isOpen={isOpen}
-                contentRefs={contentRefs}
                 setIsScreenshot={setIsScreenshot}
                 modalOpen={open}
               />

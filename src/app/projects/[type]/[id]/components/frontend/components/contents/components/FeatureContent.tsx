@@ -3,26 +3,22 @@ import AnimatedBar from "@/components/progressbar/AnimatedBar";
 import { FeatureData } from "@/types/projects";
 import clsx from "clsx";
 import Image from "next/image";
-import { Dispatch, RefObject, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import AccordionMenu from "./AccordionMenu";
 
 export default function FeatureContent({
-  i,
   feature,
-  contentRefs,
   isOpen,
   setIsScreenshot,
   modalOpen,
 }: {
-  i: number;
   feature: FeatureData;
-  contentRefs: RefObject<(HTMLDivElement | null)[]>;
   isOpen: boolean;
   setIsScreenshot: Dispatch<SetStateAction<string>>;
   modalOpen: () => void;
 }) {
   return (
-    <AccordionMenu i={i} isOpen={isOpen} contentRefs={contentRefs}>
+    <AccordionMenu isOpen={isOpen}>
       <div className={clsx("px-6 py-6 text-gray-300 bg-gray-950")}>
         <div className={clsx("mb-6")}>
           <p className={clsx("text-sm whitespace-pre-line")}>
