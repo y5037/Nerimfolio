@@ -22,16 +22,19 @@ export default function FeatureAccordion({
   const [isScreenshot, setIsScreenshot] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const { showModal, isVisible, open, close, handleExitComplete } =
-    useModalController();
+  const imgModal = useModalController();
+
+  const handleOpenImg = () => {
+    imgModal.open();
+  };
 
   return (
     <>
-      {showModal && (
+      {imgModal.showModal && (
         <ScreenshotModal
           $frontendFeature
           imgSrc={isScreenshot}
-          controller={{ isVisible, close, handleExitComplete }}
+          controller={imgModal}
         />
       )}
       <div className={clsx("space-y-3")}>
@@ -93,7 +96,7 @@ export default function FeatureAccordion({
                 feature={feature}
                 isOpen={isOpen}
                 setIsScreenshot={setIsScreenshot}
-                modalOpen={open}
+                handleOpenImg={handleOpenImg}
               />
             </div>
           );

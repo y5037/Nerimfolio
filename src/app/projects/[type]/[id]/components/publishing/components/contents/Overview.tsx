@@ -16,17 +16,20 @@ export default function Overview() {
     return item.id === paramsId;
   });
 
-  const { showModal, isVisible, open, close, handleExitComplete } =
-    useModalController();
+  const imgModal = useModalController();
+
+  const handleOpenImg = () => {
+    imgModal.open();
+  };
 
   if (!data) return;
   return (
     <>
-      {showModal && (
+      {imgModal.showModal && (
         <ScreenshotModal
           $publishingOverview
           imgSrc={isScreenshot}
-          controller={{ isVisible, close, handleExitComplete }}
+          controller={imgModal}
         />
       )}
       <div className={clsx("pb-10")}>
@@ -116,7 +119,7 @@ export default function Overview() {
                   fill
                   className={clsx("rounded-lg shadow-md")}
                   onClick={() => {
-                    open();
+                    handleOpenImg();
                     setIsScreenshot(src);
                   }}
                 />

@@ -34,7 +34,7 @@ export default function ProfileContainer() {
       ) : storyModal.showModal && modalType === "story" ? (
         <StoryModal controller={storyModal} />
       ) : (
-        ""
+        null
       )}
 
       <BackButton $about />

@@ -119,7 +119,7 @@ export default function StoryContent({
           </p>
         </>
       ) : (
-        ""
+        null
       )}
     </>
   );

@@ -48,7 +48,7 @@ export default function StoryHead({
                 ? "pm 6:00 - pm 7:30"
                 : $story4
                 ? "am 6:30 - am 8:00"
-                : ""}
+                : null}
             </p>
           </div>
         </div>

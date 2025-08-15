@@ -10,12 +10,12 @@ export default function FeatureContent({
   feature,
   isOpen,
   setIsScreenshot,
-  modalOpen,
+  handleOpenImg
 }: {
   feature: FeatureData;
   isOpen: boolean;
   setIsScreenshot: Dispatch<SetStateAction<string>>;
-  modalOpen: () => void;
+  handleOpenImg: () => void;
 }) {
   return (
     <AccordionMenu isOpen={isOpen}>
@@ -34,7 +34,7 @@ export default function FeatureContent({
               height={0}
               className={clsx("w-full rounded-md object-cover cursor-pointer")}
               onClick={() => {
-                modalOpen();
+                handleOpenImg();
                 setIsScreenshot(feature.image);
               }}
             />
