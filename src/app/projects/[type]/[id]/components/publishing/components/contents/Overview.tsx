@@ -128,12 +128,19 @@ export default function Overview() {
           </div>
         </li>
       </ul>
-      <div className={clsx("flex gap-7 mt-14 mb-20", "max-xs:mb-9")}>
+      <div
+        className={clsx(
+          "flex gap-7 mt-14 mb-20",
+          "xs500:mb-16",
+          "max-xs500:mb-10",
+          "max-xs:mb-5"
+        )}
+      >
         {data.progressbar.map((data, idx) => (
           <AnimatedCircle key={idx} data={data} />
         ))}
       </div>
-      <div className={clsx("flex items-center gap-3 mt-20")}>
+      <div className={clsx("flex items-center gap-3", "xs:mt-0")}>
         <button
           className={clsx(overviewLinkButton, "bg-[#374151]")}
           onClick={() => window.open(data.diveInLink)}
