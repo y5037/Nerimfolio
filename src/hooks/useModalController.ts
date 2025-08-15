@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useModalScrollLock } from "./useModalScrollLock";
 
 export const useModalController = (defaultValue = false) => {
   const [showModal, setShowModal] = useState(defaultValue);
@@ -27,17 +28,7 @@ export const useModalController = (defaultValue = false) => {
     };
   }, [showModal]);
 
-  useEffect(() => {
-    if (showModal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [showModal]);
+  useModalScrollLock(showModal);
 
   return { showModal, isVisible, open, close, handleExitComplete };
 };
