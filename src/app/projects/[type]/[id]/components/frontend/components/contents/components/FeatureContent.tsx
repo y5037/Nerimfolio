@@ -4,13 +4,13 @@ import { FeatureData } from "@/types/projects";
 import clsx from "clsx";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
-import AccordionMenu from "./AccordionMenu";
+import AccordionItem from "./AccordionItem";
 
 export default function FeatureContent({
   feature,
   isOpen,
   setIsScreenshot,
-  handleOpenImg
+  handleOpenImg,
 }: {
   feature: FeatureData;
   isOpen: boolean;
@@ -18,7 +18,7 @@ export default function FeatureContent({
   handleOpenImg: () => void;
 }) {
   return (
-    <AccordionMenu isOpen={isOpen}>
+    <AccordionItem isOpen={isOpen}>
       <div className={clsx("px-6 py-6 text-gray-300 bg-gray-950")}>
         <div className={clsx("mb-6")}>
           <p className={clsx("text-sm whitespace-pre-line")}>
@@ -91,6 +91,6 @@ export default function FeatureContent({
           </div>
         </div>
       </div>
-    </AccordionMenu>
+    </AccordionItem>
   );
 }

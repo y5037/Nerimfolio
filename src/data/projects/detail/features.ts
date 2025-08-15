@@ -24,7 +24,7 @@ export const featuresData: Features[] = [
             description: `사이트 전반의 주요 내비게이션인 GNB는 사용자 로그인 상태와 권한(지원자 또는 관리자)에 따라 서로 다른 메뉴와 버튼을 제공하도록 구현했습니다.
 기존에 구성된 UI 구조를 기반으로 Zustand Store를 도입하여 로그인 여부 및 사용자 권한에 따른 조건 분기 로직을 추가하였고, hydrate 완료 여부를 조건부 렌더링에 반영함으로써 초기 로딩 시 UI 깜빡임을 최소화했습니다.`,
             image:
-              "/images/projects/detail/frontend/features/albaform/navigation.svg",
+              "/images/projects/detail/frontend/features/albaform/navigation.png",
             tech: ["Zustand", "TypeScript", "Styled Components"],
             ux: [
               "모바일/태블릿 환경에서도 안정적인 네비게이션 제공",
@@ -67,7 +67,7 @@ export const featuresData: Features[] = [
             contributionNote: false,
             description: `기존에 페이지별로 개별 관리되던 툴팁 UI/UX를 개선하기 위해, 전역 상태에서 재사용할 수 있는 글로벌 툴팁 컴포넌트를 새롭게 구현했습니다. 페이지 전환 시 툴팁이 깜빡이며 사라지던 문제를 해결하고, 상태 변화에 따라 자연스럽게 동작할 수 있도록 애니메이션을 개선했습니다. 툴팁은 표시 후 3초 뒤 자동으로 사라지며, 전역과 로컬 상황 모두에서 일관된 사용자 경험을 제공할 수 있도록 구성했습니다.`,
             image:
-              "/images/projects/detail/frontend/features/albaform/tooltip.svg",
+              "/images/projects/detail/frontend/features/albaform/tooltip.png",
             tech: ["Zustand", "Styled Components"],
             ux: [
               "일관된 UI/UX를 위한 글로벌 상태 관리",
@@ -82,7 +82,7 @@ export const featuresData: Features[] = [
             contributionNote: false,
             description: `Floating Button은 다양한 기능에서 재사용될 수 있도록 $기능 프롭스를 기반으로 UI와 동작을 유연하게 분기할 수 있도록 설계했습니다. 사용자 권한(채용자/지원자)에 따라 버튼의 형태나 진입 경로가 다르게 설정되며, 사용자 흐름에 맞춘 분기 로직을 통해 보다 자연스러운 사용 경험을 제공합니다. 구조적으로도 재사용성과 유지보수성을 고려하여, 향후 기능 확장이나 새로운 페이지에 대한 대응이 용이하도록 구현했습니다.`,
             image:
-              "/images/projects/detail/frontend/features/albaform/floating.svg",
+              "/images/projects/detail/frontend/features/albaform/floating.png",
             tech: ["Typescript", "Tailwind CSS"],
             ux: [
               "권한에 따라 버튼 동작과 이동 경로가 달라지는 유동적인 플로우 제공",
@@ -97,7 +97,7 @@ export const featuresData: Features[] = [
             contributionNote: false,
             description: `카카오 지도 SDK를 활용하여 주소 기반 지도 검색과 마커 표시 기능을 구현했습니다.
 주소 입력 시 자동완성과 좌표 변환(Geocoding)을 연동함으로써 위치 기반 정보 등록의 편의성을 높였고, 컴포넌트는 재사용성을 고려한 구조로 설계하여 회원 정보 입력, 알바폼 생성 페이지 등 다양한 영역에서 활용될 수 있도록 구성했습니다.`,
-            image: "/images/projects/detail/frontend/features/albaform/map.svg",
+            image: "/images/projects/detail/frontend/features/albaform/map.png",
             tech: ["Kakao Maps SDK", "TypeScript", "Tailwind CSS"],
             ux: [
               "주소 검색 시 자동완성 및 마커 표시로 사용자의 공간 인식 향상",
@@ -246,7 +246,7 @@ export const featuresData: Features[] = [
             description: `지원자는 이 페이지에서 이력서 첨부와 자기소개 등 필수 정보를 입력하여 알바폼에 지원할 수 있습니다.
 React Hook Form과 Zod 기반의 스키마 유효성 검사를 활용해 입력 흐름을 자연스럽게 제어하며, 불완전한 제출을 방지하도록 설계했습니다. 또한 백엔드에서 임시 저장 기능을 지원하지 않는 한계를 보완하기 위해 로컬스토리지를 활용한 임시 저장 기능을 구현하여 사용자 경험을 향상시켰습니다.`,
             image:
-              "/images/projects/detail/frontend/features/albaform/apply.svg",
+              "/images/projects/detail/frontend/features/albaform/apply.png",
             tech: [
               "React Hook Form",
               "Zod",
@@ -378,7 +378,7 @@ React Hook Form과 Zod 기반의 스키마 유효성 검사를 활용해 입력 
             description: `마이페이지는 채용자와 지원자가 모두 사용하는 공통 페이지로, 사용자 권한에 따라 UI와 노출 기능이 유동적으로 분기되도록 설계했습니다. 기본적으로 내가 작성한 알바토크 글과 댓글을 확인할 수 있으며, 정렬 필터 기능과 무한 스크롤을 통해 편리한 탐색 환경을 제공합니다.
 비밀번호 변경과 내 정보 수정 기능은 React Hook Form과 Zod를 활용한 폼 유효성 검사를 적용했으며, 특히 ‘내 정보 수정’ 모달은 권한별로 입력 항목과 UI를 다르게 구성하여 맞춤형 경험을 제공합니다. 지원자에게는 스크랩한 알바폼 목록을 확인할 수 있는 추가 기능을 제공해 보다 개인화된 사용 경험을 지원합니다.`,
             image:
-              "/images/projects/detail/frontend/features/albaform/mypage.svg",
+              "/images/projects/detail/frontend/features/albaform/mypage.png",
             tech: [
               "React Query",
               "React Hook Form",
@@ -414,7 +414,7 @@ React Hook Form과 Zod 기반의 스키마 유효성 검사를 활용해 입력 
             description: `로컬 인증 방식을 기반으로 사용자 로그인 여부에 따라 네비게이션 UI를 동적으로 구성했습니다. accessToken의 존재 여부에 따라 로그인 버튼 또는 프로필 이미지가 조건부 렌더링되며, 토큰 확인 중 불필요한 UI 깜빡임을 방지하기 위해 hydration이 완료된 후에만 화면을 렌더링하도록 처리했습니다.
 또한 기획에 없던 로그아웃 기능을 사용성 측면에서 직접 기획·추가했으며, 프로필 이미지를 클릭하면 로그아웃 메뉴가 드롭다운 형태로 표시되도록 구현했습니다.`,
             image:
-              "/images/projects/detail/frontend/features/pandamarket/navigation.svg",
+              "/images/projects/detail/frontend/features/pandamarket/navigation.png",
             tech: [
               "React Query",
               "LocalStorage",
@@ -585,7 +585,7 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             description: `공통적으로 사용하는 입력 필드 컴포넌트로, 다양한 타입의 input 요소에 대응하도록 설계되었습니다.
 라벨 표시와 에러 상태 시 스타일링, React Hook Form과의 호환성을 고려해 유연하게 구성되었으며, 스타일은 CSS Module을 사용해 관리합니다. 라벨 크기 조절과 클래스명 커스터마이징이 가능해 재사용성이 뛰어납니다.`,
             image:
-              "/images/projects/detail/frontend/features/globalnomad/input.svg",
+              "/images/projects/detail/frontend/features/globalnomad/input.png",
             tech: ["TypeScript", "CSS Modules"],
             ux: [
               "일관된 UI/UX를 보장하는 범용 입력 컴포넌트",
@@ -601,7 +601,7 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             description: `제네릭 타입을 활용해 다양한 옵션 타입을 지원하는 범용 드롭다운 컴포넌트입니다.
 선택된 값에 따라 버튼 레이블이 동적으로 변경되며, 토글 버튼 클릭으로 메뉴가 열리고 닫힙니다. 또한 컴포넌트 외부 클릭 시 메뉴가 자동으로 닫히도록 커스텀 훅인 useClickOutside를 적용해 사용자 경험을 개선했습니다.`,
             image:
-              "/images/projects/detail/frontend/features/globalnomad/dropdown.svg",
+              "/images/projects/detail/frontend/features/globalnomad/dropdown.png",
             tech: ["Custom Hooks", "TypeScript", "CSS Modules"],
             ux: [
               "외부 클릭 감지로 메뉴 자동 닫힘 처리",
@@ -617,7 +617,7 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             description: `로그인 상태에 따라 로그인 버튼 또는 프로필 이미지를 조건부 렌더링하는 글로벌 내비게이션입니다. 기획에 없던 사용자 경험 개선을 위해 프로필 클릭 시 로그아웃 기능이 포함된 드롭다운 메뉴를 직접 추가 구현했으며, hydration 상태를 선제적으로 판단해 초기 렌더링 시 UI 깜빡임을 최소화했습니다.
 로그인 후 새로고침 시 UI 지연 노출 이슈가 있으나, 기능적 흐름에는 영향을 주지 않으며 추후 보완할 예정입니다.`,
             image:
-              "/images/projects/detail/frontend/features/globalnomad/navigation.svg",
+              "/images/projects/detail/frontend/features/globalnomad/navigation.png",
             tech: ["Custom Hooks", "TypeScript", "CSS Modules"],
             ux: [
               "hydration 상태 관리로 서버-클라이언트 렌더링 차이 최소화",
@@ -632,7 +632,7 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             contributionNote: false,
             description: `블랙과 화이트 테마, 그리고 sm·md·lg 크기 옵션을 지원하는 범용 버튼 컴포넌트입니다. 버튼은 상황에 따라 button 요소 또는 Link 컴포넌트로 렌더링되며, 클릭 동작이나 페이지 이동 기능을 모두 처리할 수 있습니다. 또한 비활성화 상태 처리와 커스텀 클래스 및 인라인 스타일 확장이 가능하도록 설계되었습니다.`,
             image:
-              "/images/projects/detail/frontend/features/globalnomad/button.svg",
+              "/images/projects/detail/frontend/features/globalnomad/button.png",
             tech: ["TypeScript", "CSS Modules"],
             ux: [
               "다양한 크기와 색상 옵션으로 일관된 UI 제공",
@@ -820,7 +820,7 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             description: `기본 버튼과 앵커 태그를 모두 지원하며, 버튼의 너비, 높이, 패딩, 둥근 스타일 등을 prop으로 자유롭게 커스터마이징할 수 있도록 설계되었습니다.
 또한, 클릭 이벤트 핸들러와 조건부 렌더링을 활용해 사용자 상호작용과 내비게이션 용도로 유연하게 활용할 수 있도록 구현되었습니다.`,
             image:
-              "/images/projects/detail/frontend/features/taskify/button.svg",
+              "/images/projects/detail/frontend/features/taskify/button.png",
             tech: ["SCSS Modules"],
             ux: [
               "버튼의 형태와 동작 방식을 유연하게 제어할 수 있어 다양한 UI 요구사항에 대응",
@@ -855,7 +855,7 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
 대시보드 생성자가 본인일 경우에만 설정 및 초대 기능이 노출되며, 현재 라우트에 따라 조건부 렌더링이 이루어집니다. 사용자 프로필 클릭 시 드롭다운 메뉴가 표시되고, 외부 영역 클릭 시 자동으로 닫히도록 이벤트 리스너를 활용해 사용자 경험을 개선했습니다.
 또한, 멤버 목록은 API 호출을 통해 실시간으로 불러오며, 프로필 이미지가 없는 사용자의 경우 이니셜을 활용한 스타일링된 대체 UI를 제공하여 식별이 용이하도록 구성했습니다.`,
             image:
-              "/images/projects/detail/frontend/features/taskify/navigation.svg",
+              "/images/projects/detail/frontend/features/taskify/navigation.png",
             tech: ["Axios", "SCSS Modules", "Styled-components"],
             ux: [
               "프로필 클릭 시 사용자 메뉴가 드롭다운으로 노출되어 계정 기능 접근이 직관적",
@@ -1069,7 +1069,7 @@ React Type Animation을 활용하여 제품명 ‘Taskify’가 반복적으로 
             description: `styled-components를 기반으로 제작된 이 공통 입력 컴포넌트는 입력 상태에 따라 시각적인 피드백을 제공하도록 설계되었습니다. 포커스나 비활성화 상태 등 다양한 상태를 반영하여 사용자 경험을 향상시키고, 플레이스홀더 색상 변화를 통해 입력 흐름을 명확히 안내합니다.
 또한, 전역 변수를 활용해 디자인의 일관성과 유지보수성을 확보했으며, 모든 필드는 반응형 너비를 지원합니다. 패딩과 타이포그래피 설정을 통해 가독성과 조작성 모두를 고려한 컴포넌트입니다.`,
             image:
-              "/images/projects/detail/frontend/features/rolling/input.svg",
+              "/images/projects/detail/frontend/features/rolling/input.png",
             tech: ["Styled Components"],
             ux: ["상태 기반 시각 피드백", "접근성 향상", "디자인 일관성 유지"],
           },
@@ -1081,7 +1081,7 @@ React Type Animation을 활용하여 제품명 ‘Taskify’가 반복적으로 
             description: `styled-components를 기반으로 구현된 이 공통 버튼 컴포넌트는 재사용성과 디자인 일관성을 중점에 두고 설계되었습니다. 버튼의 크기(small, default)와 상태(hover, active, focus, disabled)에 따라 동적으로 스타일이 적용되며, 모든 버튼은 중앙 정렬과 반응형 패딩을 제공합니다.
 주요 색상은 전역 CSS 변수를 통해 관리되어 유지보수가 용이하며, button 디렉토리 내에는 다양한 상황에 맞는 버튼 변형들이 함께 정의되어 있어 유연한 UI 개발이 가능합니다.`,
             image:
-              "/images/projects/detail/frontend/features/rolling/button.svg",
+              "/images/projects/detail/frontend/features/rolling/button.png",
             tech: ["Styled Components"],
             ux: ["접근성 고려", "상호작용 피드백 제공", "디자인 일관성 유지"],
           },
@@ -1097,7 +1097,7 @@ React Type Animation을 활용하여 제품명 ‘Taskify’가 반복적으로 
             description: `URL 복사와 같은 사용자 액션에 대한 피드백을 효과적으로 전달하기 위해 제작된 이 공통 Toast 컴포넌트는 화면 하단 중앙에 고정되어 자연스럽게 등장합니다. 체크 아이콘과 텍스트를 함께 배치해 직관성을 높였으며, 반응형 설계 덕분에 모바일 환경에서도 가독성과 위치 정렬이 유지됩니다.
 배경의 투명도와 그림자 효과로 시인성을 확보했고, 클로즈 버튼을 통해 사용자가 직접 종료할 수 있도록 UX를 배려했습니다.`,
             image:
-              "/images/projects/detail/frontend/features/rolling/toast.svg",
+              "/images/projects/detail/frontend/features/rolling/toast.png",
             tech: ["Styled Components"],
             ux: [
               "즉각적 피드백 제공",
