@@ -26,10 +26,10 @@ export default function FadeAnimate({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={clsx(
-            "fixed inset-0 z-[9999]",
+            "fixed inset-0 z-[9999] bg-[rgba(0,0,0,0.7)]",
             $frontendFeature
-              ? "overflow-y-auto bg-[rgba(0,0,0,0.7)]"
-              : "flex justify-center items-center cursor-auto bg-[rgba(0,0,0,0.6)]"
+              ? "overflow-y-auto"
+              : "flex justify-center items-center cursor-auto"
           )}
           onClick={handleExitComplete}
         >
