@@ -71,7 +71,7 @@ export default function RetrospectiveCard({
           src={item.imageUrl}
           alt={item.title}
           fill
-          className={clsx("object-cover object-[center_-1px]")}
+          className={clsx("absolute inset-0 object-[center_-1px]")}
           draggable={false}
         />
       </div>
