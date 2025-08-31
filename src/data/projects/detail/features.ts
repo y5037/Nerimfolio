@@ -482,12 +482,12 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             ],
           },
           {
-            title: "중고마켓 상품 등록",
+            title: "중고마켓 상품 등록 및 수정",
             implementedByMe: true,
             contributionPercent: 100,
             contributionNote: false,
-            description: `사용자가 상품 정보를 입력할 수 있는 등록 페이지입니다. 각 폼 필드는 상태 관리 함수로 제어되며, React Query의 mutate를 통해 서버에 데이터를 제출합니다.
-필수 입력 항목이 모두 채워져야만 등록 버튼이 활성화되어 불완전한 등록을 방지하며, 이미지는 최대 1개까지 업로드할 수 있도록 제한하여 직관적이고 간결한 UI를 제공합니다.`,
+            description: `사용자가 상품 정보를 입력할 수 있는 페이지입니다.
+각 폼 필드는 상태 관리 함수로 제어되며, React Query의 mutate를 통해 서버에 데이터를 제출합니다. 필수 입력 항목이 모두 채워져야만 등록 버튼이 활성화되어 불완전한 등록을 방지하며, 직관적이고 간결한 UI를 제공합니다.`,
             image:
               "/images/projects/detail/frontend/features/pandamarket/createProduct.png",
             tech: ["React Query", "TypeScript", "CSS Modules"],
@@ -501,8 +501,8 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             implementedByMe: true,
             contributionPercent: 100,
             contributionNote: false,
-            description: `상품 정보 확인과 사용자 상호작용을 위한 상세 페이지로, 게시자는 본인이 등록한 게시글을 삭제할 수 있습니다(수정 기능은 추후 추가할 예정입니다).
-좋아요 기능은 토글 방식으로 구현되어 클릭 시 숫자가 즉시 반영되며, 댓글은 무한스크롤로 데이터 패칭되며 등록, 수정, 삭제가 가능하고 React Query의 queryKey 기반 캐싱을 통해 실시간으로 반영됩니다`,
+            description: `상품 정보 확인과 사용자 상호작용을 위한 상세 페이지로, 게시자는 본인이 등록한 상품 정보를 수정 및 삭제할 수 있습니다.
+좋아요 기능은 토글 방식으로 구현되어 클릭 시 숫자가 즉시 반영되며, 댓글은 무한스크롤로 데이터 패칭되며 등록, 수정, 삭제가 가능하고 React Query의 queryKey 기반 캐싱을 통해 실시간으로 반영됩니다.`,
             image:
               "/images/projects/detail/frontend/features/pandamarket/productDetail.png",
             tech: ["React Query", "TypeScript", "CSS Modules"],
@@ -517,8 +517,7 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             implementedByMe: true,
             contributionPercent: 100,
             contributionNote: false,
-            description: `사용자는 게시된 자유게시판 글을 확인하고 탐색할 수 있는 목록 페이지를 이용할 수 있습니다. 검색 키워드 입력 시 결과가 실시간으로 필터링되어 즉각적인 검색 경험을 제공하며, 정렬 필터를 통해 최신순과 좋아요순으로 게시글을 정렬할 수 있어 다양한 탐색 기준을 지원합니다.
-현재는 제한된 데이터만 로드되도록 구성되어 있으며, 추후 IntersectionObserver 기반의 무한 스크롤 기능이 추가될 예정입니다.`,
+            description: `사용자는 게시된 자유게시판 글을 확인하고 탐색할 수 있는 목록 페이지를 이용할 수 있습니다. 검색 키워드 입력 시 결과가 실시간으로 필터링되어 즉각적인 검색 경험을 제공하며, 정렬 필터를 통해 최신순과 좋아요순으로 게시글을 정렬할 수 있어 다양한 탐색 기준을 지원합니다.`,
             image:
               "/images/projects/detail/frontend/features/pandamarket/board.png",
             tech: ["React Query", "TypeScript", "CSS Modules"],
@@ -529,21 +528,15 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             ],
           },
           {
-            title: "자유게시판 게시글 등록",
+            title: "자유게시판 게시글 등록 및 수정",
             implementedByMe: true,
             contributionPercent: 0,
             contributionNote: false,
-            description: `사용자가 자유롭게 글을 작성하고 등록할 수 있는 게시글 등록 페이지로, 현재는 구현되지 않은 상태입니다.
-향후 구현 시 제목과 본문 입력, 이미지 첨부 기능을 지원할 예정이며, 필수 입력값 검증과 입력 상태에 따른 등록 버튼 활성화 로직도 포함할 계획입니다. 폼 입력은 React Hook Form과 Zod를 활용한 유효성 검사로 처리하고, 등록 시 서버와의 통신은 React Query를 사용할 예정입니다.`,
+            description: `사용자가 자유롭게 글을 작성할 수 있는 페이지 입니다.
+각 폼 필드는 상태 관리 함수로 제어되며, React Query의 mutate를 통해 서버에 데이터를 제출합니다. 필수 입력 항목이 모두 채워져야만 등록 버튼이 활성화되어 불완전한 등록을 방지하며, 직관적이고 간결한 UI를 제공합니다.`,
             image:
               "/images/projects/detail/frontend/features/pandamarket/createPost.png",
-            tech: [
-              // "React Hook Form",
-              // "Zod",
-              // "React Query",
-              // "TypeScript",
-              // "CSS Modules",
-            ],
+            tech: ["React Query", "TypeScript", "CSS Modules"],
             ux: [
               "작성 중 실수 방지를 위한 유효성 검사 및 인터랙션 설계 예정",
               "직관적인 에디터 기반 UI로 사용자 편의성 확보 목표",
@@ -554,13 +547,11 @@ React Context API와 Provider 패턴을 활용해 입력 상태를 전역으로 
             implementedByMe: true,
             contributionPercent: 0,
             contributionNote: false,
-            description: `개별 게시글의 내용과 댓글을 확인할 수 있는 상세 페이지로, 현재는 구현되지 않은 상태입니다.
-본문 외에도 첨부 이미지 출력, 댓글 등록·수정·삭제 및 좋아요 기능을 제공할 계획이며, 각 상호작용은 실시간으로 반영되도록 설계할 예정입니다. 댓글은 페이지네이션 또는 무한스크롤 방식 중 적절한 형태로 로딩하고, 좋아요 기능은 낙관적 UI 적용 여부를 고려하여 설계할 계획입니다.`,
+            description: `게시글 상세 확인과 사용자 상호작용을 위한 상세 페이지로, 게시자는 본인이 등록한 게시글을 수정 및 삭제할 수 있습니다.
+좋아요 기능은 토글 방식으로 구현되어 클릭 시 숫자가 즉시 반영되며, 댓글은 무한스크롤로 데이터 패칭되며 등록, 수정, 삭제가 가능하고 React Query의 queryKey 기반 캐싱을 통해 실시간으로 반영됩니다.`,
             image:
               "/images/projects/detail/frontend/features/pandamarket/postDetail.png",
-            tech: [
-              // "React Query", "TypeScript", "CSS Modules"
-            ],
+            tech: ["React Query", "TypeScript", "CSS Modules"],
             ux: [
               "댓글 및 좋아요 등 상호작용에 따른 즉각적인 피드백 제공 예정",
               "이미지 포함 콘텐츠의 유연한 레이아웃 렌더링 고려",

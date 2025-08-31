@@ -45,11 +45,11 @@ export const frontendOverviewData: FrontendOverviewData[] = [
     description: [
       "이 프로젝트는 Next.js Page Router 기반으로 구축한 중고거래 및 커뮤니티 통합 플랫폼입니다.",
       "클라이언트 사이드 렌더링(CSR)을 중심으로 구현되었으며, 부트캠프 기간 동안 개인 과제로 시작해 JavaScript 기반 React에서 TypeScript 기반 Next.js로 점차 전환하며 완성도를 높여왔습니다.",
-      "현재는 포트폴리오 작업을 위해 잠시 중단된 상태이며, 약 90%가 완료된 단계입니다.",
+      "사이드 프로젝트와 포트폴리오 작업으로 잠시 중단되었으나, 현재는 개발을 모두 완료한 상태입니다.",
     ],
     keyword: ["Personal Project", "Next.js", "Typescript", "React Query"],
     thumbnail: "/images/projects/frontendSection/thumbnail/pandamarket.png",
-    period: "2024.10 - 2025.04 (임시 중단)",
+    period: "2024.10 - 2025.08",
     member: 1,
     stack: [
       { Frontend: ["React", "Next.js", "TypeScript"] },

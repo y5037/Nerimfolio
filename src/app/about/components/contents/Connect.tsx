@@ -127,7 +127,22 @@ export default function Connect() {
               onClick={() => window.open("https://velog.io/@nerimy/posts")}
               className={clsx("cursor-pointer mr-[1px]")}
             />
-            <p>Resume (추후 추가 예정)</p>
+            <p>
+              <a
+                href="/file/FE_YunHyerim.pdf"
+                download
+                className="flex items-center"
+              >
+                Resume
+                <Image
+                  src="/images/about/download.png"
+                  alt="download"
+                  width={20}
+                  height={20}
+                  className="ml-3"
+                />
+              </a>
+            </p>
           </li>
         </ul>
       </div>
