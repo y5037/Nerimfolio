@@ -63,6 +63,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </div>
       </body>
+
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-FTZT3J4QNL"
+      />
+      <script>
+        {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FTZT3J4QNL'); `}
+      </script>
     </html>
   );
 }
