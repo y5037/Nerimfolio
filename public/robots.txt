@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nerimfolio.vercel.app/
+
+# Sitemaps
+Sitemap: https://nerimfolio.vercel.app/sitemap.xml
