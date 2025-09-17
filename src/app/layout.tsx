@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     default: "윤혜림의 포트폴리오 🥨",
     template: "%s | 윤혜림의 포트폴리오 🥨",
   },
-  description: "프론트엔드 개발자 윤혜림의 포트폴리오 입니다.",
+  description: "프론트엔드 개발자 윤혜림의 포트폴리오입니다.",
   openGraph: {
     title: "윤혜림의 포트폴리오 🥨",
-    description: "프론트엔드 개발자 윤혜림의 포트폴리오 입니다.",
+    description: "프론트엔드 개발자 윤혜림의 포트폴리오입니다.",
     url: "https://nerimfolio.vercel.app/",
     siteName: "윤혜림의 포트폴리오 🥨",
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "윤혜림의 포트폴리오 🥨",
-    description: "프론트엔드 개발자 윤혜림의 포트폴리오 입니다.",
+    description: "프론트엔드 개발자 윤혜림의 포트폴리오입니다.",
     images: ["https://nerimfolio.vercel.app/images/common/og-thumbnail.jpg"],
   },
 };
