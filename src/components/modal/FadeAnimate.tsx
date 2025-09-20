@@ -48,10 +48,10 @@ export default function FadeAnimate({
             <div
               ref={contentRef}
               className={clsx(
-                "max-w-[1000px] mx-auto",
+                "mx-auto",
                 $frontendFeature &&
                   isScrollable &&
-                  "h-full overflow-y-auto hide-scrollbar py-[calc(60px+env(safe-area-inset-top))]"
+                  "max-w-[1000px] h-full overflow-y-auto hide-scrollbar py-[calc(60px+env(safe-area-inset-top))]"
               )}
             >
               <motion.div

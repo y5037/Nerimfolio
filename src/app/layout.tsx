@@ -56,6 +56,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           src="https://developers.kakao.com/sdk/js/kakao.js"
           strategy="beforeInteractive"
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FTZT3J4QNL"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FTZT3J4QNL');
+          `}
+        </Script>
       </head>
       <body className={clsx("scrollbar-hide overflow-y-scroll")}>
         <Navigation />
@@ -64,19 +76,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </div>
       </body>
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-FTZT3J4QNL"
-      />
-      <script>
-        {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FTZT3J4QNL'); `}
-      </script>
     </html>
   );
 }
