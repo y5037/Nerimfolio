@@ -1,14 +1,14 @@
 export const AboutStats = [
   {
-    label: "Projects",
+    label: "Dev",
     value: 5,
   },
   {
-    label: "Markups",
+    label: "Pub",
     value: 6,
   },
   {
     label: "Posts",
-    value: 43,
+    value: 44,
   },
 ];
