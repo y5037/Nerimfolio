@@ -33,9 +33,7 @@ export default function ProfileContainer() {
         <QRCodeModal controller={qrModal} />
       ) : storyModal.showModal && modalType === "story" ? (
         <StoryModal controller={storyModal} />
-      ) : (
-        null
-      )}
+      ) : null}
 
       <BackButton $about />
       <div className={clsx("flex")}>
@@ -49,8 +47,8 @@ export default function ProfileContainer() {
         >
           <div
             className={clsx(
-              "flex items-center gap-10 font-light text-lg mb-5",
-              "max-xs500:gap-8 max-xs500:text-base"
+              "flex items-center gap-8 font-light text-lg mb-5",
+              "max-xs500:max-xs500:text-base"
             )}
           >
             {AboutStats.map((stat, idx) => (
